@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数据结构总纲</title>
+    <url>/2024/03/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BA%B2/</url>
+    <content><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><h3 id="数据结构（三要素）"><a href="#数据结构（三要素）" class="headerlink" title="数据结构（三要素）"></a>数据结构（三要素）</h3><h4 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h4><h5 id="线性结构：线性表、栈、队列"><a href="#线性结构：线性表、栈、队列" class="headerlink" title="线性结构：线性表、栈、队列"></a>线性结构：线性表、栈、队列</h5><h5 id="树、图、集合"><a href="#树、图、集合" class="headerlink" title="树、图、集合"></a>树、图、集合</h5><h4 id="存储结构（物理结构）"><a href="#存储结构（物理结构）" class="headerlink" title="存储结构（物理结构）"></a>存储结构（物理结构）</h4><h4 id="数据的运算"><a href="#数据的运算" class="headerlink" title="数据的运算"></a>数据的运算</h4><h3 id="五个特征"><a href="#五个特征" class="headerlink" title="五个特征"></a>五个特征</h3><h4 id="算法定义"><a href="#算法定义" class="headerlink" title="算法定义"></a>算法定义</h4><h4 id="五个特征：有穷性、确定性、可行性、输入、输出"><a href="#五个特征：有穷性、确定性、可行性、输入、输出" class="headerlink" title="五个特征：有穷性、确定性、可行性、输入、输出"></a>五个特征：有穷性、确定性、可行性、输入、输出</h4><h4 id="效率的度量"><a href="#效率的度量" class="headerlink" title="效率的度量"></a>效率的度量</h4><h5 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h5><h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><h2 id="栈、队列和数组"><a href="#栈、队列和数组" class="headerlink" title="栈、队列和数组"></a>栈、队列和数组</h2><h2 id="串"><a href="#串" class="headerlink" title="串"></a>串</h2><h2 id="树和二叉树"><a href="#树和二叉树" class="headerlink" title="树和二叉树"></a>树和二叉树</h2><h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构（一）——绪论&amp;数组、链表、字符串</title>
+    <url>/2024/03/03/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8%E5%93%88%E5%B8%8C%E8%A1%A8/</url>
+    <content><![CDATA[<h1 id="0、引"><a href="#0、引" class="headerlink" title="0、引"></a>0、引</h1><p>这里记录</p>
+<h1 id="·"><a href="#·" class="headerlink" title="·"></a>·</h1><h1 id="·链表"><a href="#·链表" class="headerlink" title="·链表"></a>·链表</h1><h2 id="典型题目："><a href="#典型题目：" class="headerlink" title="典型题目："></a>典型题目：</h2><table>
+<thead>
+<tr>
+<th>题目</th>
+<th align="right">力扣链接</th>
+<th align="right">解法</th>
+<th align="right">评价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>链表相交</td>
+<td align="right"><a href="https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/">https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/</a></td>
+<td align="right">哈希表（存储+查找）、双指针（数学证明有相交能相遇，无相交会同时NULL）、硬解（谁长先先多走）</td>
+<td align="right">很有意思的题目</td>
+</tr>
+<tr>
+<td></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody></table>
+<h1 id="·哈希表"><a href="#·哈希表" class="headerlink" title="·哈希表"></a>·哈希表</h1>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2024/03/02/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br><a href="https://www.zhihu.com/column/c_1502937018040057858">https://www.zhihu.com/column/c_1502937018040057858</a></p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new (post) <span class="string">&quot;My New Post&quot;</span>    (post可写可不写)  </span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -18,16 +75,5 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 <p>常见命令：<br>hexo new “postName”      # 新建文章<br>hexo new page “pageName” # 新建页面<br>hexo generate            # 生成静态页面至public目录<br>hexo server              # 开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy              # 部署到GitHub<br>hexo help                # 查看帮助<br>hexo version             # 查看Hexo的版本<br>缩写命令：<br>hexo n &#x3D;&#x3D; hexo new<br>hexo g &#x3D;&#x3D; hexo generate<br>hexo s &#x3D;&#x3D; hexo server<br>hexo d &#x3D;&#x3D; hexo deploy<br>组合命令：<br>hexo s -g   # 生成并本地预览<br>hexo d -g   # 生成并上传</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>数据结构（一）</title>
-    <url>/2024/03/03/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
   </entry>
 </search>
