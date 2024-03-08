@@ -5,35 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 7.1.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/chenjh3061/personalWeb.github.io.git/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/chenjh3061/personalWeb.github.io.git/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/chenjh3061/personalWeb.github.io.git/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/chenjh3061/personalWeb.github.io.git/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/chenjh3061/personalWeb.github.io.git/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/chenjh3061/personalWeb.github.io.git/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"github.com","root":"/chenjh3061/personalWeb.github.io.git/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="学习记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构（一）——绪论&amp;数组、链表、字符串">
-<meta property="og:url" content="http://example.com/2024/03/03/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8%E5%93%88%E5%B8%8C%E8%A1%A8/index.html">
+<meta property="og:url" content="https://github.com/chenjh3061/personalWeb.github.io.git/2024/03/03/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8%E5%93%88%E5%B8%8C%E8%A1%A8/index.html">
 <meta property="og:site_name" content="joho world">
 <meta property="og:description" content="学习记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-03T02:25:34.000Z">
-<meta property="article:modified_time" content="2024-03-05T14:59:18.428Z">
+<meta property="article:modified_time" content="2024-03-06T07:59:55.483Z">
 <meta property="article:author" content="Joho Chen">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2024/03/03/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8%E5%93%88%E5%B8%8C%E8%A1%A8/">
+<link rel="canonical" href="https://github.com/chenjh3061/personalWeb.github.io.git/2024/03/03/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8%E5%93%88%E5%B8%8C%E8%A1%A8/">
 
 
 <script id="page-configurations">
@@ -77,7 +77,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="joho world" type="application/atom+xml">
+<link rel="alternate" href="/chenjh3061/personalWeb.github.io.git/atom.xml" title="joho world" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -96,7 +96,7 @@
 
   <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
+    <a href="/chenjh3061/personalWeb.github.io.git/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">joho world</h1>
       <span class="logo-line-after"><i></i></span>
@@ -117,22 +117,22 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/chenjh3061/personalWeb.github.io.git/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/chenjh3061/personalWeb.github.io.git/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/chenjh3061/personalWeb.github.io.git/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/chenjh3061/personalWeb.github.io.git/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -187,10 +187,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/03/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8%E5%93%88%E5%B8%8C%E8%A1%A8/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/chenjh3061/personalWeb.github.io.git/2024/03/03/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8%E5%93%88%E5%B8%8C%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/chenjh3061/personalWeb.github.io.git/images/avatar.gif">
       <meta itemprop="name" content="Joho Chen">
       <meta itemprop="description" content="">
     </span>
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-05 22:59:18" itemprop="dateModified" datetime="2024-03-05T22:59:18+08:00">2024-03-05</time>
+                <time title="修改时间：2024-03-06 15:59:55" itemprop="dateModified" datetime="2024-03-06T15:59:55+08:00">2024-03-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,7 +225,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                  <a href="/chenjh3061/personalWeb.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
                 </span>
             </span>
 
@@ -242,7 +242,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>168</span>
+              <span>211</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -262,8 +262,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="0、引"><a href="#0、引" class="headerlink" title="0、引"></a>0、引</h1><p>这里记录</p>
-<h1 id="·"><a href="#·" class="headerlink" title="·"></a>·</h1><h1 id="·链表"><a href="#·链表" class="headerlink" title="·链表"></a>·链表</h1><h2 id="典型题目："><a href="#典型题目：" class="headerlink" title="典型题目："></a>典型题目：</h2><table>
+        <h1 id="0、引"><a href="#0、引" class="headerlink" title="0、引"></a>0、引</h1><p>这里记录一些题目收集情况，主要逻辑来自 <a target="_blank" rel="noopener" href="https://www.programmercarl.com/">代码随想录</a></p>
+<h1 id="·数组"><a href="#·数组" class="headerlink" title="·数组"></a>·数组</h1><h1 id="·链表"><a href="#·链表" class="headerlink" title="·链表"></a>·链表</h1><h2 id="典型题目："><a href="#典型题目：" class="headerlink" title="典型题目："></a>典型题目：</h2><table>
 <thead>
 <tr>
 <th>题目</th>
@@ -273,10 +273,10 @@
 </tr>
 </thead>
 <tbody><tr>
-<td></td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
+<td>链表理论</td>
+<td align="right"><a target="_blank" rel="noopener" href="https://www.programmercarl.com/">链表理论</a></td>
+<td align="right">整节都是好东西</td>
+<td align="right">都是经典题目</td>
 </tr>
 <tr>
 <td>链表相交</td>
@@ -312,12 +312,12 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.png" alt="Joho Chen 微信支付">
+        <img src="/chenjh3061/personalWeb.github.io.git/images/wechatpay.png" alt="Joho Chen 微信支付">
         <p>微信支付</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/alipay.png" alt="Joho Chen 支付宝">
+        <img src="/chenjh3061/personalWeb.github.io.git/images/alipay.png" alt="Joho Chen 支付宝">
         <p>支付宝</p>
       </div>
 
@@ -333,7 +333,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2024/03/03/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8%E5%93%88%E5%B8%8C%E8%A1%A8/" title="数据结构（一）——绪论&amp;数组、链表、字符串">http://example.com/2024/03/03/数组链表哈希表/</a>
+    <a href="https://github.com/chenjh3061/personalWeb.github.io.git/2024/03/03/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8%E5%93%88%E5%B8%8C%E8%A1%A8/" title="数据结构（一）——绪论&amp;数组、链表、字符串">https://github.com/chenjh3061/personalWeb.github.io.git/2024/03/03/数组链表哈希表/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -345,7 +345,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+              <a href="/chenjh3061/personalWeb.github.io.git/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           </div>
 
         
@@ -354,11 +354,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/03/02/hello-world/" rel="prev" title="Hello World">
+    <a href="/chenjh3061/personalWeb.github.io.git/2024/03/02/hello-world/" rel="prev" title="Hello World">
       <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
       <div class="post-nav-item">
-    <a href="/2024/03/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BA%B2/" rel="next" title="数据结构总纲">
+    <a href="/chenjh3061/personalWeb.github.io.git/2024/03/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BA%B2/" rel="next" title="数据结构总纲">
       数据结构总纲 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -419,7 +419,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0%E3%80%81%E5%BC%95"><span class="nav-number">1.</span> <span class="nav-text">0、引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%C2%B7"><span class="nav-number">2.</span> <span class="nav-text">·</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%C2%B7%E9%93%BE%E8%A1%A8"><span class="nav-number">3.</span> <span class="nav-text">·链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">典型题目：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%C2%B7%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">·哈希表</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0%E3%80%81%E5%BC%95"><span class="nav-number">1.</span> <span class="nav-text">0、引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%C2%B7%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">·数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%C2%B7%E9%93%BE%E8%A1%A8"><span class="nav-number">3.</span> <span class="nav-text">·链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">典型题目：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%C2%B7%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">·哈希表</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -431,7 +431,7 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+          <a href="/chenjh3061/personalWeb.github.io.git/archives/">
         
           <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
@@ -449,10 +449,10 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/chenjh3061" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chenjh3061" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/chenjh3061" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chenjh3061"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+        <a href="/chenjh3061/personalWeb.github.io.git/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
       </span>
   </div>
 
@@ -551,21 +551,21 @@ runtime:
   </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/chenjh3061/personalWeb.github.io.git/lib/anime.min.js"></script>
+  <script src="/chenjh3061/personalWeb.github.io.git/lib/pjax/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/chenjh3061/personalWeb.github.io.git/lib/velocity/velocity.min.js"></script>
+  <script src="/chenjh3061/personalWeb.github.io.git/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/js/utils.js"></script>
+<script src="/chenjh3061/personalWeb.github.io.git/js/utils.js"></script>
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
+<script src="/chenjh3061/personalWeb.github.io.git/js/motion.js"></script>
 
 
-<script src="/js/next-boot.js"></script>
+<script src="/chenjh3061/personalWeb.github.io.git/js/schemes/muse.js"></script>
+
+
+<script src="/chenjh3061/personalWeb.github.io.git/js/next-boot.js"></script>
 
   <script>
 var pjax = new Pjax({
@@ -635,7 +635,7 @@ window.addEventListener('pjax:success', () => {
 
 
   
-<script src="/js/local-search.js"></script>
+<script src="/chenjh3061/personalWeb.github.io.git/js/local-search.js"></script>
 
 
 
