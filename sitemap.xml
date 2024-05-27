@@ -67,15 +67,15 @@
 
   <url>
     <loc>https://chenjh3061/personalWeb.github.io</loc>
-    <lastmod>2024-04-09</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://chenjh3061/personalWeb.github.io/tags/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-04-09</lastmod>
+    <loc>https://chenjh3061/personalWeb.github.io/source/tags/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -83,8 +83,8 @@
 
   
   <url>
-    <loc>https://chenjh3061/personalWeb.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-04-09</lastmod>
+    <loc>https://chenjh3061/personalWeb.github.io/source/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
