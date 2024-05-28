@@ -6,7 +6,7 @@
   <link href="https://chenjh3061/personalWeb.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenjh3061/personalWeb.github.io/"/>
-  <updated>2024-05-28T09:06:08.361Z</updated>
+  <updated>2024-05-28T14:39:00.661Z</updated>
   <id>https://chenjh3061/personalWeb.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>笔试题目记录</title>
+    <link href="https://chenjh3061/personalWeb.github.io/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%89%B9%E6%AE%8A%E8%AE%B0%E5%BD%95/%E7%AC%94%E8%AF%95%E9%A2%98%E7%9B%AE/"/>
+    <id>https://chenjh3061/personalWeb.github.io/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%89%B9%E6%AE%8A%E8%AE%B0%E5%BD%95/%E7%AC%94%E8%AF%95%E9%A2%98%E7%9B%AE/</id>
+    <published>2024-05-28T14:29:50.000Z</published>
+    <updated>2024-05-28T14:39:00.661Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2024-5-28-深圳同行者Web前端实习"><a href="#2024-5-28-深圳同行者Web前端实习" class="headerlink" title="2024-5-28 深圳同行者Web前端实习"></a>2024-5-28 深圳同行者Web前端实习</h1><p>1、写一个函数，输入为一个数组，输出一个包含它所有子集的数组。</p><p>2、不使用split方法，实现两个函数：<br>    (1)输入字符串str和分隔符spl，输出被分割后的字符串数组。例：输入abc&amp;&amp;de和&amp;&amp;，输出[“abc”,”de”]。<br>    (2)输入字符串数组str和分隔符spl，输出合并后的字符串。例：输入[“abc”,”de”]和&amp;&amp;，输出abc&amp;&amp;de。</p><p>3、找出不大于n的最大质数</p><p>4、数组中共有一千个数，数的范围在[0,999]，有且只有两个相同的数，找出这个数。</p><p>5、n个人(编号1~n)围成一个圈报数，从1报数到m，报到m的人出列，下一个人重新从1开始报数，求最后一个留下的人的编号。</p>]]></content>
+    
+    
+    <summary type="html">参加的笔试题目集锦</summary>
+    
+    
+    
+    <category term="笔面记录" scheme="https://chenjh3061/personalWeb.github.io/categories/%E7%AC%94%E9%9D%A2%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="笔试题" scheme="https://chenjh3061/personalWeb.github.io/tags/%E7%AC%94%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>算法(三)————动态规划</title>
@@ -42,7 +63,7 @@
     <link href="https://chenjh3061/personalWeb.github.io/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/%E5%81%9A%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
     <id>https://chenjh3061/personalWeb.github.io/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/%E5%81%9A%E9%A2%98%E6%8A%80%E5%B7%A7/</id>
     <published>2024-05-28T02:35:22.000Z</published>
-    <updated>2024-05-28T09:13:01.013Z</updated>
+    <updated>2024-05-28T09:17:56.051Z</updated>
     
     <content type="html"><![CDATA[<h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h1><p>运用快慢两个指针解题，能够大大缩短本身可能需要$O(n^2)$复杂度的遍历时间。</p><p>例题：力扣283移动零、11盛水最多的容器、15三数之和</p><p>总之看到暴力法需要两层for循环的，就想想能不能用双指针。</p><h1 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h1><h1 id="子串"><a href="#子串" class="headerlink" title="子串"></a>子串</h1>]]></content>
     

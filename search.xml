@@ -155,4 +155,20 @@
         <tag>笔记</tag>
       </tags>
   </entry>
+  <entry>
+    <title>笔试题目记录</title>
+    <url>//%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%89%B9%E6%AE%8A%E8%AE%B0%E5%BD%95/%E7%AC%94%E8%AF%95%E9%A2%98%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="2024-5-28-深圳同行者Web前端实习"><a href="#2024-5-28-深圳同行者Web前端实习" class="headerlink" title="2024-5-28 深圳同行者Web前端实习"></a>2024-5-28 深圳同行者Web前端实习</h1><p>1、写一个函数，输入为一个数组，输出一个包含它所有子集的数组。</p>
+<p>2、不使用split方法，实现两个函数：<br>    (1)输入字符串str和分隔符spl，输出被分割后的字符串数组。例：输入abc&amp;&amp;de和&amp;&amp;，输出[“abc”,”de”]。<br>    (2)输入字符串数组str和分隔符spl，输出合并后的字符串。例：输入[“abc”,”de”]和&amp;&amp;，输出abc&amp;&amp;de。</p>
+<p>3、找出不大于n的最大质数</p>
+<p>4、数组中共有一千个数，数的范围在[0,999]，有且只有两个相同的数，找出这个数。</p>
+<p>5、n个人(编号1~n)围成一个圈报数，从1报数到m，报到m的人出列，下一个人重新从1开始报数，求最后一个留下的人的编号。</p>
+]]></content>
+      <categories>
+        <category>笔面记录</category>
+      </categories>
+      <tags>
+        <tag>笔试题</tag>
+      </tags>
+  </entry>
 </search>
