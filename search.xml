@@ -67,13 +67,13 @@
 </thead>
 <tbody><tr>
 <td>链表理论</td>
-<td align="right"><a href="https://www.programmercarl.com/">链表理论</a></td>
+<td align="right"><a href="https://programmercarl.com/%E9%93%BE%E8%A1%A8%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B">链表理论</a></td>
 <td align="right">整节都是好东西</td>
 <td align="right">都是经典题目</td>
 </tr>
 <tr>
 <td>链表相交</td>
-<td align="right"><a href="https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/">https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/</a></td>
+<td align="right"><a href="https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/">链表相交</a></td>
 <td align="right">哈希表（存储+查找）、双指针（数学证明有相交能相遇，无相交会同时NULL）、硬解（谁长先先多走）</td>
 <td align="right">很有意思的题目</td>
 </tr>
@@ -108,6 +108,17 @@
 
 <h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>例题：<a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/description/?envType=study-plan-v2&envId=top-100-liked">力扣200:岛屿数量</a></p>
 ]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法(一)————排序算法</title>
+    <url>//%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1>]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
