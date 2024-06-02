@@ -4,7 +4,16 @@
   <url>
     <loc>https://chenjh3061/personalWeb.github.io/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%89%B9%E6%AE%8A%E8%AE%B0%E5%BD%95/%E7%AC%94%E8%AF%95%E9%A2%98%E7%9B%AE/</loc>
     
-    <lastmod>2024-05-28</lastmod>
+    <lastmod>2024-06-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenjh3061/personalWeb.github.io/Excalidraw/Drawing%202024-06-01%2020.49.46.excalidraw.html</loc>
+    
+    <lastmod>2024-06-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -112,7 +121,7 @@
 
   <url>
     <loc>https://chenjh3061/personalWeb.github.io</loc>
-    <lastmod>2024-05-28</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -120,14 +129,14 @@
   
   <url>
     <loc>https://chenjh3061/personalWeb.github.io/tags/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-05-28</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chenjh3061/personalWeb.github.io/tags/%E7%AC%94%E8%AF%95%E9%A2%98/</loc>
-    <lastmod>2024-05-28</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -136,14 +145,14 @@
   
   <url>
     <loc>https://chenjh3061/personalWeb.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-05-28</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chenjh3061/personalWeb.github.io/categories/%E7%AC%94%E9%9D%A2%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2024-05-28</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
