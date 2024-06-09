@@ -28,7 +28,7 @@
 <meta property="og:description" content="参加的笔试题目集锦">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-28T14:29:50.000Z">
-<meta property="article:modified_time" content="2024-06-06T06:32:06.403Z">
+<meta property="article:modified_time" content="2024-06-06T11:45:09.421Z">
 <meta property="article:author" content="Joho Chen">
 <meta property="article:tag" content="笔试题">
 <meta name="twitter:card" content="summary">
@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-06 14:32:06" itemprop="dateModified" datetime="2024-06-06T14:32:06+08:00">2024-06-06</time>
+                <time title="修改时间：2024-06-06 19:45:09" itemprop="dateModified" datetime="2024-06-06T19:45:09+08:00">2024-06-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,14 +243,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>945</span>
+              <span>3.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
             <div class="post-description">参加的笔试题目集锦</div>
 
@@ -295,7 +295,100 @@
 <p>就是注意考虑情况，</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">s</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> minInsertionsToMatch = <span class="keyword">function</span>(<span class="params">s</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> leftNeeded = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> rightNeeded = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> char <span class="keyword">of</span> s) &#123;</span><br><span class="line">        <span class="keyword">if</span> (char === <span class="string">&#x27;(&#x27;</span> || char === <span class="string">&#x27;[&#x27;</span>) &#123;</span><br><span class="line">            rightNeeded++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (char === <span class="string">&#x27;)&#x27;</span> || char === <span class="string">&#x27;]&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (rightNeeded &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                rightNeeded--;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                leftNeeded++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> leftNeeded + rightNeeded;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例用法</span></span><br><span class="line"><span class="keyword">let</span> s1 = <span class="string">&quot;([)]&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> s2 = <span class="string">&quot;(([]&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">minInsertionsToMatch</span>(s1)); <span class="comment">// 输出: 2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">minInsertionsToMatch</span>(s2)); <span class="comment">// 输出: 2</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="二、问答题"><a href="#二、问答题" class="headerlink" title="二、问答题"></a>二、问答题</h3><h4 id="1、进程和线程有什么区别？进程间通信方式有哪些？"><a href="#1、进程和线程有什么区别？进程间通信方式有哪些？" class="headerlink" title="1、进程和线程有什么区别？进程间通信方式有哪些？"></a>1、进程和线程有什么区别？进程间通信方式有哪些？</h4><h4 id="2、列举常用数据结构，各自的特点和使用场景"><a href="#2、列举常用数据结构，各自的特点和使用场景" class="headerlink" title="2、列举常用数据结构，各自的特点和使用场景"></a>2、列举常用数据结构，各自的特点和使用场景</h4><h4 id="3、多线程编程要注意哪些情况？"><a href="#3、多线程编程要注意哪些情况？" class="headerlink" title="3、多线程编程要注意哪些情况？"></a>3、多线程编程要注意哪些情况？</h4><h4 id="4、HTTP请求头包含哪些内容？"><a href="#4、HTTP请求头包含哪些内容？" class="headerlink" title="4、HTTP请求头包含哪些内容？"></a>4、HTTP请求头包含哪些内容？</h4><h4 id="5、TCP和HTTP的具体区别？"><a href="#5、TCP和HTTP的具体区别？" class="headerlink" title="5、TCP和HTTP的具体区别？"></a>5、TCP和HTTP的具体区别？</h4><h4 id="6、怎么提升在线视频的播放秒开率？"><a href="#6、怎么提升在线视频的播放秒开率？" class="headerlink" title="6、怎么提升在线视频的播放秒开率？"></a>6、怎么提升在线视频的播放秒开率？</h4>
+<h3 id="二、问答题"><a href="#二、问答题" class="headerlink" title="二、问答题"></a>二、问答题</h3><h4 id="1、进程和线程有什么区别？进程间通信方式有哪些？"><a href="#1、进程和线程有什么区别？进程间通信方式有哪些？" class="headerlink" title="1、进程和线程有什么区别？进程间通信方式有哪些？"></a>1、进程和线程有什么区别？进程间通信方式有哪些？</h4><h4 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h4><ul>
+<li><p><strong>进程</strong>：</p>
+<ul>
+<li>是操作系统中独立运行的基本单位，拥有独立的内存空间。</li>
+<li>进程之间的资源是隔离的，进程切换开销较大。</li>
+<li>适用于需要并行处理且相互隔离的任务。</li>
+</ul>
+</li>
+<li><p><strong>线程</strong>：</p>
+<ul>
+<li>是进程中的一个执行单元，共享进程的内存空间和资源。</li>
+<li>线程之间通信方便，但缺乏进程间的隔离性，线程切换开销较小。</li>
+<li>适用于需要并发处理且共享数据的任务。</li>
+</ul>
+</li>
+</ul>
+<h4 id="进程间通信方式"><a href="#进程间通信方式" class="headerlink" title="进程间通信方式"></a>进程间通信方式</h4><ul>
+<li>**管道 (Pipe)**：用于父子进程间的通信，单向或双向的字节流。</li>
+<li>**消息队列 (Message Queue)**：由消息组成的链表，存储在内核中。</li>
+<li>**共享内存 (Shared Memory)**：多个进程共享一块内存区域，速度快，但需要同步机制。</li>
+<li>**信号 (Signal)**：用于通知进程某个事件的发生。</li>
+<li>**套接字 (Socket)**：用于不同主机或同一主机上进程间的网络通信。</li>
+<li>**信号量 (Semaphore)**：用于进程间的同步控制。</li>
+</ul>
+<h4 id="2、列举常用数据结构，各自的特点和使用场景"><a href="#2、列举常用数据结构，各自的特点和使用场景" class="headerlink" title="2、列举常用数据结构，各自的特点和使用场景"></a>2、列举常用数据结构，各自的特点和使用场景</h4><ul>
+<li>**数组 (Array)**：连续内存空间，随机访问快，插入和删除慢。适用于需要频繁访问的场景。</li>
+<li>**链表 (Linked List)**：非连续内存空间，插入和删除快，随机访问慢。适用于需要频繁插入和删除的场景。</li>
+<li>**栈 (Stack)**：后进先出 (LIFO)，适用于递归、表达式求值、语法分析等场景。</li>
+<li>**队列 (Queue)**：先进先出 (FIFO)，适用于排队处理、广度优先搜索等场景。</li>
+<li>**哈希表 (Hash Table)**：通过哈希函数进行快速查找，适用于需要快速查找和插入的场景。</li>
+<li>**树 (Tree)**：层次结构，适用于需要快速查找、插入和删除的场景，如二叉搜索树、平衡树。</li>
+<li>**图 (Graph)**：用于表示网络结构，适用于图论算法，如最短路径、最小生成树等。</li>
+<li>**堆 (Heap)**：完全二叉树，常用于实现优先队列。</li>
+</ul>
+<h4 id="3、多线程编程要注意哪些情况？"><a href="#3、多线程编程要注意哪些情况？" class="headerlink" title="3、多线程编程要注意哪些情况？"></a>3、多线程编程要注意哪些情况？</h4><ul>
+<li><strong>线程安全</strong>：避免多个线程同时访问共享资源，使用锁或同步机制。</li>
+<li><strong>死锁</strong>：多个线程互相等待对方释放资源，导致程序无法继续运行。</li>
+<li><strong>资源竞争</strong>：多个线程争夺同一资源，导致数据不一致或程序崩溃。</li>
+<li><strong>线程调度</strong>：合理调度线程，避免过多线程导致的上下文切换开销。</li>
+<li><strong>内存一致性</strong>：保证线程之间的内存可见性，使用内存屏障或锁机制。</li>
+</ul>
+<h4 id="4、HTTP请求头包含哪些内容？"><a href="#4、HTTP请求头包含哪些内容？" class="headerlink" title="4、HTTP请求头包含哪些内容？"></a>4、HTTP请求头包含哪些内容？</h4><ul>
+<li>**通用头部 (General Headers)**：如 <code>Cache-Control</code>, <code>Connection</code>, <code>Date</code>。</li>
+<li>**请求头部 (Request Headers)**：如 <code>Accept</code>, <code>Accept-Encoding</code>, <code>Authorization</code>, <code>Host</code>, <code>User-Agent</code>, <code>Referer</code>。</li>
+<li>**响应头部 (Response Headers)**：如 <code>Location</code>, <code>Server</code>, <code>Set-Cookie</code>, <code>Content-Type</code>。</li>
+<li>**实体头部 (Entity Headers)**：如 <code>Content-Length</code>, <code>Content-Encoding</code>, <code>Content-Language</code>, <code>Content-Location</code>, <code>Content-MD5</code>, <code>Last-Modified</code>。</li>
+</ul>
+<h4 id="5、TCP和HTTP的具体区别？"><a href="#5、TCP和HTTP的具体区别？" class="headerlink" title="5、TCP和HTTP的具体区别？"></a>5、TCP和HTTP的具体区别？</h4><ul>
+<li><p>**TCP (Transmission Control Protocol)**：</p>
+<ul>
+<li>是传输层协议，提供可靠的、面向连接的通信。</li>
+<li>确保数据包按序到达，进行错误检查和流量控制。</li>
+<li>用于底层数据传输，如 HTTP 协议的数据传输。</li>
+</ul>
+</li>
+<li><p>**HTTP (HyperText Transfer Protocol)**：</p>
+<ul>
+<li>是应用层协议，基于 TCP 协议。</li>
+<li>无状态协议，每个请求&#x2F;响应都是独立的。</li>
+<li>用于在客户端和服务器之间传输超文本（如 HTML 文档、图片、视频）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="6、怎么提升在线视频的播放秒开率？"><a href="#6、怎么提升在线视频的播放秒开率？" class="headerlink" title="6、怎么提升在线视频的播放秒开率？"></a>6、怎么提升在线视频的播放秒开率？</h4><ul>
+<li><strong>优化缓冲策略</strong>：减少初始缓冲时间，根据网络情况调整缓冲区大小。</li>
+<li><strong>预加载技术</strong>：在用户点击播放前预加载部分视频内容。</li>
+<li><strong>分段加载</strong>：将视频分成多个小段，先加载前几段。</li>
+<li>**使用内容分发网络 (CDN)**：将视频内容分发到离用户最近的服务器，减少传输延迟。</li>
+<li><strong>压缩视频</strong>：使用更高效的视频编码格式，减少视频文件大小。</li>
+<li><strong>网络协议优化</strong>：使用更高效的传输协议，如 HTTP&#x2F;2 或 QUIC。</li>
+<li><strong>客户端优化</strong>：优化播放器的解码和渲染性能。</li>
+</ul>
+<h1 id="2024-06-06用友提前批模拟笔试"><a href="#2024-06-06用友提前批模拟笔试" class="headerlink" title="2024-06-06用友提前批模拟笔试"></a>2024-06-06用友提前批模拟笔试</h1><p>1、大数减法：以字符串的形式读入两个数字，编写一个函数计算它们的差，以字符串形式返回。</p>
+<h6 id="输入示例"><a href="#输入示例" class="headerlink" title="输入示例"></a>输入示例</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2</span><br></pre></td></tr></table></figure>
+<h6 id="输出示例"><a href="#输出示例" class="headerlink" title="输出示例"></a>输出示例</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-1</span><br></pre></td></tr></table></figure>
+
+<p>解法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">subtractStrings</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line">    <span class="comment">// 确定结果的符号</span></span><br><span class="line">    <span class="keyword">let</span> isNegative = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (num1 === num2) <span class="keyword">return</span> <span class="string">&quot;0&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span> (num1.<span class="property">length</span> &lt; num2.<span class="property">length</span> || (num1.<span class="property">length</span> === num2.<span class="property">length</span> &amp;&amp; num1 &lt; num2)) &#123;</span><br><span class="line">        [num1, num2] = [num2, num1];</span><br><span class="line">        isNegative = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 补齐 num2 前导零</span></span><br><span class="line">    num2 = num2.<span class="title function_">padStart</span>(num1.<span class="property">length</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> result = [];</span><br><span class="line">    <span class="keyword">let</span> borrow = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = num1.<span class="property">length</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">let</span> digit1 = <span class="built_in">parseInt</span>(num1[i], <span class="number">10</span>);</span><br><span class="line">        <span class="keyword">let</span> digit2 = <span class="built_in">parseInt</span>(num2[i], <span class="number">10</span>) + borrow;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (digit1 &lt; digit2) &#123;</span><br><span class="line">            digit1 += <span class="number">10</span>;</span><br><span class="line">            borrow = <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            borrow = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        result.<span class="title function_">push</span>(digit1 - digit2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 移除结果中的前导零</span></span><br><span class="line">    <span class="keyword">while</span> (result[result.<span class="property">length</span> - <span class="number">1</span>] === <span class="number">0</span>) &#123;</span><br><span class="line">        result.<span class="title function_">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 处理负号</span></span><br><span class="line">    <span class="keyword">if</span> (isNegative) &#123;</span><br><span class="line">        result.<span class="title function_">push</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result.<span class="title function_">reverse</span>().<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 读取输入</span></span><br><span class="line"><span class="keyword">const</span> readline = <span class="built_in">require</span>(<span class="string">&#x27;readline&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> rl = readline.<span class="title function_">createInterface</span>(&#123;</span><br><span class="line">    <span class="attr">input</span>: process.<span class="property">stdin</span>,</span><br><span class="line">    <span class="attr">output</span>: process.<span class="property">stdout</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">rl.<span class="title function_">on</span>(<span class="string">&#x27;line&#x27;</span>, <span class="function">(<span class="params">input</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> [num1, num2] = input.<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">subtractStrings</span>(num1, num2));</span><br><span class="line">    rl.<span class="title function_">close</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>2、滑动窗口最大值<br>给定一个整数数组 nums 和一个整数 k，k 表示滑动窗口的大小。你需要找出每个滑动窗口中的最大值与最小值的差，并返回这些差的最大值。</p>
+<h6 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h6><p>数组的长度为 n，1 &lt;&#x3D; n &lt;&#x3D; 10000，数组中的每个元素范围为[-10000,10000]，滑动窗口大小k的范围为[1,n]。</p>
+<h6 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h6><p>例如，给你nums &#x3D; [1,3,-1,-3,5,3,6,7]和 k &#x3D; 3，每个窗口中的最大值与最小值的差分别为[2,4,6,8]，所以返回 8。</p>
+<h6 id="输入示例-1"><a href="#输入示例-1" class="headerlink" title="输入示例"></a>输入示例</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nums = [1,3,-1,-3,5,3,6,7], k = 3</span><br></pre></td></tr></table></figure>
+<h6 id="输出示例-1"><a href="#输出示例-1" class="headerlink" title="输出示例"></a>输出示例</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8</span><br></pre></td></tr></table></figure>
+
+
+
+<p>3、软件构建<br>某个大型软件项目的构建系统拥有 N 个文件，文件编号从 0 到 N - 1，在这些文件中，某些文件依赖于其他文件的内容，这意味着如果文件 A 依赖于文件 B，则必须在处理文件 A 之前处理文件 B （0 &lt;&#x3D; A, B &lt;&#x3D; N - 1）。请编写一个算法，用于确定文件处理的顺序。</p>
+<h6 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述"></a>输入描述</h6><p>第一行输入两个正整数 N, M。表示 N 个文件之间拥有 M 条依赖关系。后续 M 行，每行两个正整数 S 和 T，表示 T 文件依赖于 S 文件。</p>
+<h6 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述"></a>输出描述</h6><p>输出共一行，如果能处理成功，则输出文件顺序，用空格隔开。 <br>如果不能成功处理（相互依赖），则输出 -1。</p>
+<h6 id="输入示例-2"><a href="#输入示例-2" class="headerlink" title="输入示例"></a>输入示例</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">5 4</span><br><span class="line">0 1</span><br><span class="line">0 2</span><br><span class="line">1 3</span><br><span class="line">2 4</span><br></pre></td></tr></table></figure>
+<h6 id="输出示例-2"><a href="#输出示例-2" class="headerlink" title="输出示例"></a>输出示例</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -417,7 +510,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2024-5-28-%E6%B7%B1%E5%9C%B3%E5%90%8C%E8%A1%8C%E8%80%85Web%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">2024-5-28 深圳同行者Web前端实习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2024-6-4%E6%B7%B1%E5%9C%B3%E5%AD%A6%E8%80%8C%E6%80%9D%E5%B0%8F%E9%AB%98%E7%A7%91%E5%AD%A6%E7%B4%A0%E5%85%BB%E6%95%99%E5%B8%88%E7%A7%8B%E6%8B%9B%E6%8F%90%E5%89%8D%E6%89%B9"><span class="nav-number">2.</span> <span class="nav-text">2024-6-4深圳学而思小高科学素养教师秋招提前批</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2024-6-5%E6%B7%B1%E5%9C%B3%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90%E5%A8%B1%E4%B9%90IOS%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%9E%E4%B9%A0"><span class="nav-number">3.</span> <span class="nav-text">2024-6-5深圳腾讯音乐娱乐IOS客户端实习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%BC%96%E7%A8%8B%E9%A2%98"><span class="nav-number">3.0.1.</span> <span class="nav-text">一、编程题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E5%88%A0%E9%99%A4%E5%8D%87%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="nav-number">3.0.1.1.</span> <span class="nav-text">1、删除升序数组重复元素：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5"><span class="nav-number">3.0.1.2.</span> <span class="nav-text">2、螺旋矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%81%E6%8B%AC%E5%8F%B7%E5%8C%BA%E9%97%B4%E5%8C%B9%E9%85%8D"><span class="nav-number">3.0.1.3.</span> <span class="nav-text">3、括号区间匹配</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%97%AE%E7%AD%94%E9%A2%98"><span class="nav-number">3.0.2.</span> <span class="nav-text">二、问答题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="nav-number">3.0.2.1.</span> <span class="nav-text">1、进程和线程有什么区别？进程间通信方式有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E5%88%97%E4%B8%BE%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E5%90%84%E8%87%AA%E7%9A%84%E7%89%B9%E7%82%B9%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.0.2.2.</span> <span class="nav-text">2、列举常用数据结构，各自的特点和使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B%E8%A6%81%E6%B3%A8%E6%84%8F%E5%93%AA%E4%BA%9B%E6%83%85%E5%86%B5%EF%BC%9F"><span class="nav-number">3.0.2.3.</span> <span class="nav-text">3、多线程编程要注意哪些情况？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4%E3%80%81HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E5%86%85%E5%AE%B9%EF%BC%9F"><span class="nav-number">3.0.2.4.</span> <span class="nav-text">4、HTTP请求头包含哪些内容？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5%E3%80%81TCP%E5%92%8CHTTP%E7%9A%84%E5%85%B7%E4%BD%93%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">3.0.2.5.</span> <span class="nav-text">5、TCP和HTTP的具体区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6%E3%80%81%E6%80%8E%E4%B9%88%E6%8F%90%E5%8D%87%E5%9C%A8%E7%BA%BF%E8%A7%86%E9%A2%91%E7%9A%84%E6%92%AD%E6%94%BE%E7%A7%92%E5%BC%80%E7%8E%87%EF%BC%9F"><span class="nav-number">3.0.2.6.</span> <span class="nav-text">6、怎么提升在线视频的播放秒开率？</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2024-5-28-%E6%B7%B1%E5%9C%B3%E5%90%8C%E8%A1%8C%E8%80%85Web%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">2024-5-28 深圳同行者Web前端实习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2024-6-4%E6%B7%B1%E5%9C%B3%E5%AD%A6%E8%80%8C%E6%80%9D%E5%B0%8F%E9%AB%98%E7%A7%91%E5%AD%A6%E7%B4%A0%E5%85%BB%E6%95%99%E5%B8%88%E7%A7%8B%E6%8B%9B%E6%8F%90%E5%89%8D%E6%89%B9"><span class="nav-number">2.</span> <span class="nav-text">2024-6-4深圳学而思小高科学素养教师秋招提前批</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2024-6-5%E6%B7%B1%E5%9C%B3%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90%E5%A8%B1%E4%B9%90IOS%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%9E%E4%B9%A0"><span class="nav-number">3.</span> <span class="nav-text">2024-6-5深圳腾讯音乐娱乐IOS客户端实习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%BC%96%E7%A8%8B%E9%A2%98"><span class="nav-number">3.0.1.</span> <span class="nav-text">一、编程题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E5%88%A0%E9%99%A4%E5%8D%87%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="nav-number">3.0.1.1.</span> <span class="nav-text">1、删除升序数组重复元素：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5"><span class="nav-number">3.0.1.2.</span> <span class="nav-text">2、螺旋矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%81%E6%8B%AC%E5%8F%B7%E5%8C%BA%E9%97%B4%E5%8C%B9%E9%85%8D"><span class="nav-number">3.0.1.3.</span> <span class="nav-text">3、括号区间匹配</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%97%AE%E7%AD%94%E9%A2%98"><span class="nav-number">3.0.2.</span> <span class="nav-text">二、问答题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="nav-number">3.0.2.1.</span> <span class="nav-text">1、进程和线程有什么区别？进程间通信方式有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.0.2.2.</span> <span class="nav-text">进程和线程的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-number">3.0.2.3.</span> <span class="nav-text">进程间通信方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E5%88%97%E4%B8%BE%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E5%90%84%E8%87%AA%E7%9A%84%E7%89%B9%E7%82%B9%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.0.2.4.</span> <span class="nav-text">2、列举常用数据结构，各自的特点和使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B%E8%A6%81%E6%B3%A8%E6%84%8F%E5%93%AA%E4%BA%9B%E6%83%85%E5%86%B5%EF%BC%9F"><span class="nav-number">3.0.2.5.</span> <span class="nav-text">3、多线程编程要注意哪些情况？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4%E3%80%81HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E5%86%85%E5%AE%B9%EF%BC%9F"><span class="nav-number">3.0.2.6.</span> <span class="nav-text">4、HTTP请求头包含哪些内容？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5%E3%80%81TCP%E5%92%8CHTTP%E7%9A%84%E5%85%B7%E4%BD%93%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">3.0.2.7.</span> <span class="nav-text">5、TCP和HTTP的具体区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6%E3%80%81%E6%80%8E%E4%B9%88%E6%8F%90%E5%8D%87%E5%9C%A8%E7%BA%BF%E8%A7%86%E9%A2%91%E7%9A%84%E6%92%AD%E6%94%BE%E7%A7%92%E5%BC%80%E7%8E%87%EF%BC%9F"><span class="nav-number">3.0.2.8.</span> <span class="nav-text">6、怎么提升在线视频的播放秒开率？</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2024-06-06%E7%94%A8%E5%8F%8B%E6%8F%90%E5%89%8D%E6%89%B9%E6%A8%A1%E6%8B%9F%E7%AC%94%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">2024-06-06用友提前批模拟笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E7%A4%BA%E4%BE%8B"><span class="nav-number">4.0.0.0.0.1.</span> <span class="nav-text">输入示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B"><span class="nav-number">4.0.0.0.0.2.</span> <span class="nav-text">输出示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%8F%8F%E8%BF%B0"><span class="nav-number">4.0.0.0.0.3.</span> <span class="nav-text">输入描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%8F%8F%E8%BF%B0"><span class="nav-number">4.0.0.0.0.4.</span> <span class="nav-text">输出描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E7%A4%BA%E4%BE%8B-1"><span class="nav-number">4.0.0.0.0.5.</span> <span class="nav-text">输入示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B-1"><span class="nav-number">4.0.0.0.0.6.</span> <span class="nav-text">输出示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">4.0.0.0.0.7.</span> <span class="nav-text">输入描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">4.0.0.0.0.8.</span> <span class="nav-text">输出描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E7%A4%BA%E4%BE%8B-2"><span class="nav-number">4.0.0.0.0.9.</span> <span class="nav-text">输入示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B-2"><span class="nav-number">4.0.0.0.0.10.</span> <span class="nav-text">输出示例</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -431,7 +524,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -444,7 +537,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -478,7 +571,7 @@
           <h5 class="widget-title">标签云</h5>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li></ul>
               </canvas>
           </div>
       </div>
@@ -514,12 +607,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">3k</span>
+    <span title="站点总字数">6k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3 分钟</span>
+    <span title="站点阅读时长">5 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
