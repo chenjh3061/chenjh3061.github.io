@@ -28,7 +28,7 @@
 <meta property="og:description" content="堆、堆排序；图、深度优先、广度优先">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-27T02:25:34.000Z">
-<meta property="article:modified_time" content="2024-06-13T15:30:39.206Z">
+<meta property="article:modified_time" content="2024-06-13T15:42:33.561Z">
 <meta property="article:author" content="Joho Chen">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-13 23:30:39" itemprop="dateModified" datetime="2024-06-13T23:30:39+08:00">2024-06-13</time>
+                <time title="修改时间：2024-06-13 23:42:33" itemprop="dateModified" datetime="2024-06-13T23:42:33+08:00">2024-06-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,7 +243,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>344</span>
+              <span>820</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -290,9 +290,29 @@
 <p>示例代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; nums </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; k </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125; </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line"> <span class="comment">// 整个流程就是上浮下沉  </span></span><br><span class="line"><span class="keyword">var</span> findKthLargest = <span class="keyword">function</span>(<span class="params">nums, k</span>) &#123;  </span><br><span class="line">   <span class="keyword">let</span> heapSize=nums.<span class="property">length</span>  </span><br><span class="line">    <span class="title function_">buildMaxHeap</span>(nums,heapSize) <span class="comment">// 构建好了一个大顶堆  </span></span><br><span class="line">    <span class="comment">// 进行下沉 大顶堆是最大元素下沉到末尾  </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=nums.<span class="property">length</span>-<span class="number">1</span>;i&gt;=nums.<span class="property">length</span>-k+<span class="number">1</span>;i--)&#123;  </span><br><span class="line">        <span class="title function_">swap</span>(nums,<span class="number">0</span>,i)  </span><br><span class="line">        --heapSize <span class="comment">// 下沉后的元素不参与到大顶堆的调整  </span></span><br><span class="line">        <span class="comment">// 重新调整大顶堆  </span></span><br><span class="line">         <span class="title function_">maxHeapify</span>(nums, <span class="number">0</span>, heapSize);  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> nums[<span class="number">0</span>]  </span><br><span class="line">   <span class="comment">// 自下而上构建一颗大顶堆  </span></span><br><span class="line">   <span class="keyword">function</span> <span class="title function_">buildMaxHeap</span>(<span class="params">nums,heapSize</span>)&#123;  </span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="title class_">Math</span>.<span class="title function_">floor</span>(heapSize/<span class="number">2</span>)-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;  </span><br><span class="line">        <span class="title function_">maxHeapify</span>(nums,i,heapSize)  </span><br><span class="line">     &#125;  </span><br><span class="line">   &#125;  </span><br><span class="line">   <span class="comment">// 从左向右，自上而下的调整节点  </span></span><br><span class="line">   <span class="keyword">function</span> <span class="title function_">maxHeapify</span>(<span class="params">nums,i,heapSize</span>)&#123;  </span><br><span class="line">       <span class="keyword">let</span> l=i*<span class="number">2</span>+<span class="number">1</span>  </span><br><span class="line">       <span class="keyword">let</span> r=i*<span class="number">2</span>+<span class="number">2</span>  </span><br><span class="line">       <span class="keyword">let</span> largest=i  </span><br><span class="line">       <span class="keyword">if</span>(l &lt; heapSize &amp;&amp; nums[l] &gt; nums[largest])&#123;  </span><br><span class="line">           largest=l  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">if</span>(r &lt; heapSize &amp;&amp; nums[r] &gt; nums[largest])&#123;  </span><br><span class="line">           largest=r  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">if</span>(largest!==i)&#123;  </span><br><span class="line">           <span class="title function_">swap</span>(nums,i,largest) <span class="comment">// 进行节点调整  </span></span><br><span class="line">           <span class="comment">// 继续调整下面的非叶子节点  </span></span><br><span class="line">           <span class="title function_">maxHeapify</span>(nums,largest,heapSize)  </span><br><span class="line">       &#125;  </span><br><span class="line">   &#125;  </span><br><span class="line">   <span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">a,  i,  j</span>)&#123;  </span><br><span class="line">        <span class="keyword">let</span> temp = a[i];  </span><br><span class="line">        a[i] = a[j];  </span><br><span class="line">        a[j] = temp;  </span><br><span class="line">   &#125;  </span><br><span class="line">&#125;;  </span><br></pre></td></tr></table></figure>
 
-<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>二维坐标中，两点可以连成线，多个点之间连线就构成了图。图也可以只存在一个节点或者没有节点(空图)。</p>
-<p>图分为有向图和无向图两种，边可以加权。</p>
-<p>无向图中某一节点的度就是上面连接的边的数目，有向图的节点则有出度和入度。</p>
+<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>二维坐标中，两点可以连成线，多个点之间连线就构成了<strong>图</strong>。<strong>图</strong>也可以只存在一个节点或者没有节点(<strong>空图</strong>)。</p>
+<p>图分为<strong>有向图</strong>和<strong>无向图</strong>两种，或者根据任意两个节点能否到达分为<strong>连通图</strong>和<strong>非连通图</strong>；边可以<em>加权</em>。（注意强连通图，是有向图中任意两个节点都可到达）。</p>
+<p>无向图中某一节点的度就是上面连接的边的数目，有向图的节点则有出度和入度。在无向图中的<strong>极大连通子图</strong>称之为该图的一个<strong>连通分量</strong>。在有向图中<strong>极大强连通子图</strong>称之为该图的<strong>强连通分量</strong>。</p>
+<h2 id="图的构造"><a href="#图的构造" class="headerlink" title="图的构造"></a>图的构造</h2><p>图可以用邻接表、邻接矩阵或者类表示。</p>
+<h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><p>用二维数组标示图<br>![[邻接矩阵.png]]<br>邻接矩阵的优点：</p>
+<ul>
+<li>表达方式简单，易于理解</li>
+<li>检查任意两个顶点间是否存在边的操作非常快</li>
+<li>适合稠密图，在边数接近顶点数平方的图中，邻接矩阵是一种空间效率较高的表示方法。<br>缺点：</li>
+<li>遇到稀疏图，会导致申请过大的二维数组造成空间浪费 且遍历 边 的时候需要遍历整个n * n矩阵，造成时间浪费</li>
+</ul>
+<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><p>邻接表 使用 数组 + 链表的方式来表示。邻接表是从边的数量来表示图，有多少边 才会申请对应大小的链表。</p>
+<p>邻接表的构造如图：<br>![[邻接表.png]]<br>邻接表的优点：</p>
+<ul>
+<li>对于稀疏图的存储，只需要存储边，空间利用率高</li>
+<li>遍历节点连接情况相对容易<br>缺点：</li>
+<li>检查任意两个节点间是否存在边，效率相对低，需要 O(V)时间，V表示某节点连接其他节点的数量。</li>
+<li>实现相对复杂，不易理解</li>
+</ul>
+<h3 id="图的遍历方式"><a href="#图的遍历方式" class="headerlink" title="图的遍历方式"></a>图的遍历方式</h3><ul>
+<li>深度优先搜索（dfs）</li>
+<li>广度优先搜索（bfs）</li>
+</ul>
 <p>例题：[力扣200:岛屿数量][anchor-id]（有意思的搜索题目）</p>
 <h2 id="典型题目：-1"><a href="#典型题目：-1" class="headerlink" title="典型题目："></a>典型题目：</h2><table>
 <thead>
@@ -432,7 +452,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A0%86"><span class="nav-number">1.</span> <span class="nav-text">堆</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">典型题目：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%9A-1"><span class="nav-number">2.1.</span> <span class="nav-text">典型题目：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A0%86"><span class="nav-number">1.</span> <span class="nav-text">堆</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">典型题目：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E6%9E%84%E9%80%A0"><span class="nav-number">2.1.</span> <span class="nav-text">图的构造</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="nav-number">2.1.1.</span> <span class="nav-text">邻接矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E8%A1%A8"><span class="nav-number">2.1.2.</span> <span class="nav-text">邻接表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F"><span class="nav-number">2.1.3.</span> <span class="nav-text">图的遍历方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%9A-1"><span class="nav-number">2.2.</span> <span class="nav-text">典型题目：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -529,12 +549,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">8k</span>
+    <span title="站点总字数">9k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">7 分钟</span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
