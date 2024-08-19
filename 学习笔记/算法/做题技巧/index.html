@@ -28,7 +28,7 @@
 <meta property="og:description" content="双指针、螺旋矩阵、">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-28T02:35:22.000Z">
-<meta property="article:modified_time" content="2024-08-04T08:51:00.580Z">
+<meta property="article:modified_time" content="2024-08-19T07:42:21.927Z">
 <meta property="article:author" content="Joho Chen">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-08-04 16:51:00" itemprop="dateModified" datetime="2024-08-04T16:51:00+08:00">2024-08-04</time>
+                <time title="修改时间：2024-08-19 15:42:21" itemprop="dateModified" datetime="2024-08-19T15:42:21+08:00">2024-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,7 +243,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>920</span>
+              <span>963</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -267,9 +267,10 @@
 <h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><p>哈希表可以处理很多查找情况，优化解题速度甚至提供新解法。当我们需要查询一个元素是否出现过，或者一个元素是否在集合里的时候，就要第一时间想到哈希法。<br>用真表做难实现就用数组模拟。<br>JS中注意map和set的特性，记住用法和原理。</p>
 <p>例题：1两数之和、560和为k的子数组、242有效字母异位词、<br>三数之和四数之和就要考虑多指针做法，用哈希去重很麻烦</p>
 <h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h1><p>运用快慢两个指针解题，（头头指针&#x2F;快慢指针，头尾指针）能够大大缩短本身可能需要$O(n^2)$复杂度的遍历时间。</p>
-<p>例题：力扣283移动零、11盛水最多的容器、15三数之和、16最接近的三数之和、力扣977有序数组的平方、[[笔试题目#1、[删除升序数组重复元素]：|删除升序数组重复元素]]、</p>
+<p>例题：力扣283移动零、11盛水最多的容器、15三数之和、16最接近的三数之和、力扣977有序数组的平方、[[笔试题目#1、[删除升序数组重复元素]：|删除升序数组重复元素]]、链表相交、链表的环、</p>
 <p>&#x3D;&#x3D;总之看到暴力法需要两层for循环的，就想想能不能用双指针&#x3D;&#x3D;。</p>
 <p>三数之和、四数之和，用双指针配合for循环。</p>
+<p>有些填充类问题都可以先给数组扩容到设定大小，然后从后往前进行填充。</p>
 <h1 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h1><p>分定宽和不定宽两种，如果需要查找窗内元素可以借助map。</p>
 <p>例题：力扣3无重复字符的最长子串(配合哈希)、483找到字符串中所有字母异位词（配合map）、</p>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/">3. 无重复字符的最长子串</a><br>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长</strong> <strong>子串</strong>的长度。<br><strong>示例 1:</strong><br><strong>输入:</strong> s &#x3D; “abcabcbb”<br><strong>输出:</strong> 3<br><strong>解释:</strong> 因为无重复字符的最长子串是 <code>&quot;abc&quot;</code>，所以其长度为 3。<br><strong>示例 2:</strong><br><strong>输入:</strong> s &#x3D; “bbbbb”<br><strong>输出:</strong> 1<br><strong>解释:</strong> 因为无重复字符的最长子串是 <code>&quot;b&quot;</code>，所以其长度为 1。<br><strong>示例 3:</strong><br><strong>输入:</strong> s &#x3D; “pwwkew”<br><strong>输出:</strong> 3<br><strong>解释:</strong> 因为无重复字符的最长子串是 <code>&quot;wke&quot;</code>，所以其长度为 3。<br>     请注意，你的答案必须是 <strong>子串</strong> 的长度，<code>&quot;pwke&quot;</code> 是一个_子序列，_不是子串。****</p>
@@ -496,12 +497,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">9k</span>
+    <span title="站点总字数">10k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">8 分钟</span>
+    <span title="站点阅读时长">9 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
