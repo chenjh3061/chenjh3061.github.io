@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chenjh3061","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1. ECMAScript 6 简介 - ECMAScript 和 JavaScript 的关系 - 《阮一峰 ECMAScript 6 (ES6) 标准入门教程 第三版》 - 书栈网 · BookStack  1234567ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 JScript 和 ActionSc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="joho world">
+<meta property="og:url" content="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/JS%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="joho world">
+<meta property="og:description" content="1. ECMAScript 6 简介 - ECMAScript 和 JavaScript 的关系 - 《阮一峰 ECMAScript 6 (ES6) 标准入门教程 第三版》 - 书栈网 · BookStack  1234567ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 JScript 和 ActionSc">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-30T08:35:00.389Z">
+<meta property="article:modified_time" content="2024-08-30T08:39:59.513Z">
+<meta property="article:author" content="Joho Chen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/JS%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | joho world</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="joho world" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">joho world</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/JS%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-08-30 16:35:00 / 修改时间：16:39:59" itemprop="dateCreated datePublished" datetime="2024-08-30T16:35:00+08:00">2024-08-30</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="https://www.bookstack.cn/read/es6-3rd/spilt.1.docs-intro.md">1. ECMAScript 6 简介 - ECMAScript 和 JavaScript 的关系 - 《阮一峰 ECMAScript 6 (ES6) 标准入门教程 第三版》 - 书栈网 · BookStack</a> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 JScript 和 ActionScript）。日常场合，这两个词是可以互换的。 </span><br><span class="line"></span><br><span class="line">在浏览器环境，JS就是ECMAScript + WebApis(BOM + DOM) </span><br><span class="line"></span><br><span class="line">在 node 环境中，JavaScript = ECMAScript + NodeApis(fs,net等) </span><br><span class="line"></span><br><span class="line">js引擎原理： [https://mp.weixin.qq.com/s/3rQtf5d8qCKeQslbtn9vQQ](https://mp.weixin.qq.com/s/3rQtf5d8qCKeQslbtn9vQQ)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript</a> </p>
+<p>JS是具有函数优先的轻量级，解释型或即时编译型的编程语言。是一门完备的动态编程语言，应用于HTML时为网站提供动态交互特性。 </p>
+<p>开发者基于JS核心编写了大量实用工具，包括浏览器API，第三方的API和框架与库。 </p>
+<p>在项目中用<code>&lt;script&gt;</code>标签引入<br>![[Pasted image 20240830163656.png]]</p>
+<p>一、直接量 </p>
+<p>数字、字符串等直接显露出来的东西，就叫直接量 </p>
+<p>二、变量 </p>
+<p>var自动定义变量类型：var a &#x3D; “hello” </p>
+<p>let自动定义变量类型（ES6新增）： </p>
+<p>不同： </p>
+<ul>
+<li>作用域：</li>
+</ul>
+<p> </p>
+<p>    var 声明的变量存在函数级作用域，而不是块级作用域。在函数内部声明的变量在整个函数内部都是可见的。 </p>
+<p>    let 声明的变量存在块级作用域，例如在 if 语句或循环中声明的变量只在该块内部可见（for循环就比较适合用let，注意循环括号里面和循环体里面的let不是一个作用域）。 </p>
+<ul>
+<li>变量提升：</li>
+</ul>
+<p> </p>
+<p>    使用 var 声明的变量存在变量提升，即变量可以在声明之前被访问，但其值为 undefined。这是因为在执行代码之前，JS引擎会将变量声明提升到其作用域的顶部。注意赋值不会提升，只有声明提升。 </p>
+<p>    使用 let 声明的变量也存在提升，但不会被初始化，直到遇到声明语句。 </p>
+<p>console.log(a); &#x2F;&#x2F; 输出 undefined </p>
+<p>var a &#x3D; 10; </p>
+<p>console.log(b); &#x2F;&#x2F; 报错，暂时性死区（Temporal Dead Zone，TDZ） </p>
+<p>let b &#x3D; 20; </p>
+<p>暂时性死区：ES6 明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。 </p>
+<ul>
+<li>重复声明：</li>
+</ul>
+<p> </p>
+<p>    使用 var 可以重复声明同一个变量，而不会报错。 </p>
+<p>    使用 let 在同一作用域内重复声明同一个变量会导致语法错误。 </p>
+<p>var x &#x3D; 10; </p>
+<p>var x &#x3D; 20; &#x2F;&#x2F; 合法，不会报错 </p>
+<p>let y &#x3D; 30; </p>
+<p>let y &#x3D; 40; &#x2F;&#x2F; 报错，重复声明 </p>
+<ul>
+<li>全局对象属性：</li>
+</ul>
+<p> </p>
+<p>    使用 var 声明的变量会成为全局对象的属性。 </p>
+<p>    使用 let 声明的变量不会成为全局对象的属性。 </p>
+<p>var globalVar &#x3D; 50; </p>
+<p>let localVar &#x3D; 60; </p>
+<p>console.log(window.globalVar); &#x2F;&#x2F; 输出 50 </p>
+<p>console.log(window.localVar); &#x2F;&#x2F; 输出 undefined </p>
+<p>总体而言，在现代JavaScript开发中，推荐使用 let 替代 var，因为 let 提供了更好的作用域规则和避免了一些 var 的问题。 </p>
+<p>tip：块级作用域（一定要加大括号） </p>
+<p>ES5只有全局作用域和函数作用域，没有块级作用域，不够合理，可能会导致内层变量覆盖外层变量，或者用来技术的循环变量泄露为全局变量。例子： </p>
+<ol>
+<li><p>var tmp &#x3D; new Date(); </p>
+</li>
+<li><p>function f() { </p>
+</li>
+<li><p>  console.log(tmp); </p>
+</li>
+<li><p>  if (false) { </p>
+</li>
+<li><p>    var tmp &#x3D; ‘hello world’;&#x2F;&#x2F;变量提升 </p>
+</li>
+<li><p>  } </p>
+</li>
+<li><p>} </p>
+</li>
+<li><p>f(); &#x2F;&#x2F; undefined</p>
+</li>
+</ol>
+<p> </p>
+<p>ES6引入了let，实际上也是借用let封闭作用域的特点，实现块级作用域的功能。ES6也允许块级作用域的嵌套。同时相对于ES5，允许了在块级作用域中定义函数，函数影响范围也在块内。 </p>
+<p>不过要注意5和6环境的巨大差异和函数的复杂性，尽量避免在块级作用域声明函数，要的话也只写函数表达式就行，不用函数声明语句。 </p>
+<ol>
+<li><p>&#x2F;&#x2F; 块级作用域内部，优先使用函数表达式 </p>
+</li>
+<li><p>{ </p>
+</li>
+<li><p>  let a &#x3D; ‘secret’; </p>
+</li>
+<li><p>  let f &#x3D; function () { </p>
+</li>
+<li><p>    return a; </p>
+</li>
+<li><p>  }; </p>
+</li>
+<li><p>}</p>
+</li>
+</ol>
+<p> </p>
+<p>tip：数据类型 </p>
+<p>在JavaScript中，数据可分为两类，分别为原生数据类型（primitive type）和对象数据类型（object type）。 </p>
+<p>原生数据类型包括数字、字符串、布尔值（不用单独声明，let var都行）、符号类型，还有两个特殊的类型：null和undefined。 </p>
+<p>对象数据类型包括对象、数组、函数、日期、正则表达式、Map、Set等 </p>
+<p>或者按照值类型和引用类型分，分别有：字符串 String、数组 Number、布尔 Boolean、空值 Null、未定义 Undefined、Symbol。||  对象Object、数组Array、函数function。 </p>
+<p>当 JavaScript 中的变量被声明的时候，程序内部会给它一个初始值 undefined。 当你对一个值为 undefined 的变量进行运算操作的时候，算出来的结果将会是 NaN，它的意思是 “Not a Number”。 如果你用 undefined 变量连接一个字符串，你将得到一个 undefined 的 字符串。 </p>
+<p>注意undefined派生自null，用&#x3D;&#x3D;比较会给true，null是关键字，undefined是一个挂在在window的全局变量。在需要进行数值类型的转换时，undefined会转换为NaN，无法参与计算；null会转换为0，可以参与计算。 量来保存将来要使用的对象，应该将其初始化为null。这样不仅能将null作为空对象指针的惯例，还有助于区分null和undefined。 </p>
+<ul>
+<li><p>数据类型转换： </p>
+<p>  在变量前面加上！！，变量会变成布尔类型true。 </p>
+<p>  ！&#x3D;&#x3D;和！&#x3D;的区别是不完全非等会自动转换类型再比 </p>
+</li>
+<li><p>数组类型： </p>
+<p>  Const ourArray &#x3D;[50,40,30]; ourArray[0]&#x3D;15; </p>
+<p>  与字符串不同，const数组可以修改，里面可以存放不同类型数据 </p>
+<p>  在 JavaScript 中，使用 const 声明的变量表示常量，它们的值在声明后不能被重新赋值。对于基本数据类型（如数字、字符串、布尔值），const 的行为是符合直觉的，一旦赋值后，就不能再改变该常量的值。 </p>
+<p>  然而，对于复合数据类型，如数组和对象，const 并不意味着不能修改数组或对象中的元素或属性。const 仅仅保证变量引用的地址不会改变，而并不阻止对该地址引用的对象进行修改。这是因为 const 保护的是变量（即引用地址），而不是变量所指向的内存中的内容。 </p>
+<p>  数组的操作主要是push()[追加在最后]，pop()[返回最后一个]，shift()[返回第一个] </p>
+<p>  unshift()[插入到第一个]，splice()[从数组中的任意位置连续删除任意数量的元素，(1,1)]， </p>
+<p>  Slice()[提取指定数量数组元素给新数组，配合…默认能复制数组] </p>
+<p>  splice可以传入第三个参数，可以是一个或多个元素，添加到数组中（替换）。 </p>
+<p>  开始和结束范围的元素会被返回，可以用这个特点复制数组元素。 </p>
+<p>  indexOf函数返回元素位置, </p>
+<p>  reduce()[接收一个规约函数和一个可选初始值，] </p>
+<p>  数组传入一些函数时，如果该函数不能直接接受数组而是要接收一串变量，就要先用spread运算符展开这个数组：<br>  ![[Pasted image 20240830163728.png]]</p>
+</li>
+</ul>
+<p>数组排序： </p>
+<p>Nums.sort((a, b) &#x3D;&gt; a-b);从小到大，从大到小就b-a。 </p>
+<p>使用 every()，map(), filter(), reduce() 等数组方法替代传统循环，可以使代码更简洁且易于阅读。 </p>
+<p>&#x2F;&#x2F; 传统循环 </p>
+<p>let sum &#x3D; 0; </p>
+<p>for (let i &#x3D; 0; i &lt; numbers.length; i++) { </p>
+<p>  sum +&#x3D; numbers[i]; </p>
+<p>} </p>
+<p>&#x2F;&#x2F; 使用 reduce 方法 </p>
+<p>let sumWithReduce &#x3D; numbers.reduce((acc, curr) &#x3D;&gt; acc + curr, 0); </p>
+<p>symbol类型： </p>
+<p>本质是一种唯一标识符，可用作对象的唯一属性名，保证每个属性的名字独一无二，其他人就不会改写或覆盖设置的属性值。因为本质不是对象，所以不能用new。 </p>
+<p> let id1 &#x3D; Symbol(‘id’); </p>
+<p> let id2 &#x3D; Symbol(‘id’); </p>
+<p> console.log(id1 &#x3D;&#x3D; id2);  &#x2F;&#x2F;false </p>
+<p>另一特点是隐藏性，只有Object.getOwnPropertySymbols方法才能访问，Object.getOwnPropertySymbols 方法会返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。 </p>
+<p>Symbol 值的实例属性description，直接返回 Symbol 值的描述。</p>
+<p>![[Pasted image 20240830163800.png]]</p>
+<p>三、不变量 </p>
+<p>Const： </p>
+<p>JS中，const声明一个只读常量，声明之后立刻要初始化，不能留到以后赋值。 </p>
+<p>作用于只在块级作用域。同样不提升、存在暂时性死区。 </p>
+<p>本质上const是变量指向的内存地址所保存的数据不得改动，但是对于对象和数组这样的复合类型数据，变量指向的内存地址保存的只是一个指向实际数据的指针，指针指向的东西不是不可变的，这种情况要小心。如果真想把整个对象锁住，用Object.freeze方法。 </p>
+<p>字符串： </p>
+<p>JavaScript中，字符串String的值是不可变的。更改 myStr 的唯一方法是为其分配一个新值，如下所示：let myStr &#x3D; “Bob”;myStr &#x3D; “Job”; </p>
+<p>字符串长度：.length </p>
+<p>注意可以使用模板字面量创建字符串：借助循环能大量输出句子 </p>
+<p>const person &#x3D; {   name: “Zodiac Hasbro”,   age: 56 }; </p>
+<p>const greeting &#x3D; <code>Hello, my name is $&#123;person.name&#125;! I am $&#123;person.age&#125; years old.</code>; </p>
+<p>字符串方法： </p>
+<p>slice、substring、substr都是截取子串 </p>
+<p>trim去除两端空白，cplit拆分，fromCharCode从字符码转字符 </p>
+<p>charCodeAt获取字符Unicode，concat链接，用+容易出错 </p>
+<p>let rawString &#x3D; String.raw<code>C:\Development\project</code>;不会动反斜杠 </p>
+<p>function titleCase(str) { </p>
+<p>  return str </p>
+<p>    .toLowerCase() &#x2F;&#x2F; 将整个字符串转换为小写 </p>
+<p>    .split(“ “)    &#x2F;&#x2F; 将字符串按照空格分割成数组 </p>
+<p>    .map(val &#x3D;&gt; val.replace(val.charAt(0), val.charAt(0).toUpperCase())) &#x2F;&#x2F; 将每个单词的首字母大写 </p>
+<p>    .join(“ “);    &#x2F;&#x2F; 将数组重新拼接成一个字符串，并用空格连接 </p>
+<p>} </p>
+<p>四、运算 </p>
+<p>加减乘除++–求余简写+&#x3D;转义字符都一样，只是注意字符串之间的+用法类同java </p>
+<p>相等运算符&#x3D;&#x3D;（不管具体数据类型），全等运算符&#x3D;&#x3D;&#x3D;（数据类型也要一样） </p>
+<p>严格不等！&#x3D;&#x3D;（和全等相反） </p>
+<p>void 操作符用于抑制副作用并返回 undefined。它常被用于：1. 抑制函数调用返回值；2. 消除表达式副作用；3. 获取未定义值。它不会影响表达式的求值顺序或强制转换表达式类型。</p>
+<p>![[Pasted image 20240830163832.png]]</p>
+<p>五、关于es5和es6<a target="_blank" rel="noopener" href="https://www.bookstack.cn/read/es6-3rd/spilt.5.docs-intro.md">ECMAScript 6 简介 - Babel 转码器 - 《阮一峰 ECMAScript 6 (ES6) 标准入门教程 第三版》</a>  </p>
+<p>两种不同的标准，可以使用Babel转码器将 ES6 代码转为 ES5 代码，从而在老版本的浏览器执行。 </p>
+<p>六、随机数</p>
+
+    </div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate comment here.hahaha~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Joho Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Joho Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Joho Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/JS%E5%9F%BA%E7%A1%80/" title="">https://chenjh3061/personalWeb.github.io/计算机网络/JavaScript/JS基础/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/CSS3/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E5%87%BD%E6%95%B0%E3%80%81%E9%A1%BA%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Joho Chen</p>
+  <div class="site-description" itemprop="description">个人记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chenjh3061" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chenjh3061" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://music.163.com/#" title="https:&#x2F;&#x2F;music.163.com&#x2F;#" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+          <h5 class="widget-title">标签云</h5>
+          <div id="myCanvasContainer" class="widget tagcloud">
+              <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li></ul>
+              </canvas>
+          </div>
+      </div>
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joho Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">67k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:01</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+# 网站运行时间
+runtime:
+   enable: true
+   create_time: "04/15/2022 13:18:00"
+   start: 2022-04-15 13:13:00 +0800
+   mobile: false
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
