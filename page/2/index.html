@@ -184,7 +184,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%B0%83%E8%AF%95/jQuery/">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%84%E7%BB%87%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -198,7 +198,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%B0%83%E8%AF%95/jQuery/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%84%E7%BB%87%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">面试组织管理题</a>
         </h2>
 
         <div class="post-meta">
@@ -209,185 +209,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-08-30 16:54:01 / 修改时间：16:54:07" itemprop="dateCreated datePublished" datetime="2024-08-30T16:54:01+08:00">2024-08-30</time>
+              <time title="创建时间：2024-08-30 10:25:34 / 修改时间：17:28:28" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
             </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>jQuery是一个快速、简洁的JavaScript库，旨在简化HTML文档遍历与操作、事件处理、动画和Ajax交互，为Web开发提供更简单的API。 </p>
-<p>jQuery的核心概念 </p>
-<p>1. 选择器（Selectors） </p>
-<p>选择器是jQuery的核心功能之一，用于查找和选取HTML元素。它们基于CSS选择器，但jQuery提供了更多的功能。 </p>
-<p>&#x2F;&#x2F; 选择所有<p>元素 $(“p”) </p>
-<p>&#x2F;&#x2F; 选择id为”myId”的元素 $(“#myId”) </p>
-<p>&#x2F;&#x2F; 选择class为”myClass”的所有元素 $(“.myClass”) </p>
-<p>&#x2F;&#x2F; 选择所有<p>元素中的第一个 $(“p:first”)  </p>
-<p>2. 事件处理（Event Handling） </p>
-<p>jQuery使得事件处理变得简单。你可以使用.on()方法来绑定事件处理程序。 </p>
-<p>&#x2F;&#x2F; 点击事件 $(“button”).on(“click”, function() {   alert(“按钮被点击了”); });  </p>
-<p>&#x2F;&#x2F; 鼠标移入和移出事件 $(“div”).on(“mouseenter mouseleave”, function() {   $(this).toggleClass(“hover”); });  </p>
-<ol start="3">
-<li>DOM 操作（DOM Manipulation）</li>
-</ol>
-<p> </p>
-<p>jQuery提供了许多方法来操作DOM元素，如添加、删除、修改元素等。 </p>
-<p>&#x2F;&#x2F; 添加类 $(“p”).addClass(“myClass”);  </p>
-<p>&#x2F;&#x2F; 移除类 $(“p”).removeClass(“myClass”);  </p>
-<p>&#x2F;&#x2F; 设置文本内容 $(“#myId”).text(“新文本内容”);  </p>
-<p>&#x2F;&#x2F; 插入元素 $(“ul”).append(“<li>新列表项</li>“);  </p>
-<p>&#x2F;&#x2F; 移动元素 </p>
-<p>$(“#target4”).appendTo(“#left-well”); </p>
-<p>&#x2F;&#x2F;克隆元素 </p>
-<p>$(“#target2”).clone().appendTo(“#right-well”); </p>
-<p>&#x2F;&#x2F; 访问父、子标签 </p>
-<p>$(“#left-well”).parent().css(“background-color”, “blue”) </p>
-<p>$(“#left-well”).children().css(“color”, “blue”) </p>
-<p>4. 动画（Animations） </p>
-<p>jQuery有一些内置的简单动画方法，如 .hide()、.show()、.slideUp()、.slideDown() 和 .fadeIn()。 </p>
-<p>&#x2F;&#x2F; 淡入元素 $(“#myId”).fadeIn();  </p>
-<p>&#x2F;&#x2F; 滑动隐藏元素 $(“.myClass”).slideUp();  </p>
-<p>&#x2F;&#x2F; 切换显示&#x2F;隐藏 $(“p”).toggle();  </p>
-<ol start="5">
-<li>Ajax</li>
-</ol>
-<p> </p>
-<p>jQuery简化了Ajax请求，使得与服务器进行异步数据交互变得更简单。 </p>
-<p>&#x2F;&#x2F; 简单的GET请求 $.get(“<a target="_blank" rel="noopener" href="https://api.example.com/data">https://api.example.com/data</a>“, function(data) {   console.log(data); });  </p>
-<p>&#x2F;&#x2F; 使用$.ajax()进行复杂请求 $.ajax({   url: “<a target="_blank" rel="noopener" href="https://api.example.com/data">https://api.example.com/data</a>“,   type: “POST”,   data: { name: “John”, age: 30 },   success: function(response) {     console.log(response);   },   error: function(xhr, status, error) {     console.error(error);   } });  </p>
-<p>6.禁用元素 </p>
-<p>能用jQuery改变HTML标签的非CSS属性 </p>
-<p>&#x2F;&#x2F;禁用按钮 </p>
-<p>$(“button”).prop(“disabled”, true”) </p>
-<p>常用方法 </p>
-<ol>
-<li>.css()</li>
-</ol>
-<p> </p>
-<p>用于获取或设置CSS属性。 </p>
-<p>&#x2F;&#x2F; 获取CSS属性 var color &#x3D; $(“p”).css(“color”); </p>
-<p>&#x2F;&#x2F; 设置CSS属性 $(“p”).css(“color”, “red”);  </p>
-<ol start="2">
-<li>.html()</li>
-</ol>
-<p> </p>
-<p>获取或设置HTML内容。 </p>
-<p>&#x2F;&#x2F; 获取HTML内容 var htmlContent &#x3D; $(“#myDiv”).html(); </p>
-<p>&#x2F;&#x2F; 设置HTML内容 $(“#myDiv”).html(“<p>新的HTML内容</p>“);  </p>
-<ol start="3">
-<li>.attr()</li>
-</ol>
-<p> </p>
-<p>获取或设置属性。 </p>
-<p>&#x2F;&#x2F; 获取属性值 var href &#x3D; $(“a”).attr(“href”);  </p>
-<p>&#x2F;&#x2F; 设置属性值 $(“a”).attr(“href”, “<a target="_blank" rel="noopener" href="https://www.example.com/">https://www.example.com</a>“);  </p>
-<ol start="4">
-<li>.each()</li>
-</ol>
-<p> </p>
-<p>遍历jQuery对象集合。 </p>
-<p>$(“li”).each(function(index, element) {   console.log(index, $(element).text()); }); </p>
-<ol start="5">
-<li>.val()</li>
-</ol>
-<p> </p>
-<p>获取或设置表单元素的值。 </p>
-<p>&#x2F;&#x2F; 获取值 var inputValue &#x3D; $(“input”).val();  </p>
-<p>&#x2F;&#x2F; 设置值 $(“input”).val(“新值”);  </p>
-<p>jQuery插件 </p>
-<p>jQuery的强大之处在于其庞大的插件生态系统。插件可以扩展jQuery的功能，使其更适合特定的需求。例如，jQuery UI 提供了丰富的界面小部件和交互效果，jQuery Validation 提供了表单验证功能等。 </p>
-<p>&#x2F;&#x2F; 使用jQuery UI的日期选择器 $(“#datepicker”).datepicker();  </p>
-<p>兼容性和版本 </p>
-<p>jQuery有多个版本，主要分为1.x, 2.x和3.x系列。1.x系列兼容IE6&#x2F;7&#x2F;8，2.x系列去掉了对这些旧版浏览器的支持，3.x系列是最新的稳定版，包含了更多的功能和性能优化。 </p>
-<p>html </p>
-<p>复制代码 </p>
-<!-- 引入最新的jQuery 3.x --> <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
-
-<!-- 引入jQuery 1.x --> <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>  
-
-<p>性能和最佳实践 </p>
-<p>尽管jQuery提供了方便的API，但在性能和代码质量方面也有一些最佳实践： </p>
-<ol>
-<li><p>缓存选择器：避免重复的DOM查询。  var $myElement &#x3D; $(“#myElement”); $myElement.text(“新的文本”); </p>
-</li>
-<li><p>链式调用：简化代码并提高性能。  $(“#myElement”).css(“color”, “red”).hide().fadeIn(); </p>
-</li>
-<li><p>事件委托：特别是在动态添加元素时，使用事件委托来提高性能。  $(“ul”).on(“click”, “li”, function() {   $(this).toggleClass(“active”); }); </p>
-</li>
-<li><p>减少DOM操作：尽量减少直接的DOM操作，可以先构建好HTML字符串或使用文档片段。  var newContent &#x3D; “<div>新的内容</div>“; $(“#container”).html(newContent);</p>
-</li>
-</ol>
-<p> </p>
-<p>结束语 </p>
-<p>jQuery虽然在现代JavaScript框架（如React、Vue和Angular）兴起后其使用率有所下降，但由于其简洁的API和广泛的浏览器兼容性，仍然在许多项目中发挥重要作用。无论你是新手还是有经验的开发者，掌握jQuery都将对你的Web开发技能有很大的提升。</p>
-
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%B0%83%E8%AF%95/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Joho Chen">
-      <meta itemprop="description" content="个人记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="joho world">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%B0%83%E8%AF%95/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
+                <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-08-30 16:54:01 / 修改时间：16:54:17" itemprop="dateCreated datePublished" datetime="2024-08-30T16:54:01+08:00">2024-08-30</time>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%AC%E8%80%83/" itemprop="url" rel="index"><span itemprop="name">公考</span></a>
+                </span>
             </span>
 
           
@@ -396,7 +227,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>905</span>
+              <span>0</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -415,25 +246,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>正则表达式用于匹配指定的字符串。JavaScript 中有多种使用正则表达式的方法。 测试正则表达式的一种方法是使用 .test() 方法。 .test() 方法会把编写的正则表达式和字符串（即括号内的内容）匹配，如果成功匹配到字符，则返回 true，反之，返回 false。 </p>
-<p>字符串中查词： </p>
-<p>Let myString  &#x3D; “12345678” </p>
-<p>Let myRegex &#x3D; &#x2F;123&#x2F; </p>
-<p>Let result &#x3D; myRegex.test(myString) </p>
-<p>中间可以加 | 表示或者，返回值是布尔，&#x2F;&#x2F;右边加上i表示忽略大小写，加g表示全局搜索(否则只搜索一次)。 </p>
-<p>let extractStr &#x3D; “Extract the word ‘coding’ from this string.”; </p>
-<p>let codingRegex &#x3D; &#x2F;coding&#x2F;;  </p>
-<p>let result &#x3D; extractStr.match(codingRegex);  </p>
-<p>如果是match方法，可以提取找到的实际匹配项，由字符串调用，和test反过来。 </p>
-<p>匹配返回具体值用match，其他用test。 </p>
-<p>通配符 . 可以表示匹配任意的字符， </p>
-<p>使用字符集 （character classes）更灵活的匹配字符。 把字符集放在方括号（[ 和 ]）之间来定义一组需要匹配的字符串。例如，如果想要匹配 bag、big 和 bug，但是不想匹配 bog。 可以创建正则表达式 &#x2F;b[aiu]g&#x2F; 来执行此操作。 [aiu] 是只匹配字符 a、i 或者 u 的字符集。如果是a到e就写[a-e]，配合数字就写成&#x2F;[a-z0-9]&#x2F;ig。 </p>
-<p>创建一个不想匹配的字符集合称为否定字符集（ negated character sets）。 </p>
-<p>要创建否定字符集，需要在开始括号后面和不想匹配的字符前面放置脱字符（即^）。 </p>
-<p>例如，&#x2F;[^aeiou]&#x2F;gi 匹配所有非元音字符。 注意，字符 .、!、[、@、&#x2F; 和空白字符等也会被匹配，该否定字符集仅排除元音字符。 </p>
-<p>至少出现一次的字符用 + 匹配，至少零次的就 * 。 </p>
-<p>惰性匹配： ？ 尽可能多的匹配。</p>
-
+          <p>面试组织管理题</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%84%E7%BB%87%E7%AE%A1%E7%90%86/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -453,7 +274,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%B0%83%E8%AF%95/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E5%B7%A7/">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%93%E6%9E%84%E5%8C%96%E9%9D%A2%E8%AF%95%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -467,7 +288,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%B0%83%E8%AF%95/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%93%E6%9E%84%E5%8C%96%E9%9D%A2%E8%AF%95%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">结构化面试介绍</a>
         </h2>
 
         <div class="post-meta">
@@ -478,7 +299,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-08-30 16:52:58 / 修改时间：16:56:10" itemprop="dateCreated datePublished" datetime="2024-08-30T16:52:58+08:00">2024-08-30</time>
+              <time title="创建时间：2024-08-30 10:25:34 / 修改时间：17:25:19" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%AC%E8%80%83/" itemprop="url" rel="index"><span itemprop="name">公考</span></a>
+                </span>
             </span>
 
           
@@ -487,7 +317,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>907</span>
+              <span>183</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -506,65 +336,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>打开Dev Tool： </p>
-<p>菜单-更多工具-开发者工具 </p>
-<p>快捷键：F12 </p>
-<p>打开命令菜单： </p>
-<p>快捷键：CTRL+SHIFT+P </p>
-<p>COMMAND+SHIFT+P(mac) </p>
-<p>功能：截图（screen shot)，darktheme, </p>
-<p>调调试窗口位置：dock， </p>
-<p>调试的使用： </p>
-<p>1、鼠标选定之后右键检查，可以迅速定位到相应的代码查看 </p>
-<p>![[Pasted image 20240830165336.png]]</p>
-<p>淡蓝色是主体，橙色是外边距 </p>
-<p>2、 </p>
-<p>![[Pasted image 20240830165322.png]]</p>
-<p>可以看页面在移动设备上的呈现效果。 </p>
-<p>3、查找dom节点（查询DOM树）： </p>
-<p>快捷键：CTRL+F </p>
-<p>Lommand +F （mac） </p>
-<p>查询方式：   文本查询、css选择器、  Xpath </p>
-<ul>
-<li><p>console窗口里面添加样式，快捷键CTRL+SHIFT+J &#x2F; Command+Option+J（mac） </p>
-<p>  $_返回上一条语句的执行结果，$0返回上一个选择的DOM节点（$1$2以此类推）  </p>
-</li>
-<li><p>Console.log(error warn table clear group time assert trace) </p>
-</li>
-<li><p>小眼睛可以追踪变量</p>
-</li>
-</ul>
-<p> </p>
-<p>hover固定状态 </p>
-<p>可以复制样式 </p>
-<p>4、JavaScript监听 </p>
-<p>在JavaScript代码中加入debugger代码，可以添加断点调试 </p>
-<p>5、网络界面可以下载网络情况，模拟用户当时面临的情况</p>
-<p>API调用：</p>
-<ol>
-<li><p>进入 命令提示符 窗口，输入命令：ipconfig &#x2F;all，然后按空格键，再按 回车键 ，就查看到电脑的ip； </p>
-</li>
-<li><p>API调用调试</p>
-</li>
-</ol>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_61843874/article/details/123324727">PostMan——安装使用教程（图文详解）_postman安装教程_super码力的博客-CSDN博客</a> </p>
-<ol start="3">
-<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Vincent-yuan/p/14860881.html">Java中使用HttpClient调用api - Vincent-yuan - 博客园 (cnblogs.com)</a> </p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45070175/article/details/118559272">JWT详解_baobao555#的博客-CSDN博客</a> </p>
-</li>
-<li><p>v</p>
-</li>
-</ol>
-<p>注意：</p>
-<p>一、控制台输出检查变量值，console.clear()清空输出 </p>
-<p>二、typeof检查变量类型 </p>
-<p>三、注意拼错的变量名和函数名，括号、方括号、大括号、引号，等号 </p>
-<p>四、注意索引可能的错误 </p>
-<p>递归的复杂度看递归次数*每次递归中的操作次数 </p>
-<p>Console.time() 配合 console.timeEnd()<strong>计时</strong></p>
-
+          <p>结构化面试介绍</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%93%E6%9E%84%E5%8C%96%E9%9D%A2%E8%AF%95%E4%BB%8B%E7%BB%8D/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -584,7 +364,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E5%BA%93/">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%BC%E5%90%88%E5%88%86%E6%9E%90%E7%A4%BE%E4%BC%9A%E7%8E%B0%E8%B1%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -598,7 +378,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E5%BA%93/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%BC%E5%90%88%E5%88%86%E6%9E%90%E7%A4%BE%E4%BC%9A%E7%8E%B0%E8%B1%A1/" class="post-title-link" itemprop="url">综合社会分析</a>
         </h2>
 
         <div class="post-meta">
@@ -609,7 +389,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-08-30 16:51:41 / 修改时间：16:52:27" itemprop="dateCreated datePublished" datetime="2024-08-30T16:51:41+08:00">2024-08-30</time>
+              <time title="创建时间：2024-08-30 10:25:34 / 修改时间：17:28:11" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%AC%E8%80%83/" itemprop="url" rel="index"><span itemprop="name">公考</span></a>
+                </span>
             </span>
 
           
@@ -618,7 +407,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>211</span>
+              <span>0</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -637,21 +426,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Math库 </p>
-<p>随机数.random()， </p>
-<p>parseInt()函数解析一个字符串返回一个整数，如“007”会转为7。注意和Math.floor有不同</p>
-<p>![[Pasted image 20240830165152.png]]</p>
-<p>numbers库 </p>
-<p>sort排序(注意a-b和b-a的区别)： </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>]; </span><br><span class="line"><span class="keyword">const</span> sorted = numbers.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);<span class="comment">//  [1, 1, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
-
-<p>字符串库： </p>
-<p>charCodeAt(i)返回i处字符的Unicode编码 </p>
-<p>Join()：把数组组合成字符串，括号里可以填分隔符 </p>
-<p>数组： </p>
-<p>reduce： </p>
-<p>filter：</p>
-
+          <p>综合分析社会现象</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%BC%E5%90%88%E5%88%86%E6%9E%90%E7%A4%BE%E4%BC%9A%E7%8E%B0%E8%B1%A1/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -671,7 +454,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E4%BC%98%E5%8C%96/">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E8%A7%82%E7%82%B9%E6%80%81%E5%BA%A6%E6%BC%AB%E7%94%BB%E5%8F%8D%E9%A9%B3%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -685,7 +468,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E4%BC%98%E5%8C%96/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E8%A7%82%E7%82%B9%E6%80%81%E5%BA%A6%E6%BC%AB%E7%94%BB%E5%8F%8D%E9%A9%B3%E9%A2%98/" class="post-title-link" itemprop="url">观点态度漫画反驳题</a>
         </h2>
 
         <div class="post-meta">
@@ -696,413 +479,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-08-30 16:50:54 / 修改时间：16:51:18" itemprop="dateCreated datePublished" datetime="2024-08-30T16:50:54+08:00">2024-08-30</time>
+              <time title="创建时间：2024-08-30 10:25:34 / 修改时间：17:25:01" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
             </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><p>💬 描述：通过分析和优化手段，提高网站的性能和用户体验。 </p>
-</li>
-<li><p>🎯 目标：实践前端优化方法，从多个方面优化自己做过的项目，最好能将优化后的网站与原网站进行对比，得到一些数据和体验上的明显提升。</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">#</a>✅ 性能优化 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87">#</a>性能指标 </p>
-<ul>
-<li><p>💬 描述：用于衡量一个 Web 页面的性能。 </p>
-</li>
-<li><p>📚 资源： <a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904153869713416">https://juejin.cn/post/6844904153869713416</a><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904153869713416">(opens new window)</a> </p>
-</li>
-<li><p>FP（First Paint） </p>
-<ul>
-<li>💬 描述：从开始加载到浏览器首次绘制像素到屏幕上的时间，也就是页面在屏幕上首次发生视觉变化的时间。</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>FCP（First Contentful Paint） </p>
-<ul>
-<li>💬 描述：浏览器首次绘制来自 DOM 的内容的时间。</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>FMP（First Meaningful Paint） </p>
-<ul>
-<li>💬 描述：页面的主要内容绘制到屏幕上的时间。</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>FSP（First Screen Paint） </p>
-<ul>
-<li>💬 描述：页面从开始加载到首屏内容全部绘制完成的时间，用户可以看到首屏的全部内容。</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>TTI（Time to Interactive） </p>
-<ul>
-<li>💬 描述：表示网页第一次完全达到可交互状态的时间点，浏览器已经可以持续性的响应用户的输入。</li>
-</ul>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5">#</a>优化手段 </p>
-<ul>
-<li><p>性能监控 </p>
-<ul>
-<li>Performance API</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>样式优化 </p>
-</li>
-<li><p>JavaScript 优化 </p>
-<ul>
-<li><p>防抖 </p>
-</li>
-<li><p>节流</p>
-</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>代码分割 </p>
-</li>
-<li><p>📚 资源压缩 </p>
-</li>
-<li><p>打包优化 </p>
-</li>
-<li><p>服务器优化 </p>
-</li>
-<li><p>缓存优化 </p>
-<ul>
-<li>Service Worker</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>动画性能 </p>
-</li>
-<li><p>dns-prefetch </p>
-</li>
-<li><p>Lazy loading </p>
-</li>
-<li><p>优化启动性能 </p>
-<ul>
-<li>异步化</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>渲染优化 </p>
-</li>
-<li><p>网络优化 </p>
-</li>
-<li><p>移动端性能优化 </p>
-</li>
-<li><p>✅ CDN </p>
-<ul>
-<li><p>💬 描述：内容分发网络，是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。 </p>
-</li>
-<li><p>📚 资源：BootCDN  <a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">https://www.bootcdn.cn/</a><a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">(opens new window)</a></p>
-</li>
-</ul>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C">#</a>用户体验 </p>
-<ul>
-<li><p>设计系统 </p>
-</li>
-<li><p>骨架屏</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E5%85%BC%E5%AE%B9%E6%80%A7">#</a>✅ 兼容性 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7">#</a>浏览器兼容性 </p>
-<ul>
-<li><p>normalize.css </p>
-</li>
-<li><p>html5shiv.js </p>
-</li>
-<li><p>respond.js </p>
-</li>
-<li><p>Babel </p>
-</li>
-<li><p>Polyfill</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%B1%8F%E5%B9%95%E5%88%86%E8%BE%A8%E7%8E%87%E5%85%BC%E5%AE%B9%E6%80%A7">#</a>屏幕分辨率兼容性 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%85%BC%E5%AE%B9%E6%80%A7">#</a>跨平台兼容性 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#seo">#</a>SEO </p>
-<ul>
-<li><p>💬 描述：搜索引擎优化，利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名。 </p>
-</li>
-<li><p>📚 资源：百度搜索📚 资源平台  <a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/cooperateresource/index">https://ziyuan.baidu.com/cooperateresource/index</a><a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/cooperateresource/index">(opens new window)</a> </p>
-</li>
-<li><p>robots.txt </p>
-</li>
-<li><p>description </p>
-</li>
-<li><p>keywords </p>
-</li>
-<li><p>SiteMap </p>
-</li>
-<li><p>HTML 标签优化 </p>
-</li>
-<li><p>站内链接建设 </p>
-</li>
-<li><p>友情链接</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E5%AE%89%E5%85%A8">#</a>✅ 安全 </p>
-<ul>
-<li><p>⭐️ XSS </p>
-</li>
-<li><p>CSRF </p>
-</li>
-<li><p>反爬虫 </p>
-</li>
-<li><p>SQL 注入 </p>
-</li>
-<li><p>DDoS</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E4%BA%94%E3%80%81%E5%89%8D%E7%AB%AF%E7%94%9F%E6%80%81">#</a>五、前端生态 </p>
-<ul>
-<li><p>💬 描述：如今，前端领域的范围越来越广，出现了更多前端工程师需要了解和关注的技术。 </p>
-</li>
-<li><p>🎯 目标：能用学到的前端技术去做更多的事情，比如开发个人博客、文档网站、小程序、APP 等。</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9%E6%9E%84%E5%BB%BA">#</a>⭐️ 静态站点构建 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%BC%80%E5%8F%91">#</a>开发 </p>
-<ul>
-<li>React Static</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%8D%9A%E5%AE%A2">#</a>博客 </p>
-<ul>
-<li><p>✅ Gatsby.js </p>
-</li>
-<li><p>✅ Docusaurus </p>
-</li>
-<li><p>Hugo </p>
-</li>
-<li><p>Hexo</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%96%87%E6%A1%A3">#</a>文档 </p>
-<ul>
-<li><p>JekyII </p>
-</li>
-<li><p>⭐️ Docsify </p>
-</li>
-<li><p>VuePress </p>
-</li>
-<li><p>✅ Dumi</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E5%A4%A7%E5%89%8D%E7%AB%AF">#</a>✅ 大前端 </p>
-<p>💬 描述：前端技术的融合更加紧密，应用的领域也更加广泛，前端领域的内容呈现多样化，除了网站外，还可以用前端技术跨平台开发 Android、iOS、小程序、虚拟现实、增强现实等。 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8">#</a>移动应用 </p>
-<ul>
-<li><p>Hybrid </p>
-</li>
-<li><p>WebView </p>
-</li>
-<li><p>React Native </p>
-</li>
-<li><p>Flutter</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85">#</a>移动应用打包 </p>
-<ul>
-<li><p>Weex </p>
-</li>
-<li><p>Cordova </p>
-</li>
-<li><p>Phonegap </p>
-</li>
-<li><p>Ionic</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8">#</a>桌面应用 </p>
-<ul>
-<li><p>Electron </p>
-</li>
-<li><p>NW.js </p>
-</li>
-<li><p>Proton Native</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%B0%8F%E7%A8%8B%E5%BA%8F">#</a>小程序 </p>
-<ul>
-<li><p>原生 </p>
-</li>
-<li><p>WebView</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E8%B7%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6">#</a>跨端开发框架 </p>
-<ul>
-<li><p>✅ uni-app </p>
-</li>
-<li><p>✅ Taro </p>
-</li>
-<li><p>Flutter </p>
-</li>
-<li><p>Chameleon </p>
-</li>
-<li><p>Wepy </p>
-</li>
-<li><p>Rax</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%B0%83%E8%AF%95">#</a>移动端调试 </p>
-<ul>
-<li><p>Chrome Dev Tools </p>
-</li>
-<li><p>Android Simulator </p>
-</li>
-<li><p>IOS Simulator</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-serverless">#</a>✅ Serverless </p>
-<ul>
-<li>💬 描述：一种构建和管理基于微服务架构的完整流程，允许你在服务部署级别而不是服务器部署级别来管理你的应用部署，你甚至可以管理某个具体功能或端口的部署，这就能让开发者快速迭代，更快速地开发软件。</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E4%BA%91%E5%BC%80%E5%8F%91">#</a>✅ 云开发 </p>
-<ul>
-<li><p>💬 描述：云端一体化的后端云服务 ，采用 Serverless 架构，免去了移动应用构建中繁琐的服务器搭建和运维。同时云开发提供的静态托管、命令行工具（CLI）、Flutter SDK 等能力降低了应用开发的门槛。使用云开发可以构建完整的小程序&#x2F;小游戏、H5、Web、移动 App 等应用。 </p>
-</li>
-<li><p>✅ 腾讯云云开发 </p>
-</li>
-<li><p>阿里云云开发</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E4%BD%8E%E4%BB%A3%E7%A0%81">#</a>低代码 </p>
-<ul>
-<li><p>💬 描述：无需编码（零代码）或通过少量代码就可以快速生成应用程序的开发平台。通过可视化进行应用程序开发的方法，使具有不同经验水平的开发人员可以通过图形化的用户界面，使用拖拽组件和模型驱动的逻辑来创建网页和移动应用程序。 </p>
-</li>
-<li><p>腾讯云低码 </p>
-</li>
-<li><p>阿里宜搭</p>
-</li>
-</ul>
-<p> </p>
-<p>前端未来 </p>
-<ul>
-<li><p>💬 描述：前端未来可能的发展趋势和热门技术。 </p>
-</li>
-<li><p>🎯 目标：关注前沿，持续进步。 </p>
-</li>
-<li><p>WebAssembly </p>
-</li>
-<li><p>智能 UI </p>
-</li>
-<li><p>React Server Component </p>
-</li>
-<li><p>CSS Houdini</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#webcomponents">#</a>WebComponents </p>
-<ul>
-<li><p>HTML templates（HTML模板） </p>
-</li>
-<li><p>Custom elements（自定义元素） </p>
-</li>
-<li><p>Shadow DOM（影子DOM）</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Joho Chen">
-      <meta itemprop="description" content="个人记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="joho world">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
+                <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-08-30 16:50:54 / 修改时间：16:51:02" itemprop="dateCreated datePublished" datetime="2024-08-30T16:50:54+08:00">2024-08-30</time>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%AC%E8%80%83/" itemprop="url" rel="index"><span itemprop="name">公考</span></a>
+                </span>
             </span>
 
           
@@ -1111,1485 +497,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><p>💬 描述：前端工程化是使用软件工程的技术和方法来进行前端的开发流程、技术、工具、经验等规范化、标准化，其主要目的为了提高开发过程中的开发效率，减少不必要的重复工作时间。 </p>
-</li>
-<li><p>📚 资源 </p>
-<ul>
-<li>什么是前端工程化？ <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/433854153/answer/1713597311">https://www.zhihu.com/question/433854153/answer/1713597311</a><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/433854153/answer/1713597311">(opens new window)</a></li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>🎯 目标：至少学会一门主流的前端开发框架（Vue &#x2F; React），并配合脚手架、组件库、工具等从 0 开始独立搭建并开发一个完整的前端网站，可以试着仿一些知名站点。要求遵循企业开发规范，将项目代码提交到代码仓库中，并独立发布上线，供他人访问。此外，建议抓住机会参与一些团队项目，感受团队开发模式和前端工程化的优势。</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-%E7%A0%94%E5%8F%91%E6%B5%81%E7%A8%8B">#</a>⭐️ 研发流程 </p>
-<ol>
-<li><p>技术选型 </p>
-</li>
-<li><p>初始化 </p>
-</li>
-<li><p>开发 </p>
-</li>
-<li><p>本地测试 </p>
-</li>
-<li><p>代码提交 </p>
-</li>
-<li><p>编译、打包、构建 </p>
-</li>
-<li><p>部署 </p>
-</li>
-<li><p>集成测试 </p>
-</li>
-<li><p>发布上线 </p>
-</li>
-<li><p>监控运维</p>
-</li>
-</ol>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1">#</a>⭐️ 代码托管 </p>
-<ul>
-<li><p>💬 描述：集中存储、备份你的代码，还能和团队成员协作开发。 </p>
-</li>
-<li><p>⭐️ GitHub </p>
-</li>
-<li><p>Gitee </p>
-</li>
-<li><p>GitLab</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-node-js">#</a>✅ Node.JS </p>
-<ul>
-<li><p>💬 描述：一个开源与跨平台的 JavaScript 运行时环境。 它是一个可用于几乎任何项目的流行工具！ </p>
-</li>
-<li><p>📚 资源 </p>
-<ul>
-<li><p>Node.js 官方教程： <a target="_blank" rel="noopener" href="http://nodejs.cn/learn">http://nodejs.cn/learn</a><a target="_blank" rel="noopener" href="http://nodejs.cn/learn">(opens new window)</a> </p>
-</li>
-<li><p>Node.js 入门： <a target="_blank" rel="noopener" href="https://cnodejs.org/getstart">https://cnodejs.org/getstart</a><a target="_blank" rel="noopener" href="https://cnodejs.org/getstart">(opens new window)</a></p>
-</li>
-</ul>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-%E5%8C%85%E7%AE%A1%E7%90%86">#</a>⭐️ 包管理 </p>
-<ul>
-<li><p>💬 描述：用于安装 Node.js 的扩展、工具等。 </p>
-</li>
-<li><p>⭐️ npm </p>
-</li>
-<li><p>⭐️ yarn </p>
-</li>
-<li><p>❌ bower </p>
-</li>
-<li><p>✅ npx</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6">#</a>开发框架 </p>
-<ul>
-<li><p>Express </p>
-</li>
-<li><p>Koa </p>
-</li>
-<li><p>Egg</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6-2">#</a>开发框架 </p>
-<ul>
-<li>💬 描述：解决特定的问题,提高_开发_效率、简化我们的代码复杂度。</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-css-%E6%A1%86%E6%9E%B6">#</a>⭐️ CSS 框架 </p>
-<ul>
-<li><p>✅ BootStrap </p>
-</li>
-<li><p>⭐️ Tailwind CSS</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-javascript-%E6%A1%86%E6%9E%B6">#</a>⭐️ JavaScript 框架 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-vue">#</a>⭐️ Vue </p>
-<ul>
-<li><p>Vue Router </p>
-</li>
-<li><p>Vuex</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-react">#</a>⭐️ React </p>
-<ul>
-<li><p>React DOM </p>
-</li>
-<li><p>React Router </p>
-</li>
-<li><p>Redux </p>
-</li>
-<li><p>MobX </p>
-</li>
-<li><p>React Hooks</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9D%8C-angular">#</a>❌ Angular </p>
-<ul>
-<li><p>RxJS </p>
-</li>
-<li><p>NgRx</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-svelte">#</a>✅ Svelte </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-umijs">#</a>✅ UmiJS </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%B0%81%E8%A3%85%E5%BA%93">#</a>封装库 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-%E7%BB%84%E4%BB%B6%E5%BA%93">#</a>⭐️ 组件库 </p>
-<ul>
-<li><p>✅ LayUI </p>
-</li>
-<li><p>⭐️ ElementUI（Vue） </p>
-</li>
-<li><p>✅ VantUI（Vue） </p>
-</li>
-<li><p>⭐️ Ant Design（React） </p>
-</li>
-<li><p>Material UI</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96">#</a>数据可视化 </p>
-<ul>
-<li><p>✅ AntV </p>
-</li>
-<li><p>Apache ECharts </p>
-</li>
-<li><p>HighCharts </p>
-</li>
-<li><p>D3.js</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E7%BB%84%E4%BB%B6-%E6%8F%92%E4%BB%B6">#</a>组件（插件） </p>
-<ul>
-<li><p>富文本编辑器 </p>
-</li>
-<li><p>弹窗 </p>
-</li>
-<li><p>轮播图</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%B7%A5%E5%85%B7%E5%BA%93">#</a>工具库 </p>
-<ul>
-<li><p>✅ jQuery </p>
-</li>
-<li><p>✅ Lodash </p>
-</li>
-<li><p>✅ Axios </p>
-</li>
-<li><p>时间处理 Moment.js</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%8A%A8%E6%95%88%E5%BA%93">#</a>动效库 </p>
-<ul>
-<li><p>✅ Animate.css </p>
-</li>
-<li><p>Ant Motion</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E5%BA%93">#</a>字体图标库 </p>
-<ul>
-<li><p>⭐️ IconFont </p>
-</li>
-<li><p>IconPark </p>
-</li>
-<li><p>Font Awesome</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-%E8%84%9A%E6%89%8B%E6%9E%B6">#</a>⭐️ 脚手架 </p>
-<ul>
-<li><p>💬 描述：快速生成新项目的目录模板，提升开发效率和开发舒适性。 </p>
-</li>
-<li><p>📚 资源： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/25ce8cf2e6a7">https://www.jianshu.com/p/25ce8cf2e6a7</a><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/25ce8cf2e6a7">(opens new window)</a> </p>
-</li>
-<li><p>Vue CLI </p>
-</li>
-<li><p>create-react-app </p>
-</li>
-<li><p>✅ Yeoman</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1">#</a>⭐️ 前端架构设计 </p>
-<ul>
-<li><p>💬 描述：一系列工具和流程的集合，旨在提升前端代码的质量，并实现高效可持续的工作流。 </p>
-</li>
-<li><p>模块化 </p>
-</li>
-<li><p>组件化 </p>
-</li>
-<li><p>✅ MVVM </p>
-</li>
-<li><p>设计原则 </p>
-</li>
-<li><p>⭐️ SPA 单页应用 </p>
-</li>
-<li><p>⭐️ 多页应用 </p>
-</li>
-<li><p>✅ 前端路由 </p>
-</li>
-<li><p>PWA </p>
-</li>
-<li><p>有损服务</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93">#</a>✅ 服务端渲染 </p>
-<ul>
-<li><p>💬 描述：在服务端渲染 HTML 页面的模式。 </p>
-</li>
-<li><p>📚 资源： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/379563505">https://www.zhihu.com/question/379563505</a><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/379563505">(opens new window)</a> </p>
-</li>
-<li><p>Next.js（React） </p>
-</li>
-<li><p>Nuxt.js（Vue） </p>
-</li>
-<li><p>❌ Universal（Angular）</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#bff">#</a>BFF </p>
-<ul>
-<li><p>💬 描述：Backend For Frontend（服务于前端的后端），就是服务器设计 API 时会考虑前端的使用，并在服务端直接进行业务逻辑的处理。 </p>
-</li>
-<li><p>📚 资源： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/eb1875c62ad3">https://www.jianshu.com/p/eb1875c62ad3</a><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/eb1875c62ad3">(opens new window)</a> </p>
-</li>
-<li><p>GraphQL</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E5%BE%AE%E5%89%8D%E7%AB%AF">#</a>✅ 微前端 </p>
-<ul>
-<li><p>💬 描述：将前端应用分解成一些更小、更简单的能够独立开发、测试、部署的小块，从而解决庞大的一整块后端服务带来的变更与扩展方面的限制。 </p>
-</li>
-<li><p>📚 资源： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96464401">https://zhuanlan.zhihu.com/p/96464401</a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96464401">(opens new window)</a> </p>
-</li>
-<li><p>qiankun </p>
-</li>
-<li><p>single-spa</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#css-in-js">#</a>CSS in JS </p>
-<ul>
-<li><p>💬 描述：用 JavaScript 来写 CSS。 </p>
-</li>
-<li><p>📚 资源： <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2017/04/css_in_js.html">http://www.ruanyifeng.com/blog/2017/04/css_in_js.html</a><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2017/04/css_in_js.html">(opens new window)</a> </p>
-</li>
-<li><p>内联样式 </p>
-</li>
-<li><p>声明样式 </p>
-</li>
-<li><p>引入样式</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-css-%E6%A8%A1%E5%9D%97%E5%8C%96">#</a>⭐️ CSS 模块化 </p>
-<ul>
-<li><p>⭐️ CSS Modules </p>
-</li>
-<li><p>✅ styled-components </p>
-</li>
-<li><p>✅ Styled JSX </p>
-</li>
-<li><p>Emotion</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95">#</a>✅ 开发调试 </p>
-<ul>
-<li><p>💬 描述：本地开发时热更新，提升开发效率。 </p>
-</li>
-<li><p>webpack-dev-server </p>
-</li>
-<li><p>serve</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F">#</a>内网穿透 </p>
-<ul>
-<li><p>💬 描述：将内网外网通过 nat 隧道打通，让内网的网站、数据让外网可以访问。 </p>
-</li>
-<li><p>Ngrok </p>
-</li>
-<li><p>NATAPP</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-css-%E9%A2%84%E7%BC%96%E8%AF%91">#</a>⭐️ CSS 预编译 </p>
-<ul>
-<li><p>💬 描述：使用新的扩展语言以增强 CSS 的能力，并通过预编译的方式将其转换为浏览器认识的 CSS 代码。 </p>
-</li>
-<li><p>⭐️ SASS </p>
-</li>
-<li><p>✅ PostCSS </p>
-</li>
-<li><p>Stylus </p>
-</li>
-<li><p>❌ LESS</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%B5%8B%E8%AF%95">#</a>测试 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB">#</a>测试分类 </p>
-<ul>
-<li><p>⭐️ UT 单元测试 </p>
-</li>
-<li><p>SIT 系统集成测试 </p>
-</li>
-<li><p>E2E 端到端测试 </p>
-</li>
-<li><p>UAT 用户验收测试</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-mock">#</a>✅ Mock </p>
-<ul>
-<li><p>💬 描述：通过随机数据，模拟各种场景，增加单元测试的真实性。 </p>
-</li>
-<li><p>Mock.js</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6">#</a>✅ 测试框架 </p>
-<ul>
-<li><p>✅ Jest </p>
-</li>
-<li><p>Enzyme </p>
-</li>
-<li><p>✅ Puppeteer（Headless Browser） </p>
-</li>
-<li><p>Mocha </p>
-</li>
-<li><p>Jasmine</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F">#</a>✅ 代码质量 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83">#</a>开发规范 </p>
-<ul>
-<li><p>💬 描述：依照规范写出的代码会更加合理。 </p>
-</li>
-<li><p>📚 资源：Airbnb 代码规范  <a target="_blank" rel="noopener" href="https://github.com/BingKui/javascript-zh">https://github.com/BingKui/javascript-zh</a><a target="_blank" rel="noopener" href="https://github.com/BingKui/javascript-zh">(opens new window)</a> </p>
-</li>
-<li><p>CSS Style Guide </p>
-</li>
-<li><p>JavaScript Style Guide</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E7%B1%BB%E5%9E%8B%E6%A0%A1%E9%AA%8C">#</a>类型校验 </p>
-<ul>
-<li>TypeScript</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5">#</a>代码检查 </p>
-<ul>
-<li><p>ESLint </p>
-</li>
-<li><p>StyleLint</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC">#</a>代码风格 </p>
-<ul>
-<li><p>💬 描述：根据配置自动格式化代码，统一格式。 </p>
-</li>
-<li><p>Prettier</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83">#</a>提交规范 </p>
-<ul>
-<li>约定式提交</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%8F%90%E4%BA%A4%E6%A3%80%E6%9F%A5">#</a>提交检查 </p>
-<ul>
-<li><p>💬 描述：在提交代码时触发一些操作，比如检查代码的风格等。 </p>
-</li>
-<li><p>pre-commit </p>
-</li>
-<li><p>husky</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7">#</a>构建工具 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA">#</a>自动化构建 </p>
-<ul>
-<li><p>💬 描述：按照配置好的流程自动打包构建项目，提高团队的开发效率，降低项目的维护难度。 </p>
-</li>
-<li><p>Gulp </p>
-</li>
-<li><p>✅ npm script </p>
-</li>
-<li><p>Grunt</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7">#</a>打包工具 </p>
-<ul>
-<li><p>💬 描述：将各种零散的📚 资源文件打包为可在浏览器等环境运行的代码。 </p>
-</li>
-<li><p>⭐️ Webpack </p>
-</li>
-<li><p>✅ Rollup </p>
-</li>
-<li><p>✅ Vite </p>
-</li>
-<li><p>Parcel </p>
-</li>
-<li><p>Snowpack</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#ci-cd">#</a>CI &#x2F; CD </p>
-<ul>
-<li><p>💬 描述：通过在应用开发阶段引入自动化来频繁向客户交付应用。 </p>
-</li>
-<li><p>GitLab CI </p>
-</li>
-<li><p>✅ Jenkins</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E9%83%A8%E7%BD%B2">#</a>部署 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-web-%E6%9C%8D%E5%8A%A1%E5%99%A8">#</a>⭐️ Web 服务器 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-nginx">#</a>⭐️ Nginx </p>
-<ul>
-<li><p>💬 描述：高性能的 HTTP 和反向代理 web 服务器。 </p>
-</li>
-<li><p>📚 资源：腾讯云动手实验室  <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/labs/gallery">https://cloud.tencent.com/developer/labs/gallery</a><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/labs/gallery">(opens new window)</a> </p>
-</li>
-<li><p>反向代理 </p>
-</li>
-<li><p>解决跨域 </p>
-</li>
-<li><p>改写请求</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-apache">#</a>✅ Apache </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%AE%B9%E5%99%A8">#</a>容器 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-docker">#</a>✅ Docker </p>
-<ul>
-<li><p>💬 描述：容器是一个标准化的软件单元，它将代码及其所有依赖关系打包，以便应用程序从一个计算环境可靠快速地运行到另一个计算环境。Docker容器镜像是一个轻量的独立的可执行的软件包。包含程序运行的时候所需的一切：代码，运行时间，系统工具，系统库和设置。 </p>
-</li>
-<li><p>📚 资源：Docker 从入门到实践  <a target="_blank" rel="noopener" href="https://vuepress.mirror.docker-practice.com/">https://vuepress.mirror.docker-practice.com/</a><a target="_blank" rel="noopener" href="https://vuepress.mirror.docker-practice.com/">(opens new window)</a> </p>
-</li>
-<li><p>Dockerfile</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#kubernetes">#</a>Kubernetes </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E9%83%A8%E7%BD%B2%E7%AD%96%E7%95%A5">#</a>部署策略 </p>
-<ul>
-<li><p>全量发布 </p>
-</li>
-<li><p>蓝绿部署 </p>
-</li>
-<li><p>滚动发布 </p>
-</li>
-<li><p>灰度发布</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E7%9B%91%E6%8E%A7%E5%91%8A%E8%AD%A6">#</a>监控告警 </p>
-<ul>
-<li><p>前端埋点 </p>
-</li>
-<li><p>错误监控 </p>
-</li>
-<li><p>性能监控 </p>
-</li>
-<li><p>行为监控</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Joho Chen">
-      <meta itemprop="description" content="个人记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="joho world">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-08-30 16:50:12 / 修改时间：16:50:38" itemprop="dateCreated datePublished" datetime="2024-08-30T16:50:12+08:00">2024-08-30</time>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><p>⭐️ 基本语法 </p>
-</li>
-<li><p>⭐️ 数据类型 </p>
-<ul>
-<li><p>值类型 </p>
-<ul>
-<li><p>字符串 String </p>
-</li>
-<li><p>数组 Number </p>
-</li>
-<li><p>布尔 Boolean </p>
-</li>
-<li><p>空值 Null </p>
-</li>
-<li><p>未定义 Undefined </p>
-</li>
-<li><p>Symbol</p>
-</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>引用类型 </p>
-<ul>
-<li><p>对象 Object </p>
-</li>
-<li><p>数组 Array </p>
-</li>
-<li><p>函数 Function</p>
-</li>
-</ul>
-</li>
-</ul>
-<p> 
-          </p>
-</li>
-<li><p>✅ 数据类型转换 </p>
-</li>
-<li><p>✅ 函数 </p>
-<ul>
-<li><p>⭐️ 概念 </p>
-</li>
-<li><p>⭐️ 自定义函数 </p>
-</li>
-<li><p>调用方式 </p>
-<ul>
-<li><p>⭐️ 全局调用 </p>
-</li>
-<li><p>构造函数调用 </p>
-</li>
-<li><p>⭐️ 函数方法调用 </p>
-</li>
-<li><p>apply </p>
-</li>
-<li><p>call</p>
-</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>✅❗ 闭包</p>
-</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>✅ 对象 </p>
-<ul>
-<li><p>概念 </p>
-</li>
-<li><p>this </p>
-</li>
-<li><p>原型链和继承 </p>
-</li>
-<li><p>常用对象 </p>
-<ul>
-<li><p>数字 Number </p>
-</li>
-<li><p>字符串 String 对象 </p>
-</li>
-<li><p>日期 Date 对象 </p>
-</li>
-<li><p>数组 Array </p>
-</li>
-<li><p>布尔 Boolean </p>
-</li>
-<li><p>算数 Math</p>
-</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>自定义对象</p>
-</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>✅❗ 作用域（作用域链） </p>
-</li>
-<li><p>✅ BOM API </p>
-</li>
-<li><p>⭐️ DOM API </p>
-</li>
-<li><p>⭐️ JSON </p>
-</li>
-<li><p>⭐️ Ajax </p>
-</li>
-<li><p>✅ JavaScript 执行机制</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-es6-%E7%89%B9%E6%80%A7">#</a>✅ ES6+ 特性 </p>
-<ul>
-<li><p>💬 描述：新引入的 JavaScript 语法特性。 </p>
-</li>
-<li><p>📚 资源：ES6 入门教程  <a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">https://es6.ruanyifeng.com/</a><a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">(opens new window)</a> </p>
-</li>
-<li><p>let 和 const </p>
-</li>
-<li><p>变量解构赋值 </p>
-</li>
-<li><p>对象扩展和新增方法 </p>
-</li>
-<li><p>Symbol </p>
-</li>
-<li><p>Set 和 Map 数据结构 </p>
-</li>
-<li><p>⭐️❗ Promise &amp; async &#x2F; await 异步编程 </p>
-</li>
-<li><p>Generator 函数异步编程</p>
-</li>
-</ul>
-<p> </p>
-<p>进阶： </p>
-<ul>
-<li><p>《JavaScript 高级程序设计》： <a target="_blank" rel="noopener" href="https://t.zsxq.com/0eKWGbTgL">https://t.zsxq.com/0eKWGbTgL</a><a target="_blank" rel="noopener" href="https://t.zsxq.com/0eKWGbTgL">(opens new window)</a> </p>
-</li>
-<li><p>《JavaScript 忍者秘籍》： <a target="_blank" rel="noopener" href="https://www.code-nav.cn/rd/?rid=28ee4e3e606b16c00e3c5b18609e3dc2">https://www.code-nav.cn/rd/?rid=28ee4e3e606b16c00e3c5b18609e3dc2</a></p>
-</li>
-</ul>
-<p> </p>
-<p>前端基础知识 </p>
-<ul>
-<li><p>✅ 互联网 </p>
-</li>
-<li><p>⭐️ 域名 </p>
-</li>
-<li><p>⭐️ DNS </p>
-</li>
-<li><p>⭐️ 服务器 </p>
-</li>
-<li><p>✅ 浏览器 </p>
-<ul>
-<li>浏览器 DOM 事件流 &#x2F; 事件委托</li>
-</ul>
-<p> </p>
-<p>  对于大量子元素的事件监听，可以使用事件委托将事件监听器添加到父元素上。 </p>
-<ul>
-<li><p>⭐️ 浏览器加载顺序 </p>
-</li>
-<li><p>⭐️ 浏览器渲染过程 </p>
-</li>
-<li><p>浏览器事件循环 </p>
-</li>
-<li><p>浏览器同源策略 </p>
-</li>
-<li><p>❗ 跨域解决方案 </p>
-</li>
-<li><p>浏览器缓存 </p>
-</li>
-<li><p>控制台调试技巧</p>
-</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>✅ HTTP </p>
-<ul>
-<li><p>❗ HTTP 请求过程 </p>
-</li>
-<li><p>常见 HTTP 协议 </p>
-<ul>
-<li><p>HTTP 1.0 </p>
-</li>
-<li><p>⭐️ HTTP 1.1 </p>
-</li>
-<li><p>HTTP 2 </p>
-</li>
-<li><p>HTTP 3</p>
-</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>⭐️ HTTP 请求类别 </p>
-</li>
-<li><p>⭐️ 常见状态码 </p>
-<ul>
-<li><p>1xx 信息 </p>
-</li>
-<li><p>2xx 成功 </p>
-</li>
-<li><p>3xx 重定向 </p>
-</li>
-<li><p>4xx 客户端错误 </p>
-</li>
-<li><p>5xx 服务器错误</p>
-</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>WebSocket </p>
-</li>
-<li><p>⭐️ Cookie </p>
-</li>
-<li><p>Session </p>
-</li>
-<li><p>⭐️ HTTPS</p>
-</li>
-</ul>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80">#</a>计算机基础 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">#</a>✅ 算法和数据结构 </p>
-<ul>
-<li><p>⭐️ 时间 &#x2F; 空间复杂度分析 </p>
-</li>
-<li><p>数据结构 </p>
-<ul>
-<li><p>数组 </p>
-</li>
-<li><p>字符串 </p>
-</li>
-<li><p>队列 </p>
-</li>
-<li><p>栈 </p>
-</li>
-<li><p>链表 </p>
-</li>
-<li><p>集合 </p>
-</li>
-<li><p>哈希表 </p>
-</li>
-<li><p>二叉树</p>
-</li>
-</ul>
-<p> 
-      </p>
-</li>
-<li><p>算法 </p>
-<ul>
-<li><p>排序 </p>
-</li>
-<li><p>双指针 </p>
-</li>
-<li><p>查找 </p>
-</li>
-<li><p>分治 </p>
-</li>
-<li><p>动态规划 </p>
-</li>
-<li><p>递归 </p>
-</li>
-<li><p>回溯 </p>
-</li>
-<li><p>贪心 </p>
-</li>
-<li><p>位运算 </p>
-</li>
-<li><p>DFS </p>
-</li>
-<li><p>BFS </p>
-</li>
-<li><p>图</p>
-</li>
-</ul>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">#</a>✅ 计算机网络 </p>
-<ul>
-<li><p>HTTP 协议 </p>
-</li>
-<li><p>网络模型 </p>
-</li>
-<li><p>UDP &#x2F; TCP 协议</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">#</a>✅ 操作系统 </p>
-<ul>
-<li><p>进程、线程 </p>
-</li>
-<li><p>进程 &#x2F; 线程间通讯方式 </p>
-</li>
-<li><p>进程调度算法 </p>
-</li>
-<li><p>进程 &#x2F; 线程状态 </p>
-</li>
-<li><p>死锁 </p>
-</li>
-<li><p>内存管理</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80">#</a>软件开发基础 </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">#</a>✅ 设计模式 </p>
-<ul>
-<li><p>单例模式 </p>
-</li>
-<li><p>代理模式 </p>
-</li>
-<li><p>工厂模式 </p>
-</li>
-<li><p>装饰者模式 </p>
-</li>
-<li><p>观察者模式 </p>
-</li>
-<li><p>策略模式 </p>
-</li>
-<li><p>门面模式</p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%AD%90%EF%B8%8F-git-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6">#</a>⭐️ Git 版本控制 </p>
-<ul>
-<li>常用命令</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8">#</a>✅ Linux 服务器 </p>
-<ul>
-<li>常用命令</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E2%9C%85-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">#</a>✅ 正则表达式 </p>
-<p>学习资源 </p>
-<ul>
-<li><p>编程导航（包含以下所有资源，强烈推荐 👍）：<a target="_blank" rel="noopener" href="https://www.code-nav.cn/">https://www.code-nav.cn(opens new window)</a> </p>
-</li>
-<li><p>freeCodecamp 在线编程： <a target="_blank" rel="noopener" href="https://learn.freecodecamp.one/">https://learn.freecodecamp.one/</a><a target="_blank" rel="noopener" href="https://learn.freecodecamp.one/">(opens new window)</a> </p>
-</li>
-<li><p>阿里云前端实战学习： <a target="_blank" rel="noopener" href="https://edu.aliyun.com/roadmap/frontend">https://edu.aliyun.com/roadmap/frontend</a><a target="_blank" rel="noopener" href="https://edu.aliyun.com/roadmap/frontend">(opens new window)</a> </p>
-</li>
-<li><p>W3Cschool 编程入门实战： <a target="_blank" rel="noopener" href="https://www.w3cschool.cn/codecamp/">https://www.w3cschool.cn/codecamp/</a><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/codecamp/">(opens new window)</a> </p>
-</li>
-<li><p>腾讯云动手实验室： <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/labs/gallery">https://cloud.tencent.com/developer/labs/gallery</a><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/labs/gallery">(opens new window)</a> </p>
-</li>
-<li><p>pink老师前端入门教程： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14J4114768">https://www.bilibili.com/video/BV14J4114768</a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14J4114768">(opens new window)</a> </p>
-</li>
-<li><p>MDN 前端文档： <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN">https://developer.mozilla.org/zh-CN</a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN">(opens new window)</a> </p>
-</li>
-<li><p>Node.js 入门： <a target="_blank" rel="noopener" href="https://cnodejs.org/getstart">https://cnodejs.org/getstart</a><a target="_blank" rel="noopener" href="https://cnodejs.org/getstart">(opens new window)</a> </p>
-</li>
-<li><p>前端清单： <a target="_blank" rel="noopener" href="https://cheatsheets.devtool.tech/">https://cheatsheets.devtool.tech/</a><a target="_blank" rel="noopener" href="https://cheatsheets.devtool.tech/">(opens new window)</a> </p>
-</li>
-<li><p>前端小课： <a target="_blank" rel="noopener" href="https://lefex.github.io/">https://lefex.github.io/</a><a target="_blank" rel="noopener" href="https://lefex.github.io/">(opens new window)</a> </p>
-</li>
-<li><p>被删的前端游乐场： <a target="_blank" rel="noopener" href="http://www.godbasin.com/">http://www.godbasin.com/</a><a target="_blank" rel="noopener" href="http://www.godbasin.com/">(opens new window)</a> </p>
-</li>
-<li><p>《ES6 入门教程》： <a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">https://es6.ruanyifeng.com/</a><a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">(opens new window)</a> </p>
-</li>
-<li><p>谷歌 Web 开发者： <a target="_blank" rel="noopener" href="https://developers.google.com/web">https://developers.google.com/web</a><a target="_blank" rel="noopener" href="https://developers.google.com/web">(opens new window)</a> </p>
-</li>
-<li><p>JavaScript 明星项目： <a target="_blank" rel="noopener" href="https://risingstars.js.org/2020/zh">https://risingstars.js.org/2020/zh</a><a target="_blank" rel="noopener" href="https://risingstars.js.org/2020/zh">(opens new window)</a> </p>
-</li>
-<li><p>Best of JS： <a target="_blank" rel="noopener" href="https://bestofjs.org/">https://bestofjs.org/</a><a target="_blank" rel="noopener" href="https://bestofjs.org/">(opens new window)</a> </p>
-</li>
-<li><p>Codewars： <a target="_blank" rel="noopener" href="https://www.codewars.com/?language=javascript">https://www.codewars.com/?language=javascript</a><a target="_blank" rel="noopener" href="https://www.codewars.com/?language=javascript">(opens new window)</a> </p>
-</li>
-<li><p>Vue.js examples： <a target="_blank" rel="noopener" href="https://vuejsexamples.com/">https://vuejsexamples.com/</a><a target="_blank" rel="noopener" href="https://vuejsexamples.com/">(opens new window)</a></p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E5%89%8D%E7%AB%AF%E8%B5%84%E8%AE%AF">#</a>前端资讯 </p>
-<ul>
-<li><p>掘金资讯： <a target="_blank" rel="noopener" href="https://juejin.cn/news">https://juejin.cn/news</a><a target="_blank" rel="noopener" href="https://juejin.cn/news">(opens new window)</a> </p>
-</li>
-<li><p>InfoQ： <a target="_blank" rel="noopener" href="https://www.infoq.cn/topic/Front-end">https://www.infoq.cn/topic/Front-end</a><a target="_blank" rel="noopener" href="https://www.infoq.cn/topic/Front-end">(opens new window)</a> </p>
-</li>
-<li><p>daily.dev： <a target="_blank" rel="noopener" href="https://daily.dev/">https://daily.dev/</a><a target="_blank" rel="noopener" href="https://daily.dev/">(opens new window)</a></p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2">#</a>技术博客 </p>
-<ul>
-<li><p>掘金： <a target="_blank" rel="noopener" href="https://juejin.cn/frontend">https://juejin.cn/frontend</a><a target="_blank" rel="noopener" href="https://juejin.cn/frontend">(opens new window)</a> </p>
-</li>
-<li><p>腾讯前端 IMWEB：<a target="_blank" rel="noopener" href="http://imweb.io/">http://imweb.io(opens new window)</a> </p>
-</li>
-<li><p>腾讯 Web 前端团队 Alloy Team：<a target="_blank" rel="noopener" href="http://www.alloyteam.com/">http://www.alloyteam.com(opens new window)</a> </p>
-</li>
-<li><p>淘宝前端团队：<a target="_blank" rel="noopener" href="http://taobaofed.org/">http://taobaofed.org(opens new window)</a> </p>
-</li>
-<li><p>百度 Web 前端研发部：<a target="_blank" rel="noopener" href="http://fex.baidu.com/">http://fex.baidu.com(opens new window)</a> </p>
-</li>
-<li><p>京东凹凸实验室：<a target="_blank" rel="noopener" href="https://aotu.io/">https://aotu.io(opens new window)</a> </p>
-</li>
-<li><p>360 奇舞团：<a target="_blank" rel="noopener" href="https://75team.com/">https://75team.com(opens new window)</a> </p>
-</li>
-<li><p>七牛团队技术博客：<a target="_blank" rel="noopener" href="http://blog.qiniu.com/">http://blog.qiniu.com(opens new window)</a> </p>
-</li>
-<li><p>有赞技术团队： <a target="_blank" rel="noopener" href="https://tech.youzan.com/tag/front-end/">https://tech.youzan.com/tag/front-end/</a><a target="_blank" rel="noopener" href="https://tech.youzan.com/tag/front-end/">(opens new window)</a> </p>
-</li>
-<li><p>百度 EFE Tech： <a target="_blank" rel="noopener" href="https://efe.baidu.com/">https://efe.baidu.com/</a><a target="_blank" rel="noopener" href="https://efe.baidu.com/">(opens new window)</a> </p>
-</li>
-<li><p>css-tricks： <a target="_blank" rel="noopener" href="https://css-tricks.com/archives">https://css-tricks.com/archives</a><a target="_blank" rel="noopener" href="https://css-tricks.com/archives">(opens new window)</a> </p>
-</li>
-<li><p>web.dev： <a target="_blank" rel="noopener" href="https://web.dev/blog/">https://web.dev/blog/</a></p>
-</li>
-</ul>
-<p> </p>
-<p>面试题库 </p>
-<ul>
-<li><p>编程导航精选面试题汇总： <a target="_blank" rel="noopener" href="https://yuyuanweb.feishu.cn/wiki/CmFywXs0Oi0MS9kU3yocJugFn2e">https://yuyuanweb.feishu.cn/wiki/CmFywXs0Oi0MS9kU3yocJugFn2e</a><a target="_blank" rel="noopener" href="https://yuyuanweb.feishu.cn/wiki/CmFywXs0Oi0MS9kU3yocJugFn2e">(opens new window)</a> </p>
-</li>
-<li><p>前端面试每日 3+1： <a target="_blank" rel="noopener" href="https://github.com/haizlin/fe-interview">https://github.com/haizlin/fe-interview</a><a target="_blank" rel="noopener" href="https://github.com/haizlin/fe-interview">(opens new window)</a> </p>
-</li>
-<li><p>React 面试题目 &amp; 题解： <a target="_blank" rel="noopener" href="https://github.com/sudheerj/reactjs-interview-questions">https://github.com/sudheerj/reactjs-interview-questions</a><a target="_blank" rel="noopener" href="https://github.com/sudheerj/reactjs-interview-questions">(opens new window)</a></p>
-</li>
-</ul>
-<p> </p>
-<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/#%E9%9D%A2%E7%BB%8F">#</a>面经 </p>
-<ul>
-<li>编程导航面经汇总： <a target="_blank" rel="noopener" href="https://yuyuanweb.feishu.cn/wiki/PLHrwcEPCiJcxXk7Ki4csRoJn2f">https://yuyuanweb.feishu.cn/wiki/PLHrwcEPCiJcxXk7Ki4csRoJn2f</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Joho Chen">
-      <meta itemprop="description" content="个人记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="joho world">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-08-30 16:50:12 / 修改时间：16:50:19" itemprop="dateCreated datePublished" datetime="2024-08-30T16:50:12+08:00">2024-08-30</time>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>JavaScript 提供了多种内置的数据结构，这些数据结构可以帮助开发者有效地管理和操作数据。以下是 JavaScript 中主要的数据结构及其相关特性和用法： </p>
-<ol>
-<li>原始类型（Primitive Types）</li>
-</ol>
-<p> </p>
-<ul>
-<li><p>Number: 表示整数和浮点数。 const num &#x3D; 42; const pi &#x3D; 3.14;  </p>
-</li>
-<li><p>String: 表示字符序列。 const str &#x3D; “Hello, world!”;  </p>
-</li>
-<li><p>Boolean: 表示真值（true）或假值（false）。 const isTrue &#x3D; true;  </p>
-</li>
-<li><p>null: 表示一个空值。 const empty &#x3D; null;  </p>
-</li>
-<li><p>undefined: 表示未定义的值。 let notDefined;  </p>
-</li>
-<li><p>Symbol: 表示唯一的标识符。 const sym &#x3D; Symbol(‘description’);  </p>
-</li>
-<li><p>BigInt: 表示任意精度的整数。 const bigInt &#x3D; 1234567890123456789012345678901234567890n;</p>
-</li>
-</ul>
-<p>  </p>
-<ol start="2">
-<li>对象类型（Object Types）</li>
-</ol>
-<p> </p>
-<ul>
-<li><p>Object: 一个键值对的集合。 const obj &#x3D; { name: “Alice”, age: 30 };  </p>
-</li>
-<li><p>Array: 有序元素的集合。 const arr &#x3D; [1, 2, 3, 4, 5];  </p>
-</li>
-<li><p>Function: 可执行的代码块。 function greet() { console.log(“Hello!”); }</p>
-</li>
-</ul>
-<p>  </p>
-<ol start="3">
-<li>特定用途的数据结构</li>
-</ol>
-<p> </p>
-<ul>
-<li><p>Set: 一种数据结构，它只存储唯一值。 const set &#x3D; new Set([1, 2, 3, 3, 4]); console.log(set); &#x2F;&#x2F; 输出: Set { 1, 2, 3, 4 }  </p>
-</li>
-<li><p>Map: 一种数据结构，它存储键值对，键可以是任何类型。 const map &#x3D; new Map(); map.set(‘name’, ‘Alice’); map.set(‘age’, 30); console.log(map.get(‘name’)); &#x2F;&#x2F; 输出: Alice  </p>
-</li>
-<li><p>WeakSet: 类似于 Set，但其成员必须是对象，并且这些对象都是弱引用，可以被垃圾回收。 const weakSet &#x3D; new WeakSet(); let obj &#x3D; {}; weakSet.add(obj);  </p>
-</li>
-<li><p>WeakMap: 类似于 Map，但其键必须是对象，并且这些键都是弱引用，可以被垃圾回收。 const weakMap &#x3D; new WeakMap(); let obj &#x3D; {}; weakMap.set(obj, ‘value’);</p>
-</li>
-</ul>
-<p>  </p>
-<ol start="4">
-<li>特殊用途的数据结构</li>
-</ol>
-<p> </p>
-<ul>
-<li><p>TypedArray: 用于处理二进制数据的一组对象，包括 Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, 和 Float64Array。 const int8 &#x3D; new Int8Array(4); int8[0] &#x3D; 42;  </p>
-</li>
-<li><p>ArrayBuffer: 用于处理固定长度的原始二进制数据。 const buffer &#x3D; new ArrayBuffer(16); const view &#x3D; new Uint8Array(buffer); view[0] &#x3D; 42;  </p>
-</li>
-<li><p>DataView: 用于处理 ArrayBuffer 中的不同类型的数据。 const buffer &#x3D; new ArrayBuffer(16); const view &#x3D; new DataView(buffer); view.setInt8(0, 42);</p>
-</li>
-</ul>
-<p>  </p>
-<ol start="5">
-<li>日期和时间</li>
-</ol>
-<p> </p>
-<ul>
-<li>Date: 用于处理日期和时间。 const now &#x3D; new Date();</li>
-</ul>
-<p>  </p>
-<ol start="6">
-<li>正则表达式</li>
-</ol>
-<p> </p>
-<ul>
-<li>RegExp: 用于匹配文本模式的对象。 const regex &#x3D; &#x2F;hello&#x2F;i;</li>
-</ul>
-<p>  </p>
-<ol start="7">
-<li>错误类型</li>
-</ol>
-<p> </p>
-<ul>
-<li>Error: 表示运行时错误的对象。 try { throw new Error(“Something went wrong”); } catch (e) { console.error(e); }</li>
-</ul>
-<p>  </p>
-<p>以上是 JavaScript 中主要的数据结构。它们各自有不同的用途和特性，帮助开发者在不同的场景下有效地管理和操作数据。 </p>
-<p>额外的数据结构和工具 </p>
-<ol>
-<li>栈（Stack）</li>
-</ol>
-<p> </p>
-<p>栈是一种后进先出（LIFO）的数据结构。 </p>
-<p>class Stack { </p>
-<p> constructor() { </p>
-<p> this.items &#x3D; []; } </p>
-<p> push(element) { </p>
-<p> this.items.push(element); } </p>
-<p> pop() { return this.items.pop(); }  </p>
-<p>peek() { return this.items[this.items.length - 1]; }  </p>
-<p>isEmpty() { return this.items.length &#x3D;&#x3D;&#x3D; 0; }  </p>
-<p>size() { return this.items.length; } </p>
-<p> clear() { this.items &#x3D; []; } </p>
-<p> }  </p>
-<ol start="2">
-<li>队列（Queue）</li>
-</ol>
-<p> </p>
-<p>队列是一种先进先出（FIFO）的数据结构。 </p>
-<p>class Queue {  </p>
-<p>constructor() { this.items &#x3D; []; }  </p>
-<p>enqueue(element) { this.items.push(element); }  </p>
-<p>dequeue() { return this.items.shift(); }  </p>
-<p>front() { return this.items[0]; }  </p>
-<p>isEmpty() { return this.items.length &#x3D;&#x3D;&#x3D; 0; } </p>
-<p> size() { return this.items.length; } </p>
-<p> clear() { this.items &#x3D; []; }  </p>
-<p>}  </p>
-<ol start="3">
-<li>双端队列（Deque）</li>
-</ol>
-<p> </p>
-<p>双端队列可以从前后两端添加或移除元素。 </p>
-<p>class Deque {  </p>
-<p>constructor() { this.items &#x3D; []; }  </p>
-<p>addFront(element) { this.items.unshift(element); }  </p>
-<p>addBack(element) { this.items.push(element); }  </p>
-<p>removeFront() { return this.items.shift(); }  </p>
-<p>removeBack() { return this.items.pop(); }  </p>
-<p>peekFront() { return this.items[0]; }  </p>
-<p>peekBack() { return this.items[this.items.length - 1]; }  </p>
-<p>isEmpty() { return this.items.length &#x3D;&#x3D;&#x3D; 0; }  </p>
-<p>size() { return this.items.length; } </p>
-<p>clear() { this.items &#x3D; []; } </p>
-<p>}  </p>
-<ol start="4">
-<li>链表（Linked List）</li>
-</ol>
-<p> </p>
-<p>链表是一种通过节点链接的线性数据结构。 </p>
-<p>classNode{ </p>
-<p>constructor(element){ </p>
-<p>this.element&#x3D;element; </p>
-<p>this.next&#x3D;null; </p>
-<p>} </p>
-<p>} </p>
-<p>classLinkedList{ </p>
-<p>constructor(){ </p>
-<p>this.head&#x3D;null; </p>
-<p>this.size&#x3D;0; </p>
-<p>} </p>
-<p>add(element){ </p>
-<p>letnode&#x3D;newNode(element); </p>
-<p>if(this.head&#x3D;&#x3D;&#x3D;null){ </p>
-<p>this.head&#x3D;node; </p>
-<p>}else{ </p>
-<p>letcurrent&#x3D;this.head; </p>
-<p>while(current.next){ </p>
-<p>current&#x3D;current.next; </p>
-<p>} </p>
-<p>current.next&#x3D;node; </p>
-<p>} </p>
-<p>this.size++; </p>
-<p>} </p>
-<p>remove(element){ </p>
-<p>letcurrent&#x3D;this.head; </p>
-<p>letprev&#x3D;null; </p>
-<p>while(current!&#x3D;&#x3D;null){ </p>
-<p>if(current.element&#x3D;&#x3D;&#x3D;element){ </p>
-<p>if(prev&#x3D;&#x3D;&#x3D;null){ </p>
-<p>this.head&#x3D;current.next; </p>
-<p>}else{ </p>
-<p>prev.next&#x3D;current.next; </p>
-<p>} </p>
-<p>this.size–; </p>
-<p>returncurrent.element; </p>
-<p>} </p>
-<p>prev&#x3D;current; </p>
-<p>current&#x3D;current.next; </p>
-<p>} </p>
-<p>return-1; </p>
-<p>} </p>
-<p>isEmpty(){ </p>
-<p>returnthis.size&#x3D;&#x3D;&#x3D;0; </p>
-<p>} </p>
-<p>size_of_list(){ </p>
-<p>returnthis.size; </p>
-<p>} </p>
-<p>printList(){ </p>
-<p>letcurrent&#x3D;this.head; </p>
-<p>letlist&#x3D;[]; </p>
-<p>while(current){ </p>
-<p>list.push(current.element); </p>
-<p>current&#x3D;current.next; </p>
-<p>} </p>
-<p>console.log(list.join(“-&gt;”)); </p>
-<p>} </p>
-<p>} </p>
-<ol start="5">
-<li>树（Tree）</li>
-</ol>
-<p> </p>
-<p>树是一种分层的数据结构，包括二叉树、二叉搜索树等。 </p>
-<p>classTreeNode{ </p>
-<p>constructor(value){ </p>
-<p>this.value&#x3D;value; </p>
-<p>this.left&#x3D;null; </p>
-<p>this.right&#x3D;null; </p>
-<p>} </p>
-<p>} </p>
-<p>classBinarySearchTree{ </p>
-<p>constructor(){ </p>
-<p>this.root&#x3D;null; </p>
-<p>} </p>
-<p>insert(value){ </p>
-<p>letnewNode&#x3D;newTreeNode(value); </p>
-<p>if(this.root&#x3D;&#x3D;&#x3D;null){ </p>
-<p>this.root&#x3D;newNode; </p>
-<p>}else{ </p>
-<p>this.insertNode(this.root,newNode); </p>
-<p>} </p>
-<p>} </p>
-<p>insertNode(node,newNode){ </p>
-<p>if(newNode.value&lt;node.value){ </p>
-<p>if(node.left&#x3D;&#x3D;&#x3D;null){ </p>
-<p>node.left&#x3D;newNode; </p>
-<p>}else{ </p>
-<p>this.insertNode(node.left,newNode); </p>
-<p>} </p>
-<p>}else{ </p>
-<p>if(node.right&#x3D;&#x3D;&#x3D;null){ </p>
-<p>node.right&#x3D;newNode; </p>
-<p>}else{ </p>
-<p>this.insertNode(node.right,newNode); </p>
-<p>} </p>
-<p>} </p>
-<p>} </p>
-<p>inorder(node){ </p>
-<p>if(node!&#x3D;&#x3D;null){ </p>
-<p>this.inorder(node.left); </p>
-<p>console.log(node.value); </p>
-<p>this.inorder(node.right); </p>
-<p>} </p>
-<p>} </p>
-<p>getRootNode(){ </p>
-<p>returnthis.root; </p>
-<p>} </p>
-<p>} </p>
-<ol start="6">
-<li>图（Graph）</li>
-</ol>
-<p> </p>
-<p>图是一种包含节点和边的数据结构。 </p>
-<p>classGraph{ </p>
-<p>constructor(){ </p>
-<p>this.adjacencyList&#x3D;newMap(); </p>
-<p>} </p>
-<p>addVertex(vertex){ </p>
-<p>if(!this.adjacencyList.has(vertex)){ </p>
-<p>this.adjacencyList.set(vertex,[]); </p>
-<p>} </p>
-<p>} </p>
-<p>addEdge(vertex1,vertex2){ </p>
-<p>if(this.adjacencyList.has(vertex1)){ </p>
-<p>this.adjacencyList.get(vertex1).push(vertex2); </p>
-<p>} </p>
-<p>if(this.adjacencyList.has(vertex2)){ </p>
-<p>this.adjacencyList.get(vertex2).push(vertex1); </p>
-<p>} </p>
-<p>} </p>
-<p>removeEdge(vertex1,vertex2){ </p>
-<p>if(this.adjacencyList.has(vertex1)){ </p>
-<p>this.adjacencyList.set( </p>
-<p>vertex1, </p>
-<p>this.adjacencyList.get(vertex1).filter((v)&#x3D;&gt;v!&#x3D;&#x3D;vertex2) </p>
-<p>); </p>
-<p>} </p>
-<p>if(this.adjacencyList.has(vertex2)){ </p>
-<p>this.adjacencyList.set( </p>
-<p>vertex2, </p>
-<p>this.adjacencyList.get(vertex2).filter((v)&#x3D;&gt;v!&#x3D;&#x3D;vertex1) </p>
-<p>); </p>
-<p>} </p>
-<p>} </p>
-<p>removeVertex(vertex){ </p>
-<p>if(this.adjacencyList.has(vertex)){ </p>
-<p>this.adjacencyList.delete(vertex); </p>
-<p>} </p>
-<p>for(let[key,value]ofthis.adjacencyList.entries()){ </p>
-<p>this.adjacencyList.set( </p>
-<p>key, </p>
-<p>value.filter((v)&#x3D;&gt;v!&#x3D;&#x3D;vertex) </p>
-<p>); </p>
-<p>} </p>
-<p>} </p>
-<p>} </p>
-<p>第三方库 </p>
-<ul>
-<li><p>Immutable.js: 提供不可变数据结构，如 List, Map, Set 等。 const { List, Map } &#x3D; require(‘immutable’); const list &#x3D; List([1, 2, 3]); const map &#x3D; Map({ key: ‘value’ });  </p>
-</li>
-<li><p>Lodash: 提供大量实用函数来操作数组、对象、字符串等。 const _ &#x3D; require(‘lodash’); const arr &#x3D; [1, 2, 3]; const doubled &#x3D; _.map(arr, n &#x3D;&gt; n * 2);</p>
-</li>
-</ul>
-<p>  </p>
-<p>数据结构分类总结 </p>
-<ul>
-<li><p>线性结构: 数组、栈、队列、链表 </p>
-</li>
-<li><p>树形结构: 二叉树、二叉搜索树、红黑树、AVL树 </p>
-</li>
-<li><p>图结构: 无向图、有向图、加权图 </p>
-</li>
-<li><p>集合结构: 集合（Set）、映射（Map） </p>
-</li>
-<li><p>特殊结构: WeakSet、WeakMap、TypedArray、ArrayBuffer、DataView</p>
-</li>
-</ul>
-<p> </p>
-<p>每种数据结构都有其特定的用途和操作，理解和使用这些数据结构可以大大提高程序的性能和代码的可维护性。</p>
-
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E5%B0%8F%E6%8A%80%E5%B7%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Joho Chen">
-      <meta itemprop="description" content="个人记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="joho world">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-08-30 16:47:45 / 修改时间：16:49:55" itemprop="dateCreated datePublished" datetime="2024-08-30T16:47:45+08:00">2024-08-30</time>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>304</span>
+              <span>0</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -2608,28 +516,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>控制台输入输出： </p>
-<p>引入ReadLine模块并创建接口-&gt;初始化变量-&gt;监听输入行-&gt;处理数据 </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> readline = <span class="built_in">require</span>(<span class="string">&#x27;readline&#x27;</span>); </span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> rl = readline.<span class="title function_">createInterface</span>(&#123; </span><br><span class="line">    <span class="attr">input</span>: process.<span class="property">stdin</span>, </span><br><span class="line">    <span class="attr">output</span>: process.<span class="property">stdout</span> </span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> inputLines = []; </span><br><span class="line"><span class="keyword">let</span> isFirstLine = <span class="literal">true</span>; </span><br><span class="line"><span class="keyword">let</span> numberOfPairs = <span class="number">0</span>; </span><br><span class="line"><span class="keyword">let</span> currentPairCount = <span class="number">0</span>; </span><br><span class="line"></span><br><span class="line">rl.<span class="title function_">on</span>(<span class="string">&#x27;line&#x27;</span>, <span class="function">(<span class="params">line</span>) =&gt;</span> &#123; </span><br><span class="line">    <span class="keyword">if</span> (isFirstLine) &#123; </span><br><span class="line">        numberOfPairs = <span class="built_in">parseInt</span>(line.<span class="title function_">trim</span>()); </span><br><span class="line">        isFirstLine = <span class="literal">false</span>; </span><br><span class="line">        currentPairCount = <span class="number">0</span>; </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">        inputLines.<span class="title function_">push</span>(line.<span class="title function_">trim</span>()); </span><br><span class="line">        currentPairCount++; </span><br><span class="line">        <span class="keyword">if</span> (currentPairCount === numberOfPairs) &#123; </span><br><span class="line">            <span class="title function_">processPairs</span>(); </span><br><span class="line">            isFirstLine = <span class="literal">true</span>; </span><br><span class="line">            inputLines = []; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">processPairs</span>(<span class="params"></span>) &#123; </span><br><span class="line">    inputLines.<span class="title function_">forEach</span>(<span class="function"><span class="params">line</span> =&gt;</span> &#123; </span><br><span class="line">        <span class="keyword">let</span> [a, b] = line.<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>).<span class="title function_">map</span>(<span class="title class_">Number</span>); </span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b); </span><br><span class="line">    &#125;); </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-<p>设计模式的策略模式，解决太多的ifelse:<br>![[Pasted image 20240830164834.png]]</p>
-<p>特殊符号的表示： </p>
-<p>原始类型+对象类型，为原始类型。数据前面加两个感叹号就是布尔类型ture，+!![]等于1 </p>
-<p>[]转原始类型是’ ‘，{}转原始类型是[object Object]</p>
-<p>Map() + parseInt()的隐形坑:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>]; </span><br><span class="line"><span class="keyword">var</span> result = arr.<span class="title function_">map</span>(<span class="built_in">parseInt</span>); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result); </span><br></pre></td></tr></table></figure>
-
-<p>但是在运行后，得到的结果是[1, NaN, NaN, NaN]，是因为实际上解析是： </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">val, index</span>) &#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">parseInt</span>(val, index); </span><br><span class="line">&#125;); </span><br></pre></td></tr></table></figure>
-
-<p>实际使用是： </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;1&#x27;</span>, <span class="number">0</span>);  <span class="comment">// 1 </span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;2&#x27;</span>, <span class="number">1</span>);  <span class="comment">// NaN </span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;3&#x27;</span>, <span class="number">2</span>);  <span class="comment">// NaN </span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;4&#x27;</span>, <span class="number">3</span>);  <span class="comment">// NaN </span></span><br></pre></td></tr></table></figure>
-
-<p>由于进制的问题，后面几个数都无法正确转换，所以要这样写： </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>]; </span><br><span class="line"><span class="keyword">var</span> result = arr.<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">val</span>) &#123;   </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">parseInt</span>(val, <span class="number">10</span>); </span><br><span class="line">&#125;); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);  <span class="comment">// [1, 2, 3, 4] </span></span><br></pre></td></tr></table></figure>
-
-<p>parseFloat()同理</p>
-
+          <p>观点态度漫画反驳题</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E8%A7%82%E7%82%B9%E6%80%81%E5%BA%A6%E6%BC%AB%E7%94%BB%E5%8F%8D%E9%A9%B3%E9%A2%98/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -2649,7 +544,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/tip%EF%BC%9A%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/CSS3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -2663,7 +558,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/tip%EF%BC%9A%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/CSS3/" class="post-title-link" itemprop="url">CSS3</a>
         </h2>
 
         <div class="post-meta">
@@ -2674,7 +569,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-08-30 16:46:05 / 修改时间：16:47:30" itemprop="dateCreated datePublished" datetime="2024-08-30T16:46:05+08:00">2024-08-30</time>
+              <time title="创建时间：2024-08-30 10:25:34 / 修改时间：19:29:38" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
             </span>
 
           
@@ -2683,7 +587,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>331</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -2702,47 +606,465 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>ES6新引入的语法，可以从数组和对象中提取值来赋值，这种方法成为解构（destructuring。 </p>
-<p>如：<br>![[Pasted image 20240830164623.png]]</p>
-<p>本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。 </p>
-<p>如：let [foo, [[bar], baz]] &#x3D; [1, [[2], 3]]; </p>
-<p>注意这里右边必须要是可遍历的结构，否则报错。 <br>解构不成功就会出现undefined。不完全解构(比如变量多于值)，也可以成功，只是只有部分赋到值。 </p>
-<p>数组解构的妙用：<br>![[Pasted image 20240830164648.png]]</p>
-<p>对象解构赋值的例子：</p>
-<p>![[Pasted image 20240830164707.png]]</p>
-<p>嵌套的对象同理。 </p>
-<p>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。如果 没有对应同名属性，就会变成undefined。 </p>
-<p>解构赋值允许默认值， </p>
-<ol>
-<li><p>let [foo &#x3D; true] &#x3D; []; </p>
-</li>
-<li><p>foo &#x2F;&#x2F; true </p>
-</li>
-<li><p>let [x, y &#x3D; ‘b’] &#x3D; [‘a’]; &#x2F;&#x2F; x&#x3D;’a’, y&#x3D;’b’ </p>
-</li>
-<li><p>let [x, y &#x3D; ‘b’] &#x3D; [‘a’, undefined]; &#x2F;&#x2F; x&#x3D;’a’, y&#x3D;’b’</p>
-</li>
-</ol>
-<p> </p>
-<p>注意，ES6 内部使用严格相等运算符（&#x3D;&#x3D;&#x3D;），判断一个位置是否有值。所以，只有当一个数组成员严格等于undefined，默认值才会生效。 </p>
-<ol>
-<li><p>let [x &#x3D; 1] &#x3D; [undefined]; </p>
-</li>
-<li><p>x &#x2F;&#x2F; 1 </p>
-</li>
-<li><p>let [x &#x3D; 1] &#x3D; [null]; </p>
-</li>
-<li><p>x &#x2F;&#x2F; null</p>
-</li>
-</ol>
-<p> </p>
-<p>注意ES6会把句子开头的{理解成代码块，最好加括号：({x} &#x3D; {x: 1});</p>
-<p>![[Pasted image 20240830164724.png]]</p>
-<p>ES6 的规则是，只要有可能导致解构的歧义，就不得使用圆括号。 </p>
-<p>但是，这条规则实际上不那么容易辨别，处理起来相当麻烦。因此，建议只要有可能，就不要在模式中放置圆括号。 </p>
-<p>用途： </p>
-<p><a target="_blank" rel="noopener" href="https://www.bookstack.cn/read/es6-3rd/spilt.7.docs-destructuring.md">3. 变量的解构赋值 - 用途 - 《阮一峰 ECMAScript 6 (ES6) 标准入门教程 第三版》 - 书栈网 · BookStack</a></p>
+          <p>CSS3新特性讲解</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/CSS3/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95+%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95+%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">CSS基本语法+引入方式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-08-30 10:25:34 / 修改时间：19:26:23" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>125</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>CSS基本语法+引入方式</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95+%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">CSS小技巧收集</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-08-30 10:25:34 / 修改时间：19:29:02" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>586</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>CSS小技巧收集</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E5%B1%9E%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E5%B1%9E%E6%80%A7/" class="post-title-link" itemprop="url">CSS属性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-08-30 10:25:34 / 修改时间：19:27:20" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>27</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>CSS基本属性</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E5%B1%9E%E6%80%A7/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E6%96%87%E6%A1%A3%E6%B5%81+%E5%85%83%E7%B4%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E6%96%87%E6%A1%A3%E6%B5%81+%E5%85%83%E7%B4%A0/" class="post-title-link" itemprop="url">CSS文档流+元素</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-08-30 10:25:34 / 修改时间：19:27:48" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>30</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>CSS文档流+元素</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/%E6%96%87%E6%A1%A3%E6%B5%81+%E5%85%83%E7%B4%A0/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTML/HTML5%E7%89%B9%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTML/HTML5%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">HTML5特性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-08-30 10:25:34 / 修改时间：19:31:33" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>342</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>HTML5特性</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTML/HTML5%E7%89%B9%E6%80%A7/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -2834,13 +1156,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -2874,7 +1196,7 @@
           <h5 class="widget-title">标签云</h5>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">7</span></li></ul>
               </canvas>
           </div>
       </div>
