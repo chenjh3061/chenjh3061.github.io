@@ -28,7 +28,7 @@
 <meta property="og:description" content="JS基础概念">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-30T02:25:34.000Z">
-<meta property="article:modified_time" content="2024-09-05T02:25:46.472Z">
+<meta property="article:modified_time" content="2024-09-11T14:47:58.141Z">
 <meta property="article:author" content="Joho Chen">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-05 10:25:46" itemprop="dateModified" datetime="2024-09-05T10:25:46+08:00">2024-09-05</time>
+                <time title="修改时间：2024-09-11 22:47:58" itemprop="dateModified" datetime="2024-09-11T22:47:58+08:00">2024-09-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,7 +243,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
+              <span>4.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -280,22 +280,20 @@
 <p>let自动定义变量类型（ES6新增）： </p>
 <p>不同： </p>
 <ul>
-<li>作用域：</li>
+<li>作用域： <br>    var 声明的变量存在函数级作用域，而不是块级作用域。在函数内部声明的变量在整个函数内部都是可见的。</li>
 </ul>
 <p> </p>
-<p>    var 声明的变量存在函数级作用域，而不是块级作用域。在函数内部声明的变量在整个函数内部都是可见的。 </p>
 <p>    let 声明的变量存在块级作用域，例如在 if 语句或循环中声明的变量只在该块内部可见（for循环就比较适合用let，注意循环括号里面和循环体里面的let不是一个作用域）。 </p>
 <ul>
-<li>变量提升：</li>
+<li>变量提升： <br>    使用 var 声明的变量存在变量提升，即变量可以在声明之前被访问，但其值为 undefined。这是因为在执行代码之前，JS引擎会将变量声明提升到其作用域的顶部。注意赋值不会提升，只有声明提升。</li>
 </ul>
 <p> </p>
-<p>    使用 var 声明的变量存在变量提升，即变量可以在声明之前被访问，但其值为 undefined。这是因为在执行代码之前，JS引擎会将变量声明提升到其作用域的顶部。注意赋值不会提升，只有声明提升。 </p>
 <p>    使用 let 声明的变量也存在提升，但不会被初始化，直到遇到声明语句。 </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// 输出 undefined </span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>; </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">// 报错，暂时性死区（Temporal Dead Zone，TDZ） </span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">20</span>; </span><br></pre></td></tr></table></figure>
 
 <p>暂时性死区：ES6 明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。 </p>
 <ul>
-<li>重复声明： <br>  使用 var 可以重复声明同一个变量，而不会报错。 <br>      使用 let 在同一作用域内重复声明同一个变量会导致语法错误。</li>
+<li>重复声明： <br>  使用 var 可以重复声明同一个变量，而不会报错。 <br>  使用 let 在同一作用域内重复声明同一个变量会导致语法错误。</li>
 </ul>
 <p> </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>; </span><br><span class="line"><span class="keyword">var</span> x = <span class="number">20</span>; <span class="comment">// 合法，不会报错 </span></span><br><span class="line"><span class="keyword">let</span> y = <span class="number">30</span>; </span><br><span class="line"><span class="keyword">let</span> y = <span class="number">40</span>; <span class="comment">// 报错，重复声明 </span></span><br></pre></td></tr></table></figure>
@@ -306,30 +304,32 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> globalVar = <span class="number">50</span>; </span><br><span class="line"><span class="keyword">let</span> localVar = <span class="number">60</span>; </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">globalVar</span>); <span class="comment">// 输出 50 </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">localVar</span>); <span class="comment">// 输出 undefined </span></span><br></pre></td></tr></table></figure>
 
 <p>总体而言，在现代JavaScript开发中，推荐使用 let 替代 var，因为 let 提供了更好的作用域规则和避免了一些 var 的问题。 </p>
+<p>Tip：const</p>
+<p>也不能重复声明，let和const都没有预解析，因而会产生TDZ，也被限制在块级作用域。只是const定义了就必须赋值，不能再次赋值。</p>
+<h3 id="Tip：作用域与作用域链"><a href="#Tip：作用域与作用域链" class="headerlink" title="Tip：作用域与作用域链"></a>Tip：作用域与作用域链</h3><p><strong>作用域</strong>就是一个变量可以生效的范围，决定了代码中的变量、函数在何处可以被访问。JS 主要有两种作用域：全局作用域和局部作用域，ES6引入块级作用域。</p>
+<p><strong>全局作用域</strong>就是定义在任何函数和块之外的变量和函数拥有全局作用域。对文件顶部代码编译之后，会执行全局上下文，同时形成全局作用域。<br>&#x3D;&#x3D; 全局作用域是最大的作用域<br>&#x3D;&#x3D; 在全局作用域定义的变量可以在任何地方使用<br>&#x3D;&#x3D; 页面打开的时候，浏览器会自动给我们生成一个全局作用域window<br>&#x3D;&#x3D; 这个作用域会一直存在，直到浏览器关闭或销毁</p>
+<p><strong>局部作用域</strong></p>
+<p>&#x3D;&#x3D; 局部作用域就是在全局作用域下面又开辟出来一个相对小一些的作用域<br>&#x3D;&#x3D; 在局部作用域中定义的变量只能在这个局部作用域起作用<br>&#x3D;&#x3D; 在js中只有函数可以生成一个局部作用域<br>&#x3D;&#x3D; 每一个函数都是一个局部作用域（函数作用域）<br>块级作用域：对于块级作用域，会在代码执行到该代码的时候生成</p>
+<p><strong>作用域链</strong></p>
+<p>&#x3D;&#x3D; 函数被创建的作用域中饭可使用的数据的集合<br>各个作用域的嵌套关系组成一条作用域链<br>作用域链主要进行 标识符（变量名和函数名）的查询，标识符解析就是沿着作用域链一级一级的搜索标识符的过程，<br>而作用域链就是保住对变量和函数的有序访问<br>（1）如果自身作用域中声明了该变量，则js不调用作用域链<br>（2）如果自身作用域中未声明变量，则需要使用作用域链进行查找</p>
 <p>tip：块级作用域（一定要加大括号） </p>
 <p>ES5只有全局作用域和函数作用域，没有块级作用域，不够合理，可能会导致内层变量覆盖外层变量，或者用来技术的循环变量泄露为全局变量。例子： </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmp = <span class="keyword">new</span> <span class="title class_">Date</span>(); </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f</span>(<span class="params"></span>) &#123; </span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(tmp); </span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">false</span>) &#123;   </span><br><span class="line">	<span class="keyword">var</span> tmp = <span class="string">&#x27;hello world&#x27;</span>;<span class="comment">//变量提升  </span></span><br><span class="line">	&#125;    </span><br><span class="line">&#125; </span><br><span class="line"><span class="title function_">f</span>(); <span class="comment">// undefined </span></span><br></pre></td></tr></table></figure>
 <p>ES6引入了let，实际上也是借用let封闭作用域的特点，实现块级作用域的功能。ES6也允许块级作用域的嵌套。同时相对于ES5，允许了在块级作用域中定义函数，函数影响范围也在块内。 </p>
 <p>不过要注意5和6环境的巨大差异和函数的复杂性，尽量避免在块级作用域声明函数，要的话也只写函数表达式就行，不用函数声明语句。 </p>
-<ol>
-<li><p>&#x2F;&#x2F; 块级作用域内部，优先使用函数表达式 </p>
-</li>
-<li><p>{ </p>
-</li>
-<li><p>  let a &#x3D; ‘secret’; </p>
-</li>
-<li><p>  let f &#x3D; function () { </p>
-</li>
-<li><p>    return a; </p>
-</li>
-<li><p>  }; </p>
-</li>
-<li><p>}</p>
-</li>
-</ol>
-<p> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 块级作用域内部，优先使用函数表达式 </span></span><br><span class="line">&#123; </span><br><span class="line">	<span class="keyword">let</span> a = <span class="string">&#x27;secret&#x27;</span>; </span><br><span class="line">	<span class="keyword">let</span> f = <span class="keyword">function</span> (<span class="params"></span>) &#123; </span><br><span class="line">		<span class="keyword">return</span> a; </span><br><span class="line">	&#125;; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Tip：预解析机制（Hoisting）"><a href="#Tip：预解析机制（Hoisting）" class="headerlink" title="Tip：预解析机制（Hoisting）"></a>Tip：预解析机制（Hoisting）</h3><p>JS中引擎运行分两步，预解析和代码执行。在 JavaScript 中，<strong>预解析机制</strong>指的是变量和函数声明会在代码执行之前被“提升”到作用域的顶部。预解析包括两部分：<strong>变量提升</strong>和<strong>函数提升</strong>。</p>
+<p>JavaScript是 轻量级 解释型 弱类型 的 脚本语言所谓的 预解析&#x2F;预解释&#x2F;预编译 是JavaScript程序的一种执行方式。</p>
+<p>变量提升：</p>
+<p>所有的var、function都会提升到当前作用域的最前面，代码按照书写顺序执行。函数的话叫状态提升。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num)<span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>函数是一等公民、</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//但是这样写又不行</span></span><br><span class="line"><span class="title function_">fun</span>()</span><br><span class="line"><span class="keyword">var</span> fun = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>+<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//因为这样用了var，系统自动把他当var看，出现报错</span></span><br></pre></td></tr></table></figure>
+<p>多个函数同时声明，后面会覆盖前面。</p>
 <h2 id="tip：数据类型"><a href="#tip：数据类型" class="headerlink" title="tip：数据类型"></a>tip：数据类型</h2><p>在JavaScript中，数据可分为两类，分别为原生数据类型（primitive type）和对象数据类型（object type）。 </p>
-<p>原生数据类型包括数字、字符串、布尔值（不用单独声明，let var都行）、符号类型，还有两个特殊的类型：null和undefined。 </p>
+<p>原生数据类型(简单数据类型)包括数字、字符串、布尔值（不用单独声明，let var都行）、符号类型，还有两个特殊的类型：null和undefined。 </p>
 <p>对象数据类型(也叫复杂数据类型)包括对象、数组、函数、日期、正则表达式、Map、Set等 </p>
 <p>或者按照值类型和引用类型分，分别有：字符串 String、数组 Number、布尔 Boolean、空值 Null、未定义 Undefined、Symbol。||  对象Object、数组Array、函数function。 </p>
 <p>当 JavaScript 中的变量被声明的时候，程序内部会给它一个初始值 undefined。 当你对一个值为 undefined 的变量进行运算操作的时候，算出来的结果将会是 NaN，它的意思是 “Not a Number”。 如果你用 undefined 变量连接一个字符串，你将得到一个 undefined 的 字符串。 </p>
@@ -357,18 +357,11 @@
 <p>数组排序： </p>
 <p>Nums.sort((a, b) &#x3D;&gt; a-b);从小到大，从大到小就b-a。 </p>
 <p>使用 every()，map(), filter(), reduce() 等数组方法替代传统循环，可以使代码更简洁且易于阅读。 </p>
-<p>&#x2F;&#x2F; 传统循环 </p>
-<p>let sum &#x3D; 0; </p>
-<p>for (let i &#x3D; 0; i &lt; numbers.length; i++) { </p>
-<p>  sum +&#x3D; numbers[i]; </p>
-<p>} </p>
-<p>&#x2F;&#x2F; 使用 reduce 方法 </p>
-<p>let sumWithReduce &#x3D; numbers.reduce((acc, curr) &#x3D;&gt; acc + curr, 0); </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统循环 </span></span><br><span class="line"><span class="keyword">let</span> sum = <span class="number">0</span>; </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; numbers.<span class="property">length</span>; i++) &#123; </span><br><span class="line">  sum += numbers[i]; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 reduce 方法 </span></span><br><span class="line"><span class="keyword">let</span> sumWithReduce = numbers.<span class="title function_">reduce</span>(<span class="function">(<span class="params">acc, curr</span>) =&gt;</span> acc + curr, <span class="number">0</span>); </span><br></pre></td></tr></table></figure>
 <p>symbol类型： </p>
 <p>本质是一种唯一标识符，可用作对象的唯一属性名，保证每个属性的名字独一无二，其他人就不会改写或覆盖设置的属性值。因为本质不是对象，所以不能用new。 </p>
-<p> let id1 &#x3D; Symbol(‘id’); </p>
-<p> let id2 &#x3D; Symbol(‘id’); </p>
-<p> console.log(id1 &#x3D;&#x3D; id2);  &#x2F;&#x2F;false </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">let</span> id1 = <span class="title class_">Symbol</span>(<span class="string">&#x27;id&#x27;</span>); </span><br><span class="line"></span><br><span class="line"> <span class="keyword">let</span> id2 = <span class="title class_">Symbol</span>(<span class="string">&#x27;id&#x27;</span>); </span><br><span class="line"></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(id1 == id2);  <span class="comment">//false </span></span><br></pre></td></tr></table></figure>
+
 <p>另一特点是隐藏性，只有Object.getOwnPropertySymbols方法才能访问，Object.getOwnPropertySymbols 方法会返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。 </p>
 <p>Symbol 值的实例属性description，直接返回 Symbol 值的描述。</p>
 <p>![[Pasted image 20240830163800.png]]</p>
@@ -381,20 +374,14 @@
 <p>JavaScript中，字符串String的值是不可变的。更改 myStr 的唯一方法是为其分配一个新值，如下所示：let myStr &#x3D; “Bob”;myStr &#x3D; “Job”; </p>
 <p>字符串长度：.length </p>
 <p>注意可以使用模板字面量创建字符串：借助循环能大量输出句子 </p>
-<p>const person &#x3D; {   name: “Zodiac Hasbro”,   age: 56 }; </p>
-<p>const greeting &#x3D; <code>Hello, my name is $&#123;person.name&#125;! I am $&#123;person.age&#125; years old.</code>; </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;   <span class="attr">name</span>: <span class="string">&quot;Zodiac Hasbro&quot;</span>,   <span class="attr">age</span>: <span class="number">56</span> &#125;; </span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> greeting = <span class="string">`Hello, my name is <span class="subst">$&#123;person.name&#125;</span>! I am <span class="subst">$&#123;person.age&#125;</span> years old.`</span>; </span><br></pre></td></tr></table></figure>
+
 <p>字符串方法： </p>
 <p>slice、substring、substr都是截取子串 </p>
 <p>trim去除两端空白，cplit拆分，fromCharCode从字符码转字符 </p>
 <p>charCodeAt获取字符Unicode，concat链接，用+容易出错 </p>
-<p>let rawString &#x3D; String.raw<code>C:\Development\project</code>;不会动反斜杠 </p>
-<p>function titleCase(str) { </p>
-<p>  return str </p>
-<p>    .toLowerCase() &#x2F;&#x2F; 将整个字符串转换为小写 </p>
-<p>    .split(“ “)    &#x2F;&#x2F; 将字符串按照空格分割成数组 </p>
-<p>    .map(val &#x3D;&gt; val.replace(val.charAt(0), val.charAt(0).toUpperCase())) &#x2F;&#x2F; 将每个单词的首字母大写 </p>
-<p>    .join(“ “);    &#x2F;&#x2F; 将数组重新拼接成一个字符串，并用空格连接 </p>
-<p>} </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> rawString = <span class="title class_">String</span>.<span class="property">raw</span><span class="string">`C:\Development\project`</span>;不会动反斜杠 </span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">titleCase</span>(<span class="params">str</span>) &#123; </span><br><span class="line">  <span class="keyword">return</span> str </span><br><span class="line">    .<span class="title function_">toLowerCase</span>() <span class="comment">// 将整个字符串转换为小写 </span></span><br><span class="line">    .<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>)    <span class="comment">// 将字符串按照空格分割成数组 </span></span><br><span class="line">    .<span class="title function_">map</span>(<span class="function"><span class="params">val</span> =&gt;</span> val.<span class="title function_">replace</span>(val.<span class="title function_">charAt</span>(<span class="number">0</span>), val.<span class="title function_">charAt</span>(<span class="number">0</span>).<span class="title function_">toUpperCase</span>())) <span class="comment">// 将每个单词的首字母大写 </span></span><br><span class="line">    .<span class="title function_">join</span>(<span class="string">&quot; &quot;</span>);    <span class="comment">// 将数组重新拼接成一个字符串，并用空格连接 </span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
 <p>四、运算 </p>
 <p>加减乘除++–求余简写+&#x3D;转义字符都一样，只是注意字符串之间的+用法类同java </p>
 <p>相等运算符&#x3D;&#x3D;（不管具体数据类型），全等运算符&#x3D;&#x3D;&#x3D;（数据类型也要一样） </p>
@@ -404,7 +391,7 @@
 <p>五、关于es5和es6<a target="_blank" rel="noopener" href="https://www.bookstack.cn/read/es6-3rd/spilt.5.docs-intro.md">ECMAScript 6 简介 - Babel 转码器 - 《阮一峰 ECMAScript 6 (ES6) 标准入门教程 第三版》</a>  </p>
 <p>两种不同的标准，可以使用Babel转码器将 ES6 代码转为 ES5 代码，从而在老版本的浏览器执行。 </p>
 <p>六、随机数</p>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="title class_">Math</span>.<span class="title function_">random</span>()</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -526,7 +513,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tip%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">tip：数据类型</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tip%EF%BC%9A%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE"><span class="nav-number">1.</span> <span class="nav-text">Tip：作用域与作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tip%EF%BC%9A%E9%A2%84%E8%A7%A3%E6%9E%90%E6%9C%BA%E5%88%B6%EF%BC%88Hoisting%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">Tip：预解析机制（Hoisting）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tip%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number"></span> <span class="nav-text">tip：数据类型</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -540,14 +527,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-count">80</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -587,7 +574,7 @@
           <h5 class="widget-title">标签云</h5>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">7</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">7</span></li></ul>
               </canvas>
           </div>
       </div>
@@ -623,12 +610,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">71k</span>
+    <span title="站点总字数">74k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:04</span>
+    <span title="站点阅读时长">1:08</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
