@@ -6,7 +6,7 @@
   <link href="https://chenjh3061/personalWeb.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenjh3061/personalWeb.github.io/"/>
-  <updated>2024-09-11T02:18:31.247Z</updated>
+  <updated>2024-09-18T02:38:18.700Z</updated>
   <id>https://chenjh3061/personalWeb.github.io/</id>
   
   <author>
@@ -15,6 +15,118 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue声明周期</title>
+    <link href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</id>
+    <published>2024-09-18T02:27:55.703Z</published>
+    <updated>2024-09-18T02:38:18.700Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个组件从创建到销毁的过程就是生命周期。<br>四大阶段八个方法。<br>![[Pasted image 20240918103813.png]]</p>]]></content>
+    
+    
+    <summary type="html">Vue的生命周期</summary>
+    
+    
+    
+    <category term="前端" scheme="https://chenjh3061/personalWeb.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="笔记" scheme="https://chenjh3061/personalWeb.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="前端" scheme="https://chenjh3061/personalWeb.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端基础</title>
+    <link href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/React/%E5%B7%A9%E5%9B%BA%E5%9F%BA%E7%A1%80/"/>
+    <id>https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/React/%E5%B7%A9%E5%9B%BA%E5%9F%BA%E7%A1%80/</id>
+    <published>2024-09-18T01:33:18.169Z</published>
+    <updated>2024-09-18T01:33:34.783Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前端基础知识"><a href="#前端基础知识" class="headerlink" title="前端基础知识"></a>前端基础知识</h3><ul><li><p>✅ 互联网</p></li><li><p>⭐️ 域名</p></li><li><p>⭐️ DNS</p></li><li><p>⭐️ 服务器</p></li><li><p>✅ 浏览器</p><ul><li>浏览器 DOM 事件流 &#x2F; 事件委托</li><li>⭐️ 浏览器加载顺序</li><li>⭐️ 浏览器渲染过程</li><li>浏览器事件循环</li><li>浏览器同源策略</li><li>❗ 跨域解决方案</li><li>浏览器缓存</li><li>控制台调试技巧</li></ul></li><li><p>✅ HTTP</p><ul><li>❗ HTTP 请求过程</li><li>常见 HTTP 协议<ul><li>HTTP 1.0</li><li>⭐️ HTTP 1.1</li><li>HTTP 2</li><li>HTTP 3</li></ul></li><li>⭐️ HTTP 请求类别</li><li>⭐️ 常见状态码<ul><li>1xx 信息</li><li>2xx 成功</li><li>3xx 重定向</li><li>4xx 客户端错误</li><li>5xx 服务器错误</li></ul></li><li>WebSocket</li><li>⭐️ Cookie</li><li>Session</li><li>⭐️ HTTPS</li></ul></li></ul><h3 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h3><h4 id="✅-算法和数据结构"><a href="#✅-算法和数据结构" class="headerlink" title="✅ 算法和数据结构"></a>✅ 算法和数据结构</h4><ul><li><p>⭐️ 时间 &#x2F; 空间复杂度分析</p></li><li><p>数据结构</p><ul><li>数组</li><li>字符串</li><li>队列</li><li>栈</li><li>链表</li><li>集合</li><li>哈希表</li><li>二叉树</li></ul></li><li><p>算法</p><ul><li>排序</li><li>双指针</li><li>查找</li><li>分治</li><li>动态规划</li><li>递归</li><li>回溯</li><li>贪心</li><li>位运算</li><li>DFS</li><li>BFS</li><li>图</li></ul></li></ul><h4 id="✅-计算机网络"><a href="#✅-计算机网络" class="headerlink" title="✅ 计算机网络"></a>✅ 计算机网络</h4><ul><li>HTTP 协议</li><li>网络模型</li><li>UDP &#x2F; TCP 协议</li></ul><h4 id="✅-操作系统"><a href="#✅-操作系统" class="headerlink" title="✅ 操作系统"></a>✅ 操作系统</h4><ul><li>进程、线程</li><li>进程 &#x2F; 线程间通讯方式</li><li>进程调度算法</li><li>进程 &#x2F; 线程状态</li><li>死锁</li><li>内存管理</li></ul><h3 id="软件开发基础"><a href="#软件开发基础" class="headerlink" title="软件开发基础"></a>软件开发基础</h3><h4 id="✅-设计模式"><a href="#✅-设计模式" class="headerlink" title="✅ 设计模式"></a>✅ 设计模式</h4><ul><li>单例模式</li><li>代理模式</li><li>工厂模式</li><li>装饰者模式</li><li>观察者模式</li><li>策略模式</li><li>门面模式</li></ul><h4 id="⭐️-Git-版本控制"><a href="#⭐️-Git-版本控制" class="headerlink" title="⭐️ Git 版本控制"></a>⭐️ Git 版本控制</h4><ul><li>常用命令</li></ul><h4 id="✅-Linux-服务器"><a href="#✅-Linux-服务器" class="headerlink" title="✅ Linux 服务器"></a>✅ Linux 服务器</h4><ul><li>常用命令</li></ul><h4 id="✅-正则表达式"><a href="#✅-正则表达式" class="headerlink" title="✅ 正则表达式"></a>✅ 正则表达式</h4>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前端基础知识&quot;&gt;&lt;a href=&quot;#前端基础知识&quot; class=&quot;headerlink&quot; title=&quot;前端基础知识&quot;&gt;&lt;/a&gt;前端基础知识&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;✅ 互联网&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;⭐️</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTML学习路径</title>
+    <link href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTML/HTML%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/"/>
+    <id>https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTML/HTML%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/</id>
+    <published>2024-09-18T01:31:57.452Z</published>
+    <updated>2024-09-18T01:32:14.835Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="⭐️-HTML"><a href="#⭐️-HTML" class="headerlink" title="⭐️ HTML"></a>⭐️ HTML</h3><ul><li><p>💬 描述：用于定义一个网页结构的基本技术。</p></li><li><p>📚 资源：<a href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML">https://developer.mozilla.org/zh-CN/docs/Learn/HTML</a></p></li><li><p>⭐️ 基本语法</p></li><li><p>⭐️ 标签</p><ul><li>分区 div</li><li>标题 h1 ~ h6</li><li>段落 p</li><li>图像 img</li><li>列表 ul &#x2F; ol</li><li>超链接 a</li><li>表单 form</li><li>表格 table</li><li>框架 iframe</li></ul></li><li><p>⭐️ 属性</p></li><li><p>✅ HTML5 特性</p><ul><li>语义化标签</li><li>浏览器支持</li><li>多媒体标签</li><li>Canvas 画布</li><li>❌ 内联 SVG</li><li>本地存储<ul><li>localStorage</li><li>sessionStorage</li><li>❌ Web SQL</li></ul></li><li>Web Workers</li><li>应用缓存（Cache Manifest）</li><li>无障碍</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;⭐️-HTML&quot;&gt;&lt;a href=&quot;#⭐️-HTML&quot; class=&quot;headerlink&quot; title=&quot;⭐️ HTML&quot;&gt;&lt;/a&gt;⭐️ HTML&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;💬</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CSS学习路径</title>
+    <link href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/CSS%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/"/>
+    <id>https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/CSS%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/</id>
+    <published>2024-09-18T01:29:21.266Z</published>
+    <updated>2024-09-18T01:31:31.931Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="⭐️-CSS"><a href="#⭐️-CSS" class="headerlink" title="⭐️ CSS"></a>⭐️ CSS</h3><ul><li><p>💬 描述：层叠样式表，用于设计风格和布局。</p></li><li><p>📚 资源：<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS">https://developer.mozilla.org/zh-CN/docs/Learn/CSS</a></p></li><li><p>⭐️ 基本语法</p></li><li><p>⭐️ 引入方式</p><ul><li>行内样式</li><li>内部样式表</li><li>外部样式表</li></ul></li><li><p>⭐️ 选择器</p><ul><li>通用选择器</li><li>标签选择器</li><li>id 选择器</li><li>class 选择器</li><li>属性选择器</li><li>派生选择器<ul><li>后代选择器</li><li>子元素选择器</li><li>相邻兄弟选择器</li></ul></li><li>组合选择器</li><li>伪选择器</li><li>选择器优先级</li></ul></li><li><p>⭐️ 属性</p><ul><li>单位<ul><li>px</li><li>em</li><li>rem</li><li>vw</li><li>vh</li></ul></li><li>背景</li><li>文本</li><li>字体</li><li>列表</li><li>表格</li></ul></li><li><p>⭐️ 文档流</p><ul><li>标准流</li><li>浮动流</li><li>定位流</li></ul></li><li><p>⭐️ 内联元素 &#x2F; 块状元素</p></li><li><p>⭐️ 盒子模型</p><ul><li>content</li><li>padding</li><li>border</li><li>margin</li></ul></li><li><p>⭐️ 浮动</p><ul><li>设置浮动 float</li><li>清除浮动 clear</li></ul></li><li><p>⭐️ 定位</p><ul><li>static</li><li>absolute</li><li>fixed</li><li>relative</li><li>sticky</li></ul></li><li><p>⭐️ 层叠规则</p></li><li><p>❗ BFC 和 IFC 机制</p></li><li><p>CSS3</p><ul><li>⭐️ 响应式布局<ul><li>媒体查询</li><li>Flex 布局</li><li>Grid 布局</li><li>瀑布流</li></ul></li><li>动画</li><li>过渡</li><li>渐变</li><li>背景</li><li>边框</li><li>圆角</li><li>字体</li><li>2D &#x2F; 3D 转换</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;⭐️-CSS&quot;&gt;&lt;a href=&quot;#⭐️-CSS&quot; class=&quot;headerlink&quot; title=&quot;⭐️ CSS&quot;&gt;&lt;/a&gt;⭐️ CSS&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;💬 描述：层叠样式表，用于设计风格和布局。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;📚</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端构建工具</title>
+    <link href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
+    <id>https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/</id>
+    <published>2024-09-18T01:28:24.442Z</published>
+    <updated>2024-09-18T01:28:56.751Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>JS作用域、预解析</title>
@@ -335,103 +447,6 @@
     
     
     <summary type="html">面试人际关系题</summary>
-    
-    
-    
-    <category term="公考" scheme="https://chenjh3061/personalWeb.github.io/categories/%E5%85%AC%E8%80%83/"/>
-    
-    
-    <category term="面试" scheme="https://chenjh3061/personalWeb.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>情景模拟</title>
-    <link href="https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E6%83%85%E6%99%AF%E6%A8%A1%E6%8B%9F/"/>
-    <id>https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E6%83%85%E6%99%AF%E6%A8%A1%E6%8B%9F/</id>
-    <published>2024-08-30T02:25:34.000Z</published>
-    <updated>2024-08-30T09:26:24.614Z</updated>
-    
-    
-    <summary type="html">面试情景模拟题</summary>
-    
-    
-    
-    <category term="公考" scheme="https://chenjh3061/personalWeb.github.io/categories/%E5%85%AC%E8%80%83/"/>
-    
-    
-    <category term="面试" scheme="https://chenjh3061/personalWeb.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试组织管理题</title>
-    <link href="https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%84%E7%BB%87%E7%AE%A1%E7%90%86/"/>
-    <id>https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%84%E7%BB%87%E7%AE%A1%E7%90%86/</id>
-    <published>2024-08-30T02:25:34.000Z</published>
-    <updated>2024-08-30T09:28:28.214Z</updated>
-    
-    
-    <summary type="html">面试组织管理题</summary>
-    
-    
-    
-    <category term="公考" scheme="https://chenjh3061/personalWeb.github.io/categories/%E5%85%AC%E8%80%83/"/>
-    
-    
-    <category term="面试" scheme="https://chenjh3061/personalWeb.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>结构化面试介绍</title>
-    <link href="https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%93%E6%9E%84%E5%8C%96%E9%9D%A2%E8%AF%95%E4%BB%8B%E7%BB%8D/"/>
-    <id>https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%93%E6%9E%84%E5%8C%96%E9%9D%A2%E8%AF%95%E4%BB%8B%E7%BB%8D/</id>
-    <published>2024-08-30T02:25:34.000Z</published>
-    <updated>2024-08-30T09:25:19.020Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先：心态摆正，多开口练 </p><p>一、认识考试 </p><p>面试是面对面交流选拔人才的考试 </p><p>  题目有：综合分析题（第一题，综合分析能力，考官的第一印象，会考社会现象和政策看法名言警句） </p><p>自我认知题（岗位匹配程度，最简单就是自我介绍[少考]） </p><p>人际关系题（人际沟通能力，必学） </p><p>组织管理题（） </p><p>应急应变题（） </p><p>实物处理题（） </p><p>其他（思维与表达能力） </p><p>二、认识考官 </p><p>三、认识对手 </p><p>四、认识考场 </p><p>五、认识规则 </p><p>六、如何备考</p>]]></content>
-    
-    
-    <summary type="html">结构化面试介绍</summary>
-    
-    
-    
-    <category term="公考" scheme="https://chenjh3061/personalWeb.github.io/categories/%E5%85%AC%E8%80%83/"/>
-    
-    
-    <category term="面试" scheme="https://chenjh3061/personalWeb.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>综合社会分析</title>
-    <link href="https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%BC%E5%90%88%E5%88%86%E6%9E%90%E7%A4%BE%E4%BC%9A%E7%8E%B0%E8%B1%A1/"/>
-    <id>https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%BC%E5%90%88%E5%88%86%E6%9E%90%E7%A4%BE%E4%BC%9A%E7%8E%B0%E8%B1%A1/</id>
-    <published>2024-08-30T02:25:34.000Z</published>
-    <updated>2024-08-30T09:28:11.269Z</updated>
-    
-    
-    <summary type="html">综合分析社会现象</summary>
-    
-    
-    
-    <category term="公考" scheme="https://chenjh3061/personalWeb.github.io/categories/%E5%85%AC%E8%80%83/"/>
-    
-    
-    <category term="面试" scheme="https://chenjh3061/personalWeb.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>观点态度漫画反驳题</title>
-    <link href="https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E8%A7%82%E7%82%B9%E6%80%81%E5%BA%A6%E6%BC%AB%E7%94%BB%E5%8F%8D%E9%A9%B3%E9%A2%98/"/>
-    <id>https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E8%A7%82%E7%82%B9%E6%80%81%E5%BA%A6%E6%BC%AB%E7%94%BB%E5%8F%8D%E9%A9%B3%E9%A2%98/</id>
-    <published>2024-08-30T02:25:34.000Z</published>
-    <updated>2024-08-30T09:25:01.476Z</updated>
-    
-    
-    <summary type="html">观点态度漫画反驳题</summary>
     
     
     
