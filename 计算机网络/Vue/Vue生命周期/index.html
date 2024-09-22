@@ -27,12 +27,14 @@
 <meta property="og:site_name" content="joho world">
 <meta property="og:description" content="Vue的生命周期">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:\Users\ADMINI~1\AppData\Local\Temp\1685974668318.png">
 <meta property="article:published_time" content="2024-09-18T02:27:55.703Z">
-<meta property="article:modified_time" content="2024-09-18T02:38:18.700Z">
+<meta property="article:modified_time" content="2024-09-19T01:24:41.087Z">
 <meta property="article:author" content="Joho Chen">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\ADMINI~1\AppData\Local\Temp\1685974668318.png">
 
 <link rel="canonical" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
 
@@ -211,10 +213,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-09-18 10:27:55 / 修改时间：10:38:18" itemprop="dateCreated datePublished" datetime="2024-09-18T10:27:55+08:00">2024-09-18</time>
+              <time title="创建时间：2024-09-18 10:27:55" itemprop="dateCreated datePublished" datetime="2024-09-18T10:27:55+08:00">2024-09-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-09-19 09:24:41" itemprop="dateModified" datetime="2024-09-19T09:24:41+08:00">2024-09-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -238,14 +246,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>63</span>
+              <span>4.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
             <div class="post-description">Vue的生命周期</div>
 
@@ -258,7 +266,231 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>一个组件从创建到销毁的过程就是生命周期。<br>四大阶段八个方法。<br>![[Pasted image 20240918103813.png]]</p>
+        <p>一个组件从创建到销毁的过程就是生命周期。<br>四大阶段八个方法。<br>![[Pasted image 20240918103813.png]]<br>![[image-24.png]]<br>TIP：钩子函数</p>
+<p>Vue框架的内置函数，随生命周期阶段自动执行，在特定的时间点执行特定的操作，比如组件创建完毕之后可以在created生命周期函数中发起Ajax请求，初始化data数据。</p>
+<ul>
+<li>初始化</li>
+<li>挂载</li>
+<li>更新</li>
+<li>销毁</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>阶段</strong></th>
+<th><strong>方法名</strong></th>
+<th><strong>方法名</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>初始化</td>
+<td>beforeCreate</td>
+<td>created</td>
+</tr>
+<tr>
+<td>挂载</td>
+<td>beforeMount</td>
+<td>mounted</td>
+</tr>
+<tr>
+<td>更新</td>
+<td>beforeUpdate</td>
+<td>updated</td>
+</tr>
+<tr>
+<td>销毁</td>
+<td>beforeDestroy</td>
+<td>destroyed</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/instance.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA">官网文档</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="一、初始化阶段："><a href="#一、初始化阶段：" class="headerlink" title="一、初始化阶段："></a>一、初始化阶段：</h3><p>1.new Vue() – Vue实例化(组件也是一个小的Vue实例)</p>
+<p>2.Init Events &amp; Lifecycle – 初始化事件和生命周期函数</p>
+<p>3.beforeCreate – 生命周期钩子函数被执行</p>
+<p>4.Init injections&amp;reactivity – Vue内部添加data和methods等</p>
+<p>5.created – 生命周期钩子函数被执行, 实例创建</p>
+<p>6.接下来是编译模板阶段 –开始分析</p>
+<p>7.Has el option? – 是否有el选项 – 检查要挂到哪里，没有. 调用$mount()方法，​ 有, 继续检查template选项。<br>![[Pasted image 20240918232406.png]]<br>components&#x2F;Life.vue - 创建一个文件 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">data</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">msg</span>: <span class="string">&quot;hello, Vue&quot;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 一. 初始化</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// new Vue()以后, vue内部给实例对象添加了一些属性和方法, data和methods初始化&quot;之前&quot;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">beforeCreate</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;beforeCreate -- 执行&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">msg</span>); <span class="comment">// undefined</span></span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// data和methods初始化以后</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 场景: 网络请求, 注册全局事件</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">created</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;created -- 执行&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">msg</span>); <span class="comment">// hello, Vue</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">timer</span> = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;哈哈哈&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125;, <span class="number">1000</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>App.vue - 引入使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;1. 生命周期&lt;/h1&gt;</span><br><span class="line">    &lt;Life&gt;&lt;/Life&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Life from &#x27;./components/Life&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Life</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="二、挂载阶段"><a href="#二、挂载阶段" class="headerlink" title="二、挂载阶段"></a>二、挂载阶段</h3><p>这里的挂载指将Vue实例与真实的DOM绑定，生成DOM结构并渲染到浏览器的过程。也就是将虚拟DOM映射到实际DOM，并在这个过程中通过数据的变化自动更新DOM元素。典型就是.mount(‘#app’)。</p>
+<p>1.template选项检查</p>
+<p>​   有 - 编译template返回render渲染函数</p>
+<p>​   无 – 编译el选项对应标签作为template(要渲染的模板)</p>
+<p>2.虚拟DOM挂载成真实DOM之前</p>
+<p>3.beforeMount – 生命周期钩子函数被执行</p>
+<p>4.Create … – 把虚拟DOM和渲染的数据一并挂到真实DOM上</p>
+<p>5.真实DOM挂载完毕</p>
+<p>6.mounted – 生命周期钩子函数被执行</p>
+<p>![[Pasted image 20240918232651.png]]</p>
+<p>components&#x2F;Life.vue - 创建一个文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>学习生命周期 - 看控制台打印<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;myP&quot;</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// ...省略其他代码</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 二. 挂载</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 真实DOM挂载之前</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 场景: 预处理data, 不会触发updated钩子函数</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">beforeMount</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;beforeMount -- 执行&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;myP&quot;</span>)); <span class="comment">// null</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">msg</span> = <span class="string">&quot;重新值&quot;</span></span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 真实DOM挂载以后</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 场景: 挂载后真实DOM</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">mounted</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;mounted -- 执行&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;myP&quot;</span>)); <span class="comment">// p</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="三、更新阶段"><a href="#三、更新阶段" class="headerlink" title="三、更新阶段"></a>三、更新阶段</h3><p>1.当data里数据改变, 更新DOM之前</p>
+<p>2.beforeUpdate – 生命周期钩子函数被执行</p>
+<p>3.Virtual DOM…… – 虚拟DOM重新渲染, 打补丁到真实DOM</p>
+<p>4.updated – 生命周期钩子函数被执行</p>
+<p>5.当有data数据改变 – 重复这个循环</p>
+<p>![[Pasted image 20240918233148.png]]</p>
+<p>components&#x2F;Life.vue - 创建一个文件</p>
+<p>准备ul+li循环, 按钮添加元素, 触发data改变-&gt;导致更新周期开始</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>学习生命周期 - 看控制台打印<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;myP&quot;</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;myUL&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(val, index) in arr&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;index&quot;</span>&gt;</span></span><br><span class="line">              &#123;&#123; val &#125;&#125;</span><br><span class="line">          <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arr.push(1000)&quot;</span>&gt;</span>点击末尾加值<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">data</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">msg</span>: <span class="string">&quot;hello, Vue&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">arr</span>: [<span class="number">5</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">1</span>]</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// ...省略其他代码</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 三. 更新</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 前提: data数据改变才执行</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 更新之前</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">beforeUpdate</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;beforeUpdate -- 执行&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;#myUL&gt;li&quot;</span>)[<span class="number">4</span>]); <span class="comment">// undefined</span></span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 更新之后</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 场景: 获取更新后的真实DOM</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">updated</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;updated -- 执行&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;#myUL&gt;li&quot;</span>)[<span class="number">4</span>]); <span class="comment">// li</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="四、销毁阶段"><a href="#四、销毁阶段" class="headerlink" title="四、销毁阶段"></a>四、销毁阶段</h3><p>1.当$destroy()被调用 – 比如组件DOM被移除(例v-if)</p>
+<p>2.beforeDestroy – 生命周期钩子函数被执行</p>
+<p>3.拆卸数据监视器、子组件和事件侦听器</p>
+<p>4.实例销毁后, 最后触发一个钩子函数</p>
+<p>5.destroyed – 生命周期钩子函数被执行</p>
+<p>![[Pasted image 20240918233328.png]]</p>
+<p>components&#x2F;Life.vue - 准备生命周期方法(Life组件即将要被删除)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// ...省略其他代码</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 四. 销毁</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 前提: v-if=&quot;false&quot; 销毁Vue实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 场景: 移除全局事件, 移除当前组件, 计时器, 定时器, eventBus移除事件$off方法</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">beforeDestroy</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// console.log(&#x27;beforeDestroy -- 执行&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="built_in">clearInterval</span>(<span class="variable language_">this</span>.<span class="property">timer</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">destroyed</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// console.log(&quot;destroyed -- 执行&quot;);</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>主要: App.vue - 点击按钮让Life组件从DOM上移除 -&gt; 导致Life组件进入销毁阶段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;Life v-if=&quot;show&quot;&gt;&lt;/Life&gt;</span><br><span class="line">&lt;button @click=&quot;show = false&quot;&gt;销毁组件&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            show: true</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-nextTick和-refs知识"><a href="#2-nextTick和-refs知识" class="headerlink" title="2. $nextTick和$refs知识"></a>2. $nextTick和$refs知识</h2><p>nextTick允许用户在下一个DOM更新循环结束后执行某个回调函数。Vue的响应式系统中DOM更新不会立刻发生（异步更新），如果需要立刻获取更新后的DOM状态，而DOM此时还没更新完成，nextTick就是一个解决方案。</p>
+<h3 id="2-0-refs-获取DOM"><a href="#2-0-refs-获取DOM" class="headerlink" title="2.0 $refs-获取DOM"></a>2.0 $refs-获取DOM</h3><p>components&#x2F;More.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;p&gt;1. 获取原生DOM元素&lt;/p&gt;</span><br><span class="line">      &lt;h1 id=&quot;h&quot; ref=&quot;myH&quot;&gt;我是一个孤独可怜又能吃的h1&lt;/h1&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// 目标: 获取组件对象</span><br><span class="line">// 1. 创建组件/引入组件/注册组件/使用组件</span><br><span class="line">// 2. 组件起别名ref</span><br><span class="line">// 3. 恰当时机, 获取组件对象</span><br><span class="line">export default &#123;</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        console.log(document.getElementById(&quot;h&quot;)); // h1</span><br><span class="line">        console.log(this.$refs.myH); // h1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结: 通过id &#x2F; ref, 都可以获取原生DOM标签</p>
+</blockquote>
+<h3 id="2-1-refs-获取组件对象"><a href="#2-1-refs-获取组件对象" class="headerlink" title="2.1 $refs-获取组件对象"></a>2.1 $refs-获取组件对象</h3><p>components&#x2F;Child&#x2F;Demo.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;p&gt;我是Demo组件&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    methods: &#123;</span><br><span class="line">        fn()&#123;</span><br><span class="line">            console.log(&quot;demo组件内的方法被调用了&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>More.vue - 获取组件对象 - 调用组件方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;p&gt;1. 获取原生DOM元素&lt;/p&gt;</span><br><span class="line">      &lt;h1 id=&quot;h&quot; ref=&quot;myH&quot;&gt;我是一个孤独可怜又能吃的h1&lt;/h1&gt;</span><br><span class="line">      &lt;p&gt;2. 获取组件对象 - 可调用组件内一切&lt;/p&gt;</span><br><span class="line">      &lt;Demo ref=&quot;de&quot;&gt;&lt;/Demo&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// 目标: 获取组件对象</span><br><span class="line">// 1. 创建组件/引入组件/注册组件/使用组件</span><br><span class="line">// 2. 组件起别名ref</span><br><span class="line">// 3. 恰当时机, 获取组件对象</span><br><span class="line">import Demo from &#x27;./Child/Demo&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        console.log(document.getElementById(&quot;h&quot;)); // h1</span><br><span class="line">        console.log(this.$refs.myH); // h1</span><br><span class="line">        let demoObj = this.$refs.de;</span><br><span class="line">        demoObj.fn()</span><br><span class="line">    &#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">        Demo</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结: ref定义值, 通过$refs.值 来获取组件对象, 就能继续调用组件内的变量</p>
+</blockquote>
+<h3 id="2-2-nextTick使用"><a href="#2-2-nextTick使用" class="headerlink" title="2.2 $nextTick使用"></a>2.2 $nextTick使用</h3><blockquote>
+<h4 id="Vue更新DOM-异步的"><a href="#Vue更新DOM-异步的" class="headerlink" title="Vue更新DOM-异步的"></a>Vue更新DOM-异步的</h4></blockquote>
+<blockquote>
+<p>目标: 点击count++, 马上通过”原生DOM”拿标签内容, 无法拿到新值</p>
+</blockquote>
+<p>components&#x2F;Move.vue - 继续新增第三套代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;p&gt;1. 获取原生DOM元素&lt;/p&gt;</span><br><span class="line">      &lt;h1 id=&quot;h&quot; ref=&quot;myH&quot;&gt;我是一个孤独可怜又能吃的h1&lt;/h1&gt;</span><br><span class="line">      &lt;p&gt;2. 获取组件对象 - 可调用组件内一切&lt;/p&gt;</span><br><span class="line">      &lt;Demo ref=&quot;de&quot;&gt;&lt;/Demo&gt;</span><br><span class="line">      &lt;p&gt;3. vue更新DOM是异步的&lt;/p&gt;</span><br><span class="line">      &lt;p ref=&quot;myP&quot;&gt;&#123;&#123; count &#125;&#125;&lt;/p&gt;</span><br><span class="line">      &lt;button @click=&quot;btn&quot;&gt;点击count+1, 马上提取p标签内容&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">// 目标: 获取组件对象</span><br><span class="line">// 1. 创建组件/引入组件/注册组件/使用组件</span><br><span class="line">// 2. 组件起别名ref</span><br><span class="line">// 3. 恰当时机, 获取组件对象</span><br><span class="line">import Demo from &#x27;./Child/Demo&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        console.log(document.getElementById(&quot;h&quot;)); // h1</span><br><span class="line">        console.log(this.$refs.myH); // h1</span><br><span class="line"></span><br><span class="line">        let demoObj = this.$refs.de;</span><br><span class="line">        demoObj.fn()</span><br><span class="line">    &#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">        Demo</span><br><span class="line">    &#125;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            count: 0</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        btn()&#123;</span><br><span class="line">            this.count++; // vue监测数据更新, 开启一个DOM更新队列(异步任务)</span><br><span class="line">            console.log(this.$refs.myP.innerHTML); // 0</span><br><span class="line"></span><br><span class="line">            // 原因: Vue更新DOM异步</span><br><span class="line">            // 解决: this.$nextTick()</span><br><span class="line">            // 过程: DOM更新完会挨个触发$nextTick里的函数体</span><br><span class="line">             this.$nextTick(() =&gt; &#123;</span><br><span class="line">                console.log(this.$refs.myP.innerHTML); // 1</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结: 因为DOM更新是异步的</p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7069702323173326885">https://juejin.cn/post/7069702323173326885</a> 掘金上的nextTick讲解，有兴趣的可以了解下讲的比较深入</p>
+</blockquote>
+<h3 id="2-3-nextTick使用场景"><a href="#2-3-nextTick使用场景" class="headerlink" title="2.3 $nextTick使用场景"></a>2.3 $nextTick使用场景</h3><blockquote>
+<p>目标: 点击搜索按钮, 弹出聚焦的输入框, 按钮消失</p>
+</blockquote>
+<p>![[Pasted image 20240918234017.png]]</p>
+<p>components&#x2F;Tick.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;input ref=&quot;myInp&quot; type=&quot;text&quot; placeholder=&quot;这是一个输入框&quot; v-if=&quot;isShow&quot;&gt;</span><br><span class="line">      &lt;button v-else @click=&quot;btn&quot;&gt;点击我进行搜索&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// 目标: 点按钮(消失) - 输入框出现并聚焦</span><br><span class="line">// 1. 获取到输入框</span><br><span class="line">// 2. 输入框调用事件方法focus()达到聚焦行为</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            isShow: false</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        async btn()&#123;</span><br><span class="line">            this.isShow = true;</span><br><span class="line">            // this.$refs.myInp.focus()</span><br><span class="line">            // 原因: data变化更新DOM是异步的</span><br><span class="line">            // 输入框还没有挂载到真实DOM上</span><br><span class="line">            // 解决:</span><br><span class="line">            // this.$nextTick(() =&gt; &#123;</span><br><span class="line">            //     this.$refs.myInp.focus()</span><br><span class="line">            // &#125;)</span><br><span class="line">            // 扩展: await取代回调函数</span><br><span class="line">            // $nextTick()原地返回Promise对象</span><br><span class="line">            await this.$nextTick()</span><br><span class="line">            this.$refs.myInp.focus()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-vite-构建工具"><a href="#3-vite-构建工具" class="headerlink" title="3.vite 构建工具"></a>3.vite 构建工具</h2><blockquote>
+<p>了解：vite 工具作用和特点</p>
+</blockquote>
+<p>vite（法语意为 “快速的”，发音 <code>/vit/</code>，发音同 “veet”) 是一种新型前端构建工具，能够显著提升前端开发体验。</p>
+<p>对比 webpack：每一次打包都会执行所有相关的依赖</p>
+<ul>
+<li>需要查找依赖，打包所有的模块，然后才能提供服务，更新速度会随着代码体积增加越来越慢</li>
+<li>![[Pasted image 20240918234615.png]]</li>
+</ul>
+<h3 id="3-1-vite-的原理："><a href="#3-1-vite-的原理：" class="headerlink" title="3.1 vite 的原理："></a>3.1 vite 的原理：</h3><ul>
+<li>使用原生 ESModule 通过 script 标签动态导入，访问页面的时候加载到对应模块编译并响应</li>
+</ul>
+<p>![[Pasted image 20240918234632.png]]</p>
+<p>问题：</p>
+<ul>
+<li><p>基于 <code>webpack</code> 构建项目，基于 <code>vite</code> 构建项目，谁更快体验更好？vite</p>
+</li>
+<li><p>基于 <code>webpack</code> 的 <code>vue-cli</code> 可以创建 vue 项目吗？可以，慢一点而已</p>
+</li>
+</ul>
+<h3 id="3-2vite-创建项目"><a href="#3-2vite-创建项目" class="headerlink" title="3.2vite 创建项目"></a>3.2vite 创建项目</h3><blockquote>
+<p>掌握：使用 vite 构建工具创建项目</p>
+</blockquote>
+<ol>
+<li>运行创建项目命令：</li>
+</ol>
+<p>bash：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 使用npm</span><br><span class="line">npm create vite@latest</span><br><span class="line"># 使用yarn</span><br><span class="line">yarn create vite</span><br><span class="line"># 使用pnpm</span><br><span class="line">pnpm create vite</span><br><span class="line"></span><br><span class="line">npm i pnpm -g  </span><br></pre></td></tr></table></figure>
+
+<p>![[Pasted image 20240918234722.png]] </p>
+<ol>
+<li>进入项目目录，安装依赖，启动项目即可。</li>
+</ol>
+<p>目录结构实例图</p>
+<p><a target="_blank" rel="noopener" href="https://panjiachen.github.io/vue-element-admin-site/zh/guide/#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">https://panjiachen.github.io/vue-element-admin-site/zh/guide/#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84</a></p>
+<h3 id="3-3代码分析"><a href="#3-3代码分析" class="headerlink" title="3.3代码分析"></a>3.3代码分析</h3><blockquote>
+<p>对 vite 初始化的代码进行分析</p>
+</blockquote>
+<ol>
+<li>需要切换插件</li>
+</ol>
+<p>vue3 组件代码和 vue2 有些不一样，使用的语法提示和高亮插件也不一样。</p>
+<ul>
+<li><code>vetur</code> 插件需要禁用，安装 <code>volar</code>插件。</li>
+</ul>
+<p>![[Pasted image 20240918234755.png]]</p>
+<ol>
+<li><p>总结 vue3 写法不同</p>
+<ol>
+<li><p>组件一个根节点非必需</p>
+</li>
+<li><p>创建应用挂载到根容器</p>
+</li>
+<li><p>入口页面，ESM 加载资源</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>平常组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;节点1&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;节点2&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>main.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createApp &#125; from &#x27;vue&#x27;</span><br><span class="line">import App from &#x27;./App.vue&#x27;</span><br><span class="line"></span><br><span class="line">// 根据App组件创建一个应用实例</span><br><span class="line"></span><br><span class="line">const app = createApp(App)</span><br><span class="line"></span><br><span class="line">// app应用挂载（管理）index.html的 #app 容器</span><br><span class="line"></span><br><span class="line">app.mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>index.html</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;module&quot; src=&quot;/src/main.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<ul>
+<li><p>安装 <code>volar</code> 禁用 <code>vuter</code>，也可以使用工作区模式启用对应插件</p>
+</li>
+<li><p>vue3 中是使用 <code>createApp()</code> 管理容器，不是 <code>new Vue()</code></p>
+</li>
+<li><p>下图是一个后台管理系统的常规目录规范</p>
+</li>
+<li><p><img src="C:\Users\ADMINI~1\AppData\Local\Temp\1685974668318.png" alt="68597466831"></p>
+</li>
+</ul>
+<h2 id="今日总结"><a href="#今日总结" class="headerlink" title="今日总结"></a>今日总结</h2><p>vue的生命周期哪4个阶段, 哪8个方法</p>
+<p>知道ref和$refs使用和作用以及场景</p>
+<p>知道$nextTick的作用</p>
+<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><h3 id="1、Vue-的-nextTick-的原理是什么-（高薪常问）"><a href="#1、Vue-的-nextTick-的原理是什么-（高薪常问）" class="headerlink" title="1、Vue 的 nextTick 的原理是什么? （高薪常问）"></a>1、Vue 的 nextTick 的原理是什么? （高薪常问）</h3><p>​    \1. 为什么需要 nextTick ，Vue 是异步修改 DOM 的并且不鼓励开发者直接接触 DOM，但有时候业务需要必须对数据更改–刷新后的 DOM 做相应的处理，这时候就可以使用 Vue.nextTick(callback)这个 api 了。</p>
+<p>​    \2. 理解原理前的准备 首先需要知道事件循环中宏任务和微任务这两个概念,常见的宏任务有 script, setTimeout, setInterval, setImmediate, I&#x2F;O, UI rendering 常见的微任务有 rocess.nextTick(Nodejs),Promise.then(), MutationObserver;</p>
+<p>​    \3. 理解 nextTick 的原理正是 vue 通过异步队列控制 DOM 更新和 nextTick 回调函数先后执行的方式。如果大家看过这部分的源码，会发现其中做了很多 isNative()的判断，因为这里还存在兼容性优雅降级的问题。可见 Vue 开发团队的深思熟虑，对性能的良苦用心。</p>
+<h3 id="2、vue生命周期总共分为几个阶段？（必会）"><a href="#2、vue生命周期总共分为几个阶段？（必会）" class="headerlink" title="2、vue生命周期总共分为几个阶段？（必会）"></a>2、vue生命周期总共分为几个阶段？（必会）</h3><p>   Vue 实例从创建到销毁的过程，就是生命周期。也就是从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程，我们称这是 Vue 的生命周期。</p>
+<p><strong>1****）beforeCreate</strong></p>
+<p>​    在实例初始化之后，数据观测 (data observer) 和 event&#x2F;watcher 事件配置之前被调用。</p>
+<p><strong>2****）created</strong></p>
+<p>​    在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)， 属性和方法的运算，watch&#x2F;event 事件回调。然而，挂载阶段还没开始，$el 属性目前不可见。</p>
+<p><strong>3****）beforeMount</strong></p>
+<p>​    在挂载开始之前被调用：相关的 render 函数首次被调用。</p>
+<p><strong>4****）mounted</strong></p>
+<p>​    el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.$el 也在文档内。</p>
+<p><strong>5****）beforeUpdate</strong></p>
+<p>​    数据更新时调用，发生在虚拟 DOM 打补丁之前。这里适合在更新之前访问现有的 DOM，比如手动移除已添加的事件监听器。该钩子在服务器端渲染期间不被调用，因为只有初次渲染会在服务端进行。</p>
+<p><strong>6****）updated</strong></p>
+<p>​    由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。</p>
+<p><strong>7****）beforeDestroy</strong></p>
+<p>​    实例销毁之前调用。在这一步，实例仍然完全可用。该钩子在服务器端渲染期间不被调用。</p>
+<p><strong>8****）destroyed</strong></p>
+<p>​    Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务器端渲染期间不被调用。</p>
+<h3 id="3、第一次加载页面会触发哪几个钩子函数？（必会）"><a href="#3、第一次加载页面会触发哪几个钩子函数？（必会）" class="headerlink" title="3、第一次加载页面会触发哪几个钩子函数？（必会）"></a>3、第一次加载页面会触发哪几个钩子函数？（必会）</h3><p>   当页面第一次页面加载时会触发 beforeCreate, created, beforeMount, mounted 这几个钩子函数</p>
 
     </div>
 
@@ -320,7 +552,10 @@
     <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/React/%E5%B7%A9%E5%9B%BA%E5%9F%BA%E7%A1%80/" rel="prev" title="前端基础">
       <i class="fa fa-chevron-left"></i> 前端基础
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vite%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/" rel="next" title="Vite初始化项目">
+      Vite初始化项目 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -379,6 +614,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E9%98%B6%E6%AE%B5%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">一、初始化阶段：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%8C%82%E8%BD%BD%E9%98%B6%E6%AE%B5"><span class="nav-number">2.</span> <span class="nav-text">二、挂载阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%9B%B4%E6%96%B0%E9%98%B6%E6%AE%B5"><span class="nav-number">3.</span> <span class="nav-text">三、更新阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E9%94%80%E6%AF%81%E9%98%B6%E6%AE%B5"><span class="nav-number">4.</span> <span class="nav-text">四、销毁阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-nextTick%E5%92%8C-refs%E7%9F%A5%E8%AF%86"><span class="nav-number"></span> <span class="nav-text">2. $nextTick和$refs知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-0-refs-%E8%8E%B7%E5%8F%96DOM"><span class="nav-number">1.</span> <span class="nav-text">2.0 $refs-获取DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-refs-%E8%8E%B7%E5%8F%96%E7%BB%84%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">2.1 $refs-获取组件对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-nextTick%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">2.2 $nextTick使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue%E6%9B%B4%E6%96%B0DOM-%E5%BC%82%E6%AD%A5%E7%9A%84"><span class="nav-number">3.1.</span> <span class="nav-text">Vue更新DOM-异步的</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-nextTick%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">4.</span> <span class="nav-text">2.3 $nextTick使用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-vite-%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7"><span class="nav-number"></span> <span class="nav-text">3.vite 构建工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-vite-%E7%9A%84%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">3.1 vite 的原理：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2vite-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">3.2vite 创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">3.3代码分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E6%80%BB%E7%BB%93"><span class="nav-number"></span> <span class="nav-text">今日总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number"></span> <span class="nav-text">面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81Vue-%E7%9A%84-nextTick-%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88-%EF%BC%88%E9%AB%98%E8%96%AA%E5%B8%B8%E9%97%AE%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">1、Vue 的 nextTick 的原理是什么? （高薪常问）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%80%BB%E5%85%B1%E5%88%86%E4%B8%BA%E5%87%A0%E4%B8%AA%E9%98%B6%E6%AE%B5%EF%BC%9F%EF%BC%88%E5%BF%85%E4%BC%9A%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">2、vue生命周期总共分为几个阶段？（必会）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E4%BC%9A%E8%A7%A6%E5%8F%91%E5%93%AA%E5%87%A0%E4%B8%AA%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%EF%BC%9F%EF%BC%88%E5%BF%85%E4%BC%9A%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">3、第一次加载页面会触发哪几个钩子函数？（必会）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -392,7 +628,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">85</span>
+          <span class="site-state-item-count">87</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -439,7 +675,7 @@
           <h5 class="widget-title">标签云</h5>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">7</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">7</span></li></ul>
               </canvas>
           </div>
       </div>
@@ -475,12 +711,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">72k</span>
+    <span title="站点总字数">80k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:05</span>
+    <span title="站点阅读时长">1:12</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
