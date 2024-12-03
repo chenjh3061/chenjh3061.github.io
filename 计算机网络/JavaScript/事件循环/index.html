@@ -28,7 +28,7 @@
 <meta property="og:description" content="前端的核心原理 浏览器的进程模型何为进程？程序运行需要自己专属的内存空间，这块空间可以简单理解为进程。进程之间相互独立隔离，即使需要通信，也需要双方同意。![[Pasted image 20240922151426.png]] 线程有了进程就可以运行程序代码，运行代码的“人”称为“线程”。一个进程至少一个，一个进程可以包含多个线程。 浏览器的进程和线程浏览器是一个多进程多线程的应用程序，内部极其复">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-22T07:08:59.974Z">
-<meta property="article:modified_time" content="2024-09-22T07:21:51.295Z">
+<meta property="article:modified_time" content="2024-09-29T06:34:34.532Z">
 <meta property="article:author" content="Joho Chen">
 <meta name="twitter:card" content="summary">
 
@@ -209,10 +209,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-09-22 15:08:59 / 修改时间：15:21:51" itemprop="dateCreated datePublished" datetime="2024-09-22T15:08:59+08:00">2024-09-22</time>
+              <time title="创建时间：2024-09-22 15:08:59" itemprop="dateCreated datePublished" datetime="2024-09-22T15:08:59+08:00">2024-09-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-09-29 14:34:34" itemprop="dateModified" datetime="2024-09-29T14:34:34+08:00">2024-09-29</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -227,14 +233,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>484</span>
+              <span>2.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -255,6 +261,40 @@
 <p>负责加载网络资源。网络进程内部会启动多个线程处理不同的网络任务。</p>
 <p>3、渲染进程</p>
 <p>渲染进程启动后，会开启一个<strong>渲染主线程</strong>，主线程负责执行HTML、CSS、JS代码。默认情况下浏览器回味每个标签开启一个新的渲染进程，以保证不同标签页指间不会相互影响。</p>
+<h3 id="渲染主线程是怎么工作的？"><a href="#渲染主线程是怎么工作的？" class="headerlink" title="渲染主线程是怎么工作的？"></a>渲染主线程是怎么工作的？</h3><p>任务很多很繁忙，解析HTMLCSS、执行JS、计算样式、布局、处理图层、执行事件处理函数等等等等。东西太多了，反而不适用多个线程来处理。</p>
+<p>于是渲染进程的调度想出了绝妙的主意：排队</p>
+<p>![[Pasted image 20240922232358.png]]</p>
+<p>开始的时候渲染主线程会进入无限循环，每一次循环会检查消息队列中是否有任务存在，有就取出第一个任务执行，执行完之后进入下一次循环，没有就进入休眠状态。其他所有进程程可以随时向消息队列添加任务。新任务会加到消息队列的末尾。在添加新任务时，如果主线是休眠状态，则会将其唤醒以继续循环拿取任务。</p>
+<p>**** 整个过程，就是事件循环（消息循环）****</p>
+<h3 id="何为异步"><a href="#何为异步" class="headerlink" title="何为异步"></a>何为异步</h3><p>异步和事件循环有脱不开的关系。代码在执行过程中会遇到一些无法立即处理的任务，如计时完成后要执行的任务setTimeout、setInterval，网络通信完成后需要执行的XHR、Fetch，用户操作后需要执行的任务addEventListener。</p>
+<p>如果让渲染主线程等待这些任务的时机达到，就会导致主线程长期处于阻塞状态，从而导致浏览器卡死。<br>![[Pasted image 20240923220302.png]]<br>渲染主线程承担着极其重要的工作，无论如何不能阻塞，因此浏览器使用异步手段解决问题。<br>![[Pasted image 20240923220519.png]]<br>使用异步方式，渲染主线程永不阻塞。<br>![[Pasted image 20240923232034.png]]<br>用事件循环就能解释很多定时函数等的使用方式。<br>![[Pasted image 20240925102645.png]]</p>
+<h3 id="任务的优先级"><a href="#任务的优先级" class="headerlink" title="任务的优先级"></a>任务的优先级</h3><p>任务没有优先级，先进先出</p>
+<p>但<strong>消息队列有优先级</strong></p>
+<p>W3C：每个任务都有一个任务类型，同类型任务必须在一个队列，不同类型任务可以分属于不同队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行。</p>
+<p>浏览器必须准备好一个微队列，微队列中的任务优先于其他所有任务执行。</p>
+<pre><code>由于浏览器复杂度急剧提升，W3C已经不再使用宏队列说法。
+</code></pre>
+<p>Chrome的实现中至少包含以下三个队列：</p>
+<ul>
+<li>延时队列：用于存放计时器到达后的回调任务，优先级【中】</li>
+<li>交互队列：用于存放用户操作后产生的事件处理任务，优先级【高】</li>
+<li>微队列：用户存放需要最快执行的任务，优先级【最高】<br>  添加任务到微任务队列主要方式是Promise和MutationObserver</li>
+</ul>
+<p>其他队列开发中少见，不详细考虑。</p>
+<p>注意：不同浏览器的几种队列优先级不一定一样。</p>
+<p>练习：</p>
+<p>![[Pasted image 20240926114009.png]]<br>输出5 4 3 1 2 </p>
+<p>![[Pasted image 20240926114417.png]]</p>
+<p>![[Pasted image 20240928170525.png]]</p>
+<p>单线程是异步产生的原因</p>
+<p>事件循环是异步的实现方式</p>
+<p>Tip:<br>W3C（万维网联盟）规定，<strong>计时器嵌套超过五层之后，延时最小会变成4毫秒</strong>，这个规则是为了<strong>防止性能问题和滥用计时器</strong>，并提升页面响应能力，具体原因如下：</p>
+<h3 id="1-性能优化"><a href="#1-性能优化" class="headerlink" title="1. 性能优化"></a>1. <strong>性能优化</strong></h3><p>当嵌套计时器层数增加时，每一层计时器都需要 JavaScript 引擎分配资源和时间进行处理。过多的嵌套会导致频繁的任务调度和执行，可能会造成高频的任务阻塞主线程，导致页面卡顿或响应缓慢。</p>
+<p>为了防止开发者无意中设置过于频繁的定时任务，占用过多系统资源，W3C 规定超过五层嵌套的最小延时为 4ms。这种设计可以减轻浏览器的负担，避免性能下降。</p>
+<h3 id="2-节能与电池寿命"><a href="#2-节能与电池寿命" class="headerlink" title="2. 节能与电池寿命"></a>2. <strong>节能与电池寿命</strong></h3><p>对于运行在移动设备上的网页，频繁的 JavaScript 任务执行会导致高能耗，尤其是在电池供电的情况下。通过限制计时器嵌套的最小延时，浏览器可以减少高频的 CPU 唤醒，从而节省电量并延长设备的电池寿命。</p>
+<h3 id="3-避免滥用和兼容性"><a href="#3-避免滥用和兼容性" class="headerlink" title="3. 避免滥用和兼容性"></a>3. <strong>避免滥用和兼容性</strong></h3><p>JavaScript 的 <code>setTimeout</code> 和 <code>setInterval</code> 允许开发者设定非常小的时间间隔（理论上可以设置为 0ms），这可能会被滥用，导致资源竞争问题。通过设定 4ms 的下限，W3C 能确保所有浏览器在处理嵌套计时器时有一致的行为，保证跨浏览器的兼容性。</p>
+<h3 id="历史背景："><a href="#历史背景：" class="headerlink" title="历史背景："></a>历史背景：</h3><p>早期 JavaScript 允许开发者使用极短的定时器（甚至可以设置为 0ms），这带来了大量的性能问题，特别是当多个计时器嵌套时，JavaScript 引擎会频繁调度任务，影响页面的流畅性。因此，W3C 为了提高性能和稳定性，引入了这个限制。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>W3C 规定嵌套计时器超过五层后，延时最小变为 4ms，主要目的是为了<strong>提升浏览器性能、降低能耗</strong>以及<strong>避免过度使用系统资源</strong>，确保页面的流畅性和用户体验。</p>
 
     </div>
 
@@ -311,7 +351,10 @@
     <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vite%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/" rel="prev" title="Vite初始化项目">
       <i class="fa fa-chevron-left"></i> Vite初始化项目
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vuex/" rel="next" title="Vuex基础">
+      Vuex基础 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -370,7 +413,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">浏览器的进程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%95%E4%B8%BA%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">何为进程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">浏览器的进程和线程</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">浏览器的进程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%95%E4%B8%BA%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">何为进程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">浏览器的进程和线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E4%B8%BB%E7%BA%BF%E7%A8%8B%E6%98%AF%E6%80%8E%E4%B9%88%E5%B7%A5%E4%BD%9C%E7%9A%84%EF%BC%9F"><span class="nav-number">1.4.</span> <span class="nav-text">渲染主线程是怎么工作的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%95%E4%B8%BA%E5%BC%82%E6%AD%A5"><span class="nav-number">1.5.</span> <span class="nav-text">何为异步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.6.</span> <span class="nav-text">任务的优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">1.7.</span> <span class="nav-text">1. 性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%8A%82%E8%83%BD%E4%B8%8E%E7%94%B5%E6%B1%A0%E5%AF%BF%E5%91%BD"><span class="nav-number">1.8.</span> <span class="nav-text">2. 节能与电池寿命</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%81%BF%E5%85%8D%E6%BB%A5%E7%94%A8%E5%92%8C%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="nav-number">1.9.</span> <span class="nav-text">3. 避免滥用和兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%86%E5%8F%B2%E8%83%8C%E6%99%AF%EF%BC%9A"><span class="nav-number">1.10.</span> <span class="nav-text">历史背景：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.11.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -384,7 +427,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">92</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -431,7 +474,7 @@
           <h5 class="widget-title">标签云</h5>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">7</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">8</span></li></ul>
               </canvas>
           </div>
       </div>
@@ -467,12 +510,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">80k</span>
+    <span title="站点总字数">92k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:12</span>
+    <span title="站点阅读时长">1:24</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
