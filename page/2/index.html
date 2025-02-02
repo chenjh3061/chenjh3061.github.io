@@ -184,7 +184,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -198,7 +198,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">浏览器渲染原理</a>
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -208,15 +208,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2024-09-27 23:13:11" itemprop="dateCreated datePublished" datetime="2024-09-27T23:13:11+08:00">2024-09-27</time>
+              <time title="创建时间：2025-01-16 09:24:41" itemprop="dateCreated datePublished" datetime="2025-01-16T09:24:41+08:00">2025-01-16</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-30 10:34:16" itemprop="dateModified" datetime="2024-09-30T10:34:16+08:00">2024-09-30</time>
-              </span>
 
           
             <span class="post-meta-item" title="本文字数">
@@ -224,7 +217,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>3</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -243,24 +236,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="什么是渲染？"><a href="#什么是渲染？" class="headerlink" title="什么是渲染？"></a>什么是渲染？</h1><p>渲染的单词是render，这个词在不同地方有着不同的意思。浏览器的渲染就是把html字符串转为屏幕上像素信息的过程。</p>
-<h2 id="浏览器是如何渲染页面的？"><a href="#浏览器是如何渲染页面的？" class="headerlink" title="浏览器是如何渲染页面的？"></a>浏览器是如何渲染页面的？</h2><p>当浏览器的网络线程收到HTML文档后，会产生一个渲染任务，并将其传递给渲染主线程的消息队列。<br>在事件循环机制的作用下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。</p>
-<p>渲染时间点：<br>![[Pasted image 20240929143237.png]]</p>
-<p>渲染流水线：<br>![[Pasted image 20240929145049.png]]</p>
-<h3 id="具体步骤："><a href="#具体步骤：" class="headerlink" title="具体步骤："></a>具体步骤：</h3><p>1、解析HTML（parse HTML）</p>
-<p>将HTML文件解析后生成两棵树-》DOM树和CSSOM树。<br>![[Pasted image 20240929145617.png]]<br>CSS Object Modal<br>![[Pasted image 20240929145705.png]]<br>有了两个树，就赋予了JS操作他们的能力。</p>
-<p>![[Pasted image 20240930083955.png]]<br>![[Pasted image 20240930084146.png]]</p>
-<p>![[Pasted image 20240930084244.png]]<br>JS有可能改动当前的DOM，所以要下载好执行了再继续解析。</p>
-<p>2、样式计算<br>![[Pasted image 20240930084356.png]]<br>CSS全部执行后的最终样式在这里得出。<br>![[Pasted image 20240930084617.png]]</p>
-<p>3、布局<br>![[Pasted image 20240930084637.png]]<br>![[Pasted image 20240930084819.png]]<br>![[Pasted image 20240930084843.png]]<br>![[Pasted image 20240930084906.png]]<br>内容必须在行盒中，行盒和块盒不能相邻。<br>![[Pasted image 20240930085127.png]]</p>
-<p>4、分层<br>![[Pasted image 20240930085249.png]]<br>一些操作导致的重绘，不需要把整个页面全部刷新，需要分层。展板上的贴纸可以换。跟堆叠上下文有关的都会影响。<br>![[Pasted image 20240930085708.png]]</p>
-<p>5、绘制<br>![[Pasted image 20240930090142.png]]</p>
-<p>6、分块<br>![[Pasted image 20240930102348.png]]<br>![[Pasted image 20240930102355.png]]<br>![[Pasted image 20240930102442.png]]</p>
-<p>7、光栅化<br>![[Pasted image 20240930102633.png]]<br>![[Pasted image 20240930102724.png]]<br>![[Pasted image 20240930102749.png]]</p>
-<p>8、画<br>![[Pasted image 20240930102810.png]]<br>![[Pasted image 20240930103048.png]]</p>
-<p>完整过程：<br>![[Pasted image 20240930103104.png]]</p>
-<p>面试题：<br>![[Pasted image 20240930103134.png]]<br>![[Pasted image 20240930103336.png]]<br>![[Pasted image 20240930103415.png]]</p>
-
+          <h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1>
       
     </div>
 
@@ -280,7 +256,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vuex/">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E5%90%8E%E7%AB%AF/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -294,7 +270,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vuex/" class="post-title-link" itemprop="url">Vuex基础</a>
+            <a href="/%E5%90%8E%E7%AB%AF/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -305,7 +281,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-09-22 22:13:04 / 修改时间：22:14:01" itemprop="dateCreated datePublished" datetime="2024-09-22T22:13:04+08:00">2024-09-22</time>
+              <time title="创建时间：2025-01-03 10:11:39 / 修改时间：10:33:13" itemprop="dateCreated datePublished" datetime="2025-01-03T10:11:39+08:00">2025-01-03</time>
             </span>
 
           
@@ -314,426 +290,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="01-vuex基础-介绍"><a href="#01-vuex基础-介绍" class="headerlink" title="01-vuex基础-介绍"></a>01-vuex基础-介绍</h3><blockquote>
-<p>组件共享数据&#x2F;通信的方式有哪些？</p>
-</blockquote>
-<ol>
-<li><p>父传子通信 &#x3D;》通过props把父组件的数据传递给子组件</p>
-</li>
-<li><p>子传父 &#x3D;》1. 父组件定义自定义事件和回调函数（接收子组件数据）2. 通过this.$emit(‘自定义事件名’, data)</p>
-</li>
-</ol>
-<p>结论：组件通信的目的&#x3D;》<strong>共享数据给其它组件使用</strong></p>
-<p>3.refs</p>
-<p>​   Vuex 是一个专为 Vue.js 应用程序开发的<strong>状态管理模式</strong>。它采用<strong>集中式</strong>存储管理应用的所有组件的状态，并以相应的<strong>规则</strong>保证状态以一种可预测的方式发生变化。</p>
-<p><font color="red">我们理解：</font></p>
-<ul>
-<li>vuex是采用集中式管理组件依赖的共享数据的一个工具vue插件，可以解决不同组件数据共享问题。</li>
-</ul>
-<p>![[Pasted image 20240922221359.png]]</p>
-<p><font color="red">看图结论：</font></p>
-<ul>
-<li><p>state 管理数据，管理的数据是响应式的，当数据改变时驱动视图更新。&#x3D;》类似组件的data</p>
-</li>
-<li><p>mutations 更新数据，state中的数据只能使用mutations去改变数据。</p>
-</li>
-<li><p>actions 请求数据，响应成功后把数据提交给mutations</p>
-</li>
-</ul>
-<p><img src="/assets/1573542431789.png" alt="1573542431789"></p>
-<p><strong>使用原则&#x2F;场景</strong>：如果你不知道是否需要 vuex，那就是不需要它。适合在一些比较复杂和大型的项目中使用。</p>
-<p>大型的项目：页面数据&#x3D;》大于100个&#x3D;》大型项目</p>
-<p>扩展阅读：</p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://vuex.vuejs.org/zh/guide">官网</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html">使用原则</a></p>
-</li>
-</ul>
-<h3 id="02-vuex基础-初始化和基本使用"><a href="#02-vuex基础-初始化和基本使用" class="headerlink" title="02-vuex基础-初始化和基本使用"></a>02-vuex基础-初始化和基本使用</h3><blockquote>
-<p>npm  create  vite@latest  采用 vite  搭建项目</p>
-</blockquote>
-<p>说明：注意<strong>选择vuex插件</strong></p>
-<blockquote>
-<p>基本使用步骤</p>
-</blockquote>
-<p>初始化：</p>
-<ul>
-<li><p>第一步：npm install vuex@next –save  &#x3D;》创建项目没选择vuex，需要单独安装和初始化</p>
-</li>
-<li><p>第二步： 创建store.js  <code>import &#123; createStore &#125; from &#39;vuex&#39;</code>  <code>import &#123; createApp &#125; from &#39;vue&#39;</code></p>
-</li>
-<li><p>第三步：<code>const store = createStore (&#123;...配置项&#125;)</code></p>
-</li>
-<li><p>第四步：导出 <code>export default store</code></p>
-</li>
-<li><p>第六步：导入main.js 在根实例配置 store ，选项指向 store 实例对象</p>
-</li>
-</ul>
-<p><code>store.js</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 初始化一个vuex的实例（数据仓库） 导出即可</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个新的 store 实例</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(&#123;</span><br><span class="line"></span><br><span class="line">  state () &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">      <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">mutations</span>: &#123;</span><br><span class="line"></span><br><span class="line">    increment (state) &#123;</span><br><span class="line"></span><br><span class="line">      state.<span class="property">count</span>++</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><code>main.js</code></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="addition">+ import store from &#x27;@/store&#x27;</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">const app = createApp(&#123; /* 根组件 */ &#125;)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">// 将 store 实例作为插件安装</span><br><span class="line"></span><br><span class="line">app.use(store)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="03-vuex基础-state"><a href="#03-vuex基础-state" class="headerlink" title="03-vuex基础-state"></a>03-vuex基础-state</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><ul>
-<li>管理数据&#x3D;&gt;类似组件data</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(&#123; <span class="comment">// 配置对象 state, mutations, actions, getters</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    <span class="title function_">state</span>(<span class="params"></span>) &#123;  <span class="comment">// store里的state 类似于vue里的data</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取数据</li>
-</ul>
-<ol>
-<li>在组件获取state的数据：原始用法插值表达式</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>news组件 state的数据：&#123;&#123;$store.state.count&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>使用计算属性</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 在生命周期中拿到state里的数据并打印</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">state</span>.<span class="property">count</span>)</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="04-vuex基础-mutations"><a href="#04-vuex基础-mutations" class="headerlink" title="04-vuex基础-mutations"></a>04-vuex基础-mutations</h3><h4 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h4><ul>
-<li>修改数据</li>
-</ul>
-<p>vuex的store中声明：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(&#123; <span class="comment">// 配置对象 state, mutations, actions, getters</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    <span class="title function_">state</span>(<span class="params"></span>) &#123;  <span class="comment">// store里的state 类似于vue里的data</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">mutations</span>: &#123; <span class="comment">// store里的state 类似于vue里的methods 但是同步更改state里的数据</span></span><br><span class="line"></span><br><span class="line">        <span class="title function_">addCount</span>(<span class="params">state</span>) &#123; <span class="comment">// 定义修改数据的函数</span></span><br><span class="line"></span><br><span class="line">            state.<span class="property">count</span>++</span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="title function_">addCountS</span>(<span class="params">state, payload</span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(payload.<span class="property">num</span>)</span><br><span class="line"></span><br><span class="line">            state.<span class="property">count</span> = state.<span class="property">count</span> + payload.<span class="property">num</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>组件调用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">     <span class="attr">methods</span>: &#123;</span><br><span class="line"></span><br><span class="line">        <span class="title function_">handlerCount</span>(<span class="params"></span>) &#123; <span class="comment">// 给button绑定的方法</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// this.$store.commit(&#x27;第一个参数是mutations定义的方法名字&#x27;,&#x27;后面的参数是需要传递的数据&#x27;)</span></span><br><span class="line"></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">commit</span>(<span class="string">&#x27;addCount&#x27;</span>)  <span class="comment">//没有参数</span></span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="title function_">handlerCountS</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">commit</span>(<span class="string">&#x27;addCountS&#x27;</span>, &#123; <span class="attr">num</span>: <span class="number">555</span> &#125;) <span class="comment">//携带了参数的</span></span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>注意：</p>
-<ol>
-<li><p>Mutation 需遵守 Vue 的响应规则</p>
-</li>
-<li><p>Mutation 必须是<strong>同步函数</strong></p>
-</li>
-</ol>
-<h3 id="05-vuex基础-actions"><a href="#05-vuex基础-actions" class="headerlink" title="05-vuex基础-actions"></a>05-vuex基础-actions</h3><h4 id="基本用法-2"><a href="#基本用法-2" class="headerlink" title="基本用法"></a>基本用法</h4><p>说明：异步获取后台数据&#x3D;》mutation 来记录 action 产生的事件作用</p>
-<p>vuex定义：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(&#123; <span class="comment">// 配置对象 state, mutations, actions, getters</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    <span class="title function_">state</span>(<span class="params"></span>) &#123;  <span class="comment">// store里的state 类似于vue里的data</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">mutations</span>: &#123; <span class="comment">// store里的state 类似于vue里的methods 但是同步更改state里的数据</span></span><br><span class="line"></span><br><span class="line">        <span class="title function_">addCount</span>(<span class="params">state</span>) &#123;</span><br><span class="line"></span><br><span class="line">            state.<span class="property">count</span>++</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">actions</span>: &#123;<span class="comment">// 异步的方法写在actions里面</span></span><br><span class="line"></span><br><span class="line">        <span class="title function_">asyncAddCount</span>(<span class="params">context</span>) &#123; <span class="comment">// actions 中的函数有默认传参 context</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// context 就是我们的$store</span></span><br><span class="line"></span><br><span class="line">            <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">                context.<span class="title function_">commit</span>(<span class="string">&#x27;addCount&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            &#125;, <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>组件使用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">getData () &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发请求获取数据</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// this.$store.dispatch(&#x27;getData&#x27;)</span></span><br><span class="line"></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">dispatch</span>(<span class="string">&#x27;getData&#x27;</span>,&#123; <span class="attr">num</span>: <span class="number">10</span> &#125;)</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>注意：</p>
-<ul>
-<li><p>Action 提交的是 mutation，而不是直接变更状态。</p>
-</li>
-<li><p>Action 可以包含任意异步操作。</p>
-</li>
-</ul>
-<h3 id="06-vuex基础-getters"><a href="#06-vuex基础-getters" class="headerlink" title="06-vuex基础-getters"></a>06-vuex基础-getters</h3><h4 id="基本用法-3"><a href="#基本用法-3" class="headerlink" title="基本用法"></a>基本用法</h4><blockquote>
-<p>除了state之外，有时我们还需要从state中派生出一些状态，这些状态是依赖state的，此时会用到getters（类似组件中计算属性，依赖值变化会重新执行计算）</p>
-</blockquote>
-<p>说明：类似vue组件中计算属性computed</p>
-<p>例如，state中定义count值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="title function_">state</span>(<span class="params"></span>) &#123;  <span class="comment">// store里的state 类似于vue里的data</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="attr">count</span>: <span class="number">0</span>,</span><br><span class="line"></span><br><span class="line">            <span class="attr">money</span>: <span class="number">100</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>组件中，需要显示money值加100</p>
-<ul>
-<li>定义getters</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  <span class="attr">getters</span>: &#123; <span class="comment">// 和vue的计算属性一样的用法 要用返回值</span></span><br><span class="line"></span><br><span class="line">        <span class="title function_">addMoney</span>(<span class="params">state</span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> state.<span class="property">money</span> + <span class="number">100</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>使用getters</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div&gt;getters里面的经过计算好的money&#123;&#123; this.$store.getters.addMoney &#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="07-vuex基础-modules"><a href="#07-vuex基础-modules" class="headerlink" title="07-vuex基础-modules"></a>07-vuex基础-modules</h3><h4 id="为什么会有模块化？"><a href="#为什么会有模块化？" class="headerlink" title="为什么会有模块化？"></a>为什么会有模块化？</h4><blockquote>
-<p>由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。</p>
-</blockquote>
-<p>这句话的意思是，如果把所有的状态都放在state中，当项目变得越来越大的时候，Vuex会变得越来越难以维护</p>
-<p>由此，又有了Vuex的模块化</p>
-<p><img src="/assets/image-20200904155846709.png" alt="image-20200904155846709"></p>
-<h4 id="模块化的简单应用"><a href="#模块化的简单应用" class="headerlink" title="模块化的简单应用"></a>模块化的简单应用</h4><p><strong>应用</strong></p>
-<p>定义两个模块   <strong>user</strong> 和  <strong>setting</strong></p>
-<p>需求：</p>
-<ol>
-<li><p>user中管理用户的状态  token</p>
-</li>
-<li><p>setting中管理 应用的名称 name</p>
-</li>
-</ol>
-<p>   创建一个module文件夹并创建两个js文件</p>
-<p>   <img src="C:\Users\Administrator\Desktop\前端vue\day05（6.8）\笔记\assets\44a078ea98db604826947ef43e67006.png" alt="4a078ea98db604826947ef43e6700"></p>
-<p>   setting.js文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> setting = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attr">state</span>: <span class="function">() =&gt;</span> (&#123;</span><br><span class="line"></span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;海绵宝宝&#x27;</span></span><br><span class="line"></span><br><span class="line">    &#125;),</span><br><span class="line"></span><br><span class="line">    <span class="attr">mutations</span>: &#123;&#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">actions</span>: &#123;&#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">getters</span>: &#123;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> setting</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>​   user.js文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attr">state</span>: <span class="function">() =&gt;</span> (&#123;</span><br><span class="line"></span><br><span class="line">        <span class="attr">token</span>: <span class="string">&#x27;12345&#x27;</span></span><br><span class="line"></span><br><span class="line">    &#125;),</span><br><span class="line"></span><br><span class="line">    <span class="attr">mutations</span>: &#123;&#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">actions</span>: &#123;&#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">getters</span>: &#123;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> user</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>定义这两个module数据</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(&#123; <span class="comment">// 配置对象 state, mutations, actions, getters</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    <span class="title function_">state</span>(<span class="params"></span>) &#123;  <span class="comment">// store里的state 类似于vue里的data</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="attr">count</span>: <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">            <span class="attr">money</span>: <span class="number">100</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">mutations</span>: &#123; <span class="comment">// store里的state 类似于vue里的methods 但是同步更改state里的数据</span></span><br><span class="line"></span><br><span class="line">        <span class="title function_">addCount</span>(<span class="params">state, payload</span>) &#123;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">            state.<span class="property">count</span>++</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="title function_">addCountS</span>(<span class="params">state, payload</span>) &#123;<span class="comment">// 在大多数情况下，载荷应该是一个对象，这样可以包含多个字段并且记录的 mutation 会更易读</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(payload.<span class="property">num</span>)</span><br><span class="line"></span><br><span class="line">            state.<span class="property">count</span> = state.<span class="property">count</span> + payload.<span class="property">num</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">actions</span>: &#123;</span><br><span class="line"></span><br><span class="line">        <span class="title function_">asyncAddCount</span>(<span class="params">context</span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// context 就是我们的$store</span></span><br><span class="line"></span><br><span class="line">            <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">                context.<span class="title function_">commit</span>(<span class="string">&#x27;addCount&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            &#125;, <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">getters</span>: &#123; <span class="comment">// 和vue的计算属性一样的用法 要用返回值</span></span><br><span class="line"></span><br><span class="line">        <span class="title function_">addMoney</span>(<span class="params">state</span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> state.<span class="property">money</span> + <span class="number">100</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">modules</span>: &#123; <span class="comment">// 在modules模块了注册刚才创建的子store</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">user</span>: user,</span><br><span class="line"></span><br><span class="line">        <span class="attr">setting</span>: setting</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>组件中分别显示用户的token和应用名称name</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div&gt;用户token &#123;&#123; $store.state.user.token &#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div&gt;用户名称 &#123;&#123; $store.state.setting.name &#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>请注意： 此时要获取子模块的状态 需要通过 $store.<strong><code>state</code></strong>.<strong><code>模块名称</code></strong>.<strong><code>属性名</code></strong> 来获取</p>
-<p>怎样调用module里面的子store的mutations？</p>
-<p>在user.js里面写一个mutations</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">mutations</span>: &#123;</span><br><span class="line"></span><br><span class="line">        <span class="title function_">changeToken</span>(<span class="params">state</span>) &#123; <span class="comment">// 改变state.token</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">            state.<span class="property">token</span> = <span class="string">&#x27;54321&#x27;</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>news.vue的methods中写一个方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="title function_">handlerCountUser</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">commit</span>(<span class="string">&#x27;changeToken&#x27;</span>) <span class="comment">// 注意现在的this.$store.commit还是根store，但是会自动进入子store中寻找向匹配的mutations事件,如果根store的mutations和子mutations里面命同样的名字，两个方法一起执行，</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="模块化中的命名空间"><a href="#模块化中的命名空间" class="headerlink" title="模块化中的命名空间"></a>模块化中的命名空间</h4><p><strong>命名空间</strong>  <strong><code>namespaced</code></strong></p>
-<blockquote>
-<p>这里注意理解</p>
-</blockquote>
-<h5 id="为什么引入命名空间？"><a href="#为什么引入命名空间？" class="headerlink" title="为什么引入命名空间？"></a>为什么引入命名空间？</h5><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。</p>
-<blockquote>
-<p>这句话的意思是 刚才的user模块还是setting模块，它的 action、mutation 和 getter 其实并没有区分，都可以直接通过全局的方式调用 如</p>
-</blockquote>
-<p><img src="/assets/image-20200904164007116.png" alt="image-20200904164007116"></p>
-<h5 id="如何使用命名空间？"><a href="#如何使用命名空间？" class="headerlink" title="如何使用命名空间？"></a>如何使用命名空间？</h5><p>高封闭性？可以理解成 <strong>一家人如果分家了，此时，你的爸妈可以随意的进出分给你的小家，你觉得自己没什么隐私了，我们可以给自己的房门加一道锁（命名空间 namespaced）,你的父母再也不能进出你的小家了</strong></p>
-<p>如</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  <span class="keyword">const</span> user = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attr">namespaced</span>: <span class="literal">true</span>, <span class="comment">// 加上这句，开启命名空间</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">state</span>: <span class="function">() =&gt;</span> (&#123;</span><br><span class="line"></span><br><span class="line">        <span class="attr">token</span>: <span class="string">&#x27;12345&#x27;</span>,</span><br><span class="line"></span><br><span class="line">        <span class="attr">count</span>: <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">    &#125;),</span><br><span class="line"></span><br><span class="line">    <span class="attr">mutations</span>: &#123;</span><br><span class="line"></span><br><span class="line">        <span class="title function_">changeToken</span>(<span class="params">state</span>) &#123;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">            state.<span class="property">token</span> = <span class="string">&#x27;54321&#x27;</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">actions</span>: &#123;&#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">getters</span>: &#123;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> user</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用带命名空间的模块 <strong><code>action/mutations</code></strong></p>
-<p><img src="/assets/image-20210215123048279.png" alt="image-20210215123048279"></p>
-<p>再想调用子store的mutations<strong>直接调用-带上模块的属性名路径</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="title function_">handlerCountUser</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">commit</span>(<span class="string">&#x27;user/changeToken&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="12-总结"><a href="#12-总结" class="headerlink" title="12-总结"></a>12-总结</h3><blockquote>
-<p>vuex核心知识</p>
-</blockquote>
-<ul>
-<li>state  声明数据 ········································（data）</li>
-</ul>
-<p>  - this.$store.state.数据属性名</p>
-<ul>
-<li>mutations 修改数据 ···································（同步的methods）</li>
-</ul>
-<p>  - this.$store.commit(‘函数名称’,’传参’)</p>
-<ul>
-<li>actions 获取后台数据 ·································（异步的methods）</li>
-</ul>
-<p>  - this.$store.dispatch(‘函数名称’,’传参’)</p>
-<ul>
-<li>getters 派生数据  ·········································（计算属性）</li>
-</ul>
-<p>  - this.$store.getters.函数名</p>
-<ul>
-<li>modules 模块化 ············································（组件）</li>
-</ul>
-<p>  - 独立的文件（对象）中定义：state、mutations、actions、getters</p>
-<p>  - 更好的管理项目状态数据</p>
-
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Joho Chen">
-      <meta itemprop="description" content="个人记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="joho world">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" class="post-title-link" itemprop="url">事件循环</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-09-22 15:08:59" itemprop="dateCreated datePublished" datetime="2024-09-22T15:08:59+08:00">2024-09-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-29 14:34:34" itemprop="dateModified" datetime="2024-09-29T14:34:34+08:00">2024-09-29</time>
-              </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>前端的核心原理</p>
-<h2 id="浏览器的进程模型"><a href="#浏览器的进程模型" class="headerlink" title="浏览器的进程模型"></a>浏览器的进程模型</h2><h3 id="何为进程？"><a href="#何为进程？" class="headerlink" title="何为进程？"></a>何为进程？</h3><p>程序运行需要自己专属的内存空间，这块空间可以简单理解为进程。进程之间相互独立隔离，即使需要通信，也需要双方同意。<br>![[Pasted image 20240922151426.png]]</p>
-<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>有了进程就可以运行程序代码，运行代码的“人”称为“线程”。一个进程至少一个，一个进程可以包含多个线程。</p>
-<h3 id="浏览器的进程和线程"><a href="#浏览器的进程和线程" class="headerlink" title="浏览器的进程和线程"></a>浏览器的进程和线程</h3><p>浏览器是一个多进程多线程的应用程序，内部极其复杂，为了减少连环崩溃的几率，启动浏览器之后，它会自动启动多个进程。在浏览器的任务管理器能看到。<br>![[Pasted image 20240922151842.png]]<br>![[Pasted image 20240922151937.png]]<br>1、浏览器进程</p>
-<p>负责界面显示、用户交互、子进程管理等，浏览器进程内部会启动多个线程处理不同的任务。</p>
-<p>2、网络进程</p>
-<p>负责加载网络资源。网络进程内部会启动多个线程处理不同的网络任务。</p>
-<p>3、渲染进程</p>
-<p>渲染进程启动后，会开启一个<strong>渲染主线程</strong>，主线程负责执行HTML、CSS、JS代码。默认情况下浏览器回味每个标签开启一个新的渲染进程，以保证不同标签页指间不会相互影响。</p>
-<h3 id="渲染主线程是怎么工作的？"><a href="#渲染主线程是怎么工作的？" class="headerlink" title="渲染主线程是怎么工作的？"></a>渲染主线程是怎么工作的？</h3><p>任务很多很繁忙，解析HTMLCSS、执行JS、计算样式、布局、处理图层、执行事件处理函数等等等等。东西太多了，反而不适用多个线程来处理。</p>
-<p>于是渲染进程的调度想出了绝妙的主意：排队</p>
-<p>![[Pasted image 20240922232358.png]]</p>
-<p>开始的时候渲染主线程会进入无限循环，每一次循环会检查消息队列中是否有任务存在，有就取出第一个任务执行，执行完之后进入下一次循环，没有就进入休眠状态。其他所有进程程可以随时向消息队列添加任务。新任务会加到消息队列的末尾。在添加新任务时，如果主线是休眠状态，则会将其唤醒以继续循环拿取任务。</p>
-<p>**** 整个过程，就是事件循环（消息循环）****</p>
-<h3 id="何为异步"><a href="#何为异步" class="headerlink" title="何为异步"></a>何为异步</h3><p>异步和事件循环有脱不开的关系。代码在执行过程中会遇到一些无法立即处理的任务，如计时完成后要执行的任务setTimeout、setInterval，网络通信完成后需要执行的XHR、Fetch，用户操作后需要执行的任务addEventListener。</p>
-<p>如果让渲染主线程等待这些任务的时机达到，就会导致主线程长期处于阻塞状态，从而导致浏览器卡死。<br>![[Pasted image 20240923220302.png]]<br>渲染主线程承担着极其重要的工作，无论如何不能阻塞，因此浏览器使用异步手段解决问题。<br>![[Pasted image 20240923220519.png]]<br>使用异步方式，渲染主线程永不阻塞。<br>![[Pasted image 20240923232034.png]]<br>用事件循环就能解释很多定时函数等的使用方式。<br>![[Pasted image 20240925102645.png]]</p>
-<h3 id="任务的优先级"><a href="#任务的优先级" class="headerlink" title="任务的优先级"></a>任务的优先级</h3><p>任务没有优先级，先进先出</p>
-<p>但<strong>消息队列有优先级</strong></p>
-<p>W3C：每个任务都有一个任务类型，同类型任务必须在一个队列，不同类型任务可以分属于不同队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行。</p>
-<p>浏览器必须准备好一个微队列，微队列中的任务优先于其他所有任务执行。</p>
-<pre><code>由于浏览器复杂度急剧提升，W3C已经不再使用宏队列说法。
-</code></pre>
-<p>Chrome的实现中至少包含以下三个队列：</p>
-<ul>
-<li>延时队列：用于存放计时器到达后的回调任务，优先级【中】</li>
-<li>交互队列：用于存放用户操作后产生的事件处理任务，优先级【高】</li>
-<li>微队列：用户存放需要最快执行的任务，优先级【最高】<br>  添加任务到微任务队列主要方式是Promise和MutationObserver</li>
-</ul>
-<p>其他队列开发中少见，不详细考虑。</p>
-<p>注意：不同浏览器的几种队列优先级不一定一样。</p>
-<p>练习：</p>
-<p>![[Pasted image 20240926114009.png]]<br>输出5 4 3 1 2 </p>
-<p>![[Pasted image 20240926114417.png]]</p>
-<p>![[Pasted image 20240928170525.png]]</p>
-<p>单线程是异步产生的原因</p>
-<p>事件循环是异步的实现方式</p>
-<p>Tip:<br>W3C（万维网联盟）规定，<strong>计时器嵌套超过五层之后，延时最小会变成4毫秒</strong>，这个规则是为了<strong>防止性能问题和滥用计时器</strong>，并提升页面响应能力，具体原因如下：</p>
-<h3 id="1-性能优化"><a href="#1-性能优化" class="headerlink" title="1. 性能优化"></a>1. <strong>性能优化</strong></h3><p>当嵌套计时器层数增加时，每一层计时器都需要 JavaScript 引擎分配资源和时间进行处理。过多的嵌套会导致频繁的任务调度和执行，可能会造成高频的任务阻塞主线程，导致页面卡顿或响应缓慢。</p>
-<p>为了防止开发者无意中设置过于频繁的定时任务，占用过多系统资源，W3C 规定超过五层嵌套的最小延时为 4ms。这种设计可以减轻浏览器的负担，避免性能下降。</p>
-<h3 id="2-节能与电池寿命"><a href="#2-节能与电池寿命" class="headerlink" title="2. 节能与电池寿命"></a>2. <strong>节能与电池寿命</strong></h3><p>对于运行在移动设备上的网页，频繁的 JavaScript 任务执行会导致高能耗，尤其是在电池供电的情况下。通过限制计时器嵌套的最小延时，浏览器可以减少高频的 CPU 唤醒，从而节省电量并延长设备的电池寿命。</p>
-<h3 id="3-避免滥用和兼容性"><a href="#3-避免滥用和兼容性" class="headerlink" title="3. 避免滥用和兼容性"></a>3. <strong>避免滥用和兼容性</strong></h3><p>JavaScript 的 <code>setTimeout</code> 和 <code>setInterval</code> 允许开发者设定非常小的时间间隔（理论上可以设置为 0ms），这可能会被滥用，导致资源竞争问题。通过设定 4ms 的下限，W3C 能确保所有浏览器在处理嵌套计时器时有一致的行为，保证跨浏览器的兼容性。</p>
-<h3 id="历史背景："><a href="#历史背景：" class="headerlink" title="历史背景："></a>历史背景：</h3><p>早期 JavaScript 允许开发者使用极短的定时器（甚至可以设置为 0ms），这带来了大量的性能问题，特别是当多个计时器嵌套时，JavaScript 引擎会频繁调度任务，影响页面的流畅性。因此，W3C 为了提高性能和稳定性，引入了这个限制。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>W3C 规定嵌套计时器超过五层后，延时最小变为 4ms，主要目的是为了<strong>提升浏览器性能、降低能耗</strong>以及<strong>避免过度使用系统资源</strong>，确保页面的流畅性和用户体验。</p>
-
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vite%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Joho Chen">
-      <meta itemprop="description" content="个人记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="joho world">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vite%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/" class="post-title-link" itemprop="url">Vite初始化项目</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-09-19 20:26:18 / 修改时间：22:37:34" itemprop="dateCreated datePublished" datetime="2024-09-19T20:26:18+08:00">2024-09-19</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>901</span>
+              <span>479</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -752,72 +309,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="vite-vue项目模板结构"><a href="#vite-vue项目模板结构" class="headerlink" title="vite-vue项目模板结构"></a>vite-vue项目模板结构</h1><ul>
-<li>.vscode: 编辑器配置</li>
-<li>node_modules:依赖包</li>
-<li>public:vite开启的web服务器的静态资源目录<br>  - <code>http://localhost:5173/</code></li>
-<li>src: 我们写源代码的位置</li>
-<li>.gitignore: git管理忽略文件</li>
-<li>index.html: 静态页面<br>  - 挂载 #app 元素<br>  - js的入口文件: <code>src/main.js</code></li>
-<li>package.json: 项目信息</li>
-<li>package-lock.json: 版本锁定</li>
-<li>README.md: 说明文件，你可以自己写一些项目运行说明</li>
-<li>vite.config.js : vite的配置文件</li>
-</ul>
-<h2 id="一-vite-的常用项目配置"><a href="#一-vite-的常用项目配置" class="headerlink" title="一  vite 的常用项目配置"></a>一  vite 的常用项目配置</h2><p>构建前端项目</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm init vue@latest</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"></span><br><span class="line">npm init vite@latest</span><br></pre></td></tr></table></figure>
-<p>找到项目的vite.config.js文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">&#x27;@vitejs/plugin-vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">&#x27;path&#x27;</span></span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">plugins</span>: [<span class="title function_">vue</span>()],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+          <p>北方阴极生寒，寒生水，南方阳极生热，热生火，东方阳散以泄而生风，风生木，西方阴止以收而生燥，燥生金，中央阴阳交而生温，温生土，其相生也所以相维，其相克也所以相制，此之恋谓有伦。火为太阳，性炎上；水为太阴，性润下；木为少阳，性腾上而无所止；土无常性，视四时所乘，欲使相济得所，勿令太过弗及。</p>
+<p>北方亥子丑，冬季也。南方巳午未，夏季也，东方寅卯辰，春令也，西方申酉戌，秋令也，冬季阴寒为水，夏季阳热为火，春令阳和散泄为木，秋令寒肃收敛为金，土无专位，居中央而寄四隅，四隅者，艮（丑寅）巽（辰巳）坤（未申）干（戌亥），即四季交脱之际也，春夏之交，木气未尽，火气已至，间杂之气名也属土，（夏秋冬同论）如统一年而论土，至午未月为最旺，亦居中央之意也，顺序相生，所以相维，故循环而不断，隔位相克，所以相制，故盛极则衰，否极则泰，无往不复，天之道也，伦者常也，言有一定之程序也。</p>
+<p>夫五行之性，名致其用，水者其性智，火者其性礼，木其性仁，金其性义，惟土主信，重厚宽博，无所不容，水附之而行，木托之而生，金不得土则无自出，火不得土则无自归，必损实以为通。致虚以为明，故五行皆赖土也。</p>
 
-<p>配置路径别名，我们在真实的项目开发中常用到相对路径，配置下别名相对来讲会好用一些</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">&#x27;@vitejs/plugin-vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">&#x27;path&#x27;</span>  <span class="comment">// 引入路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">plugins</span>: [<span class="title function_">vue</span>()],</span><br><span class="line">    <span class="attr">resolve</span>: &#123;  <span class="comment">// 配置别名</span></span><br><span class="line">        <span class="attr">alias</span>: &#123;</span><br><span class="line">            <span class="string">&quot;@&quot;</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;src&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="二-项目中使用sass-预编译处理"><a href="#二-项目中使用sass-预编译处理" class="headerlink" title="二 项目中使用sass 预编译处理"></a>二 项目中使用sass 预编译处理</h2><p>引入sass包</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install sass</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">传统的css写法</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">h3</span>&gt;&lt;<span class="selector-tag">h3</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h3</span>&#123;</span><br><span class="line">  <span class="attribute">font-size</span>:<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">h3</span>&gt;&lt;<span class="selector-tag">h3</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//scss写法</span></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:red;</span><br><span class="line">  <span class="selector-tag">h3</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">100px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span><span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//sass写法</span><br><span class="line">body</span><br><span class="line">  background-color: #760606</span><br><span class="line">  h3</span><br><span class="line">    font-size:100px</span><br></pre></td></tr></table></figure>
-
-<h2 id="三-安装vuex"><a href="#三-安装vuex" class="headerlink" title="三 安装vuex"></a>三 安装vuex</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vuex@next --save</span><br></pre></td></tr></table></figure>
-<p>初始化：</p>
-<ul>
-<li>第一步：npm install vuex@next –save  &#x3D;》创建项目没选择vuex，需要单独安装和初始化</li>
-<li>第二步： 创建store.js  <code>import &#123; createStore &#125; from &#39;vuex&#39;</code>  <code>import &#123; createApp &#125; from &#39;vue&#39;</code></li>
-<li>第三步：<code>const store = createStore (&#123;...配置项&#125;)</code></li>
-<li>第四步：导出 <code>export default store</code></li>
-<li>第六步：导入main.js 在根实例配置 store ，选项指向 store 实例对象<br><code>store.js</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建store文件夹 index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个新的 store 实例</span></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(&#123;</span><br><span class="line">    <span class="title function_">state</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">mutations</span>: &#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">actions</span>: &#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">getters</span>: &#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">modules</span>: &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><code>main.js</code>  挂载vuex</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;./store/index&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">createApp</span>(<span class="title class_">App</span>).<span class="title function_">use</span>(store).<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="四-安装路由"><a href="#四-安装路由" class="headerlink" title="四 安装路由"></a>四 安装路由</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router@4</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建router文件夹 index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHashHistory &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"><span class="comment">// 1. 定义路由组件.</span></span><br><span class="line"><span class="comment">// 也可以从其他文件导入</span></span><br><span class="line"><span class="comment">// import News from &#x27;../view/News.vue&#x27;</span></span><br><span class="line"><span class="comment">// 2. 定义一些路由</span></span><br><span class="line"><span class="comment">// 每个路由都需要映射到一个组件。</span></span><br><span class="line"><span class="comment">// 我们后面再讨论嵌套路由。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>, <span class="attr">redirect</span>: <span class="string">&#x27;/news&#x27;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&#x27;/news&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;新闻&#x27;</span>, <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;../view/News.vue&#x27;</span>) &#125;, <span class="comment">// 路由懒加载</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 创建路由实例并传递 `routes` 配置</span></span><br><span class="line"><span class="comment">// 你可以在这里输入更多的配置，但我们在这里</span></span><br><span class="line"><span class="keyword">const</span> router = <span class="title function_">createRouter</span>(&#123;</span><br><span class="line">    <span class="attr">history</span>: <span class="title function_">createWebHashHistory</span>(),<span class="comment">// 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。</span></span><br><span class="line">    routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">router.<span class="title function_">beforeEach</span>(<span class="function">(<span class="params">to, <span class="keyword">from</span></span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (to.<span class="property">path</span> === <span class="string">&#x27;/news&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// return false</span></span><br><span class="line">        router.<span class="title function_">push</span>(<span class="string">&#x27;/home&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">router.<span class="title function_">afterEach</span>(<span class="function">(<span class="params">to, <span class="keyword">from</span></span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (to.<span class="property">path</span> === <span class="string">&#x27;/news&#x27;</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我去news了！&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure>
-<h2 id="五-element-plus"><a href="#五-element-plus" class="headerlink" title="五 element-plus"></a>五 element-plus</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install element-plus --save</span><br><span class="line"></span><br><span class="line">npm install @element-plus/icons-vue       //图标单独下载</span><br></pre></td></tr></table></figure>
-
-<p>使用推荐的按需导入，如果用全局导入非常影响性能，非必要不使用</p>
-<p>按需导入: 使用插件自动导入你使用的组件 - 推荐</p>
-<ul>
-<li>下载按需导入插件:<code>npm install -D unplugin-vue-components unplugin-auto-import</code></li>
-<li>在vite.config.js添加配置按需要导入组件</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">首先你需要安装unplugin-vue-components 和 unplugin-auto-import这两款插件</span><br><span class="line"></span><br><span class="line">npm install -D unplugin-vue-components unplugin-auto-import</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">&#x27;@vitejs/plugin-vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">&#x27;path&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">AutoImport</span> <span class="keyword">from</span> <span class="string">&#x27;unplugin-auto-import/vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Components</span> <span class="keyword">from</span> <span class="string">&#x27;unplugin-vue-components/vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ElementPlusResolver</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;unplugin-vue-components/resolvers&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">plugins</span>: [</span><br><span class="line">        <span class="title function_">vue</span>(),</span><br><span class="line">        <span class="title class_">AutoImport</span>(&#123;</span><br><span class="line">            <span class="attr">resolvers</span>: [<span class="title class_">ElementPlusResolver</span>()],</span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="title class_">Components</span>(&#123;</span><br><span class="line">            <span class="attr">resolvers</span>: [<span class="title class_">ElementPlusResolver</span>()],</span><br><span class="line">        &#125;),],</span><br><span class="line"></span><br><span class="line">    <span class="attr">resolve</span>: &#123;</span><br><span class="line">        <span class="attr">alias</span>: &#123;</span><br><span class="line">            <span class="string">&quot;@&quot;</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;src&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>注册所有图标 在main.js中配置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @element-plus/icons-vue</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;./store/index&#x27;</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router/index&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> <span class="title class_">ElementPlusIconsVue</span> <span class="keyword">from</span> <span class="string">&#x27;@element-plus/icons-vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> [key, component] <span class="keyword">of</span> <span class="title class_">Object</span>.<span class="title function_">entries</span>(<span class="title class_">ElementPlusIconsVue</span>)) &#123;</span><br><span class="line">    app.<span class="title function_">component</span>(key, component)</span><br><span class="line">&#125;</span><br><span class="line">app.<span class="title function_">use</span>(store).<span class="title function_">use</span>(router).<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>使用message提示消息组件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-button :plain=<span class="string">&quot;true&quot;</span> @click=<span class="string">&quot;open2&quot;</span>&gt;success&lt;/el-button&gt;</span><br><span class="line"></span><br><span class="line">    <span class="attr">methods</span>: &#123;</span><br><span class="line">        <span class="title function_">open2</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="title class_">ElMessage</span>(&#123;s</span><br><span class="line">                <span class="attr">message</span>: <span class="string">&#x27;Congrats, this is a success message.&#x27;</span>,</span><br><span class="line">                <span class="attr">type</span>: <span class="string">&#x27;success&#x27;</span>,</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;vu</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
-<h2 id="六-导入css初始化样式"><a href="#六-导入css初始化样式" class="headerlink" title="六 导入css初始化样式"></a>六 导入css初始化样式</h2><p>创建style文件夹 创建reset.css文件</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">  <span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">font-size</span>:<span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#app</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ecf5ff</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在main.js引入</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;@/store/index&#x27;</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;@/router/index&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;@/App.vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> <span class="title class_">ElementPlusIconsVue</span> <span class="keyword">from</span> <span class="string">&#x27;@element-plus/icons-vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;@/style/reset.css&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> [key, component] <span class="keyword">of</span> <span class="title class_">Object</span>.<span class="title function_">entries</span>(<span class="title class_">ElementPlusIconsVue</span>)) &#123;</span><br><span class="line">    app.<span class="title function_">component</span>(key, component)</span><br><span class="line">&#125;</span><br><span class="line">app.<span class="title function_">use</span>(store).<span class="title function_">use</span>(router).<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -837,7 +332,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E5%90%8E%E7%AB%AF/RabbitMQ/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -851,7 +346,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="post-title-link" itemprop="url">Vue声明周期</a>
+            <a href="/%E5%90%8E%E7%AB%AF/RabbitMQ/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -861,24 +356,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2024-09-18 10:27:55" itemprop="dateCreated datePublished" datetime="2024-09-18T10:27:55+08:00">2024-09-18</time>
+              <time title="创建时间：2024-12-23 11:11:43" itemprop="dateCreated datePublished" datetime="2024-12-23T11:11:43+08:00">2024-12-23</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-19 09:24:41" itemprop="dateModified" datetime="2024-09-19T09:24:41+08:00">2024-09-19</time>
+                <time title="修改时间：2025-01-09 23:18:39" itemprop="dateModified" datetime="2025-01-09T23:18:39+08:00">2025-01-09</time>
               </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
 
           
             <span class="post-meta-item" title="本文字数">
@@ -886,14 +372,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.2k</span>
+              <span>308</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -905,10 +391,182 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Vue的生命周期</p>
+          <p>高性能异步通讯组件，消息队列。平时的同步操作对资源消耗太大，改为消息队列既能解耦也能改善高并发和级联问题，提升性能。相对于rocketmq，Rabbitmq它的架构比较简单、易于部署，功能相对全面，适用于中小型应用和系统，注重可靠性、易用性和开发者友好性。<br>![[Pasted image 20241225103357.png]]<br>基础：异步<br>![[Pasted image 20250109231413.png]]<br>![[Pasted image 20250109231724.png]]<br>![[Pasted image 20250109231733.png]]</p>
+<p>技术选型：<br>![[Pasted image 20250109231837.png]]</p>
+
+      
+    </div>
+
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E5%90%8E%E7%AB%AF/Redis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%90%8E%E7%AB%AF/Redis/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-23 11:09:19" itemprop="dateCreated datePublished" datetime="2024-12-23T11:09:19+08:00">2024-12-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-27 23:53:17" itemprop="dateModified" datetime="2024-12-27T23:53:17+08:00">2024-12-27</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>252</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>缓存中间件的佼佼者，必学技术。<br>![[Pasted image 20241225103714.png]]</p>
+<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p>Redis是键值型数据库，没有表没有约束，就是NoSql数据库。这种非结构化的数据库相较结构化数据库更灵活，甚至可以用Json格式。只能基本满足事物的隔离性等等ACID要求。</p>
+<p>本质是单线程执行，只有处理网络请求才会有多线程，每个命令有原子性。基于内存设计、IO多路复用、有良好的编码，所以低延迟速度快。在内存基础上也能数据持久化。支持主从、分片。支持多语言客户端。</p>
+<h3 id="常见数据结构及指令"><a href="#常见数据结构及指令" class="headerlink" title="常见数据结构及指令"></a>常见数据结构及指令</h3><h3 id="应用与优化"><a href="#应用与优化" class="headerlink" title="应用与优化"></a>应用与优化</h3><h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><h1 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h1><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1>
+      
+    </div>
+
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E5%90%8E%E7%AB%AF/SpringBoot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%90%8E%E7%AB%AF/SpringBoot/" class="post-title-link" itemprop="url">SpringBoot框架</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-20 22:58:55" itemprop="dateCreated datePublished" datetime="2024-12-20T22:58:55+08:00">2024-12-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-23 11:02:55" itemprop="dateModified" datetime="2024-12-23T11:02:55+08:00">2024-12-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>104</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>SpringBoot框架</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
+              <a class="btn" href="/%E5%90%8E%E7%AB%AF/SpringBoot/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -933,7 +591,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/React/%E5%B7%A9%E5%9B%BA%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -947,7 +605,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/React/%E5%B7%A9%E5%9B%BA%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">前端基础</a>
+            <a href="/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">Java基础</a>
         </h2>
 
         <div class="post-meta">
@@ -956,9 +614,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-09-18 09:33:18 / 修改时间：09:33:34" itemprop="dateCreated datePublished" datetime="2024-09-18T09:33:18+08:00">2024-09-18</time>
+              <time title="创建时间：2024-12-20 19:11:55" itemprop="dateCreated datePublished" datetime="2024-12-20T19:11:55+08:00">2024-12-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-03 23:37:58" itemprop="dateModified" datetime="2025-01-03T23:37:58+08:00">2025-01-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+                </span>
             </span>
 
           
@@ -967,14 +640,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>461</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -986,114 +659,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="前端基础知识"><a href="#前端基础知识" class="headerlink" title="前端基础知识"></a>前端基础知识</h3><ul>
-<li><p>✅ 互联网</p>
-</li>
-<li><p>⭐️ 域名</p>
-</li>
-<li><p>⭐️ DNS</p>
-</li>
-<li><p>⭐️ 服务器</p>
-</li>
-<li><p>✅ 浏览器</p>
-<ul>
-<li>浏览器 DOM 事件流 &#x2F; 事件委托</li>
-<li>⭐️ 浏览器加载顺序</li>
-<li>⭐️ 浏览器渲染过程</li>
-<li>浏览器事件循环</li>
-<li>浏览器同源策略</li>
-<li>❗ 跨域解决方案</li>
-<li>浏览器缓存</li>
-<li>控制台调试技巧</li>
-</ul>
-</li>
-<li><p>✅ HTTP</p>
-<ul>
-<li>❗ HTTP 请求过程</li>
-<li>常见 HTTP 协议<ul>
-<li>HTTP 1.0</li>
-<li>⭐️ HTTP 1.1</li>
-<li>HTTP 2</li>
-<li>HTTP 3</li>
-</ul>
-</li>
-<li>⭐️ HTTP 请求类别</li>
-<li>⭐️ 常见状态码<ul>
-<li>1xx 信息</li>
-<li>2xx 成功</li>
-<li>3xx 重定向</li>
-<li>4xx 客户端错误</li>
-<li>5xx 服务器错误</li>
-</ul>
-</li>
-<li>WebSocket</li>
-<li>⭐️ Cookie</li>
-<li>Session</li>
-<li>⭐️ HTTPS</li>
-</ul>
-</li>
-</ul>
-<h3 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h3><h4 id="✅-算法和数据结构"><a href="#✅-算法和数据结构" class="headerlink" title="✅ 算法和数据结构"></a>✅ 算法和数据结构</h4><ul>
-<li><p>⭐️ 时间 &#x2F; 空间复杂度分析</p>
-</li>
-<li><p>数据结构</p>
-<ul>
-<li>数组</li>
-<li>字符串</li>
-<li>队列</li>
-<li>栈</li>
-<li>链表</li>
-<li>集合</li>
-<li>哈希表</li>
-<li>二叉树</li>
-</ul>
-</li>
-<li><p>算法</p>
-<ul>
-<li>排序</li>
-<li>双指针</li>
-<li>查找</li>
-<li>分治</li>
-<li>动态规划</li>
-<li>递归</li>
-<li>回溯</li>
-<li>贪心</li>
-<li>位运算</li>
-<li>DFS</li>
-<li>BFS</li>
-<li>图</li>
-</ul>
-</li>
-</ul>
-<h4 id="✅-计算机网络"><a href="#✅-计算机网络" class="headerlink" title="✅ 计算机网络"></a>✅ 计算机网络</h4><ul>
-<li>HTTP 协议</li>
-<li>网络模型</li>
-<li>UDP &#x2F; TCP 协议</li>
-</ul>
-<h4 id="✅-操作系统"><a href="#✅-操作系统" class="headerlink" title="✅ 操作系统"></a>✅ 操作系统</h4><ul>
-<li>进程、线程</li>
-<li>进程 &#x2F; 线程间通讯方式</li>
-<li>进程调度算法</li>
-<li>进程 &#x2F; 线程状态</li>
-<li>死锁</li>
-<li>内存管理</li>
-</ul>
-<h3 id="软件开发基础"><a href="#软件开发基础" class="headerlink" title="软件开发基础"></a>软件开发基础</h3><h4 id="✅-设计模式"><a href="#✅-设计模式" class="headerlink" title="✅ 设计模式"></a>✅ 设计模式</h4><ul>
-<li>单例模式</li>
-<li>代理模式</li>
-<li>工厂模式</li>
-<li>装饰者模式</li>
-<li>观察者模式</li>
-<li>策略模式</li>
-<li>门面模式</li>
-</ul>
-<h4 id="⭐️-Git-版本控制"><a href="#⭐️-Git-版本控制" class="headerlink" title="⭐️ Git 版本控制"></a>⭐️ Git 版本控制</h4><ul>
-<li>常用命令</li>
-</ul>
-<h4 id="✅-Linux-服务器"><a href="#✅-Linux-服务器" class="headerlink" title="✅ Linux 服务器"></a>✅ Linux 服务器</h4><ul>
-<li>常用命令</li>
-</ul>
-<h4 id="✅-正则表达式"><a href="#✅-正则表达式" class="headerlink" title="✅ 正则表达式"></a>✅ 正则表达式</h4>
+          <p>补充Java基础知识</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1113,7 +687,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTML/HTML%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/%E8%99%9A%E6%8B%9FDOM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1127,7 +701,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTML/HTML%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" class="post-title-link" itemprop="url">HTML学习路径</a>
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/%E8%99%9A%E6%8B%9FDOM/" class="post-title-link" itemprop="url">虚拟DOM</a>
         </h2>
 
         <div class="post-meta">
@@ -1138,372 +712,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-09-18 09:31:57 / 修改时间：09:32:14" itemprop="dateCreated datePublished" datetime="2024-09-18T09:31:57+08:00">2024-09-18</time>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>260</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="⭐️-HTML"><a href="#⭐️-HTML" class="headerlink" title="⭐️ HTML"></a>⭐️ HTML</h3><ul>
-<li><p>💬 描述：用于定义一个网页结构的基本技术。</p>
-</li>
-<li><p>📚 资源：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML">https://developer.mozilla.org/zh-CN/docs/Learn/HTML</a></p>
-</li>
-<li><p>⭐️ 基本语法</p>
-</li>
-<li><p>⭐️ 标签</p>
-<ul>
-<li>分区 div</li>
-<li>标题 h1 ~ h6</li>
-<li>段落 p</li>
-<li>图像 img</li>
-<li>列表 ul &#x2F; ol</li>
-<li>超链接 a</li>
-<li>表单 form</li>
-<li>表格 table</li>
-<li>框架 iframe</li>
-</ul>
-</li>
-<li><p>⭐️ 属性</p>
-</li>
-<li><p>✅ HTML5 特性</p>
-<ul>
-<li>语义化标签</li>
-<li>浏览器支持</li>
-<li>多媒体标签</li>
-<li>Canvas 画布</li>
-<li>❌ 内联 SVG</li>
-<li>本地存储<ul>
-<li>localStorage</li>
-<li>sessionStorage</li>
-<li>❌ Web SQL</li>
-</ul>
-</li>
-<li>Web Workers</li>
-<li>应用缓存（Cache Manifest）</li>
-<li>无障碍</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/CSS%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Joho Chen">
-      <meta itemprop="description" content="个人记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="joho world">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSS/CSS%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" class="post-title-link" itemprop="url">CSS学习路径</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-09-18 09:29:21 / 修改时间：09:31:31" itemprop="dateCreated datePublished" datetime="2024-09-18T09:29:21+08:00">2024-09-18</time>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>398</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="⭐️-CSS"><a href="#⭐️-CSS" class="headerlink" title="⭐️ CSS"></a>⭐️ CSS</h3><ul>
-<li><p>💬 描述：层叠样式表，用于设计风格和布局。</p>
-</li>
-<li><p>📚 资源：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS">https://developer.mozilla.org/zh-CN/docs/Learn/CSS</a></p>
-</li>
-<li><p>⭐️ 基本语法</p>
-</li>
-<li><p>⭐️ 引入方式</p>
-<ul>
-<li>行内样式</li>
-<li>内部样式表</li>
-<li>外部样式表</li>
-</ul>
-</li>
-<li><p>⭐️ 选择器</p>
-<ul>
-<li>通用选择器</li>
-<li>标签选择器</li>
-<li>id 选择器</li>
-<li>class 选择器</li>
-<li>属性选择器</li>
-<li>派生选择器<ul>
-<li>后代选择器</li>
-<li>子元素选择器</li>
-<li>相邻兄弟选择器</li>
-</ul>
-</li>
-<li>组合选择器</li>
-<li>伪选择器</li>
-<li>选择器优先级</li>
-</ul>
-</li>
-<li><p>⭐️ 属性</p>
-<ul>
-<li>单位<ul>
-<li>px</li>
-<li>em</li>
-<li>rem</li>
-<li>vw</li>
-<li>vh</li>
-</ul>
-</li>
-<li>背景</li>
-<li>文本</li>
-<li>字体</li>
-<li>列表</li>
-<li>表格</li>
-</ul>
-</li>
-<li><p>⭐️ 文档流</p>
-<ul>
-<li>标准流</li>
-<li>浮动流</li>
-<li>定位流</li>
-</ul>
-</li>
-<li><p>⭐️ 内联元素 &#x2F; 块状元素</p>
-</li>
-<li><p>⭐️ 盒子模型</p>
-<ul>
-<li>content</li>
-<li>padding</li>
-<li>border</li>
-<li>margin</li>
-</ul>
-</li>
-<li><p>⭐️ 浮动</p>
-<ul>
-<li>设置浮动 float</li>
-<li>清除浮动 clear</li>
-</ul>
-</li>
-<li><p>⭐️ 定位</p>
-<ul>
-<li>static</li>
-<li>absolute</li>
-<li>fixed</li>
-<li>relative</li>
-<li>sticky</li>
-</ul>
-</li>
-<li><p>⭐️ 层叠规则</p>
-</li>
-<li><p>❗ BFC 和 IFC 机制</p>
-</li>
-<li><p>CSS3</p>
-<ul>
-<li>⭐️ 响应式布局<ul>
-<li>媒体查询</li>
-<li>Flex 布局</li>
-<li>Grid 布局</li>
-<li>瀑布流</li>
-</ul>
-</li>
-<li>动画</li>
-<li>过渡</li>
-<li>渐变</li>
-<li>背景</li>
-<li>边框</li>
-<li>圆角</li>
-<li>字体</li>
-<li>2D &#x2F; 3D 转换</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Joho Chen">
-      <meta itemprop="description" content="个人记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="joho world">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Vue/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">前端构建工具</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-09-18 09:28:24 / 修改时间：09:28:56" itemprop="dateCreated datePublished" datetime="2024-09-18T09:28:24+08:00">2024-09-18</time>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%A2%84%E8%A7%A3%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Joho Chen">
-      <meta itemprop="description" content="个人记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="joho world">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%A2%84%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">JS作用域、预解析</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-09-11 10:11:59 / 修改时间：10:18:31" itemprop="dateCreated datePublished" datetime="2024-09-11T10:11:59+08:00">2024-09-11</time>
+              <time title="创建时间：2024-12-12 00:00:00 / 修改时间：12:46:16" itemprop="dateCreated datePublished" datetime="2024-12-12T00:00:00+08:00">2024-12-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1513,10 +722,6 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-                </span>
             </span>
 
           
@@ -1525,7 +730,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>210</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1544,10 +749,280 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>作用域、预解析</p>
+          <p>为什么需要虚拟DOM</p>
+<p>在框架设计中，由于颗粒度不够，当数据发生变化时，框架只能以组件为单位进行更新。如果一个组件涉及到1000个真实DOM，而一次只需改变一个，直接操作真实DOM引起整个组件刷新渲染消耗太大。选择虚拟DOM先讲更新后的虚拟DOM与原来的进行对比，随后精准更新需要改变的真实DOM。  同时也是为了解耦运行环境，虚拟DOM本质是JS对象，在移动端等其他场景没有真实DOM的情况下也能描述界面，为多端开发提供帮助。</p>
+
+      
+    </div>
+
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%88%AC%E8%99%AB/%E7%88%AC%E8%99%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%88%AC%E8%99%AB/%E7%88%AC%E8%99%AB/" class="post-title-link" itemprop="url">爬虫入门</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-08 23:25:34 / 修改时间：23:57:35" itemprop="dateCreated datePublished" datetime="2024-12-08T23:25:34+08:00">2024-12-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>312</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>爬虫基础知识</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/JavaScript/%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%A2%84%E8%A7%A3%E6%9E%90/">
+              <a class="btn" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%88%AC%E8%99%AB/%E7%88%AC%E8%99%AB/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/web%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B%E5%89%96%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/web%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B%E5%89%96%E6%9E%90/" class="post-title-link" itemprop="url">web请求过程剖析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-07 10:25:34 / 修改时间：23:20:15" itemprop="dateCreated datePublished" datetime="2024-12-07T10:25:34+08:00">2024-12-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>102</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>web请求过程剖析</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/web%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B%E5%89%96%E6%9E%90/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061/personalWeb.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E6%A8%A1%E6%9D%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">面试模板</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-01 22:25:34" itemprop="dateCreated datePublished" datetime="2024-12-01T22:25:34+08:00">2024-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-18 16:09:37" itemprop="dateModified" datetime="2024-12-18T16:09:37+08:00">2024-12-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%AC%E8%80%83/" itemprop="url" rel="index"><span itemprop="name">公考</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>57</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>面试的一些模板收集</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E6%A8%A1%E6%9D%BF/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1571,7 +1046,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1637,7 +1112,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1720,12 +1195,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">98k</span>
+    <span title="站点总字数">147k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:30</span>
+    <span title="站点阅读时长">2:13</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
