@@ -1,0 +1,114 @@
+/* 
+ * NexT Theme - Minimal CSS
+ * This is a minimal CSS file to make the site usable
+ * Generated: 2026-05-08
+ */
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  background: #f5f5f5;
+}
+
+/* Header */
+.header {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px 0;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  text-decoration: none;
+}
+
+/* Main content */
+.main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.post {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.post-title a {
+  color: #555;
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  color: #222;
+}
+
+.post-meta {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.post-body {
+  line-height: 1.8;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+/* Footer */
+.footer {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+/* Pagination */
+.pagination {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+  }
+}
