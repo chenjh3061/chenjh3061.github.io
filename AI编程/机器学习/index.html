@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chenjh3061.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="按照有无监督号（即数据书否带有标签），分为监督学习、无监督学习、半监督学习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习">
+<meta property="og:url" content="https://chenjh3061.github.io/AI%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="joho world">
+<meta property="og:description" content="按照有无监督号（即数据书否带有标签），分为监督学习、无监督学习、半监督学习。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997126528.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997397299.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997587001.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997643664.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997654866.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997681706.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760002000807.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760067931886.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760077751628.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760084736069.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760084777455.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147240422.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147251662.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147276264.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147305503.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147336182.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147346457.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147406403.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147419020.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760343594797.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760791953553.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760791989195.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760792396519.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760792444079.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760792452416.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760792519404.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842558485.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842651735.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842730926.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842749895.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842774376.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842788916.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842823475.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760843504418.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845028981.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845088015.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845114533.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845144626.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845165738.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845217887.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845278095.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845294394.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845327129.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845359174.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845389895.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845404342.png">
+<meta property="og:image" content="https://jalammar.github.io/images/t/self-attention-matrix-calculation-2.png">
+<meta property="og:image" content="https://jalammar.github.io/images/t/the-encoder-decoder-encoder-decoder-attention-blocks.png">
+<meta property="article:published_time" content="2025-10-26T07:54:13.000Z">
+<meta property="article:modified_time" content="2026-04-19T05:40:44.502Z">
+<meta property="article:author" content="Joho Chen">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://chenjh3061.github.io/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997126528.png">
+
+<link rel="canonical" href="https://chenjh3061.github.io/AI%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>机器学习 | joho world</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="joho world" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">joho world</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061.github.io/AI%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          机器学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-10-26 15:54:13" itemprop="dateCreated datePublished" datetime="2025-10-26T15:54:13+08:00">2025-10-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-04-19 13:40:44" itemprop="dateModified" datetime="2026-04-19T13:40:44+08:00">2026-04-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/AI%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">AI编程</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+            <div class="post-description">按照有无监督号（即数据书否带有标签），分为监督学习、无监督学习、半监督学习。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997126528.png"><br>按照有无监督号（即数据书否带有标签），分为监督学习、无监督学习、半监督学习。<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997397299.png"><br>监督学习：<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997587001.png"><br>半监督：<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997643664.png"><br>无监督：<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997654866.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1759997681706.png"></p>
+<h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><p>四个核心概念：<br>数据集：数据，包含训练集（60%-80%）、验证集（10%-20%）、测试集（10%-20%）。<br>特征：和任务目标强相关，描述样本属性的具体变量。<br>标签：目标变量，学习的答案。<br>    回归任务：标签是连续数值<br>    分类任务：标签离散<br>    序列标注任务：标签是与输入序列对应的序列。<br>模型：机器学习的核心产物，提炼出特征和标签的关系公式。<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760002000807.png"></p>
+<h4 id="三个核心要素"><a href="#三个核心要素" class="headerlink" title="三个核心要素"></a>三个核心要素</h4><p>模型：定义能够学什么，本质是对输入输出间关系的数学抽象。<br>学习准则：定义学的多好，核心是损失函数，用于量化模型预测结果和真是标签直接的差距，是目标导向，决定优化方向。<br>优化算法：定义怎么学好，目标最小化损失函数，找到模型的最优参数。经典方法有梯度下降、随机梯度下降、牛顿法。</p>
+<h4 id="三个简单分类模型"><a href="#三个简单分类模型" class="headerlink" title="三个简单分类模型"></a>三个简单分类模型</h4><p> 分类、聚类、回归是机器学习中最核心的三大任务类型。三大模型也就是这三个。<br> <img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760067931886.png"></p>
+<p> 逻辑回归：最基础最广泛的模型之一，本质是二分类或者多分类模型。<br> <img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760077751628.png"><br> <img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760084736069.png"><br> <img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760084777455.png"></p>
+<p> 神经网络：<br> <img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147240422.png"><br> <img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147251662.png"><br> <img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147276264.png"><br> <img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147305503.png"></p>
+<p> 支持向量机：<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147336182.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147346457.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147406403.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760147419020.png"></p>
+<h4 id="四个复杂分类模型"><a href="#四个复杂分类模型" class="headerlink" title="四个复杂分类模型"></a>四个复杂分类模型</h4><p>决策树：<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760343594797.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760791953553.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760791989195.png"></p>
+<p>随机森林<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760792396519.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760792444079.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760792452416.png"></p>
+<p>朴素贝叶斯<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760792519404.png"></p>
+<p><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842558485.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842651735.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842730926.png"></p>
+<p>XGBoost梯度提升树<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842749895.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842774376.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842788916.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760842823475.png"></p>
+<h4 id="四种常见聚类模型"><a href="#四种常见聚类模型" class="headerlink" title="四种常见聚类模型"></a>四种常见聚类模型</h4><p>聚类模型解决如何分组的问题，是无监督学习的核心，无需人工标注，靠自身分组。<br>聚类模型的目标是将数据集中的样本按照“相似度”自动分组（“簇”，Cluster）同一簇内相似度极高(簇内紧凑性)，不同的极低(簇间分离性)。</p>
+<p>K均值聚类<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760843504418.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845028981.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845088015.png"></p>
+<p>谱聚类<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845114533.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845144626.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845165738.png"></p>
+<p>层次聚类<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845217887.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845278095.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845294394.png"></p>
+<p>DBSCAN聚类<br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845327129.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845359174.png"><br> <img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845389895.png"><br><img src="/../../image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1760845404342.png"></p>
+<h4 id="四种常见回归模型"><a href="#四种常见回归模型" class="headerlink" title="四种常见回归模型"></a>四种常见回归模型</h4><h3 id="transformer架构"><a href="#transformer架构" class="headerlink" title="transformer架构"></a>transformer架构</h3><p>深度学习在过去十年中最重要的创新之一，它彻底改变了自然语言处理领域，并且其影响力已经扩展到计算机视觉、音频处理等多个领域。</p>
+<hr>
+<h4 id="一、一句话总结：Transformer-的核心创新"><a href="#一、一句话总结：Transformer-的核心创新" class="headerlink" title="一、一句话总结：Transformer 的核心创新"></a>一、一句话总结：Transformer 的核心创新</h4><p><strong>Transformer 架构的核心创新在于完全摒弃了循环神经网络和卷积神经网络等传统的序列处理方式，首次提出并成功运用了“自注意力机制”（Self-Attention Mechanism）来捕捉序列内元素之间的长距离依赖关系。</strong> 这种机制使得模型能够并行处理整个序列，极大地提升了训练效率，并在捕捉复杂上下文关系方面表现出色。</p>
+<hr>
+<h4 id="二、Transformer-背景的创新：解决了什么问题？"><a href="#二、Transformer-背景的创新：解决了什么问题？" class="headerlink" title="二、Transformer 背景的创新：解决了什么问题？"></a>二、Transformer 背景的创新：解决了什么问题？</h4><p>在 Transformer 出现之前（主要是在 2017 年 Google 发布论文 “Attention is All You Need” 之前），NLP 领域的主流架构是 RNN（循环神经网络）及其变体（如 LSTM 和 GRU）。</p>
+<p><strong>RNN 的痛点：</strong></p>
+<ol>
+<li><p><strong>无法并行计算</strong>：RNN 的处理方式是“串行”的。它必须按顺序逐个读取输入序列中的单词，计算依赖于前一个时刻的状态。这就像你读一句话必须从左到右一个词一个词地读，不能跳着读。这种固有的序列依赖，使得训练过程无法利用现代 GPU&#x2F;TPU 强大的并行计算能力，训练速度非常慢。</p>
+</li>
+<li><p><strong>长距离依赖问题</strong>：由于信息需要通过一个时间步一个时间步的传递，当句子很长时，开头的信息在传递到结尾的过程中很容易发生“梯度消失”或“梯度爆炸”问题。也就是说，模型很难记住远距离的上下文关系。例如，在一个长达 100 个单词的句子中，模型很难理解第一个单词和最后一个单词之间的逻辑联系。</p>
+</li>
+</ol>
+<p><strong>小结</strong>：RNN 结构非常适合处理自然语言这种天生具有时序性的数据，但它的“串行”和“记忆遗忘”两大瓶颈，限制了模型性能和规模的进一步扩展。</p>
+<hr>
+<h4 id="三、Transformer-的核心创新：自注意力机制"><a href="#三、Transformer-的核心创新：自注意力机制" class="headerlink" title="三、Transformer 的核心创新：自注意力机制"></a>三、Transformer 的核心创新：自注意力机制</h4><p>Transformer 架构的精髓就是 <strong>自注意力机制</strong>。它彻底改变了模型处理序列数据的方式。</p>
+<ol>
+<li>核心思想</li>
+</ol>
+<p>想象一下你正在读一个长句子： “The animal didn’t cross the street because <strong>it</strong> was too tired.”</p>
+<p>当你读到 “it” 这个词时，你的大脑会立刻意识到 **”it” 指代的是 “The animal”**。你之所以能做出这个判断，是因为你的注意力在理解 “it” 时，“动态地”关注到了句子中最重要的部分——“The animal”。</p>
+<p><strong>自注意力机制模仿的就是这个过程。</strong> 它计算序列中<strong>每一个</strong>单词与其他<strong>所有</strong>单词之间的“关联性”或“重要性得分”，并利用这个得分来加权求和，从而生成该单词更丰富的上下文表示。</p>
+<ol start="2">
+<li>工作流程（简化的数学解释）</li>
+</ol>
+<p>1、  <strong>输入向量</strong>：假设我们的输入是词序列 <code>[&quot;The&quot;, &quot;animal&quot;, &quot;didn&#39;t&quot;, &quot;cross&quot;, &quot;street&quot;]</code>。每个词都会被映射成一个高维度的向量，这被称为词嵌入。</p>
+<p>2、 <strong>创建三个向量</strong>：对于每个输入向量，模型会生成三个不同的向量：<br>    *   **Query (查询向量, Q)**：可以理解为“我（这个词）在找什么？”<br>    *   **Key (键向量, K)**：可以理解为“我（这个词）是什么？”<br>    *   **Value (值向量, V)**：可以理解为“如果我（这个词）相关，我有什么信息可以提供？”</p>
+<p>3、<strong>计算注意力分数</strong>：以单词 “animal” 为例，它会用它的 Query 向量去和所有单词（包括它自己）的 Key 向量做点积，得到一组分数。分数越高，代表 “animal” 认为这个单词越相关。<br>    *   <code>Score(&quot;animal&quot;, &quot;The&quot;)</code> &#x3D; Q<sub>“animal”</sub> · K<sub>“The”</sub><br>    *   <code>Score(&quot;animal&quot;, &quot;animal&quot;)</code> &#x3D; Q<sub>“animal”</sub> · K<sub>“animal”</sub><br>    *   <code>...以此类推</code></p>
+<p>4、 <strong>Softmax 归一化</strong>：将这些分数通过 Softmax 函数，转换成一组总和为 1 的权重。这组权重就代表了 “animal” 在计算自己的新表示时，应该“关注”其他单词的程度。</p>
+<p>5、 <strong>加权求和</strong>：用计算出的权重，对所有单词的 Value 向量进行加权求和。最终得到的这个新向量，就是 “animal” 融合了整个句子上下文信息的“增强版”表示。<br>    *   <code>New_Representation(&quot;animal&quot;)</code> &#x3D; w<sub>“The”</sub> * V<sub>“The”</sub> + w<sub>“animal”</sub> * V<sub>“animal”</sub> + … </p>
+<p>通过这个过程，即使相距很远（比如句子开头和结尾），模型也能直接计算它们之间的关联，完美解决了 RNN 的长距离依赖问题。</p>
+<p><img src="https://jalammar.github.io/images/t/self-attention-matrix-calculation-2.png" alt="Self-Attention Visualized|256x100"></p>
+<ol start="3">
+<li>多头注意力</li>
+</ol>
+<p>Transformer 并不只是做一次上述的计算，而是<strong>并行地执行多次</strong>，这被称为“多头注意力”。你可以把每个头想象成一个不同的“专家”或“关注模式”，比如：</p>
+<ul>
+<li>头1：可能主要关注语法关系（主谓宾）。</li>
+<li>头2：可能主要关注指代关系（如 it 和 animal）。</li>
+<li>头3：可能主要关注语义相似性。</li>
+</ul>
+<p>最后，将所有头的输出拼接起来，再通过一个线性层进行整合，使得模型能够从不同角度捕捉丰富而复杂的依赖关系。</p>
+<hr>
+<h4 id="四、Transformer-的完整架构"><a href="#四、Transformer-的完整架构" class="headerlink" title="四、Transformer 的完整架构"></a>四、Transformer 的完整架构</h4><p>自注意力机制是 Transformer 的引擎，但它需要与其它组件协同工作，才能形成一个完整的、强大的模型架构。</p>
+<p><img src="https://jalammar.github.io/images/t/the-encoder-decoder-encoder-decoder-attention-blocks.png" alt="Transformer Architecture|256x24"></p>
+<p>一个标准的 Transformer 模型由两大部分组成：</p>
+<ol>
+<li>编码器</li>
+</ol>
+<p>编码器的任务是<strong>理解输入序列</strong>。它由 N 个相同的编码器层堆叠而成（论文中 N&#x3D;6）。每个编码器层内部包含两个子层：</p>
+<ul>
+<li><strong>多头自注意力子层</strong>：如上所述，让每个词关注输入序列中的所有其他词。</li>
+<li><strong>前馈神经网络子层</strong>：一个简单的全连接网络，对每个词的表示进行独立的非线性变换。</li>
+<li><strong>残差连接</strong> 和 <strong>层归一化</strong>：这两个技巧非常关键，它们极大地缓解了深层网络中的梯度消失问题，让训练数百上千层的超深模型成为可能。</li>
+</ul>
+<ol start="2">
+<li>解码器</li>
+</ol>
+<p>解码器的任务是<strong>根据编码器的输出生成目标序列</strong>（例如，将中文翻译成英文）。它也是由 N 个相同的解码器层堆叠而成。每个解码器层包含三个子层：</p>
+<ul>
+<li><strong>带掩码的多头自注意力子层</strong>：和编码器类似，但是为了避免“作弊”，在进行注意力计算时，模型只能关注到<strong>已经生成</strong>的输出词，而不能看到未来的词。例如，在预测英文句子的第三个单词时，它只能利用前两个单词的信息。</li>
+<li><strong>编码器-解码器注意力子层</strong>：这是 Transformer 的另一个关键！它让解码器中的每个词去<strong>关注输入序列（源序列）中的所有词</strong>，从而决定在生成当前输出词时，应该重点参考输入序列中的哪些信息。</li>
+<li><strong>前馈神经网络子层</strong>：同上。</li>
+<li>同样，每个子层都有<strong>残差连接</strong>和<strong>层归一化</strong>。</li>
+</ul>
+<hr>
+<h4 id="五、Transformer-的颠覆性意义"><a href="#五、Transformer-的颠覆性意义" class="headerlink" title="五、Transformer 的颠覆性意义"></a>五、Transformer 的颠覆性意义</h4><p>Transformer 的出现，其意义是全方位和革命性的。</p>
+<ol>
+<li><strong>技术上：确立了注意力机制的核心地位</strong></li>
+</ol>
+<ul>
+<li>Attention is All You Need <strong>这个标题本身就是一种宣言</strong>。它证明了注意力机制本身就可以构建出强大的模型，而 RNN&#x2F;CNN 不再是必需品。</li>
+<li>它为后续所有模型（如 BERT、GPT 系列等）奠定了基础架构。</li>
+</ul>
+<ol start="2">
+<li><strong>效率上：完美利用了并行计算</strong></li>
+</ol>
+<ul>
+<li>由于自注意力机制在计算输入序列中任意两个位置的关系时，是相互独立的，因此整个过程可以被高效地并行化。这使得 Transformer 可以在巨大的数据集上进行训练，而 RNN 因为其串行性，训练规模一直受限。</li>
+<li>这为<strong>超大模型</strong>的出现铺平了道路。没有并行计算，就不可能有今天千亿参数级别的 GPT-4。</li>
+</ul>
+<ol start="3">
+<li><strong>效果上：显著提升了模型性能</strong></li>
+</ol>
+<ul>
+<li>它解决了 RNN 的长距离依赖问题，使得模型能够更好地捕获长文本中的复杂上下文信息，在机器翻译、文本摘要、问答等任务上取得了当时最好的成绩。</li>
+<li>随着模型规模（参数量）和数据量的增加，Transformer 表现出了强大的<strong>缩放定律</strong>——模型越大，数据越多，性能越好。这是一个非常重要的发现，鼓励了“大力出奇迹”的模型开发范式。</li>
+</ul>
+<ol start="4">
+<li><strong>应用上：催生了预训练-微调范式</strong></li>
+</ol>
+<ul>
+<li>BERT (Bidirectional Encoder Representations from Transformers) 是基于 Transformer <strong>编码器</strong>的代表作。它通过在海量无标签文本上进行“预训练”，学习通用的语言知识，然后在具体的下游任务（如情感分析、命名实体识别）上进行“微调”，就能取得非常好的效果。范式极大地降低了各任务的应用门槛。</li>
+<li>GPT (Generative Pre-trained Transformer) 系列模型是基于 Transformer <strong>解码器</strong>的代表作。它通过“自回归”方式（一次预测一个词）进行文本生成，从 GPT-1、GPT-2、GPT-3 发展到今天引爆全球的 ChatGPT，展示了 AI 在内容生成和对话方面的惊人能力。</li>
+</ul>
+<ol start="5">
+<li><strong>生态上：推动了基础大模型的繁荣</strong></li>
+</ol>
+<ul>
+<li>Transformer 架构的通用性和可扩展性，使其成为构建<strong>基础大模型</strong> 的标准范式。GPT、PaLM、LLaMA 等一系列改变世界的大模型，都建立在 Transformer 之上。</li>
+<li>它成为了一个新的<strong>“操作系统”</strong>，开发者们在这个核心架构上不断改进、优化和应用，从而催生了今天生机勃勃的 AI 大模型生态。</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left">RNN &#x2F; LSTM &#x2F; GRU</th>
+<th align="left">Transformer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>核心机制</strong></td>
+<td align="left">循环结构，隐藏状态传递</td>
+<td align="left">自注意力机制</td>
+</tr>
+<tr>
+<td align="left"><strong>计算方式</strong></td>
+<td align="left"><strong>串行</strong>，无法并行</td>
+<td align="left"><strong>并行</strong>，可高效计算</td>
+</tr>
+<tr>
+<td align="left"><strong>长距离依赖</strong></td>
+<td align="left">困难，易遗忘</td>
+<td align="left"><strong>容易</strong>，直接计算任意位置关系</td>
+</tr>
+<tr>
+<td align="left"><strong>训练效率</strong></td>
+<td align="left">慢</td>
+<td align="left"><strong>快</strong>，能充分利用 GPU&#x2F;TPU</td>
+</tr>
+<tr>
+<td align="left"><strong>规模扩展</strong></td>
+<td align="left">受限</td>
+<td align="left"><strong>良好</strong>，易于构建超大模型</td>
+</tr>
+<tr>
+<td align="left"><strong>代表模型</strong></td>
+<td align="left">传统机器翻译、语音识别</td>
+<td align="left"><strong>BERT, GPT, PaLM, LLaMA</strong> 等</td>
+</tr>
+</tbody></table>
+<p><strong>Transformer 架构的创新，不仅仅是提出了一个新的模型，更是开启了一个新时代。它将自然语言处理的范式从“特定任务、特定模型”推向了“通用基础模型、微调即服务”，其深远影响足以与当年深度学习取代传统机器学习相媲美，是理解当今 AI 技术浪潮的基石。</strong></p>
+
+    </div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate comment here.hahaha~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Joho Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Joho Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Joho Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://chenjh3061.github.io/AI%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="机器学习">https://chenjh3061.github.io/AI编程/机器学习/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/AI/" rel="tag"><i class="fa fa-tag"></i> AI</a>
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E9%83%A8%E7%BD%B2/NGINX/" rel="prev" title="NGINX">
+      <i class="fa fa-chevron-left"></i> NGINX
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/AI%E7%BC%96%E7%A8%8B/AI%E7%BC%96%E7%A8%8B/" rel="next" title="AI编程">
+      AI编程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">一些概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E4%B8%AA%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0"><span class="nav-number">1.0.1.</span> <span class="nav-text">三个核心要素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E4%B8%AA%E7%AE%80%E5%8D%95%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.0.2.</span> <span class="nav-text">三个简单分类模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E4%B8%AA%E5%A4%8D%E6%9D%82%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.0.3.</span> <span class="nav-text">四个复杂分类模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8D%E5%B8%B8%E8%A7%81%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.0.4.</span> <span class="nav-text">四种常见聚类模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8D%E5%B8%B8%E8%A7%81%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.0.5.</span> <span class="nav-text">四种常见回归模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transformer%E6%9E%B6%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">transformer架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%80%BB%E7%BB%93%EF%BC%9ATransformer-%E7%9A%84%E6%A0%B8%E5%BF%83%E5%88%9B%E6%96%B0"><span class="nav-number">1.1.1.</span> <span class="nav-text">一、一句话总结：Transformer 的核心创新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Transformer-%E8%83%8C%E6%99%AF%E7%9A%84%E5%88%9B%E6%96%B0%EF%BC%9A%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">1.1.2.</span> <span class="nav-text">二、Transformer 背景的创新：解决了什么问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E3%80%81Transformer-%E7%9A%84%E6%A0%B8%E5%BF%83%E5%88%9B%E6%96%B0%EF%BC%9A%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.3.</span> <span class="nav-text">三、Transformer 的核心创新：自注意力机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Transformer-%E7%9A%84%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84"><span class="nav-number">1.1.4.</span> <span class="nav-text">四、Transformer 的完整架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94%E3%80%81Transformer-%E7%9A%84%E9%A2%A0%E8%A6%86%E6%80%A7%E6%84%8F%E4%B9%89"><span class="nav-number">1.1.5.</span> <span class="nav-text">五、Transformer 的颠覆性意义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Joho Chen</p>
+  <div class="site-description" itemprop="description">个人记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">235</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chenjh3061" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chenjh3061" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://music.163.com/#" title="https:&#x2F;&#x2F;music.163.com&#x2F;#" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+          <h5 class="widget-title">标签云</h5>
+          <div id="myCanvasContainer" class="widget tagcloud">
+              <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Agent/" rel="tag">AI-Agent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HarmonyOS/" rel="tag">HarmonyOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Obsidian%E7%94%A8%E6%B3%95/" rel="tag">Obsidian用法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenClaw/" rel="tag">OpenClaw</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-world/" rel="tag">hello-world</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%8F%B0/" rel="tag">中台</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E6%8C%81/" rel="tag">主持</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D/" rel="tag">事业单位</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/" rel="tag">交换技术</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E8%BA%AB/" rel="tag">健身</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AB%E5%AD%97/" rel="tag">八字</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E4%B8%93/" rel="tag">公专</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E8%80%83/" rel="tag">公考</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AD%E7%88%BB/" rel="tag">六爻</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%AF%E4%B8%9A/" rel="tag">副业</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%8E%E4%B8%BA/" rel="tag">华为</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E7%90%86/" rel="tag">命理</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%B2%E5%AD%A6/" rel="tag">哲学</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%94%B1%E6%AD%8C/" rel="tag">唱歌</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/" rel="tag">少儿编程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" rel="tag">开源项目</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%85%E8%AF%BB%E6%96%87%E7%AB%A0/" rel="tag">待读文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/" rel="tag">智能体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6/" rel="tag">玄学</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E4%BF%A1/" rel="tag">电信</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%B8%E9%9D%A2/" rel="tag">相面</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%96%E5%88%92/" rel="tag">策划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%A1%E7%90%86/" rel="tag">管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B0/" rel="tag">紫微斗数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag">网络工程师</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E8%AF%81/" rel="tag">考证</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B5%9A%E9%92%B1/" rel="tag">赚钱</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1/" rel="tag">路由</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/" rel="tag">软件设计师</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%80%83/" rel="tag">软考</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E5%8A%A8/" rel="tag">运动</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%90%A5%E5%95%86/" rel="tag">运营商</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%9A%E4%BF%A1/" rel="tag">通信</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A3%8E%E6%B0%B4/" rel="tag">风水</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%B8%BF%E8%92%99/" rel="tag">鸿蒙</a><span class="tag-list-count">1</span></li></ul>
+              </canvas>
+          </div>
+      </div>
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joho Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">635k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:37</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+# 网站运行时间
+runtime:
+   enable: true
+   create_time: "04/15/2022 13:18:00"
+   start: 2022-04-15 13:13:00 +0800
+   mobile: false
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

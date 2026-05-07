@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chenjh3061.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="面试组织管理题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试组织管理题">
+<meta property="og:url" content="https://chenjh3061.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%84%E7%BB%87%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:site_name" content="joho world">
+<meta property="og:description" content="面试组织管理题">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-30T02:25:34.000Z">
+<meta property="article:modified_time" content="2026-03-06T12:22:09.673Z">
+<meta property="article:author" content="Joho Chen">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chenjh3061.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%84%E7%BB%87%E7%AE%A1%E7%90%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>面试组织管理题 | joho world</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="joho world" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">joho world</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%84%E7%BB%87%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          面试组织管理题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-30 10:25:34" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-06 20:22:09" itemprop="dateModified" datetime="2026-03-06T20:22:09+08:00">2026-03-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%AC%E8%80%83/" itemprop="url" rel="index"><span itemprop="name">公考</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+            <div class="post-description">面试组织管理题</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>题型多样；以效果为核心，做到有条理；</p>
+<p>思路：一个开头+三个阶段</p>
+<h2 id="总论"><a href="#总论" class="headerlink" title="总论"></a>总论</h2><p>难点：类型多、要素多、信息多、经验少</p>
+<p>纵向分层八段锦（暗线）：<br>    主题、时间、地点、对象<br>    内容、&#x3D;&#x3D;<strong>方式</strong>&#x3D;&#x3D;、保障、效果</p>
+<p>重视事中推进<br>    四个一活动法：一次一次一次一次<br>目的、重点、扣题、</p>
+<h2 id="一、调研"><a href="#一、调研" class="headerlink" title="一、调研"></a>一、调研</h2><p>审题：目的分析-&gt;内容-&gt;对象-&gt;方式（问卷、走访、座谈会、暗访）</p>
+<p>答题：准备工作-&gt;展开调研-&gt;总结调研成果</p>
+<p>注意办事逻辑，做事流程</p>
+<p>调研现状、问题、有利于发展的对策</p>
+<p>1、在全面建成小康社会的关键时期，为了学习其他地区在小康社会建设方面的经验。领导让你组织一些专家和记者到先进地区进行考察和调研。如果安排你负责这项工作你会怎么组织?<br>![[Pasted image 20250121151243.png]]<br>    如果由我来负责这次去A县的观摩学习活动，在前期的沟通协调上，我会重点从三方面入手。<br>    首先，我会先和本县的分管领导沟通，明确本次观摩的核心重点是什么，比如产业发展、人居环境整治，还是基层治理。同时我会建议以镇为单位，每镇由一名书记和一名农户代表组成观摩团，确保人员具有代表性，便于后续经验落实。我自己也会牵头建立一个联络小组，负责统筹对接。<br>    其次，我会主动联系A县的对口部门，先通过电话或邮件说明我们的来意、人数、时间和学习重点，了解对方的接待安排和可开放的参观点。在此基础上，我会拟一份初步的观摩形成，包括参观哪些村、看什么项目、是否安排座谈等，发给A县征求意见，再根据反馈调整优化，确保路线合理、内容充实。<br>    最后，我会在出发之前组织一次简短的沟通会，向与会人员说明观摩重点和注意事项，同时收集大家最想了解的问题，比如集体经济和乡村旅游，把需求汇总后提前反馈给A县，让对方在讲解和交流中更有针对性，提升学习实效。</p>
+<p>模板：</p>
+<p>做好此次调研，能充分了解XX情况，为进一步题推进&#x2F;优化XX提供参考依据（为XX提供方向，保证XX顺利开展），我会重点做好以下三个方面：</p>
+<p>首先，做好充分的筹备工作。1、成立调研小组，结合单位工作情况及本次调研的需要成立调研小组，并进行简单培训，就此次调研的目的、内容、方式、对象进行说明，统一调研口径，保证效果。2、全面制定调研问卷。我会围绕调研目的将本次调研所需的信息，一一设置好相应的问题，保证调研内容的全面性。3、做好工作安排。我会明确好各项工作的时间点，保证此次调研如期完成。</p>
+<p> 在做好以上工作的基础之上，有序开展调研。我会结合不同调查对象的特点，灵活运用走访、问卷、座谈会等方式了解三个方面的内容。1、了解XX存在的问题&#x2F;原因。2、了解XX建议&#x2F;经验。3、了解XX需求。</p>
+<p> 调研结束后，我会整理调研报告。对于收集到的信息进行分类整理，尤其是数据的处理，无效的数据要剔除，用数据处理软件进行处理，确保调研报告的真实性&#x2F;就XX存在的现状及建议一一说明，以图文的形式呈现，形成关于XX的调研报告，交给领导&#x2F;相关部门。（445字）</p>
+<p>1、你是县乡村振兴局工作人员，领导让你对本县特色农产品（枸杞、滩羊、葡萄酒等）品牌建设、市场销路、电商发展情况开展一次专项调研，你会如何组织实施？<br>    八段锦<br>    ![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20260201221723.png]]<br>    ![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20260201221734.png]]</p>
+<h2 id="二、宣传"><a href="#二、宣传" class="headerlink" title="二、宣传"></a>二、宣传</h2><p>审题：目的分析→内容→对象→方式<br>z<br>答题：准备工作→开展宣传→强化效果</p>
+<p>1、在社区开展垃圾分类的宣传，你会怎么组织?<br>![[Pasted image 20250121153707.png]]<br>做好此次宣传有利于增加XX对XX的了解，将XX深入人心，从而推动XX的实现。我将重点做好以下三个方面工作：</p>
+<p> 首先，做好准备工作。1、成立宣传小组，结合单位工作情况及本次宣传的需要成立调研小组，并进行简单培训，就此次宣传的目的、内容、方式、对象进行说明，保证效果。2、准备宣传素材。我会结合宣传内容及不同宣传对象的特点制作文字、图片、视频等素材。3、做好保障工作。宣传小组要制作预算表和计划表，合理安排工作进度。</p>
+<p> 在完成以上的工作后，我会开展宣传。1、线下宣传营造XX氛围。通过横幅、宣传栏、电梯广播，公交、地铁、交通广播、地标建筑，进机关，进社区，进学校，让XX感受到处处是XX。2、线上宣传进行补充。微信、抖音、微博等。3、活动宣传深化效果。我会开展宣讲会、知识竞赛等活动，让XX在活动中感受XX，深化宣传。</p>
+<p> 最后，我会对宣传效果进行了解，简单调研XX的反馈，如果没有实现预期目标，我会创新宣传方式，优化宣传工作进行二次宣传。如果宣传效果理想，我会选择相对有效的宣传方式，进行常态化宣传。（432字）</p>
+<h2 id="三、活动"><a href="#三、活动" class="headerlink" title="三、活动"></a>三、活动</h2><p>1、街道办举办活动，要求以“幸福家庭、和谐社区”为主题，请你想两个创意活动，并就其中一个具体开展。<br>![[Pasted image 20250121153729.png]]<br>前期：<br>    调研本地、了解其他地区优秀经验、组建专班、对接其他部门、准备物资、宣传活动、形成活动方案。</p>
+<h2 id="四、综合工作"><a href="#四、综合工作" class="headerlink" title="四、综合工作"></a>四、综合工作</h2><p>1、你市要充分整合利用公园绿地、桥下空间等城市“金角银边”，将体育设施巧妙“嵌”入市民日常生活半径。如果由你负责，你认为应当重点考虑哪些工作？<br>    我认为应当重点把我以下三方面：<br>    一、精准摸排与科学规划同步推进。组织由城管、园林、体育、规划等多部门组成的联合摸排小组，结合卫星图、实地踏勘和居民问卷等方式，在全市进行拉网式排查，梳理哪些桥下空间、公园边角具备改造条件，摸清面积、人流、安全性等基础数据后，再一地一策，制定方案，比如桥下空间建乒乓球场、公园空地做太极广场，具备条件的地方还可以安排公共卫生间，避免一刀切浪费资源，让空间真正用得好。<br>    二、设施建设兼顾实用性和群众参与感。结合前期调研中居民反馈的情况，在建设中优先配置群众呼声高的项目，急群众之所急。同时试点共建共治共享模式，比如在社区公告栏征求居民意见，组织金角银边微提案大赛等活动，让居民参与设施布局和建设，提升认同感和使用意愿。<br>    三、建立可持续政策机制。建好更要管好，明确属地街道为管理责任主体，引入社区志愿者、物业或本地体育组织共同维护。同时摸索以用代管模式，配合体育社团等使用，减少破坏和荒废。同时设置线上公众号和线下居民反映渠道，居民可以便捷保修或提建议，实现闭环管理。</p>
+<p>2、你是市场监管局工作人员，辖区内部分餐饮单位存在食品安全隐患、外卖平台乱象、虚假宣传等问题，群众反映强烈，领导让你牵头开展一次“食品安全专项整治”行动。你会如何组织？<br>    ![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20260201153004.png]]<br>    作为市场监督管理局工作人员，我深知食品安全事关群众生命健康和社会稳定。接到领导安排后，我将坚持“人民至上、问题导向”原则，从五个方面系统组织“食品安全专项整治”行动，确保整治工作见实效、可持续。具体如下：<br>    第一，组建工作专班，制定行动方案。<br>    我会立即牵头成立工作专班，抽调各部门业务骨干，明确组长、副组长及成员职责，确保专业力量全覆盖。同时，深入调研辖区餐饮单位分布、群众投诉热点和历史监管数据，制定科学可行的行动方案。细化目标，如消除重大隐患、规范外卖平台秩序；同时明确时间节点、责任分工和应急预案，报请领导审批后严格执行，确保行动“有章可循、有责可究”。<br>    第二，梳理问题清单，确定整治范围。<br>    我会通过“线上+线下”双渠道全面梳理问题：线上整合市长热线平台投诉、社交媒体舆情和外卖平台数据，线下联合社区网格员走访摸排，建立动态问题清单。清单将分类标注食品安全隐患、外卖平台乱象、虚假宣传等三类问题，并依据风险等级排序。在此基础上，聚焦学校周边、商业中心等重点区域，锁定重点对象，划定整治“靶心”，避免“撒网式”检查，确保资源精准投放。<br>    第三，部署开展自查，同步审查典型。<br>    一方面，下发《自查自纠通知书》，要求餐饮单位7日内完成全面自查，重点排查食材来源、加工流程和宣传内容，并提交整改报告；对拒不配合的单位，依法约谈警告。另一方面，同步开展“典型审查”：组织专项检查组，针对群众投诉反应最为强烈的餐饮单位，对相关发现的典型问题进行突击核查，同时暗访外卖平台，抽查订单真实性，确保问题“查深查透、不留死角”。<br>    第四，加强正反宣传，营造舆论氛围。<br>    坚持“整治与引导并重”：对于历史以来屡教不改的餐饮单位，在官方媒体和线下宣传栏点名批评，曝光非法典型。而对于守法经营的标杆单位，进行表彰，同时引入流动红旗制度，发放安心商家认证。形成“政府监管、企业自律、群众监督”的共治氛围，让整治行动从“要我安全”转向“我要安全”。<br>    第五，制度监督再重，巩固整治成效。<br>    整治结束后，还需要建立长效机制：<br>    线上通过政务公众号、短视频平台发布《食品安全小课堂》，并设置“随手拍”举报入口；线下联合社区开展“食品安全进万家”活动，发放宣传手册、举办讲座，邀请群众代表参与“明厨亮灶”体验日。同时常态化检查，每季度开展“回头看”；此外，定期向群众通报整治成果，接受社会监督，确保问题不反弹。最终形成《专项整治白皮书》，提炼可推广经验，为长效治理提供依据。<br>    总之，我将以“时时放心不下”的责任感，把群众满意度作为检验标准，确保专项整治“治标更治本”，切实守护好人民群众“舌尖上的安全”。</p>
+<p>3、你是市商务局工作人员，为助力中小微企业数字化转型，提升企业电商运营、直播带货、跨境电商能力，领导让你组织一次“数字赋能 · 助企发展”专题培训班，你会如何开展？<br>    ![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20260201214714.png]]</p>
+<p>4、你是街道办工作人员，为提升基层治理效能，打造15分钟便民生活圈，领导让你牵头建设“社区党群服务中心+智慧服务平台”，整合政务、养老、文体、医疗等功能，你会如何推进？<br>    ![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20260202212149.png]]</p>
+<p>大类题：<br>5、你是市文旅局工作人员， 市里将举办“京津冀文旅发展论坛”，涉及多地嘉宾、媒体、企业代表参会，领导安排你负责会场布置、流程衔接、后勤服务、应急保障等工作，你会如何组织？<br>    ![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20260202220612.png]]</p>
+<p>6、你是海事局政务中心负责人，为提升船员、船东、航运企业办事便利度，解决船舶登记、船员证书、通航许可等办理痛点，领导让你牵头打造“海事政务一站式服务”升级项目，你会如何组织实施？<br>    ![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20260202221827.png]]</p>
+<p>7、你所在街道计划在各小区推行“线上点单、线下服务”上门服务，模式，聚焦群众“急难愁盼”问题，提供上门理发、免费量血压、磨菜刀剪刀等便民服务。你作为街道办事处工作人员，负责组织此次活动，会如何开展？<br>    ![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20260207101826.png]]<br>    一、前期筹备：精准摸底，量体裁衣<br>    确定服务清单（量力而行）<br>    我会先联合各小区网格员，通过业主群、上门走访等方式，征集居民的实际需求。除了题目里提到的理发、量血压、磨菜刀，还可以收集其他高频诉求，比如小家电维修、代缴水电费等。<br>    之后，我会结合街道的人力、物力资源，筛选出可落地的服务项目，形成正式服务清单，并同步明确每项服务的频次、覆盖人群和收费标准（公益类项目明确免费）。<br>    搭建点单渠道（简单易行）<br>    我会以微信为核心工具，搭建 “线上点单” 的便捷渠道。<br>    为每个小区建立专属服务接龙群，居民只需在群内按 “姓名 + 住址 + 服务项目 + 时间” 格式接龙即可完成点单。<br>    针对不会使用智能手机的老年人，我会安排网格员、志愿者协助代填，确保服务覆盖所有人群。<br>    同时，我会在群内公示服务须知、安全承诺和反馈入口，让居民一目了然。<br>    二、中期执行：规范运作，保障安全<br>    集中提供服务（定量定时）<br>    我会将服务时间固定为每周三、周六下午，以小区为单位集中开展。<br>    提前在各小区公告栏、业主群发布服务预告，明确当次可提供的服务项目和接单上限。<br>    活动当天，在小区广场设置临时服务点，安排志愿者引导居民有序排队，避免人员聚集。<br>    对于行动不便的独居老人、残疾人等特殊群体，我会安排服务人员提供上门一对一服务，确保服务不打折扣。<br>    严选服务人员（严进人员）<br>    我会建立服务人员准入机制：<br>    优先选择有资质、口碑好的本地商户或志愿者团队，比如联系本地理发店、社区医院，筛选具备健康证、执业资格的人员。<br>    所有服务人员必须通过背景审查，并签订《安全服务承诺书》，明确服务规范和责任。<br>    服务前，我会组织统一培训，重点强调文明用语、操作规范和疫情防控要求，比如理发工具消毒、血压测量的注意事项等。<br>    三、后期优化：动态调整，长效运营<br>    用好群众反馈（动态调整）<br>    我会在每次服务结束后，通过群内问卷、现场回访等方式收集居民的评价和建议。<br>    比如，统计居民对服务项目的满意度，分析高频投诉或需求变化，及时调整服务清单。<br>    如果居民反映磨菜刀的需求特别大，我会增加该项目的服务频次；如果某类服务参与率低，我会评估后予以替换。<br>    建立长效机制<br>    我会定期复盘活动数据，形成《便民服务运营报告》，并推动将此项服务纳入街道常态化民生工程。<br>    同时，我会积极联动辖区企业、社会组织，引入更多公益资源，丰富服务内容，让 “线上点单、线下服务” 成为解决群众 “急难愁盼” 的长效抓手。</p>
+<p>五、积累<br>十种活动：<br>    ![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20260207094505.png]]<br>    宣讲会：报名、流程、效果<br>    面对面：选人、选点、流程、效果<br>    上门活动：春联|鼠标垫|日历|水杯、上门|座谈|宣传<br>    友谊赛：报名、比赛、颁奖<br>    推广：制作文案、选择平台、精准投流、答疑<br>    ![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20260207100249.png]]<br>    短剧&#x2F;视频：文案、拍摄、展播<br>    有奖问答：题目、提问、奖励<br>    进社区：选人、选点、答疑、礼品<br>    征集评比：主题、宣传、收集、评比、公布<br>    表演：对接、文案、排演、演出<br>    主题骑行：人员、线路、行动、宣传<br>    冠名活动：（预算很多）<br>    组织转发朋友圈：制作、动员、宣传 </p>
+
+    </div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate comment here.hahaha~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Joho Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Joho Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Joho Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://chenjh3061.github.io/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%84%E7%BB%87%E7%AE%A1%E7%90%86/" title="面试组织管理题">https://chenjh3061.github.io/公考/面试/组织管理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E7%BB%93%E6%9E%84%E5%8C%96%E9%9D%A2%E8%AF%95%E4%BB%8B%E7%BB%8D/" rel="prev" title="结构化面试介绍">
+      <i class="fa fa-chevron-left"></i> 结构化面试介绍
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E5%85%AC%E8%80%83/%E9%9D%A2%E8%AF%95/%E6%83%85%E6%99%AF%E6%A8%A1%E6%8B%9F/" rel="next" title="情景模拟">
+      情景模拟 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">总论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%B0%83%E7%A0%94"><span class="nav-number">2.</span> <span class="nav-text">一、调研</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%A3%E4%BC%A0"><span class="nav-number">3.</span> <span class="nav-text">二、宣传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%B4%BB%E5%8A%A8"><span class="nav-number">4.</span> <span class="nav-text">三、活动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%BB%BC%E5%90%88%E5%B7%A5%E4%BD%9C"><span class="nav-number">5.</span> <span class="nav-text">四、综合工作</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Joho Chen</p>
+  <div class="site-description" itemprop="description">个人记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">235</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chenjh3061" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chenjh3061" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://music.163.com/#" title="https:&#x2F;&#x2F;music.163.com&#x2F;#" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+          <h5 class="widget-title">标签云</h5>
+          <div id="myCanvasContainer" class="widget tagcloud">
+              <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Agent/" rel="tag">AI-Agent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HarmonyOS/" rel="tag">HarmonyOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Obsidian%E7%94%A8%E6%B3%95/" rel="tag">Obsidian用法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenClaw/" rel="tag">OpenClaw</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-world/" rel="tag">hello-world</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%8F%B0/" rel="tag">中台</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E6%8C%81/" rel="tag">主持</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D/" rel="tag">事业单位</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/" rel="tag">交换技术</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E8%BA%AB/" rel="tag">健身</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AB%E5%AD%97/" rel="tag">八字</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E4%B8%93/" rel="tag">公专</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E8%80%83/" rel="tag">公考</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AD%E7%88%BB/" rel="tag">六爻</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%AF%E4%B8%9A/" rel="tag">副业</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%8E%E4%B8%BA/" rel="tag">华为</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E7%90%86/" rel="tag">命理</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%B2%E5%AD%A6/" rel="tag">哲学</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%94%B1%E6%AD%8C/" rel="tag">唱歌</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/" rel="tag">少儿编程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" rel="tag">开源项目</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%85%E8%AF%BB%E6%96%87%E7%AB%A0/" rel="tag">待读文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/" rel="tag">智能体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6/" rel="tag">玄学</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E4%BF%A1/" rel="tag">电信</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%B8%E9%9D%A2/" rel="tag">相面</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%96%E5%88%92/" rel="tag">策划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%A1%E7%90%86/" rel="tag">管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B0/" rel="tag">紫微斗数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag">网络工程师</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E8%AF%81/" rel="tag">考证</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B5%9A%E9%92%B1/" rel="tag">赚钱</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1/" rel="tag">路由</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/" rel="tag">软件设计师</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%80%83/" rel="tag">软考</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E5%8A%A8/" rel="tag">运动</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%90%A5%E5%95%86/" rel="tag">运营商</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%9A%E4%BF%A1/" rel="tag">通信</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A3%8E%E6%B0%B4/" rel="tag">风水</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%B8%BF%E8%92%99/" rel="tag">鸿蒙</a><span class="tag-list-count">1</span></li></ul>
+              </canvas>
+          </div>
+      </div>
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joho Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">635k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:37</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+# 网站运行时间
+runtime:
+   enable: true
+   create_time: "04/15/2022 13:18:00"
+   start: 2022-04-15 13:13:00 +0800
+   mobile: false
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

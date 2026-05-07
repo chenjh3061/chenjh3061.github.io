@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chenjh3061.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="光网是国家战略，全光网产业端到端自主可控，全光网市场空间巨大。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全光组网">
+<meta property="og:url" content="https://chenjh3061.github.io/DX/%E4%BA%91%E4%B8%AD%E5%8F%B0/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91/index.html">
+<meta property="og:site_name" content="joho world">
+<meta property="og:description" content="光网是国家战略，全光网产业端到端自主可控，全光网市场空间巨大。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1763447955082.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761098491018.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761115478181.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761116248834.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761181522411.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761181550208.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761181624180.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761271547579.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761272452775.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765781547082.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765783828398.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765786577536.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765876544150.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765935135002.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765876989872.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765877154467.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765936048863.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765936212626.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765936375127.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765936474371.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765936962072.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937110664.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937250146.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937419709.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937528834.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937708820.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937820587.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765938094179.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765938257295.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765938564209.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765939482900.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765939556105.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765939628713.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765940117528.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765941420875.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765941585219.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765941734287.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765941842567.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765956594303.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765961918547.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765961965333.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765962715957.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765962769037.png">
+<meta property="og:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765963367353.png">
+<meta property="article:published_time" content="2025-10-26T07:54:13.000Z">
+<meta property="article:modified_time" content="2026-04-19T05:40:44.519Z">
+<meta property="article:author" content="Joho Chen">
+<meta property="article:tag" content="电信">
+<meta property="article:tag" content="工作">
+<meta property="article:tag" content="云计算">
+<meta property="article:tag" content="中台">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://chenjh3061.github.io/image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1763447955082.png">
+
+<link rel="canonical" href="https://chenjh3061.github.io/DX/%E4%BA%91%E4%B8%AD%E5%8F%B0/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>全光组网 | joho world</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="joho world" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">joho world</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061.github.io/DX/%E4%BA%91%E4%B8%AD%E5%8F%B0/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          全光组网
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-10-26 15:54:13" itemprop="dateCreated datePublished" datetime="2025-10-26T15:54:13+08:00">2025-10-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-04-19 13:40:44" itemprop="dateModified" datetime="2026-04-19T13:40:44+08:00">2026-04-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">工作</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C/DX/" itemprop="url" rel="index"><span itemprop="name">DX</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+            <div class="post-description">光网是国家战略，全光网产业端到端自主可控，全光网市场空间巨大。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>光网是国家战略，全光网产业端到端自主可控，全光网市场空间巨大。<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1763447955082.png"></p>
+<h2 id="物理结构"><a href="#物理结构" class="headerlink" title="物理结构"></a>物理结构</h2><ul>
+<li><p><strong>线缆知识</strong>：<br>    - <strong>皮缆</strong>：类似光纤，有不同接头型号，成品线一般最长35米，工程距离长时使用。<br>    - <strong>网线</strong>：工程中长距离需自己做头，尾纤用于机房或短距离户外，皮线两端用熔纤方式做头。</p>
+</li>
+<li><p><strong>设备部件</strong>：<br>    - <strong>分光器</strong>：分不同规格，用于将光分成多路，无源设备。<br>    - <strong>熔纤盘</strong>：连接光缆与光纤，实现光资源利用。<br>    - <strong>主光猫</strong>：由熔纤盘接尾纤连接，OLT设备通过它让用户上网。<br>    - <strong>有源设备</strong>：需接电，如主光猫；无源设备如分光器，无需接电。</p>
+</li>
+<li><p><strong>组网概念</strong>：<br>    - <strong>全光正向组网</strong>：主设备到从设备用光连接，通过分光器将光分给从设备。<br>    - <strong>PON口</strong>：光纤接到设备的接口，分上行和下行口。是无源分光网络口。<br>    - <strong>光电复合缆</strong>：同时传输光和电，解决设备供电问题。</p>
+</li>
+<li><p><strong>OLT设备</strong>：区域级光集中器，统管一片区域的光，光传给主设备，主设备再下发数据。</p>
+</li>
+<li><p><strong>无缝漫游</strong>：不同主网关间实现漫游功能，用户移动时网络不断线，通过OLT实现。</p>
+</li>
+<li><p><strong>产品优势</strong>：运维全负责、全光信号传输稳定、有源设备少耗电少。</p>
+</li>
+<li><p><strong>布点原则</strong>：<br>    - <strong>信号强度</strong>：以 -20 到 -40 为好，穿水泥墙信号会衰减。-50和-60已经比较慢。可以通过一边看直播一边在用户区域走动测试信号。<br>    - <strong>覆盖范围</strong>：吸顶设备覆盖范围100 - 120平，半径8 - 10米，高度不超5米。<br>    - <strong>场景考虑</strong>：政企客户多放走廊，非政企客户可放室内，需考虑成本和领导办公室等特殊点位。</p>
+</li>
+</ul>
+<p>光网优势：</p>
+<ul>
+<li>重量轻、占空间小</li>
+<li>传输距离远，使用年限长</li>
+<li>带宽升级无需更换</li>
+<li>光纤比铜缆价格低</li>
+<li>无源光汇聚网络扁平（OLT光纤线路终端+ONU），ODN无源节能环保省机房空调等。</li>
+<li>运营商有光缆工程优势。<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761098491018.png"></li>
+</ul>
+<p>OLT（光纤线路终端）–光缆–熔纤盘–主光猫–分光器–从光猫<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761115478181.png" alt="|0x0"><br><strong>1. 光信号入口 (OLT)</strong></p>
+<ul>
+<li>互联网数据首先进入 <strong>OLT</strong>，这是一个覆盖一个区域的集中设备。</li>
+<li>OLT将电信号转换为光信号，通过光纤向下分发。</li>
+</ul>
+<p><strong>2. 光信号分发 (分光器)</strong></p>
+<ul>
+<li>光信号通过光纤到达 <strong>分光器</strong>。这是一个<strong>无源设备</strong>，无需供电，作用是将一路主干光信号<strong>分成多路</strong>，送给多个<strong>主光猫</strong>。</li>
+<li>这使得单个OLT端口能够服务大量用户，极大地节省了光纤资源。</li>
+</ul>
+<p>光分配网ODN<br>光网络单元ONU（用户侧）</p>
+<p><strong>3. 主网关转换 (主光猫)</strong></p>
+<ul>
+<li><strong>主光猫</strong>接收到分光器传来的光信号，将其转换为网络数据，并承担起家庭或办公室<strong>主网关</strong>的角色。</li>
+<li>它通过<strong>光电复合缆</strong>向下联的<strong>有源分光器</strong>同时提供<strong>光信号</strong>和<strong>电力</strong>。</li>
+</ul>
+<p><strong>4. 终端信号覆盖 (有源分光器 → 从网关)</strong></p>
+<ul>
+<li><strong>有源分光器</strong>是组网的关键延伸。它接收来自主网关的光电复合缆，并将<strong>光信号和电力</strong>通过其多个端口分配给各个<strong>从网关</strong>。如果但分光器不够还可以通过<strong>级联口</strong>进行多分光器级联。级联过多导致光衰时，要加无源分光器把光直接拉到设备上。<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761116248834.png"></li>
+<li><strong>从网关</strong>是部署在每个房间或区域的Wi-Fi接入点，它通过接收光信号并为用户提供最终的无线网络覆盖。</li>
+</ul>
+<p><strong>5. 实现无缝漫游</strong></p>
+<ul>
+<li>整个网络由顶层的OLT统一管理和分配IP地址，所有主、从网关都在同一个逻辑网络下。</li>
+<li>因此当手机在移动时，会自动切换到信号最强的那个从网关，这个过程无需重新认证，从而实现<strong>无缝漫游</strong>。</li>
+</ul>
+<p>POE交换机支持对网线进行直流供电。</p>
+<h3 id="与交换机组网对比"><a href="#与交换机组网对比" class="headerlink" title="与交换机组网对比"></a>与交换机组网对比</h3><p>1、成本<br>    光纤比网线便宜，但是设备价格各有千秋<br>2、方便<br>    光纤省事，轻巧<br>    但是交换机是统一协议，但是pon设备不互通</p>
+<p>大型密集：推荐pon<br>小微：交换机，好维护</p>
+<p>刚性通道：电路<br>柔性通道：光路</p>
+<h3 id="TIP：OLT"><a href="#TIP：OLT" class="headerlink" title="TIP：OLT"></a>TIP：OLT</h3><p>接入层的光设备<br>可以接入家款、专网（企业专线）、数据（如摄像头）、园区网。</p>
+<p>上行到OLT的ONU接口有GPON、XGPON、EPON<br>GPON：吉比特无源光网络<br>    - <strong>速率</strong>：<br>    - <strong>下行</strong>: 2.488 Gbps<br>    - <strong>上行</strong>: 1.244 Gbps</p>
+<ul>
+<li><strong>技术标准</strong>：ITU-T G.984 标准。</li>
+<li><strong>特点</strong>：<ul>
+<li><strong>上下行不对称</strong>：下行速率（下载）是上行速率（上传）的两倍，非常符合普通家庭用户“大下载、小上传”的上网习惯。</li>
+<li><strong>分光比高</strong>：支持最大1:64的分光比，意味着一根光纤可以分给64个用户，成本效益高。</li>
+<li><strong>成熟稳定</strong>：技术非常成熟，是全球部署最广泛的PON技术，是目前绝大多数家庭的标配。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：提供最高1000Mbps（千兆）带宽的普通家庭宽带套餐。<ul>
+<li><strong>注意</strong>：虽然GPON的物理下行速率高达2.488Gbps，但由于系统开销和共享带宽，实际能到户的稳定带宽通常在 <strong>900-1000Mbps</strong> 左右。<br>XGPON：10吉比特无源光网络</li>
+<li><strong>速率</strong>：</li>
+<li><strong>下行</strong>: 10 Gbps</li>
+<li><strong>上行</strong>: 2.5 Gbps 或 10 Gbps (取决于具体标准XGS-PON)</li>
+</ul>
+</li>
+<li><strong>技术标准</strong>：ITU-T G.987 标准。XG-PON本身只定义了10G&#x2F;2.5G的速率，而XGS-PON是它的一个子集，定义了对称的10G&#x2F;10G速率。</li>
+<li><strong>特点</strong>：<ul>
+<li><strong>速率大幅提升</strong>：下行速率是GPON的4倍，上行速率是GPON的2倍或更高，能提供更流畅的4K&#x2F;8K视频、云游戏、高速下载等体验。</li>
+<li><strong>对分光比要求更高</strong>：为了保证高带宽，实际部署时分光比通常控制在1:32或1:16。</li>
+<li><strong>成本更高</strong>：设备成本和光纤要求都比GPON高。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：运营商提供的 <strong>2000Mbps、3000Mbps甚至5000Mbps</strong> 的超高速宽带套餐。它向未来的万兆（10Gbps）平滑演进。<br>GE口：千兆以太网口<ul>
+<li><strong>速率</strong>：</li>
+<li><strong>全双工</strong>: 1 Gbps (即1000 Mbps)</li>
+</ul>
+</li>
+<li><strong>技术标准</strong>：IEEE 802.3ab 标准。</li>
+<li><strong>特点</strong>：<ul>
+<li><strong>对称速率</strong>：理论上下行都是1Gbps，非常对称。</li>
+<li><strong>技术通用</strong>：这是目前局域网中最标准的接口，几乎所有路由器、电脑、交换机都配备。</li>
+<li><strong>工作在第二层（数据链路层）</strong>：它只负责数据帧的转发，不关心整个光网络的调度和复用。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li><strong>光猫的LAN侧接口</strong>：光猫接收到PON口的光信号并转换成电信号后，通过GE口连接到用户家里的路由器或电脑。这是绝大多数<strong>1000Mbps及以下宽带</strong>的最终出口。</li>
+<li><strong>企业路由器&#x2F;交换机端口</strong>：作为内部网络连接的标准接口。</li>
+</ul>
+</li>
+</ul>
+<h2 id="业务推进"><a href="#业务推进" class="headerlink" title="业务推进"></a>业务推进</h2><p>商企多房间高并发，可用纯WiFi。<br>中大企业有小翼全光网和高阶网关。<br>统一自维服务，自交付、自运维、自运营。<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761181522411.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761181550208.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761181624180.png"></p>
+<p>Tip：溯源和安审<br>溯源电信自有，能够反查上网账号。而安审必须要受理portal认证，需要手动在配置里面网络-远程管理-插件管理-携网勾选。<br>    或aWiFi配置-启用aWiFi-携网</p>
+<h4 id="1-1-N"><a href="#1-1-N" class="headerlink" title="1+1+N"></a>1+1+N</h4><h2 id="FTTR解构"><a href="#FTTR解构" class="headerlink" title="FTTR解构"></a>FTTR解构</h2><p>OLT往下：<br>主光猫：<br>有&#x2F;无源不等比分光器：一个上行口一个级联口多个下行口<br>AP设备：嵌入式、桶式。</p>
+<h4 id="政企高阶组网"><a href="#政企高阶组网" class="headerlink" title="政企高阶组网"></a>政企高阶组网</h4><p>用的是高阶网关，附加CPU+AI卡+存储+基本防火墙。能够接入用友致远天翼网盘，还能汇聚视频。<br>    服务新企业，一站式买齐</p>
+<h4 id="小翼全光网"><a href="#小翼全光网" class="headerlink" title="小翼全光网"></a>小翼全光网</h4><p>FTTR-大B，wapon是小b，都属于政企全光组网。</p>
+<p>小翼用来取代以前所有的老组网，核心是使用了全光多PON口主网关（中兴A10、P610&#x2F;锐捷），配合光AP、从光猫、分光器。</p>
+<p>主网关可以根据OLT来决定PON上行（Xgpon，一个PON口可连三个AP）或LAN上行（GE口，配合光猫做上行）。可以保留现有内网部分新开，也可以双上行做负载均衡。</p>
+<p>主网关&#x3D;路由器+防火墙（最基本的）+AC+交换机+OLT<br>安防类特制产品还可以带有源摄像头，还有双上行做备份的产品。</p>
+<p>两个主推设备：<br>中兴P610<br>最多256个AP，单AP支持64终端接入，32个并发，也就是最多1200个终端。更多并发或者支持WIFI7的版本是集采外了。</p>
+<p>方案指引：<br>分期24个月<br>p610每月660元<br>p604，330元<br>施工队去不能填装机费，给月租的3倍激励。</p>
+<h2 id="全光组网平台运营管理平台"><a href="#全光组网平台运营管理平台" class="headerlink" title="全光组网平台运营管理平台"></a>全光组网平台运营管理平台</h2><p>售后管理的平台，维护支撑。<br>主要用来一键检测，具体情况还是要去现场看。<br>权限走ACC申请，WAPON认证平台<br>内网登录10.18.</p>
+<p>网管认证管理，用户如果开了wapon认证能力，就需要分析mse和认证通不通，考虑是否割接。</p>
+<h3 id="客户自服务平台"><a href="#客户自服务平台" class="headerlink" title="客户自服务平台"></a>客户自服务平台</h3><p>网管监控+认证管理<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761271547579.png"><br>有一键检测、一键调优</p>
+<p>漫游配置、上网时段管理、网络使用统计分析、<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1761272452775.png"></p>
+<h2 id="双线复杂组网"><a href="#双线复杂组网" class="headerlink" title="双线复杂组网"></a>双线复杂组网</h2><h3 id="网络通信基本原理"><a href="#网络通信基本原理" class="headerlink" title="网络通信基本原理"></a>网络通信基本原理</h3><p><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765781547082.png"><br>IPRAN是4G的承载网，STN是5G。<br>EPC是4G的核心网，5GC是5G的核心网。<br>再通过CE到163和CN2。</p>
+<p>ONU和OLT组成的是PON。UP和CP是核心层（转发面和控制面）。</p>
+<p>网络通信<br>定义：网络通信是指通过计算机网络实现设备之间的数据传输和信息交换。<br>关键要素：</p>
+<ul>
+<li>发送方与接收方</li>
+<li>传输介质 (有线、无线)－ 通信协议<br>应用场景：互联网、局域网、物联网等。</li>
+</ul>
+<p>通信模型：<br>点对点：两个设备直接通信<br>广播：一个设备向多个设备发送数据</p>
+<p>通信方式：<br>单工：单向<br>半双工：双向交替<br>全双工：双向同时</p>
+<p>数据传输：<br>电路交换：建立专用路径（如早期电话线）<br>分组交换：数据分割成多个组（互联网）<br>报文交换：数据以完整报文形式（较少用）</p>
+<p>协议与分层模型：<br>![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20251026185536.png]]<br>应用层：（端口号用来标示互相通信的应用程序）<br>    文件传输：TFTP(161)、FTP(21)、NFS<br>    邮件：SMTP(25)<br>    远程登录：Telnet(23)、rlogin<br>    网络管理：SNMP(161)<br>    域名管理：DNS(53)<br>TCP（协议类型字段6）：FTP、Telnet、SMTP<br>UDP（17）：DNS、TFTP、SNMP</p>
+<p>层层封装、层层解封装<br> <img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765783828398.png"></p>
+<p>TCP三握四挥<br>UDP高效无连接不可靠</p>
+<p>网络层：<br>    IP、<br>    地址解析&#x2F;反向地址解析：ARP&#x2F;RARP<br>    互联网控制消息协议：ICMP（包括ping、tracert）<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765786577536.png"><br>20字节报头<br>版本、首部长、优先级和服务类型、总长度<br>唯一标识、分片控制标志、片偏移<br>生存时间（经过一个路由器就减一，0之后丢弃，防止环路）、协议、首部校验和<br>源IP<br>目的IP<br>选项、数据</p>
+<h3 id="IPRAN移动回传网络基础"><a href="#IPRAN移动回传网络基础" class="headerlink" title="IPRAN移动回传网络基础"></a>IPRAN移动回传网络基础</h3><h4 id="IPRAN-STN网络架构"><a href="#IPRAN-STN网络架构" class="headerlink" title="IPRAN&#x2F;STN网络架构"></a>IPRAN&#x2F;STN网络架构</h4><p><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765876544150.png"></p>
+<p>核心层：作为中枢承担跨区域流量调度和高速转发，时延&lt;1ms，可靠性99.999%。<br>汇聚层：承接接入层流量，实施策略路由和QoS标记<br>部署业务边缘功能（如L3VPN termination）。<br>接入层：直接连接终端&#x2F;基站，提供最后一公里接入。支持多种接口：GE&#x2F;10GE&#x2F;25GE。时延要求：≤5ms（5G前传场景）。<br>    使用了环形拓扑增强可靠性</p>
+<p>ER（Edge Router）<br>    部署在核心层和外部网络边界，用于跨AS域路由交换、NAT444、抗DDoS攻击<br>DR（Domain Router）<br>    自治域内流量调度枢纽、实施MPLS TE流量工程<br>    必须支持ISIS Level-2路由协议、需配置BFD+FRR（故障倒换时间&lt;50ms）<br>A设备（Access Device）<br>    设备类型：无线场景：BBU（基带处理单元）、固网场景：OLT&#x2F;MDU</p>
+<p> IGP内部网关协议<br> BGP边界网关协议</p>
+<h4 id="承载业务"><a href="#承载业务" class="headerlink" title="承载业务"></a>承载业务</h4><h4 id="重点运维任务"><a href="#重点运维任务" class="headerlink" title="重点运维任务"></a>重点运维任务</h4><h4 id="网络演进与下一阶段计划"><a href="#网络演进与下一阶段计划" class="headerlink" title="网络演进与下一阶段计划"></a>网络演进与下一阶段计划</h4><h3 id="OTN专线"><a href="#OTN专线" class="headerlink" title="OTN专线"></a>OTN专线</h3><p>双线收入占产数的37%，是稳定政企客户、拉动集团收入的重要基础。<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765935135002.png"><br>SD-WAN横跨两类<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765876989872.png"><br>大网图<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765877154467.png"><br>163基础网，CN2三层组网，OTN二层组网<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765936048863.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765936212626.png"><br>OTN主要用在左边的广域组网场景</p>
+<h4 id="简单传输技术、OTN"><a href="#简单传输技术、OTN" class="headerlink" title="简单传输技术、OTN"></a>简单传输技术、OTN</h4><p><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765936375127.png"><br>SDH同步时分复用，稳定、网管功能强，以前金融政府部队用的多，是很多通信网的基础。SDN设备上面插不同业务板就能做不同业务。<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765936474371.png"></p>
+<p><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765936962072.png"><br>PTN比OTN包含的业务还要多（类似MPLS，面向分组业务），更适合承载多样化的IP化业务（如企业专线、视频等），可以深度拓展，IP有序演进（支持从2、3、4、到5g的平滑演进）。5G也用了PTN原理（移动，其他两家还是IPRAN）。<br>    <strong>PTN分组交换网</strong>，通过标签交换实现业务隔离，不同于电路交换SDH和纯光层交换OTN，PTN支持更细粒度的业务调度和QoS保障，适用于城域接入和汇聚层。<br>    5G大连接大带宽低时延，需要通过5G切片网实现。基站将不同需求的业务切开来，互相不干扰。但是PTN传输的时候还是会把这些信息打包到一个组里，需要一种支持切片的传输技术。<br>    <strong>SPN切片网</strong>，跟基站的切片统一，保护传输。每个切片有独立的带宽、时延和转发资源，甚至可以通过FlexEd时隙分配独立的物理通道。虽然PTN也能用VLAN来划分，但是不如物理传输层面就划好高效。移动的5G就是SPN，其他两家继续IPRAN。<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937110664.png"><br>中国电信OTN精品专线是依托OTN传输网络，为用户提供2M到400G速率二层传输专线，实现点到点、点到多点、点到云的连接。<br>    性能指标方面，提供可选的时延等级（T1金融专网时延不超过5.5ms&#x2F;千公里,其他的不承诺）。可调带宽、中断恢复时间根据A级别定。<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937250146.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937419709.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937528834.png"><br>全球最大的全光网<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937708820.png"><br>十大优势：<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765937820587.png"><br>在线服务：b.189.cn </p>
+<p><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765938094179.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765938257295.png"><br>入云场景就分四种，没用半档的。<br>如果AA级客户需要接入异局站，在CRM记得勾选<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765938564209.png"><br>半档的就是为了客户不想加钱上三挡又需要双接入保护，2.5的还可以双枢纽楼骨干。<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765939482900.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765939556105.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765939628713.png"></p>
+<p><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765940117528.png"><br>24年新功能，随选专线和算力专网。<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765941420875.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765941585219.png"></p>
+<p><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765941734287.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765941842567.png"><br>对比老业务：<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765956594303.png"></p>
+<h3 id="IP专业认证"><a href="#IP专业认证" class="headerlink" title="IP专业认证"></a>IP专业认证</h3><h4 id="IP网规划总体思路"><a href="#IP网规划总体思路" class="headerlink" title="IP网规划总体思路"></a>IP网规划总体思路</h4><p><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765961918547.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765961965333.png"></p>
+<h4 id="新型城域网组网和关键技术"><a href="#新型城域网组网和关键技术" class="headerlink" title="新型城域网组网和关键技术"></a>新型城域网组网和关键技术</h4><p>从传统ICT到云网融合的新型ICT<br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765962715957.png"><br><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765962769037.png"><br>算力资源逐步向城域网络边缘下移。</p>
+<p>注意：<br>    新型城域网依旧是连接底座，是基础承载网络，不能立即带来业务增长。</p>
+<h4 id="新型城域网的安全可靠性"><a href="#新型城域网的安全可靠性" class="headerlink" title="新型城域网的安全可靠性"></a>新型城域网的安全可靠性</h4><h3 id="传输网"><a href="#传输网" class="headerlink" title="传输网"></a>传输网</h3><h4 id="传输网络架构"><a href="#传输网络架构" class="headerlink" title="传输网络架构"></a>传输网络架构</h4><p><img src="/../../../image/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91-1765963367353.png"></p>
+<h4 id="光纤光缆"><a href="#光纤光缆" class="headerlink" title="光纤光缆"></a>光纤光缆</h4><p>![[..&#x2F;..&#x2F;..&#x2F;index&#x2F;Pasted image 20251218170912.png]]</p>
+<h4 id="传输系统"><a href="#传输系统" class="headerlink" title="传输系统"></a>传输系统</h4>
+    </div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate comment here.hahaha~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Joho Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Joho Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Joho Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://chenjh3061.github.io/DX/%E4%BA%91%E4%B8%AD%E5%8F%B0/%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91/" title="全光组网">https://chenjh3061.github.io/DX/云中台/全光组网/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%94%B5%E4%BF%A1/" rel="tag"><i class="fa fa-tag"></i> 电信</a>
+              <a href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag"><i class="fa fa-tag"></i> 工作</a>
+              <a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag"><i class="fa fa-tag"></i> 云计算</a>
+              <a href="/tags/%E4%B8%AD%E5%8F%B0/" rel="tag"><i class="fa fa-tag"></i> 中台</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/DX/%E4%BA%91%E4%B8%AD%E5%8F%B0/%E5%B0%8F%E5%A4%A9%E7%BD%91%E3%80%81%E4%BA%91%E3%80%815G%E5%AE%9A%E5%88%B6%E7%BD%91/" rel="prev" title="小天网、云、5G定制网">
+      <i class="fa fa-chevron-left"></i> 小天网、云、5G定制网
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E8%BF%90%E5%8A%A8%E5%81%A5%E8%BA%AB/%E7%8C%AB%E7%8B%97/" rel="next" title="猫狗">
+      猫狗 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">物理结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%BB%84%E7%BD%91%E5%AF%B9%E6%AF%94"><span class="nav-number">1.1.</span> <span class="nav-text">与交换机组网对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TIP%EF%BC%9AOLT"><span class="nav-number">1.2.</span> <span class="nav-text">TIP：OLT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%9A%E5%8A%A1%E6%8E%A8%E8%BF%9B"><span class="nav-number">2.</span> <span class="nav-text">业务推进</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-N"><span class="nav-number">2.0.1.</span> <span class="nav-text">1+1+N</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTTR%E8%A7%A3%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">FTTR解构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%BF%E4%BC%81%E9%AB%98%E9%98%B6%E7%BB%84%E7%BD%91"><span class="nav-number">3.0.1.</span> <span class="nav-text">政企高阶组网</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E7%BF%BC%E5%85%A8%E5%85%89%E7%BD%91"><span class="nav-number">3.0.2.</span> <span class="nav-text">小翼全光网</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%85%89%E7%BB%84%E7%BD%91%E5%B9%B3%E5%8F%B0%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0"><span class="nav-number">4.</span> <span class="nav-text">全光组网平台运营管理平台</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E8%87%AA%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0"><span class="nav-number">4.1.</span> <span class="nav-text">客户自服务平台</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E7%BA%BF%E5%A4%8D%E6%9D%82%E7%BB%84%E7%BD%91"><span class="nav-number">5.</span> <span class="nav-text">双线复杂组网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">5.1.</span> <span class="nav-text">网络通信基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IPRAN%E7%A7%BB%E5%8A%A8%E5%9B%9E%E4%BC%A0%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80"><span class="nav-number">5.2.</span> <span class="nav-text">IPRAN移动回传网络基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IPRAN-STN%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84"><span class="nav-number">5.2.1.</span> <span class="nav-text">IPRAN&#x2F;STN网络架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%BF%E8%BD%BD%E4%B8%9A%E5%8A%A1"><span class="nav-number">5.2.2.</span> <span class="nav-text">承载业务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E7%82%B9%E8%BF%90%E7%BB%B4%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.2.3.</span> <span class="nav-text">重点运维任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%BC%94%E8%BF%9B%E4%B8%8E%E4%B8%8B%E4%B8%80%E9%98%B6%E6%AE%B5%E8%AE%A1%E5%88%92"><span class="nav-number">5.2.4.</span> <span class="nav-text">网络演进与下一阶段计划</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OTN%E4%B8%93%E7%BA%BF"><span class="nav-number">5.3.</span> <span class="nav-text">OTN专线</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BC%A0%E8%BE%93%E6%8A%80%E6%9C%AF%E3%80%81OTN"><span class="nav-number">5.3.1.</span> <span class="nav-text">简单传输技术、OTN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP%E4%B8%93%E4%B8%9A%E8%AE%A4%E8%AF%81"><span class="nav-number">5.4.</span> <span class="nav-text">IP专业认证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IP%E7%BD%91%E8%A7%84%E5%88%92%E6%80%BB%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="nav-number">5.4.1.</span> <span class="nav-text">IP网规划总体思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%9E%8B%E5%9F%8E%E5%9F%9F%E7%BD%91%E7%BB%84%E7%BD%91%E5%92%8C%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF"><span class="nav-number">5.4.2.</span> <span class="nav-text">新型城域网组网和关键技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%9E%8B%E5%9F%8E%E5%9F%9F%E7%BD%91%E7%9A%84%E5%AE%89%E5%85%A8%E5%8F%AF%E9%9D%A0%E6%80%A7"><span class="nav-number">5.4.3.</span> <span class="nav-text">新型城域网的安全可靠性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%BD%91"><span class="nav-number">5.5.</span> <span class="nav-text">传输网</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84"><span class="nav-number">5.5.1.</span> <span class="nav-text">传输网络架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%89%E7%BA%A4%E5%85%89%E7%BC%86"><span class="nav-number">5.5.2.</span> <span class="nav-text">光纤光缆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.5.3.</span> <span class="nav-text">传输系统</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Joho Chen</p>
+  <div class="site-description" itemprop="description">个人记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">235</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chenjh3061" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chenjh3061" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://music.163.com/#" title="https:&#x2F;&#x2F;music.163.com&#x2F;#" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+          <h5 class="widget-title">标签云</h5>
+          <div id="myCanvasContainer" class="widget tagcloud">
+              <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Agent/" rel="tag">AI-Agent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HarmonyOS/" rel="tag">HarmonyOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Obsidian%E7%94%A8%E6%B3%95/" rel="tag">Obsidian用法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenClaw/" rel="tag">OpenClaw</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-world/" rel="tag">hello-world</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%8F%B0/" rel="tag">中台</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E6%8C%81/" rel="tag">主持</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D/" rel="tag">事业单位</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/" rel="tag">交换技术</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E8%BA%AB/" rel="tag">健身</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AB%E5%AD%97/" rel="tag">八字</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E4%B8%93/" rel="tag">公专</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E8%80%83/" rel="tag">公考</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AD%E7%88%BB/" rel="tag">六爻</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%AF%E4%B8%9A/" rel="tag">副业</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%8E%E4%B8%BA/" rel="tag">华为</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E7%90%86/" rel="tag">命理</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%B2%E5%AD%A6/" rel="tag">哲学</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%94%B1%E6%AD%8C/" rel="tag">唱歌</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/" rel="tag">少儿编程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" rel="tag">开源项目</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%85%E8%AF%BB%E6%96%87%E7%AB%A0/" rel="tag">待读文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/" rel="tag">智能体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6/" rel="tag">玄学</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E4%BF%A1/" rel="tag">电信</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%B8%E9%9D%A2/" rel="tag">相面</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%96%E5%88%92/" rel="tag">策划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%A1%E7%90%86/" rel="tag">管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B0/" rel="tag">紫微斗数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag">网络工程师</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E8%AF%81/" rel="tag">考证</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B5%9A%E9%92%B1/" rel="tag">赚钱</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1/" rel="tag">路由</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/" rel="tag">软件设计师</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%80%83/" rel="tag">软考</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E5%8A%A8/" rel="tag">运动</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%90%A5%E5%95%86/" rel="tag">运营商</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%9A%E4%BF%A1/" rel="tag">通信</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A3%8E%E6%B0%B4/" rel="tag">风水</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%B8%BF%E8%92%99/" rel="tag">鸿蒙</a><span class="tag-list-count">1</span></li></ul>
+              </canvas>
+          </div>
+      </div>
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joho Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">635k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:37</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+# 网站运行时间
+runtime:
+   enable: true
+   create_time: "04/15/2022 13:18:00"
+   start: 2022-04-15 13:13:00 +0800
+   mobile: false
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

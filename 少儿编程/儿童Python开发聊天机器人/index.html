@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chenjh3061.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="教10岁儿童用Python调用智谱大模型创建AI聊天机器人的详细教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="儿童Python开发聊天机器人">
+<meta property="og:url" content="https://chenjh3061.github.io/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/%E5%84%BF%E7%AB%A5Python%E5%BC%80%E5%8F%91%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA/index.html">
+<meta property="og:site_name" content="joho world">
+<meta property="og:description" content="教10岁儿童用Python调用智谱大模型创建AI聊天机器人的详细教程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-26T07:54:13.000Z">
+<meta property="article:modified_time" content="2026-04-19T05:40:44.649Z">
+<meta property="article:author" content="Joho Chen">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="少儿编程">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chenjh3061.github.io/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/%E5%84%BF%E7%AB%A5Python%E5%BC%80%E5%8F%91%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>儿童Python开发聊天机器人 | joho world</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="joho world" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">joho world</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061.github.io/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/%E5%84%BF%E7%AB%A5Python%E5%BC%80%E5%8F%91%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          儿童Python开发聊天机器人
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-10-26 15:54:13" itemprop="dateCreated datePublished" datetime="2025-10-26T15:54:13+08:00">2025-10-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-04-19 13:40:44" itemprop="dateModified" datetime="2026-04-19T13:40:44+08:00">2026-04-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%99%E8%82%B2/" itemprop="url" rel="index"><span itemprop="name">教育</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%99%E8%82%B2/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">少儿编程</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+            <div class="post-description">教10岁儿童用Python调用智谱大模型创建AI聊天机器人的详细教程</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="教10岁儿童用Python调用智谱大模型创建AI聊天机器人的详细教程"><a href="#教10岁儿童用Python调用智谱大模型创建AI聊天机器人的详细教程" class="headerlink" title="教10岁儿童用Python调用智谱大模型创建AI聊天机器人的详细教程"></a>教10岁儿童用Python调用智谱大模型创建AI聊天机器人的详细教程</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>对于有一定Python基础的10岁儿童来说，创建一个图形化界面的AI聊天机器人是一项既有趣又有教育意义的项目。本教程将指导孩子们如何使用Python调用智谱AI的大模型，并使用Tkinter库创建一个简单的图形用户界面。通过这个项目，孩子们不仅能学习到如何与AI技术交互，还能巩固Python编程技能，了解GUI编程的基础知识。</p>
+<h2 id="第一部分：准备工作"><a href="#第一部分：准备工作" class="headerlink" title="第一部分：准备工作"></a>第一部分：准备工作</h2><h3 id="1-1-注册智谱AI账号并获取API密钥"><a href="#1-1-注册智谱AI账号并获取API密钥" class="headerlink" title="1.1 注册智谱AI账号并获取API密钥"></a>1.1 注册智谱AI账号并获取API密钥</h3><p>在开始编程之前，我们需要先注册智谱AI账号并获取API密钥。这就像我们获得了一个特别的”通行证”，让我们能够使用智谱AI的大模型。</p>
+<ol>
+<li>访问智谱AI开放平台网站：<a target="_blank" rel="noopener" href="https://open.bigmodel.cn/">智谱AI开放平台</a></li>
+<li>点击”注册”按钮，填写必要的信息（手机号、邮箱等）创建新账号</li>
+<li>登录后，点击右上角的用户图标，进入个人中心</li>
+<li>在API密钥部分，点击”创建API密钥”，获取一个API Key<br>记住，新用户注册后会赠送100万token，完成实名认证后还可以额外获得400万token！这些token就像是我们与AI交流的”货币”，每次提问都会消耗一些token。[<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_61977748/article/details/140224946">45</a>]</li>
+</ol>
+<h3 id="1-2-安装必要的Python库"><a href="#1-2-安装必要的Python库" class="headerlink" title="1.2 安装必要的Python库"></a>1.2 安装必要的Python库</h3><p>我们需要安装两个主要的Python库：</p>
+<ol>
+<li><code>zhipuai</code>：智谱AI提供的Python SDK，用于调用他们的API</li>
+<li><code>tkinter</code>：Python的标准GUI库，用于创建图形用户界面<br>安装这两个库非常简单，只需要在命令行中执行以下命令：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install zhipuai</span><br></pre></td></tr></table></figure>
+Tkinter是Python的标准库，通常在安装Python时就已经包含，所以不需要额外安装。</li>
+</ol>
+<h2 id="第二部分：Tkinter基础"><a href="#第二部分：Tkinter基础" class="headerlink" title="第二部分：Tkinter基础"></a>第二部分：Tkinter基础</h2><h3 id="2-1-什么是Tkinter？"><a href="#2-1-什么是Tkinter？" class="headerlink" title="2.1 什么是Tkinter？"></a>2.1 什么是Tkinter？</h3><p>Tkinter是Python自带的一个图形用户界面（GUI）库。GUI就像一个可视化界面，让我们可以通过窗口、按钮和文本框等元素与计算机程序交互，就像我们使用手机或电脑上的应用程序一样。<br>对于10岁的孩子来说，使用Tkinter创建GUI就像在搭积木。我们需要将不同的组件（如按钮、文本框）添加到主窗口中，并设置它们的属性和位置。[<a target="_blank" rel="noopener" href="https://blog.csdn.net/Asigerg/article/details/135893785">80</a>]</p>
+<h3 id="2-2-创建第一个Tkinter窗口"><a href="#2-2-创建第一个Tkinter窗口" class="headerlink" title="2.2 创建第一个Tkinter窗口"></a>2.2 创建第一个Tkinter窗口</h3><p>让我们从创建一个简单的窗口开始，这将是我们的聊天机器人的主界面。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="comment"># 创建主窗口</span></span><br><span class="line">root = tk.Tk()</span><br><span class="line">root.title(<span class="string">&quot;AI Chat Bot&quot;</span>)  <span class="comment"># 设置窗口标题</span></span><br><span class="line">root.geometry(<span class="string">&quot;400x500&quot;</span>)    <span class="comment"># 设置窗口大小</span></span><br><span class="line"><span class="comment"># 进入主循环</span></span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+<p>这个代码创建了一个空窗口，标题为”AI Chat Bot”，大小为400x500像素。窗口现在是空的，我们将在其中添加更多的组件。</p>
+<h3 id="2-3-添加基本组件"><a href="#2-3-添加基本组件" class="headerlink" title="2.3 添加基本组件"></a>2.3 添加基本组件</h3><p>让我们向窗口中添加一些基本组件，使它看起来更像一个聊天界面。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="comment"># 创建主窗口</span></span><br><span class="line">root = tk.Tk()</span><br><span class="line">root.title(<span class="string">&quot;AI Chat Bot&quot;</span>)</span><br><span class="line">root.geometry(<span class="string">&quot;400x500&quot;</span>)</span><br><span class="line"><span class="comment"># 创建聊天区域（显示聊天历史）</span></span><br><span class="line">chat_area = tk.Text(root, width=<span class="number">50</span>, height=<span class="number">20</span>)</span><br><span class="line">chat_area.pack(padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建输入框（用户输入消息）</span></span><br><span class="line">entry = tk.Entry(root, width=<span class="number">30</span>)</span><br><span class="line">entry.pack(padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建发送按钮</span></span><br><span class="line">send_button = tk.Button(root, text=<span class="string">&quot;发送&quot;</span>, width=<span class="number">10</span>)</span><br><span class="line">send_button.pack(padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 进入主循环</span></span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+<p>现在，我们有一个包含三个主要组件的窗口：</p>
+<ol>
+<li>一个文本区域（<code>chat_area</code>）用于显示聊天历史</li>
+<li>一个输入框（<code>entry</code>）用于输入消息</li>
+<li>一个按钮（<code>send_button</code>）用于发送消息</li>
+</ol>
+<h2 id="第三部分：使用Tkinter创建聊天界面"><a href="#第三部分：使用Tkinter创建聊天界面" class="headerlink" title="第三部分：使用Tkinter创建聊天界面"></a>第三部分：使用Tkinter创建聊天界面</h2><h3 id="3-1-设计聊天界面布局"><a href="#3-1-设计聊天界面布局" class="headerlink" title="3.1 设计聊天界面布局"></a>3.1 设计聊天界面布局</h3><p>在创建聊天机器人之前，我们需要考虑界面应该是什么样子。一个典型的聊天界面应该包含：</p>
+<ol>
+<li>聊天历史记录区域（显示之前的对话）</li>
+<li>用户输入区域（输入新消息）</li>
+<li>发送按钮（发送消息）</li>
+<li>可能还需要一个显示AI回复的区域<br>我们可以使用Tkinter的布局管理器（pack、grid或place）来安排这些组件的位置。对于初学者来说，pack是最简单的布局管理器。[<a target="_blank" rel="noopener" href="https://dashima.net/docs/28-tkinter%E5%AE%9A%E5%AE%9A%E7%9A%84%E7%AE%80%E6%98%93%E7%9A%84%E8%81%8A%E5%A4%A9%E7%AA%97%E5%8F%A3/">54</a>]<br>让我们创建一个更完善的聊天界面：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> ttk  <span class="comment"># 导入ttk模块，提供更现代的组件</span></span><br><span class="line"><span class="comment"># 创建主窗口</span></span><br><span class="line">root = tk.Tk()</span><br><span class="line">root.title(<span class="string">&quot;AI Chat Bot&quot;</span>)</span><br><span class="line">root.geometry(<span class="string">&quot;400x600&quot;</span>)</span><br><span class="line"><span class="comment"># 创建聊天框架</span></span><br><span class="line">chat_frame = ttk.Frame(root)</span><br><span class="line">chat_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建滚动条</span></span><br><span class="line">scrollbar = ttk.Scrollbar(chat_frame)</span><br><span class="line">scrollbar.pack(side=tk.RIGHT, fill=tk.Y)</span><br><span class="line"><span class="comment"># 创建聊天列表（显示聊天历史）</span></span><br><span class="line">chat_list = tk.Listbox(chat_frame, width=<span class="number">50</span>, height=<span class="number">20</span>, yscrollcommand=scrollbar.<span class="built_in">set</span>)</span><br><span class="line">chat_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=<span class="literal">True</span>)</span><br><span class="line">scrollbar.config(command=chat_list.yview)</span><br><span class="line"><span class="comment"># 创建输入框架</span></span><br><span class="line">input_frame = ttk.Frame(root)</span><br><span class="line">input_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建用户输入标签</span></span><br><span class="line">user_label = ttk.Label(input_frame, text=<span class="string">&quot;我：&quot;</span>)</span><br><span class="line">user_label.pack(side=tk.LEFT)</span><br><span class="line"><span class="comment"># 创建用户输入框</span></span><br><span class="line">entry = ttk.Entry(input_frame, width=<span class="number">30</span>)</span><br><span class="line">entry.pack(side=tk.LEFT, expand=<span class="literal">True</span>, fill=tk.X)</span><br><span class="line"><span class="comment"># 创建发送按钮</span></span><br><span class="line">send_button = ttk.Button(input_frame, text=<span class="string">&quot;发送&quot;</span>)</span><br><span class="line">send_button.pack(side=tk.RIGHT, padx=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 进入主循环</span></span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+这个界面包括：</li>
+</ol>
+<ul>
+<li>一个聊天区域，使用Listbox和Scrollbar显示聊天历史，并可以滚动查看</li>
+<li>一个输入区域，包含一个标签”我：”和一个输入框</li>
+<li>一个”发送”按钮</li>
+</ul>
+<h3 id="3-2-添加基本功能"><a href="#3-2-添加基本功能" class="headerlink" title="3.2 添加基本功能"></a>3.2 添加基本功能</h3><p>现在，我们需要添加一些基本功能，使这个界面可以作为一个聊天工具使用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> ttk</span><br><span class="line"><span class="comment"># 创建主窗口</span></span><br><span class="line">root = tk.Tk()</span><br><span class="line">root.title(<span class="string">&quot;AI Chat Bot&quot;</span>)</span><br><span class="line">root.geometry(<span class="string">&quot;400x600&quot;</span>)</span><br><span class="line"><span class="comment"># 创建聊天框架</span></span><br><span class="line">chat_frame = ttk.Frame(root)</span><br><span class="line">chat_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建滚动条</span></span><br><span class="line">scrollbar = ttk.Scrollbar(chat_frame)</span><br><span class="line">scrollbar.pack(side=tk.RIGHT, fill=tk.Y)</span><br><span class="line"><span class="comment"># 创建聊天列表（显示聊天历史）</span></span><br><span class="line">chat_list = tk.Listbox(chat_frame, width=<span class="number">50</span>, height=<span class="number">20</span>, yscrollcommand=scrollbar.<span class="built_in">set</span>)</span><br><span class="line">chat_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=<span class="literal">True</span>)</span><br><span class="line">scrollbar.config(command=chat_list.yview)</span><br><span class="line"><span class="comment"># 创建输入框架</span></span><br><span class="line">input_frame = ttk.Frame(root)</span><br><span class="line">input_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建用户输入标签</span></span><br><span class="line">user_label = ttk.Label(input_frame, text=<span class="string">&quot;我：&quot;</span>)</span><br><span class="line">user_label.pack(side=tk.LEFT)</span><br><span class="line"><span class="comment"># 创建用户输入框</span></span><br><span class="line">entry = ttk.Entry(input_frame, width=<span class="number">30</span>)</span><br><span class="line">entry.pack(side=tk.LEFT, expand=<span class="literal">True</span>, fill=tk.X)</span><br><span class="line"><span class="comment"># 创建发送按钮</span></span><br><span class="line">send_button = ttk.Button(input_frame, text=<span class="string">&quot;发送&quot;</span>)</span><br><span class="line">send_button.pack(side=tk.RIGHT, padx=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 定义发送消息的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_message</span>():</span><br><span class="line">    user_input = entry.get()  <span class="comment"># 获取用户输入的消息</span></span><br><span class="line">    <span class="keyword">if</span> user_input.strip() == <span class="string">&quot;&quot;</span>:  <span class="comment"># 如果消息为空，不进行任何操作</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 在聊天列表中显示用户的消息</span></span><br><span class="line">    chat_list.insert(tk.END, <span class="string">f&quot;我：<span class="subst">&#123;user_input&#125;</span>&quot;</span>)</span><br><span class="line">    chat_list.see(tk.END)  <span class="comment"># 自动滚动到最新消息</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 清空输入框</span></span><br><span class="line">    entry.delete(<span class="number">0</span>, tk.END)</span><br><span class="line"><span class="comment"># 为发送按钮绑定点击事件</span></span><br><span class="line">send_button.config(command=send_message)</span><br><span class="line"><span class="comment"># 进入主循环</span></span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+<p>这个代码添加了一个<code>send_message</code>函数，当用户点击”发送”按钮或按下回车键时，这个函数会被调用。它会获取用户输入的消息，将其显示在聊天列表中，并清空输入框。</p>
+<h2 id="第四部分：调用智谱AI大模型"><a href="#第四部分：调用智谱AI大模型" class="headerlink" title="第四部分：调用智谱AI大模型"></a>第四部分：调用智谱AI大模型</h2><h3 id="4-1-什么是智谱AI？"><a href="#4-1-什么是智谱AI？" class="headerlink" title="4.1 什么是智谱AI？"></a>4.1 什么是智谱AI？</h3><p>智谱AI是一个提供大语言模型（LLM）的平台，就像一个非常聪明的电脑程序，可以理解人类语言并进行对话。智谱AI的大模型能够回答问题、生成文本、提供信息，甚至可以帮助我们完成一些简单的任务。[<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_61977748/article/details/140224946">45</a>]</p>
+<h3 id="4-2-使用Python调用智谱AI-API"><a href="#4-2-使用Python调用智谱AI-API" class="headerlink" title="4.2 使用Python调用智谱AI API"></a>4.2 使用Python调用智谱AI API</h3><p>要使用智谱AI的大模型，我们需要使用他们的API（应用程序编程接口）。API就像一个桥梁，让我们可以通过编程与智谱AI的大模型进行交互。<br>首先，我们需要安装智谱AI的Python SDK：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install zhipuai</span><br></pre></td></tr></table></figure>
+<p>然后，我们可以使用以下代码调用智谱AI的API：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> zhipuai <span class="keyword">import</span> ZhipuAI</span><br><span class="line"><span class="comment"># 替换为你的API密钥</span></span><br><span class="line">api_key = <span class="string">&quot;your_api_key_here&quot;</span></span><br><span class="line"><span class="comment"># 创建一个ZhipuAI实例</span></span><br><span class="line">client = ZhipuAI(api_key=api_key)</span><br><span class="line"><span class="comment"># 调用对话API</span></span><br><span class="line">response = client.chat.completions.create(</span><br><span class="line">    model=<span class="string">&quot;glm-4&quot;</span>,  <span class="comment"># 使用的模型名称</span></span><br><span class="line">    messages=[</span><br><span class="line">        &#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;你好！你叫什么名字？&quot;</span>&#125;  <span class="comment"># 用户的消息</span></span><br><span class="line">    ],</span><br><span class="line">    stream=<span class="literal">True</span>  <span class="comment"># 是否使用流式响应</span></span><br><span class="line">)</span><br><span class="line"><span class="comment"># 处理响应</span></span><br><span class="line"><span class="keyword">for</span> chunk <span class="keyword">in</span> response:</span><br><span class="line">    <span class="built_in">print</span>(chunk.choices[<span class="number">0</span>].delta.content)  <span class="comment"># 打印AI的回复</span></span><br></pre></td></tr></table></figure>
+<p>这个代码做了以下几件事：</p>
+<ol>
+<li>导入ZhipuAI类</li>
+<li>创建一个ZhipuAI实例，需要传入API密钥</li>
+<li>调用<code>chat.completions.create</code>方法，这相当于向智谱AI的大模型发送一个问题</li>
+<li>使用流式响应（stream&#x3D;True），这意味着回复会逐步返回，而不是一次性全部返回</li>
+<li>打印AI的回复[<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_61977748/article/details/140224946">45</a>]</li>
+</ol>
+<h3 id="4-3-集成智谱AI到聊天机器人"><a href="#4-3-集成智谱AI到聊天机器人" class="headerlink" title="4.3 集成智谱AI到聊天机器人"></a>4.3 集成智谱AI到聊天机器人</h3><p>现在，我们将智谱AI集成到我们之前创建的聊天界面中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> ttk</span><br><span class="line"><span class="keyword">from</span> zhipuai <span class="keyword">import</span> ZhipuAI</span><br><span class="line"><span class="comment"># 替换为你的API密钥</span></span><br><span class="line">api_key = <span class="string">&quot;your_api_key_here&quot;</span></span><br><span class="line"><span class="comment"># 创建一个ZhipuAI实例</span></span><br><span class="line">client = ZhipuAI(api_key=api_key)</span><br><span class="line"><span class="comment"># 创建主窗口</span></span><br><span class="line">root = tk.Tk()</span><br><span class="line">root.title(<span class="string">&quot;AI Chat Bot&quot;</span>)</span><br><span class="line">root.geometry(<span class="string">&quot;400x600&quot;</span>)</span><br><span class="line"><span class="comment"># 创建聊天框架</span></span><br><span class="line">chat_frame = ttk.Frame(root)</span><br><span class="line">chat_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建滚动条</span></span><br><span class="line">scrollbar = ttk.Scrollbar(chat_frame)</span><br><span class="line">scrollbar.pack(side=tk.RIGHT, fill=tk.Y)</span><br><span class="line"><span class="comment"># 创建聊天列表（显示聊天历史）</span></span><br><span class="line">chat_list = tk.Listbox(chat_frame, width=<span class="number">50</span>, height=<span class="number">20</span>, yscrollcommand=scrollbar.<span class="built_in">set</span>)</span><br><span class="line">chat_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=<span class="literal">True</span>)</span><br><span class="line">scrollbar.config(command=chat_list.yview)</span><br><span class="line"><span class="comment"># 创建输入框架</span></span><br><span class="line">input_frame = ttk.Frame(root)</span><br><span class="line">input_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建用户输入标签</span></span><br><span class="line">user_label = ttk.Label(input_frame, text=<span class="string">&quot;我：&quot;</span>)</span><br><span class="line">user_label.pack(side=tk.LEFT)</span><br><span class="line"><span class="comment"># 创建用户输入框</span></span><br><span class="line">entry = ttk.Entry(input_frame, width=<span class="number">30</span>)</span><br><span class="line">entry.pack(side=tk.LEFT, expand=<span class="literal">True</span>, fill=tk.X)</span><br><span class="line"><span class="comment"># 创建发送按钮</span></span><br><span class="line">send_button = ttk.Button(input_frame, text=<span class="string">&quot;发送&quot;</span>)</span><br><span class="line">send_button.pack(side=tk.RIGHT, padx=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 定义发送消息的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_message</span>():</span><br><span class="line">    user_input = entry.get()  <span class="comment"># 获取用户输入的消息</span></span><br><span class="line">    <span class="keyword">if</span> user_input.strip() == <span class="string">&quot;&quot;</span>:  <span class="comment"># 如果消息为空，不进行任何操作</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 在聊天列表中显示用户的消息</span></span><br><span class="line">    chat_list.insert(tk.END, <span class="string">f&quot;我：<span class="subst">&#123;user_input&#125;</span>&quot;</span>)</span><br><span class="line">    chat_list.see(tk.END)  <span class="comment"># 自动滚动到最新消息</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 清空输入框</span></span><br><span class="line">    entry.delete(<span class="number">0</span>, tk.END)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 调用智谱AI的API获取回复</span></span><br><span class="line">    messages = [&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: user_input&#125;]</span><br><span class="line">    response = client.chat.completions.create(</span><br><span class="line">        model=<span class="string">&quot;glm-4&quot;</span>,</span><br><span class="line">        messages=messages,</span><br><span class="line">        stream=<span class="literal">True</span></span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 处理流式响应</span></span><br><span class="line">    ai_response = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> chunk <span class="keyword">in</span> response:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">hasattr</span>(chunk.choices[<span class="number">0</span>].delta, <span class="string">&quot;content&quot;</span>):</span><br><span class="line">            ai_response += chunk.choices[<span class="number">0</span>].delta.content</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 显示AI的回复</span></span><br><span class="line">    chat_list.insert(tk.END, <span class="string">f&quot;AI：<span class="subst">&#123;ai_response&#125;</span>&quot;</span>)</span><br><span class="line">    chat_list.see(tk.END)</span><br><span class="line"><span class="comment"># 为发送按钮绑定点击事件</span></span><br><span class="line">send_button.config(command=send_message)</span><br><span class="line"><span class="comment"># 进入主循环</span></span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+<p>这个代码将智谱AI的API集成到了我们的聊天界面中。当用户发送一条消息时，程序会：</p>
+<ol>
+<li>将用户的消息显示在聊天列表中</li>
+<li>调用智谱AI的API获取回复</li>
+<li>将AI的回复显示在聊天列表中</li>
+</ol>
+<h3 id="4-4-处理流式响应"><a href="#4-4-处理流式响应" class="headerlink" title="4.4 处理流式响应"></a>4.4 处理流式响应</h3><p>智谱AI的API支持流式响应，这意味着回复会逐步返回，而不是一次性全部返回。这就像我们观看一个正在加载的视频，内容会逐渐出现，而不是一下子全部显示出来。<br>在上面的代码中，我们使用了一个循环来处理流式响应：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ai_response = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> chunk <span class="keyword">in</span> response:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">hasattr</span>(chunk.choices[<span class="number">0</span>].delta, <span class="string">&quot;content&quot;</span>):</span><br><span class="line">        ai_response += chunk.choices[<span class="number">0</span>].delta.content</span><br></pre></td></tr></table></figure>
+<p>这段代码逐块接收AI的回复，并将它们拼接成一个完整的回复。</p>
+<h3 id="4-5-处理错误和异常"><a href="#4-5-处理错误和异常" class="headerlink" title="4.5 处理错误和异常"></a>4.5 处理错误和异常</h3><p>在实际应用中，我们需要处理可能发生的错误和异常，例如API调用失败、网络连接问题等。<br>我们可以在代码中添加错误处理：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">send_message</span>():</span><br><span class="line">    user_input = entry.get()</span><br><span class="line">    <span class="keyword">if</span> user_input.strip() == <span class="string">&quot;&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    chat_list.insert(tk.END, <span class="string">f&quot;我：<span class="subst">&#123;user_input&#125;</span>&quot;</span>)</span><br><span class="line">    chat_list.see(tk.END)</span><br><span class="line">    entry.delete(<span class="number">0</span>, tk.END)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        messages = [&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: user_input&#125;]</span><br><span class="line">        response = client.chat.completions.create(</span><br><span class="line">            model=<span class="string">&quot;glm-4&quot;</span>,</span><br><span class="line">            messages=messages,</span><br><span class="line">            stream=<span class="literal">True</span></span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        ai_response = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> chunk <span class="keyword">in</span> response:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">hasattr</span>(chunk.choices[<span class="number">0</span>].delta, <span class="string">&quot;content&quot;</span>):</span><br><span class="line">                ai_response += chunk.choices[<span class="number">0</span>].delta.content</span><br><span class="line">        </span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;AI：<span class="subst">&#123;ai_response&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;错误：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br></pre></td></tr></table></figure>
+<p>这段代码使用了<code>try-except</code>块来捕获可能发生的错误，并将错误信息显示在聊天列表中。</p>
+<h2 id="第五部分：完善聊天机器人"><a href="#第五部分：完善聊天机器人" class="headerlink" title="第五部分：完善聊天机器人"></a>第五部分：完善聊天机器人</h2><h3 id="5-1-添加用户界面改进"><a href="#5-1-添加用户界面改进" class="headerlink" title="5.1 添加用户界面改进"></a>5.1 添加用户界面改进</h3><p>为了使聊天机器人更加用户友好，我们可以添加一些改进：</p>
+<ol>
+<li><strong>自动滚动</strong>：确保聊天列表始终滚动到最新消息</li>
+<li><strong>消息对齐</strong>：将用户的消息和AI的回复对齐，使界面看起来更整洁</li>
+<li><strong>消息时间戳</strong>：显示每条消息的发送时间</li>
+<li><strong>消息气泡</strong>：使用不同的背景颜色区分用户的消息和AI的回复<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> ttk</span><br><span class="line"><span class="keyword">from</span> zhipuai <span class="keyword">import</span> ZhipuAI</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="comment"># 替换为你的API密钥</span></span><br><span class="line">api_key = <span class="string">&quot;your_api_key_here&quot;</span></span><br><span class="line"><span class="comment"># 创建一个ZhipuAI实例</span></span><br><span class="line">client = ZhipuAI(api_key=api_key)</span><br><span class="line"><span class="comment"># 创建主窗口</span></span><br><span class="line">root = tk.Tk()</span><br><span class="line">root.title(<span class="string">&quot;AI Chat Bot&quot;</span>)</span><br><span class="line">root.geometry(<span class="string">&quot;400x600&quot;</span>)</span><br><span class="line"><span class="comment"># 创建聊天框架</span></span><br><span class="line">chat_frame = ttk.Frame(root)</span><br><span class="line">chat_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建滚动条</span></span><br><span class="line">scrollbar = ttk.Scrollbar(chat_frame)</span><br><span class="line">scrollbar.pack(side=tk.RIGHT, fill=tk.Y)</span><br><span class="line"><span class="comment"># 创建聊天列表（显示聊天历史）</span></span><br><span class="line">chat_list = tk.Listbox(chat_frame, width=<span class="number">50</span>, height=<span class="number">20</span>, yscrollcommand=scrollbar.<span class="built_in">set</span>)</span><br><span class="line">chat_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=<span class="literal">True</span>)</span><br><span class="line">scrollbar.config(command=chat_list.yview)</span><br><span class="line"><span class="comment"># 创建输入框架</span></span><br><span class="line">input_frame = ttk.Frame(root)</span><br><span class="line">input_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建用户输入标签</span></span><br><span class="line">user_label = ttk.Label(input_frame, text=<span class="string">&quot;我：&quot;</span>)</span><br><span class="line">user_label.pack(side=tk.LEFT)</span><br><span class="line"><span class="comment"># 创建用户输入框</span></span><br><span class="line">entry = ttk.Entry(input_frame, width=<span class="number">30</span>)</span><br><span class="line">entry.pack(side=tk.LEFT, expand=<span class="literal">True</span>, fill=tk.X)</span><br><span class="line"><span class="comment"># 创建发送按钮</span></span><br><span class="line">send_button = ttk.Button(input_frame, text=<span class="string">&quot;发送&quot;</span>)</span><br><span class="line">send_button.pack(side=tk.RIGHT, padx=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 定义发送消息的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_message</span>():</span><br><span class="line">    user_input = entry.get()</span><br><span class="line">    <span class="keyword">if</span> user_input.strip() == <span class="string">&quot;&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 显示用户的消息</span></span><br><span class="line">    timestamp = datetime.now().strftime(<span class="string">&quot;%H:%M&quot;</span>)</span><br><span class="line">    chat_list.insert(tk.END, <span class="string">f&quot;<span class="subst">&#123;timestamp&#125;</span> 我：<span class="subst">&#123;user_input&#125;</span>&quot;</span>)</span><br><span class="line">    chat_list.see(tk.END)</span><br><span class="line">    entry.delete(<span class="number">0</span>, tk.END)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 调用智谱AI的API获取回复</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        messages = [&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: user_input&#125;]</span><br><span class="line">        response = client.chat.completions.create(</span><br><span class="line">            model=<span class="string">&quot;glm-4&quot;</span>,</span><br><span class="line">            messages=messages,</span><br><span class="line">            stream=<span class="literal">True</span></span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        ai_response = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> chunk <span class="keyword">in</span> response:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">hasattr</span>(chunk.choices[<span class="number">0</span>].delta, <span class="string">&quot;content&quot;</span>):</span><br><span class="line">                ai_response += chunk.choices[<span class="number">0</span>].delta.content</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 显示AI的回复</span></span><br><span class="line">        timestamp = datetime.now().strftime(<span class="string">&quot;%H:%M&quot;</span>)</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;<span class="subst">&#123;timestamp&#125;</span> AI：<span class="subst">&#123;ai_response&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;错误：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line"><span class="comment"># 为发送按钮绑定点击事件</span></span><br><span class="line">send_button.config(command=send_message)</span><br><span class="line"><span class="comment"># 进入主循环</span></span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+这个代码添加了：</li>
+</ol>
+<ul>
+<li>时间戳，显示每条消息的发送时间</li>
+<li>自动滚动，确保最新消息始终可见</li>
+</ul>
+<h3 id="5-2-添加热键支持"><a href="#5-2-添加热键支持" class="headerlink" title="5.2 添加热键支持"></a>5.2 添加热键支持</h3><p>为了使聊天机器人更加用户友好，我们可以添加热键支持，例如按下回车键可以发送消息。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">send_message</span>(<span class="params">event=<span class="literal">None</span></span>):</span><br><span class="line">    user_input = entry.get()</span><br><span class="line">    <span class="keyword">if</span> user_input.strip() == <span class="string">&quot;&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    timestamp = datetime.now().strftime(<span class="string">&quot;%H:%M&quot;</span>)</span><br><span class="line">    chat_list.insert(tk.END, <span class="string">f&quot;<span class="subst">&#123;timestamp&#125;</span> 我：<span class="subst">&#123;user_input&#125;</span>&quot;</span>)</span><br><span class="line">    chat_list.see(tk.END)</span><br><span class="line">    entry.delete(<span class="number">0</span>, tk.END)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        messages = [&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: user_input&#125;]</span><br><span class="line">        response = client.chat.completions.create(</span><br><span class="line">            model=<span class="string">&quot;glm-4&quot;</span>,</span><br><span class="line">            messages=messages,</span><br><span class="line">            stream=<span class="literal">True</span></span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        ai_response = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> chunk <span class="keyword">in</span> response:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">hasattr</span>(chunk.choices[<span class="number">0</span>].delta, <span class="string">&quot;content&quot;</span>):</span><br><span class="line">                ai_response += chunk.choices[<span class="number">0</span>].delta.content</span><br><span class="line">        </span><br><span class="line">        timestamp = datetime.now().strftime(<span class="string">&quot;%H:%M&quot;</span>)</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;<span class="subst">&#123;timestamp&#125;</span> AI：<span class="subst">&#123;ai_response&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;错误：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line"><span class="comment"># 为发送按钮和回车键绑定事件</span></span><br><span class="line">send_button.config(command=send_message)</span><br><span class="line">root.bind(<span class="string">&quot;&lt;Return&gt;&quot;</span>, send_message)</span><br></pre></td></tr></table></figure>
+<p>这个代码添加了对回车键的支持，这样用户可以按下回车键来发送消息，而不仅仅是点击”发送”按钮。</p>
+<h3 id="5-3-保存和加载聊天历史"><a href="#5-3-保存和加载聊天历史" class="headerlink" title="5.3 保存和加载聊天历史"></a>5.3 保存和加载聊天历史</h3><p>为了使聊天机器人更加实用，我们可以添加保存和加载聊天历史的功能。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> ttk, filedialog</span><br><span class="line"><span class="keyword">from</span> zhipuai <span class="keyword">import</span> ZhipuAI</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="comment"># 替换为你的API密钥</span></span><br><span class="line">api_key = <span class="string">&quot;your_api_key_here&quot;</span></span><br><span class="line"><span class="comment"># 创建一个ZhipuAI实例</span></span><br><span class="line">client = ZhipuAI(api_key=api_key)</span><br><span class="line"><span class="comment"># 创建主窗口</span></span><br><span class="line">root = tk.Tk()</span><br><span class="line">root.title(<span class="string">&quot;AI Chat Bot&quot;</span>)</span><br><span class="line">root.geometry(<span class="string">&quot;400x600&quot;</span>)</span><br><span class="line"><span class="comment"># 创建菜单栏</span></span><br><span class="line">menu_bar = tk.Menu(root)</span><br><span class="line">root.config(menu=menu_bar)</span><br><span class="line"><span class="comment"># 创建文件菜单</span></span><br><span class="line">file_menu = tk.Menu(menu_bar, tearoff=<span class="number">0</span>)</span><br><span class="line">menu_bar.add_cascade(label=<span class="string">&quot;文件&quot;</span>, menu=file_menu)</span><br><span class="line"><span class="comment"># 保存聊天历史的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_chat_history</span>():</span><br><span class="line">    file_path = filedialog.asksaveasfilename(</span><br><span class="line">        defaultextension=<span class="string">&quot;.txt&quot;</span>,</span><br><span class="line">        filetypes=[(<span class="string">&quot;文本文件&quot;</span>, <span class="string">&quot;*.txt&quot;</span>), (<span class="string">&quot;所有文件&quot;</span>, <span class="string">&quot;*.*&quot;</span>)]</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">if</span> file_path:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(chat_list.size()):</span><br><span class="line">                f.write(<span class="string">f&quot;<span class="subst">&#123;chat_list.get(i)&#125;</span>\n&quot;</span>)</span><br><span class="line"><span class="comment"># 加载聊天历史的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_chat_history</span>():</span><br><span class="line">    file_path = filedialog.askopenfilename(</span><br><span class="line">        filetypes=[(<span class="string">&quot;文本文件&quot;</span>, <span class="string">&quot;*.txt&quot;</span>), (<span class="string">&quot;所有文件&quot;</span>, <span class="string">&quot;*.*&quot;</span>)]</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">if</span> file_path:</span><br><span class="line">        chat_list.delete(<span class="number">0</span>, tk.END)</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">                chat_list.insert(tk.END, line.strip())</span><br><span class="line"><span class="comment"># 添加菜单项</span></span><br><span class="line">file_menu.add_command(label=<span class="string">&quot;保存聊天历史&quot;</span>, command=save_chat_history)</span><br><span class="line">file_menu.add_command(label=<span class="string">&quot;加载聊天历史&quot;</span>, command=load_chat_history)</span><br><span class="line"><span class="comment"># 创建聊天框架</span></span><br><span class="line">chat_frame = ttk.Frame(root)</span><br><span class="line">chat_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建滚动条</span></span><br><span class="line">scrollbar = ttk.Scrollbar(chat_frame)</span><br><span class="line">scrollbar.pack(side=tk.RIGHT, fill=tk.Y)</span><br><span class="line"><span class="comment"># 创建聊天列表（显示聊天历史）</span></span><br><span class="line">chat_list = tk.Listbox(chat_frame, width=<span class="number">50</span>, height=<span class="number">20</span>, yscrollcommand=scrollbar.<span class="built_in">set</span>)</span><br><span class="line">chat_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=<span class="literal">True</span>)</span><br><span class="line">scrollbar.config(command=chat_list.yview)</span><br><span class="line"><span class="comment"># 创建输入框架</span></span><br><span class="line">input_frame = ttk.Frame(root)</span><br><span class="line">input_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建用户输入标签</span></span><br><span class="line">user_label = ttk.Label(input_frame, text=<span class="string">&quot;我：&quot;</span>)</span><br><span class="line">user_label.pack(side=tk.LEFT)</span><br><span class="line"><span class="comment"># 创建用户输入框</span></span><br><span class="line">entry = ttk.Entry(input_frame, width=<span class="number">30</span>)</span><br><span class="line">entry.pack(side=tk.LEFT, expand=<span class="literal">True</span>, fill=tk.X)</span><br><span class="line"><span class="comment"># 创建发送按钮</span></span><br><span class="line">send_button = ttk.Button(input_frame, text=<span class="string">&quot;发送&quot;</span>)</span><br><span class="line">send_button.pack(side=tk.RIGHT, padx=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 定义发送消息的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_message</span>(<span class="params">event=<span class="literal">None</span></span>):</span><br><span class="line">    user_input = entry.get()</span><br><span class="line">    <span class="keyword">if</span> user_input.strip() == <span class="string">&quot;&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    timestamp = datetime.now().strftime(<span class="string">&quot;%H:%M&quot;</span>)</span><br><span class="line">    chat_list.insert(tk.END, <span class="string">f&quot;<span class="subst">&#123;timestamp&#125;</span> 我：<span class="subst">&#123;user_input&#125;</span>&quot;</span>)</span><br><span class="line">    chat_list.see(tk.END)</span><br><span class="line">    entry.delete(<span class="number">0</span>, tk.END)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        messages = [&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: user_input&#125;]</span><br><span class="line">        response = client.chat.completions.create(</span><br><span class="line">            model=<span class="string">&quot;glm-4&quot;</span>,</span><br><span class="line">            messages=messages,</span><br><span class="line">            stream=<span class="literal">True</span></span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        ai_response = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> chunk <span class="keyword">in</span> response:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">hasattr</span>(chunk.choices[<span class="number">0</span>].delta, <span class="string">&quot;content&quot;</span>):</span><br><span class="line">                ai_response += chunk.choices[<span class="number">0</span>].delta.content</span><br><span class="line">        </span><br><span class="line">        timestamp = datetime.now().strftime(<span class="string">&quot;%H:%M&quot;</span>)</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;<span class="subst">&#123;timestamp&#125;</span> AI：<span class="subst">&#123;ai_response&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;错误：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line"><span class="comment"># 为发送按钮和回车键绑定事件</span></span><br><span class="line">send_button.config(command=send_message)</span><br><span class="line">root.bind(<span class="string">&quot;&lt;Return&gt;&quot;</span>, send_message)</span><br><span class="line"><span class="comment"># 进入主循环</span></span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+<p>这个代码添加了：</p>
+<ul>
+<li>菜单栏，包含”文件”菜单</li>
+<li>保存聊天历史的功能</li>
+<li>加载聊天历史的功能</li>
+</ul>
+<h3 id="5-4-添加语音支持"><a href="#5-4-添加语音支持" class="headerlink" title="5.4 添加语音支持"></a>5.4 添加语音支持</h3><p>为了让聊天机器人更加有趣，我们可以添加语音支持，使AI的回复能够被朗读出来。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> ttk</span><br><span class="line"><span class="keyword">from</span> zhipuai <span class="keyword">import</span> ZhipuAI</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> pyttsx3  <span class="comment"># 用于文本转语音</span></span><br><span class="line"><span class="comment"># 替换为你的API密钥</span></span><br><span class="line">api_key = <span class="string">&quot;your_api_key_here&quot;</span></span><br><span class="line"><span class="comment"># 创建一个ZhipuAI实例</span></span><br><span class="line">client = ZhipuAI(api_key=api_key)</span><br><span class="line"><span class="comment"># 初始化文本转语音引擎</span></span><br><span class="line">engine = pyttsx3.init()</span><br><span class="line"><span class="comment"># 创建主窗口</span></span><br><span class="line">root = tk.Tk()</span><br><span class="line">root.title(<span class="string">&quot;AI Chat Bot&quot;</span>)</span><br><span class="line">root.geometry(<span class="string">&quot;400x600&quot;</span>)</span><br><span class="line"><span class="comment"># 创建菜单栏</span></span><br><span class="line">menu_bar = tk.Menu(root)</span><br><span class="line">root.config(menu=menu_bar)</span><br><span class="line"><span class="comment"># 创建文件菜单</span></span><br><span class="line">file_menu = tk.Menu(menu_bar, tearoff=<span class="number">0</span>)</span><br><span class="line">menu_bar.add_cascade(label=<span class="string">&quot;文件&quot;</span>, menu=file_menu)</span><br><span class="line"><span class="comment"># 保存聊天历史的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_chat_history</span>():</span><br><span class="line">    file_path = filedialog.asksaveasfilename(</span><br><span class="line">        defaultextension=<span class="string">&quot;.txt&quot;</span>,</span><br><span class="line">        filetypes=[(<span class="string">&quot;文本文件&quot;</span>, <span class="string">&quot;*.txt&quot;</span>), (<span class="string">&quot;所有文件&quot;</span>, <span class="string">&quot;*.*&quot;</span>)]</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">if</span> file_path:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(chat_list.size()):</span><br><span class="line">                f.write(<span class="string">f&quot;<span class="subst">&#123;chat_list.get(i)&#125;</span>\n&quot;</span>)</span><br><span class="line"><span class="comment"># 加载聊天历史的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_chat_history</span>():</span><br><span class="line">    file_path = filedialog.askopenfilename(</span><br><span class="line">        filetypes=[(<span class="string">&quot;文本文件&quot;</span>, <span class="string">&quot;*.txt&quot;</span>), (<span class="string">&quot;所有文件&quot;</span>, <span class="string">&quot;*.*&quot;</span>)]</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">if</span> file_path:</span><br><span class="line">        chat_list.delete(<span class="number">0</span>, tk.END)</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">                chat_list.insert(tk.END, line.strip())</span><br><span class="line"><span class="comment"># 添加菜单项</span></span><br><span class="line">file_menu.add_command(label=<span class="string">&quot;保存聊天历史&quot;</span>, command=save_chat_history)</span><br><span class="line">file_menu.add_command(label=<span class="string">&quot;加载聊天历史&quot;</span>, command=load_chat_history)</span><br><span class="line"><span class="comment"># 创建聊天框架</span></span><br><span class="line">chat_frame = ttk.Frame(root)</span><br><span class="line">chat_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建滚动条</span></span><br><span class="line">scrollbar = ttk.Scrollbar(chat_frame)</span><br><span class="line">scrollbar.pack(side=tk.RIGHT, fill=tk.Y)</span><br><span class="line"><span class="comment"># 创建聊天列表（显示聊天历史）</span></span><br><span class="line">chat_list = tk.Listbox(chat_frame, width=<span class="number">50</span>, height=<span class="number">20</span>, yscrollcommand=scrollbar.<span class="built_in">set</span>)</span><br><span class="line">chat_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=<span class="literal">True</span>)</span><br><span class="line">scrollbar.config(command=chat_list.yview)</span><br><span class="line"><span class="comment"># 创建输入框架</span></span><br><span class="line">input_frame = ttk.Frame(root)</span><br><span class="line">input_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建用户输入标签</span></span><br><span class="line">user_label = ttk.Label(input_frame, text=<span class="string">&quot;我：&quot;</span>)</span><br><span class="line">user_label.pack(side=tk.LEFT)</span><br><span class="line"><span class="comment"># 创建用户输入框</span></span><br><span class="line">entry = ttk.Entry(input_frame, width=<span class="number">30</span>)</span><br><span class="line">entry.pack(side=tk.LEFT, expand=<span class="literal">True</span>, fill=tk.X)</span><br><span class="line"><span class="comment"># 创建发送按钮</span></span><br><span class="line">send_button = ttk.Button(input_frame, text=<span class="string">&quot;发送&quot;</span>)</span><br><span class="line">send_button.pack(side=tk.RIGHT, padx=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 定义发送消息的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_message</span>(<span class="params">event=<span class="literal">None</span></span>):</span><br><span class="line">    user_input = entry.get()</span><br><span class="line">    <span class="keyword">if</span> user_input.strip() == <span class="string">&quot;&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    timestamp = datetime.now().strftime(<span class="string">&quot;%H:%M&quot;</span>)</span><br><span class="line">    chat_list.insert(tk.END, <span class="string">f&quot;<span class="subst">&#123;timestamp&#125;</span> 我：<span class="subst">&#123;user_input&#125;</span>&quot;</span>)</span><br><span class="line">    chat_list.see(tk.END)</span><br><span class="line">    entry.delete(<span class="number">0</span>, tk.END)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        messages = [&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: user_input&#125;]</span><br><span class="line">        response = client.chat.completions.create(</span><br><span class="line">            model=<span class="string">&quot;glm-4&quot;</span>,</span><br><span class="line">            messages=messages,</span><br><span class="line">            stream=<span class="literal">True</span></span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        ai_response = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> chunk <span class="keyword">in</span> response:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">hasattr</span>(chunk.choices[<span class="number">0</span>].delta, <span class="string">&quot;content&quot;</span>):</span><br><span class="line">                ai_response += chunk.choices[<span class="number">0</span>].delta.content</span><br><span class="line">        </span><br><span class="line">        timestamp = datetime.now().strftime(<span class="string">&quot;%H:%M&quot;</span>)</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;<span class="subst">&#123;timestamp&#125;</span> AI：<span class="subst">&#123;ai_response&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 将AI的回复朗读出来</span></span><br><span class="line">        engine.say(ai_response)</span><br><span class="line">        engine.runAndWait()</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;错误：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line"><span class="comment"># 为发送按钮和回车键绑定事件</span></span><br><span class="line">send_button.config(command=send_message)</span><br><span class="line">root.bind(<span class="string">&quot;&lt;Return&gt;&quot;</span>, send_message)</span><br><span class="line"><span class="comment"># 进入主循环</span></span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+<p>这个代码使用了<code>pyttsx3</code>库来实现文本转语音功能。当AI生成回复后，程序会使用默认的语音设置将回复朗读出来。</p>
+<h3 id="5-5-添加自定义模型选择"><a href="#5-5-添加自定义模型选择" class="headerlink" title="5.5 添加自定义模型选择"></a>5.5 添加自定义模型选择</h3><p>智谱AI提供了多种大模型，我们可以允许用户选择使用哪个模型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> ttk</span><br><span class="line"><span class="keyword">from</span> zhipuai <span class="keyword">import</span> ZhipuAI</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> pyttsx3</span><br><span class="line"><span class="comment"># 替换为你的API密钥</span></span><br><span class="line">api_key = <span class="string">&quot;your_api_key_here&quot;</span></span><br><span class="line"><span class="comment"># 创建一个ZhipuAI实例</span></span><br><span class="line">client = ZhipuAI(api_key=api_key)</span><br><span class="line"><span class="comment"># 初始化文本转语音引擎</span></span><br><span class="line">engine = pyttsx3.init()</span><br><span class="line"><span class="comment"># 创建主窗口</span></span><br><span class="line">root = tk.Tk()</span><br><span class="line">root.title(<span class="string">&quot;AI Chat Bot&quot;</span>)</span><br><span class="line">root.geometry(<span class="string">&quot;400x600&quot;</span>)</span><br><span class="line"><span class="comment"># 创建菜单栏</span></span><br><span class="line">menu_bar = tk.Menu(root)</span><br><span class="line">root.config(menu=menu_bar)</span><br><span class="line"><span class="comment"># 创建文件菜单</span></span><br><span class="line">file_menu = tk.Menu(menu_bar, tearoff=<span class="number">0</span>)</span><br><span class="line">menu_bar.add_cascade(label=<span class="string">&quot;文件&quot;</span>, menu=file_menu)</span><br><span class="line"><span class="comment"># 保存聊天历史的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_chat_history</span>():</span><br><span class="line">    file_path = filedialog.asksaveasfilename(</span><br><span class="line">        defaultextension=<span class="string">&quot;.txt&quot;</span>,</span><br><span class="line">        filetypes=[(<span class="string">&quot;文本文件&quot;</span>, <span class="string">&quot;*.txt&quot;</span>), (<span class="string">&quot;所有文件&quot;</span>, <span class="string">&quot;*.*&quot;</span>)]</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">if</span> file_path:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(chat_list.size()):</span><br><span class="line">                f.write(<span class="string">f&quot;<span class="subst">&#123;chat_list.get(i)&#125;</span>\n&quot;</span>)</span><br><span class="line"><span class="comment"># 加载聊天历史的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_chat_history</span>():</span><br><span class="line">    file_path = filedialog.askopenfilename(</span><br><span class="line">        filetypes=[(<span class="string">&quot;文本文件&quot;</span>, <span class="string">&quot;*.txt&quot;</span>), (<span class="string">&quot;所有文件&quot;</span>, <span class="string">&quot;*.*&quot;</span>)]</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">if</span> file_path:</span><br><span class="line">        chat_list.delete(<span class="number">0</span>, tk.END)</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">                chat_list.insert(tk.END, line.strip())</span><br><span class="line"><span class="comment"># 添加菜单项</span></span><br><span class="line">file_menu.add_command(label=<span class="string">&quot;保存聊天历史&quot;</span>, command=save_chat_history)</span><br><span class="line">file_menu.add_command(label=<span class="string">&quot;加载聊天历史&quot;</span>, command=load_chat_history)</span><br><span class="line"><span class="comment"># 创建模型选择框架</span></span><br><span class="line">model_frame = ttk.Frame(root)</span><br><span class="line">model_frame.pack(fill=tk.X, padx=<span class="number">10</span>, pady=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 创建模型选择标签</span></span><br><span class="line">model_label = ttk.Label(model_frame, text=<span class="string">&quot;选择模型：&quot;</span>)</span><br><span class="line">model_label.pack(side=tk.LEFT)</span><br><span class="line"><span class="comment"># 创建模型选择下拉列表</span></span><br><span class="line">model_var = tk.StringVar()</span><br><span class="line">model_var.<span class="built_in">set</span>(<span class="string">&quot;glm-4&quot;</span>)  <span class="comment"># 默认选择glm-4模型</span></span><br><span class="line">model_options = [<span class="string">&quot;glm-4&quot;</span>, <span class="string">&quot;glm-4v&quot;</span>, <span class="string">&quot;其他模型&quot;</span>]</span><br><span class="line">model_dropdown = ttk.Combobox(model_frame, textvariable=model_var, values=model_options)</span><br><span class="line">model_dropdown.pack(side=tk.LEFT, padx=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 创建聊天框架</span></span><br><span class="line">chat_frame = ttk.Frame(root)</span><br><span class="line">chat_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建滚动条</span></span><br><span class="line">scrollbar = ttk.Scrollbar(chat_frame)</span><br><span class="line">scrollbar.pack(side=tk.RIGHT, fill=tk.Y)</span><br><span class="line"><span class="comment"># 创建聊天列表（显示聊天历史）</span></span><br><span class="line">chat_list = tk.Listbox(chat_frame, width=<span class="number">50</span>, height=<span class="number">20</span>, yscrollcommand=scrollbar.<span class="built_in">set</span>)</span><br><span class="line">chat_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=<span class="literal">True</span>)</span><br><span class="line">scrollbar.config(command=chat_list.yview)</span><br><span class="line"><span class="comment"># 创建输入框架</span></span><br><span class="line">input_frame = ttk.Frame(root)</span><br><span class="line">input_frame.pack(fill=tk.BOTH, expand=<span class="literal">True</span>, padx=<span class="number">10</span>, pady=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 创建用户输入标签</span></span><br><span class="line">user_label = ttk.Label(input_frame, text=<span class="string">&quot;我：&quot;</span>)</span><br><span class="line">user_label.pack(side=tk.LEFT)</span><br><span class="line"><span class="comment"># 创建用户输入框</span></span><br><span class="line">entry = ttk.Entry(input_frame, width=<span class="number">30</span>)</span><br><span class="line">entry.pack(side=tk.LEFT, expand=<span class="literal">True</span>, fill=tk.X)</span><br><span class="line"><span class="comment"># 创建发送按钮</span></span><br><span class="line">send_button = ttk.Button(input_frame, text=<span class="string">&quot;发送&quot;</span>)</span><br><span class="line">send_button.pack(side=tk.RIGHT, padx=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 定义发送消息的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_message</span>(<span class="params">event=<span class="literal">None</span></span>):</span><br><span class="line">    user_input = entry.get()</span><br><span class="line">    <span class="keyword">if</span> user_input.strip() == <span class="string">&quot;&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    timestamp = datetime.now().strftime(<span class="string">&quot;%H:%M&quot;</span>)</span><br><span class="line">    chat_list.insert(tk.END, <span class="string">f&quot;<span class="subst">&#123;timestamp&#125;</span> 我：<span class="subst">&#123;user_input&#125;</span>&quot;</span>)</span><br><span class="line">    chat_list.see(tk.END)</span><br><span class="line">    entry.delete(<span class="number">0</span>, tk.END)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        messages = [&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: user_input&#125;]</span><br><span class="line">        model_name = model_var.get()</span><br><span class="line">        response = client.chat.completions.create(</span><br><span class="line">            model=model_name,</span><br><span class="line">            messages=messages,</span><br><span class="line">            stream=<span class="literal">True</span></span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        ai_response = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> chunk <span class="keyword">in</span> response:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">hasattr</span>(chunk.choices[<span class="number">0</span>].delta, <span class="string">&quot;content&quot;</span>):</span><br><span class="line">                ai_response += chunk.choices[<span class="number">0</span>].delta.content</span><br><span class="line">        </span><br><span class="line">        timestamp = datetime.now().strftime(<span class="string">&quot;%H:%M&quot;</span>)</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;<span class="subst">&#123;timestamp&#125;</span> AI：<span class="subst">&#123;ai_response&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 将AI的回复朗读出来</span></span><br><span class="line">        engine.say(ai_response)</span><br><span class="line">        engine.runAndWait()</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        chat_list.insert(tk.END, <span class="string">f&quot;错误：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        chat_list.see(tk.END)</span><br><span class="line"><span class="comment"># 为发送按钮和回车键绑定事件</span></span><br><span class="line">send_button.config(command=send_message)</span><br><span class="line">root.bind(<span class="string">&quot;&lt;Return&gt;&quot;</span>, send_message)</span><br><span class="line"><span class="comment"># 进入主循环</span></span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+<p>这个代码添加了一个模型选择下拉列表，允许用户选择使用哪个大模型。需要注意的是，不同的模型可能需要不同的参数，调用时需要确保使用正确的参数。</p>
+<h2 id="第六部分：测试和调试"><a href="#第六部分：测试和调试" class="headerlink" title="第六部分：测试和调试"></a>第六部分：测试和调试</h2><h3 id="6-1-常见问题和解决方案"><a href="#6-1-常见问题和解决方案" class="headerlink" title="6.1 常见问题和解决方案"></a>6.1 常见问题和解决方案</h3><p>在使用这个AI聊天机器人的过程中，可能会遇到一些问题。以下是一些常见的问题及其解决方案：</p>
+<ol>
+<li><strong>API调用失败</strong>：<ul>
+<li><strong>原因</strong>：API密钥错误、网络连接问题、API限制等</li>
+<li><strong>解决方案</strong>：检查API密钥是否正确，确保网络连接正常，查看智谱AI的API文档了解限制和错误代码</li>
+</ul>
+</li>
+<li><strong>程序卡顿</strong>：<ul>
+<li><strong>原因</strong>：长时间的API调用、复杂的GUI操作等</li>
+<li><strong>解决方案</strong>：使用异步编程处理长时间操作，避免在主线程中执行耗时操作</li>
+</ul>
+</li>
+<li><strong>文本编码问题</strong>：<ul>
+<li><strong>原因</strong>：不同系统或库之间的编码不一致</li>
+<li><strong>解决方案</strong>：确保所有字符串都使用UTF-8编码，特别是在保存和加载文件时</li>
+</ul>
+</li>
+</ol>
+<h3 id="6-2-测试聊天机器人"><a href="#6-2-测试聊天机器人" class="headerlink" title="6.2 测试聊天机器人"></a>6.2 测试聊天机器人</h3><p>在完成代码编写后，我们需要对聊天机器人进行测试，确保所有功能都能正常工作。</p>
+<ol>
+<li><strong>基本功能测试</strong>：<ul>
+<li>发送消息</li>
+<li>接收AI回复</li>
+<li>保存和加载聊天历史</li>
+</ul>
+</li>
+<li><strong>边界条件测试</strong>：<ul>
+<li>输入空消息</li>
+<li>输入非常长的消息</li>
+<li>输入包含特殊字符的消息</li>
+</ul>
+</li>
+<li><strong>性能测试</strong>：<ul>
+<li>多次连续对话</li>
+<li>大量聊天历史</li>
+</ul>
+</li>
+</ol>
+<h3 id="6-3-调试技巧"><a href="#6-3-调试技巧" class="headerlink" title="6.3 调试技巧"></a>6.3 调试技巧</h3><p>当遇到问题时，可以使用以下调试技巧：</p>
+<ol>
+<li><strong>打印日志</strong>：<ul>
+<li>在关键步骤打印变量的值</li>
+<li>记录程序的执行流程</li>
+</ul>
+</li>
+<li><strong>使用IDE的调试功能</strong>：<ul>
+<li>设置断点</li>
+<li>单步执行代码</li>
+<li>检查变量值</li>
+</ul>
+</li>
+<li><strong>查看API响应</strong>：<ul>
+<li>打印完整的API响应</li>
+<li>分析错误信息</li>
+</ul>
+</li>
+</ol>
+<h2 id="第七部分：扩展项目"><a href="#第七部分：扩展项目" class="headerlink" title="第七部分：扩展项目"></a>第七部分：扩展项目</h2><h3 id="7-1-添加更多功能"><a href="#7-1-添加更多功能" class="headerlink" title="7.1 添加更多功能"></a>7.1 添加更多功能</h3><p>除了基本的聊天功能外，我们可以为聊天机器人添加更多功能：</p>
+<ol>
+<li><strong>多语言支持</strong>：<ul>
+<li>允许用户选择聊天的语言</li>
+<li>使用翻译API进行语言转换</li>
+</ul>
+</li>
+<li><strong>个性化设置</strong>：<ul>
+<li>允许用户自定义界面主题</li>
+<li>添加用户头像和AI头像</li>
+</ul>
+</li>
+<li><strong>集成其他服务</strong>：<ul>
+<li>与社交媒体集成</li>
+<li>与日历或提醒服务集成</li>
+</ul>
+</li>
+</ol>
+<h3 id="7-2-学习更多关于AI的知识"><a href="#7-2-学习更多关于AI的知识" class="headerlink" title="7.2 学习更多关于AI的知识"></a>7.2 学习更多关于AI的知识</h3><p>通过这个项目，孩子们可以学习更多关于AI的知识：</p>
+<ol>
+<li><strong>了解大语言模型</strong>：<ul>
+<li>什么是大语言模型</li>
+<li>它们是如何工作的</li>
+<li>它们的局限性和潜力</li>
+</ul>
+</li>
+<li><strong>探索不同的AI模型</strong>：<ul>
+<li>比较不同AI模型的性能</li>
+<li>了解它们的优缺点</li>
+</ul>
+</li>
+<li><strong>学习AI伦理</strong>：<ul>
+<li>讨论AI的伦理问题</li>
+<li>了解如何负责任地使用AI</li>
+</ul>
+</li>
+</ol>
+<h3 id="7-3-进一步学习Python和GUI编程"><a href="#7-3-进一步学习Python和GUI编程" class="headerlink" title="7.3 进一步学习Python和GUI编程"></a>7.3 进一步学习Python和GUI编程</h3><p>这个项目为孩子们提供了进一步学习Python和GUI编程的机会：</p>
+<ol>
+<li><strong>深入学习Python</strong>：<ul>
+<li>学习更高级的Python特性</li>
+<li>探索Python的标准库</li>
+</ul>
+</li>
+<li><strong>学习更高级的GUI技术</strong>：<ul>
+<li>探索其他GUI库，如PyQt或wxPython</li>
+<li>学习创建更复杂的GUI应用程序</li>
+</ul>
+</li>
+<li><strong>学习软件工程原则</strong>：<ul>
+<li>学习如何结构化大型Python项目</li>
+<li>探索版本控制和协作开发</li>
+</ul>
+</li>
+</ol>
+<h2 id="第八部分：总结"><a href="#第八部分：总结" class="headerlink" title="第八部分：总结"></a>第八部分：总结</h2><p>通过这个项目，孩子们不仅学习了如何使用Python调用智谱AI的大模型，还学习了如何使用Tkinter创建图形用户界面。他们通过这个过程：</p>
+<ul>
+<li>巩固了Python编程技能</li>
+<li>学习了GUI编程的基础知识</li>
+<li>了解了如何与AI技术交互</li>
+<li>培养了解决问题的能力<br>希望这个教程能帮助有一定Python基础的10岁儿童创建自己的AI聊天机器人，并激发他们对编程和AI的兴趣。随着他们技能的提高，他们可以继续扩展这个项目，添加更多功能，并探索更复杂的AI应用。</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[45] 如何用Python调用智谱AI的API 原创 - CSDN博客. <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_61977748/article/details/140224946">https://blog.csdn.net/m0_61977748/article/details/140224946</a>.<br>[54] 28 Tkinter实现简易的聊天窗口 - 大师码. <a target="_blank" rel="noopener" href="https://dashima.net/docs/28-tkinter%E5%AE%9A%E5%AE%9A%E7%9A%84%E7%AE%80%E6%98%93%E7%9A%84%E8%81%8A%E5%A4%A9%E7%AA%97%E5%8F%A3/">https://dashima.net/docs/28-tkinter%E5%AE%9A%E5%AE%9A%E7%9A%84%E7%AE%80%E6%98%93%E7%9A%84%E8%81%8A%E5%A4%A9%E7%AA%97%E5%8F%A3/</a>.<br>[80] Python的GUI编程库Tkinter的学习原创 - CSDN博客. <a target="_blank" rel="noopener" href="https://blog.csdn.net/Asigerg/article/details/135893785">https://blog.csdn.net/Asigerg/article/details/135893785</a>. </p>
+
+    </div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate comment here.hahaha~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Joho Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Joho Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Joho Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://chenjh3061.github.io/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/%E5%84%BF%E7%AB%A5Python%E5%BC%80%E5%8F%91%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA/" title="儿童Python开发聊天机器人">https://chenjh3061.github.io/少儿编程/儿童Python开发聊天机器人/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+              <a href="/tags/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 少儿编程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/%E5%B0%8F%E5%AD%A6%E9%80%9F%E7%AE%97/" rel="prev" title="小学速算">
+      <i class="fa fa-chevron-left"></i> 小学速算
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/Python%E7%BC%96%E7%A8%8B/" rel="next" title="Python编程">
+      Python编程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%9910%E5%B2%81%E5%84%BF%E7%AB%A5%E7%94%A8Python%E8%B0%83%E7%94%A8%E6%99%BA%E8%B0%B1%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%88%9B%E5%BB%BAAI%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">教10岁儿童用Python调用智谱大模型创建AI聊天机器人的详细教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">第一部分：准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%B3%A8%E5%86%8C%E6%99%BA%E8%B0%B1AI%E8%B4%A6%E5%8F%B7%E5%B9%B6%E8%8E%B7%E5%8F%96API%E5%AF%86%E9%92%A5"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.1 注册智谱AI账号并获取API密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E7%9A%84Python%E5%BA%93"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2 安装必要的Python库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9ATkinter%E5%9F%BA%E7%A1%80"><span class="nav-number">1.3.</span> <span class="nav-text">第二部分：Tkinter基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E4%BB%80%E4%B9%88%E6%98%AFTkinter%EF%BC%9F"><span class="nav-number">1.3.1.</span> <span class="nav-text">2.1 什么是Tkinter？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AATkinter%E7%AA%97%E5%8F%A3"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.2 创建第一个Tkinter窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E6%B7%BB%E5%8A%A0%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">2.3 添加基本组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9A%E4%BD%BF%E7%94%A8Tkinter%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%95%8C%E9%9D%A2"><span class="nav-number">1.4.</span> <span class="nav-text">第三部分：使用Tkinter创建聊天界面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E8%AE%BE%E8%AE%A1%E8%81%8A%E5%A4%A9%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80"><span class="nav-number">1.4.1.</span> <span class="nav-text">3.1 设计聊天界面布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%B7%BB%E5%8A%A0%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-number">1.4.2.</span> <span class="nav-text">3.2 添加基本功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%EF%BC%9A%E8%B0%83%E7%94%A8%E6%99%BA%E8%B0%B1AI%E5%A4%A7%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.5.</span> <span class="nav-text">第四部分：调用智谱AI大模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%99%BA%E8%B0%B1AI%EF%BC%9F"><span class="nav-number">1.5.1.</span> <span class="nav-text">4.1 什么是智谱AI？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%BD%BF%E7%94%A8Python%E8%B0%83%E7%94%A8%E6%99%BA%E8%B0%B1AI-API"><span class="nav-number">1.5.2.</span> <span class="nav-text">4.2 使用Python调用智谱AI API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E9%9B%86%E6%88%90%E6%99%BA%E8%B0%B1AI%E5%88%B0%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="nav-number">1.5.3.</span> <span class="nav-text">4.3 集成智谱AI到聊天机器人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E5%A4%84%E7%90%86%E6%B5%81%E5%BC%8F%E5%93%8D%E5%BA%94"><span class="nav-number">1.5.4.</span> <span class="nav-text">4.4 处理流式响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-%E5%A4%84%E7%90%86%E9%94%99%E8%AF%AF%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="nav-number">1.5.5.</span> <span class="nav-text">4.5 处理错误和异常</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E5%AE%8C%E5%96%84%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="nav-number">1.6.</span> <span class="nav-text">第五部分：完善聊天机器人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%94%B9%E8%BF%9B"><span class="nav-number">1.6.1.</span> <span class="nav-text">5.1 添加用户界面改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E6%B7%BB%E5%8A%A0%E7%83%AD%E9%94%AE%E6%94%AF%E6%8C%81"><span class="nav-number">1.6.2.</span> <span class="nav-text">5.2 添加热键支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E4%BF%9D%E5%AD%98%E5%92%8C%E5%8A%A0%E8%BD%BD%E8%81%8A%E5%A4%A9%E5%8E%86%E5%8F%B2"><span class="nav-number">1.6.3.</span> <span class="nav-text">5.3 保存和加载聊天历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E6%B7%BB%E5%8A%A0%E8%AF%AD%E9%9F%B3%E6%94%AF%E6%8C%81"><span class="nav-number">1.6.4.</span> <span class="nav-text">5.4 添加语音支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9"><span class="nav-number">1.6.5.</span> <span class="nav-text">5.5 添加自定义模型选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E6%B5%8B%E8%AF%95%E5%92%8C%E8%B0%83%E8%AF%95"><span class="nav-number">1.7.</span> <span class="nav-text">第六部分：测试和调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.7.1.</span> <span class="nav-text">6.1 常见问题和解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E6%B5%8B%E8%AF%95%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="nav-number">1.7.2.</span> <span class="nav-text">6.2 测试聊天机器人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7"><span class="nav-number">1.7.3.</span> <span class="nav-text">6.3 调试技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86%EF%BC%9A%E6%89%A9%E5%B1%95%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.8.</span> <span class="nav-text">第七部分：扩展项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E6%B7%BB%E5%8A%A0%E6%9B%B4%E5%A4%9A%E5%8A%9F%E8%83%BD"><span class="nav-number">1.8.1.</span> <span class="nav-text">7.1 添加更多功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E5%AD%A6%E4%B9%A0%E6%9B%B4%E5%A4%9A%E5%85%B3%E4%BA%8EAI%E7%9A%84%E7%9F%A5%E8%AF%86"><span class="nav-number">1.8.2.</span> <span class="nav-text">7.2 学习更多关于AI的知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%AD%A6%E4%B9%A0Python%E5%92%8CGUI%E7%BC%96%E7%A8%8B"><span class="nav-number">1.8.3.</span> <span class="nav-text">7.3 进一步学习Python和GUI编程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AB%E9%83%A8%E5%88%86%EF%BC%9A%E6%80%BB%E7%BB%93"><span class="nav-number">1.9.</span> <span class="nav-text">第八部分：总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">1.10.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Joho Chen</p>
+  <div class="site-description" itemprop="description">个人记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">235</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chenjh3061" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chenjh3061" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://music.163.com/#" title="https:&#x2F;&#x2F;music.163.com&#x2F;#" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+          <h5 class="widget-title">标签云</h5>
+          <div id="myCanvasContainer" class="widget tagcloud">
+              <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Agent/" rel="tag">AI-Agent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HarmonyOS/" rel="tag">HarmonyOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Obsidian%E7%94%A8%E6%B3%95/" rel="tag">Obsidian用法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenClaw/" rel="tag">OpenClaw</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-world/" rel="tag">hello-world</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%8F%B0/" rel="tag">中台</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E6%8C%81/" rel="tag">主持</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D/" rel="tag">事业单位</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/" rel="tag">交换技术</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E8%BA%AB/" rel="tag">健身</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AB%E5%AD%97/" rel="tag">八字</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E4%B8%93/" rel="tag">公专</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E8%80%83/" rel="tag">公考</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AD%E7%88%BB/" rel="tag">六爻</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%AF%E4%B8%9A/" rel="tag">副业</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%8E%E4%B8%BA/" rel="tag">华为</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E7%90%86/" rel="tag">命理</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%B2%E5%AD%A6/" rel="tag">哲学</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%94%B1%E6%AD%8C/" rel="tag">唱歌</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/" rel="tag">少儿编程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" rel="tag">开源项目</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%85%E8%AF%BB%E6%96%87%E7%AB%A0/" rel="tag">待读文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/" rel="tag">智能体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6/" rel="tag">玄学</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E4%BF%A1/" rel="tag">电信</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%B8%E9%9D%A2/" rel="tag">相面</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%96%E5%88%92/" rel="tag">策划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%A1%E7%90%86/" rel="tag">管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B0/" rel="tag">紫微斗数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag">网络工程师</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E8%AF%81/" rel="tag">考证</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B5%9A%E9%92%B1/" rel="tag">赚钱</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1/" rel="tag">路由</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/" rel="tag">软件设计师</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%80%83/" rel="tag">软考</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E5%8A%A8/" rel="tag">运动</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%90%A5%E5%95%86/" rel="tag">运营商</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%9A%E4%BF%A1/" rel="tag">通信</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A3%8E%E6%B0%B4/" rel="tag">风水</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%B8%BF%E8%92%99/" rel="tag">鸿蒙</a><span class="tag-list-count">1</span></li></ul>
+              </canvas>
+          </div>
+      </div>
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joho Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">635k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:37</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+# 网站运行时间
+runtime:
+   enable: true
+   create_time: "04/15/2022 13:18:00"
+   start: 2022-04-15 13:13:00 +0800
+   mobile: false
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chenjh3061.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前端学习路径">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端学习路径">
+<meta property="og:url" content="https://chenjh3061.github.io/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/index.html">
+<meta property="og:site_name" content="joho world">
+<meta property="og:description" content="前端学习路径">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-30T02:25:34.000Z">
+<meta property="article:modified_time" content="2025-10-26T07:54:13.109Z">
+<meta property="article:author" content="Joho Chen">
+<meta property="article:tag" content="学习路径">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chenjh3061.github.io/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前端学习路径 | joho world</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="joho world" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">joho world</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061.github.io/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端学习路径
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-30 10:25:34" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-10-26 15:54:13" itemprop="dateModified" datetime="2025-10-26T15:54:13+08:00">2025-10-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+            <div class="post-description">前端学习路径</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>1、前端应该掌握的状态码：<a target="_blank" rel="noopener" href="https://blog.csdn.net/self_discipline123/article/details/84934938">(70条消息) 前端开发过程中常见的几种HTTP状态码_前端404not found_self_discipline123的博客-CSDN博客</a> </p>
+<p>2、前端调试工具：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1KM4y1G7EF/?spm_id_from=333.337.search-card.all.click&vd_source=d9065a2ab38642c851a16afb4a3300a4">【浏览器调试工具精讲】Chrome Dev Tools精讲，前端必看！_哔哩哔哩_bilibili</a> </p>
+<p>3、git的使用原理。<a href="onenote:https://d.docs.live.net/0034d8f71d478127/%E6%96%87%E6%A1%A3/%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%81Linux/linux%E5%92%8Cgit%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.one#Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&section-id={9DE33C99-C961-48AD-9CAC-5673DC95E3EB}&page-id={BAEA188A-459C-4407-9840-D59CEB142C17}&end">Git常用命令</a> </p>
+<p>4、mockjs模拟接口：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_38134431/article/details/118155093">前端使用mockjs模拟接口数据_js 制造假数据自定义接口_winne雪的博客-CSDN博客</a> </p>
+<p>5、JS进阶：<a target="_blank" rel="noopener" href="https://doc.houdunren.com/%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B/js/4%20%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B.html#%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84">声明数组 | 后盾人 (houdunren.com)</a> </p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6875152247714480136">32个手写JS，巩固你的JS基础（面试高频） - 掘金 (juejin.cn)</a> </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52834435">(70条消息) 程序媛小y的博客_CSDN博客-PTA合集,JavaScript,递推、dfs训练题领域博主</a> </p>
+<p>6、基础算法（代码随想录） </p>
+<p>7、<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qB4y1M7vP/?spm_id_from=333.337.search-card.all.click">8分钟学完springboot+vue前后分离的增删改查_哔哩哔哩_bilibili</a> </p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15741177Eh/?spm_id_from=333.337.search-card.all.click&vd_source=d9065a2ab38642c851a16afb4a3300a4">最全最新Vue、Vuejs教程，从入门到精通_哔哩哔哩_bilibili</a> </p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nh411e7oG/?spm_id_from=333.337.search-card.all.click&vd_source=d9065a2ab38642c851a16afb4a3300a4">【自学编程】最新前端编程学习路线，速成贴心，冲击大厂程序员_哔哩哔哩_bilibili</a></p>
+<p>![[Pasted image 20240830170127.png]]<br>鱼皮哥的今晚前端路线不是很详细，所以本文诞生了，很长时间没发文了，诸君共勉！</p>
+<p>注意本文适合纯前端乃至想要进阶全栈的同学，我会尽量把各个关键点列出</p>
+<h2 id="基础阶段"><a href="#基础阶段" class="headerlink" title="基础阶段"></a>基础阶段</h2><ul>
+<li><p>HTML：<strong>HTML4</strong>到<strong>HTML5</strong>，一些新特性要了解，比如<code>contenteditable</code>属性</p>
+</li>
+<li><p>CSS：<strong>CSS</strong>方面比较关键，分几个节点</p>
+</li>
+</ul>
+<p>  + 第一个阶段：熟悉基本语法到<strong>CSS3</strong></p>
+<p>  + 第二个阶段：学会运用预处理器如<strong>Less</strong>，<strong>Sass</strong>，学会<strong>CSS Module</strong>（普通实习够了）</p>
+<p>  + 第三个阶段：学会原子化CSS如<strong>TailwindCSS</strong>，<strong>UnoCSS</strong>（进阶）</p>
+<p>  + 第四个阶段：学会运用后处理器<strong>PostCSS</strong>，运用各个插件（进阶）</p>
+<ul>
+<li>JavaScript：<strong>JavaScript</strong>主要为如下</li>
+</ul>
+<p>  + 基本语法，操作DOM，BOM等</p>
+<p>  + **ES6+**后的语法</p>
+<p>  + 正则表达式</p>
+<p>  + 设计模式（<strong>发布订阅</strong>模式建议学好，很常用，其他如单例模式了解即可）</p>
+<p>  + <strong>TypeScript</strong>：JS的超集，我的建议是在学完js后就先了解好ts的基本语法，对以后有帮助</p>
+<p>  + Canvas（可选，有2D和3D）</p>
+<ul>
+<li>数据结构和算法：学好这个对后面的源码部分有帮助</li>
+</ul>
+<p>  + 数组：队列，链表，哈希表等等</p>
+<p>  + 排序：双指针，<strong>二分</strong>（比较重要）等等</p>
+<ul>
+<li>数据交互：这块就是和后端交流最多的地方了，也分阶段</li>
+</ul>
+<p>  + （基本）Ajax：学好最基础的交互方法</p>
+<p>  + （基本）<strong>Axios</strong>：Ajax的封装常用库，分几个小阶段</p>
+<p>    + 掌握基本用法</p>
+<p>    + <strong>进阶</strong>就是你用Ajax自己封装出一个简单的Axios</p>
+<p>    + <strong>更进一步</strong>就是二次封装axios，这点在项目中很多</p>
+<p>  + （基本）Fetch：建议掌握</p>
+<p>  + （进阶）WebSocket，SSE</p>
+<p>  + （<strong>必备</strong>）网络模式，HTTP协议，TCP三次握手四次挥手等，就是计算机网络部分，部分大公司很看重</p>
+<h2 id="提升阶段"><a href="#提升阶段" class="headerlink" title="提升阶段"></a>提升阶段</h2><ul>
+<li>包管理工具，目前较多，基本只需了解命令，进阶的话需要了解工作区等概念</li>
+</ul>
+<p>  + <strong>npm</strong>（node官方）</p>
+<p>  + cnpm（不推荐了现在）</p>
+<p>  + yarn（一般）</p>
+<p>  + <strong>pnpm</strong>（推荐，在速度方面很快且在后续的Monorepo项目中运用多）</p>
+<ul>
+<li>工程化：即构建工具一类，目前来说你想学深必须学好这里，如果很急的话暂时可以跳过，但不急的话建议先学懂这块再去学框架会更好</li>
+</ul>
+<p>  + <strong>Webpack</strong>：老牌常用的工具，进阶就是会定制插件</p>
+<p>  + <strong>Vite</strong>：新生代，构建很快，进阶就是会定制插件</p>
+<p>  + Gulp：不推荐了</p>
+<p>  + EsBuild：可选</p>
+<p>  + SWC：可选</p>
+<p>  + <strong>Babel</strong>：让我们使用新语法和 api，babel 会在编译中转为目标环境的支持的语法（进阶必学）</p>
+<ul>
+<li><p>项目管理：<strong>Git</strong>，学会多提交github代码，这里不多表述</p>
+</li>
+<li><p>框架：主要分几个</p>
+</li>
+</ul>
+<p>  + <strong>React</strong>：生态丰富，主要学好<strong>hooks</strong>，函数式编程已成主流，基本的库如下</p>
+<p>    + <strong>React-Router</strong>：路由</p>
+<p>    + <strong>Redux</strong>：状态管理，也有其替代如<strong>Zustand</strong>也用的多</p>
+<p>    + <strong>Antd</strong>：UI库，我的建议是学的时候可以自己尝试用原生写一个类似的组件，因为企业中的需求很多不一样，需要自己定制一些UI组件库（后面UI库单独列一下）</p>
+<p>    + 进阶的一些如动画库 react-transition-group，可以根据需求寻找</p>
+<p>  + <strong>Vue</strong>：生态丰富，现在Vue2版本虽然停止维护，但还是建议学，很多面试会问Vue2和Vue3的区别</p>
+<p>    + <strong>Vue-Router</strong>：路由</p>
+<p>    + <strong>Vuex</strong>：状态管理，有<strong>Pinia</strong>替换</p>
+<p>  + Angular：老牌，但国内用的少，需要掌握 Rxjs</p>
+<p>  + Solid：新生，国内用的少</p>
+<ul>
+<li>UI组件库单独：</li>
+</ul>
+<p>  + PC端</p>
+<p>    + Element UI</p>
+<p>    + Ant Design</p>
+<p>    + IView</p>
+<p>  + H5端</p>
+<p>    + Vant（用的最多）</p>
+<p>    + Muse UI</p>
+<p>  + 小程序：（一般来说大前端包括小程序）</p>
+<p>    + Vant和iview</p>
+<h2 id="进阶阶段"><a href="#进阶阶段" class="headerlink" title="进阶阶段"></a>进阶阶段</h2><p>一般来说你学会前面的时候，运用好框架做好项目就可以实习了，这时候只要基础好基本没问题</p>
+<p>下面的内容就是进阶部分了，一般来说在实习不会问，源码方面大公司问的多，普通实习的同学了解即可</p>
+<ul>
+<li><strong>SSR</strong>服务器渲染：有利于SEO搜索引擎优化，一般是<strong>进阶学习</strong></li>
+</ul>
+<p>  + NuxtJS（运用在Vue框架）</p>
+<p>  + NextJS（运用在React框架）</p>
+<ul>
+<li>小程序：大部分公司都是前端写小程序，所以有必要还是学一下，实习的话一般不需要</li>
+</ul>
+<p>  + 原生小程序（不推荐）</p>
+<p>  + <strong>Uniapp</strong></p>
+<p>  + <strong>Taro</strong></p>
+<ul>
+<li>跨端：如安卓，iOS</li>
+</ul>
+<p>  + <strong>Uniapp</strong>：用的挺多</p>
+<p>  + Flutter：这个可选，因为需要学习一门新的语言dart，所以难度较高</p>
+<p>  + <strong>HTML5 Plus</strong>：挺常用的</p>
+<p>  + <strong>Hybrid</strong>：很常用，可以嵌入到原生安卓和ios开发</p>
+<p>  + <strong>ReactNative</strong>：React的跨端，学过react的话上手难度很低，很不错</p>
+<ul>
+<li><strong>源码</strong>：这块很多问的大多都是框架的底层，很多大公司会问，建议多看网上八股和看源代码</li>
+</ul>
+<p>  + Vue：如v2和v3底层实现，diff算法等等</p>
+<p>  + React：如fiber架构，hooks的区别等</p>
+<ul>
+<li><p>可视化：可选，一些公司用，技术如Echarts，DataV，Ucharts等</p>
+</li>
+<li><p>微前端：可选，进阶学，大公司一般有用</p>
+</li>
+</ul>
+<p>  + 乾坤（阿里）</p>
+<p>  + macro APP（京东）</p>
+<p>  + 无界（腾讯）</p>
+<ul>
+<li><strong>服务器</strong>：想要进阶的必备</li>
+</ul>
+<p>  + Linux的基础</p>
+<p>  + Nginx基础，Nginx的插件，lua语言</p>
+<p>  + <strong>Pm2</strong>: 很常用的服务器库，<strong>进阶必备</strong></p>
+<ul>
+<li><strong>技术方案</strong>：各个需求的整合</li>
+</ul>
+<p>  + 主题切换：如白天黑夜</p>
+<p>  + 数据埋点和服务监控：大公司非常常用！</p>
+<p>  + 性能监控和指标分析：作为高级工程师必须考虑好性能问题</p>
+<p>  + <strong>monorepo</strong>：该项目想要用到另一个项目的东西，就需要这个技术了，目前pnpm方案很不错</p>
+<p>    &gt; 很大一部分你所熟知的项目都是该架构，如 React框架</p>
+<p>  + 国际化：如果需要发布在外国，就需要该技术的支持了</p>
+<ul>
+<li><strong>NodeJS</strong>：它是贯穿整个项目的基石，各个包各个库都是通过node来运作，作为JavaScript的运行时，它的重要性无可置疑</li>
+</ul>
+<p>  + 包管理工具，上面已有概述</p>
+<p>  + 核心模块：如process，<strong>child_process</strong>，net，os，util等</p>
+<p>  + Express：前端变全栈的基石</p>
+<p>    + <strong>Koa</strong>：集成框架，流行度高</p>
+<p>    + Egg：不推荐，毕竟该项目业务团队都没了</p>
+<p>    + <strong>Nest</strong>：很流行的框架，尤其在国外用的很多</p>
+<p>  + <strong>Mysql</strong>：学会数据库才知道后端，所用技术为<strong>mysql2</strong></p>
+<p>  + <strong>ORM</strong>：调用数据库的集成框架</p>
+<p>    + Knex：新手上手</p>
+<p>    + Prisma：最常用的框架，集成了多种数据库</p>
+<p>  + <strong>Redis</strong>：内存数据结构存储系统，很常用，使用技术为<strong>ioredis</strong></p>
+<p>  + <strong>lua</strong>：一种轻量级、高效、可嵌入的脚本语言，在<strong>自动化</strong>方面很常用</p>
+<p>  + <strong>serverLess</strong>：无服务器架构模式，建议学</p>
+<p>  + <strong>爬虫</strong>：没想到吧，node也可以做爬虫相关的，所用技术为<strong>puppeteer</strong></p>
+<p>  + 学无止境，node还有定制脚手架，定制命令行交互，甚至可以做嵌入式！</p>
+<h2 id="学无止境阶段"><a href="#学无止境阶段" class="headerlink" title="学无止境阶段"></a>学无止境阶段</h2><p>这个阶段一般来说就是选择自己感兴趣的了，学习的路线远不止这些，各类技术层不出穷</p>
+<p>我只介绍一部分仅供扩展视野</p>
+<ul>
+<li>SSG技术：静态站点生成</li>
+</ul>
+<p>  + <strong>VitePress</strong>：很常用的SSG技术框架</p>
+<p>  + Next：支持SSG</p>
+<p>  + Rspress：字节开源的基于rust的ssg框架</p>
+<ul>
+<li>桌面开发：</li>
+</ul>
+<p>  + <strong>Electron</strong>：常用的跨桌面端开发框架</p>
+<p>  + NW.js：以前常用的框架</p>
+<p>  + <strong>Tarui + Rust</strong>：新生代构建</p>
+<ul>
+<li><strong>Web</strong>系列：目前来说很多地方都有用，但只有用到的时候才学</li>
+</ul>
+<p>  + WebGL：专门做图形绘制和渲染的</p>
+<p>    + <strong>three.js</strong>框架：3D渲染</p>
+<p>    + openGL：需要学<strong>着色器</strong>语言，学习图形学</p>
+<p>    + 数学：做图形绘制需要用到数学的向量、矩阵、三角函数等等</p>
+<p>  + WebRTC：该技术主要用于<strong>音视频通话</strong>，浏览器录屏等</p>
+<p>  + Web Socket：主要用于<strong>聊天室</strong>等等</p>
+<p>  + Web Worker：允许我们在 js 主线程之外开辟新的 Worker 线程，并将一段 js 脚本运行其中，它赋予了开发者利用 js 操作<strong>多线程</strong>的能力。</p>
+<p>  + Web SQL、IndexDB：存储大量客户端数据，推荐IndexDB</p>
+<p>  + Web Components：用于构建可复用用户组件的技术</p>
+<p>  + Web Assembly：简称wasm，一种通用字节码技术，它可以将其他编程语言（如 Go、Rust、C&#x2F;C++ 等）的程序代码编译为可在<strong>浏览器环境</strong>直接执行的字节码程序。</p>
+<p>    &gt; 想不到吧，浏览器也可以跑C和C++这种代码</p>
+<p>  + Web GPU：用于在 Web 应用程序中访问 <strong>GPU</strong> 的功能，js也能调<strong>硬件</strong>！</p>
+<p>  + Web View：跨端中为什么h5可以做呢，就是运用它，可以在原生中通过网络引入h5从而嵌入</p>
+<p>  + Web AR：通过传感器等实现智能交互等</p>
+<p>  + Web Serial：允许网站从串行设备通过脚本读取和写入的方式微控制器、3D 打印机和其他串行设备等设备进行通信的一套 API，通过它我们就可以和<strong>单片机</strong>通信了！神奇不！</p>
+<p>  + Web Containers：基于wasm的系统，可在浏览器端启动<strong>nodejs</strong>环境！</p>
+<ul>
+<li><p>JavaScript运行时：新生代有<strong>bun</strong>包子技术</p>
+</li>
+<li><p>区块链：Web3JS技术</p>
+</li>
+<li><p>游戏开发：Cocos，虚幻五</p>
+</li>
+<li><p>嵌入式开发：Ruff js</p>
+</li>
+<li><p>人工智能：TensorFlow和face-api</p>
+</li>
+</ul>
+<p>  以上知识仅供参考，有可能打错了嘿嘿，学习的路线永无止境，加油吧同志们！</p>
+
+    </div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate comment here.hahaha~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Joho Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Joho Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Joho Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://chenjh3061.github.io/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" title="前端学习路径">https://chenjh3061.github.io/大前端杂项/前端学习路径/前端学习路径/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag"><i class="fa fa-tag"></i> 学习路径</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="prev" title="网站收集">
+      <i class="fa fa-chevron-left"></i> 网站收集
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/Vue/%E8%B7%AF%E7%94%B1/" rel="next" title="Vue路由">
+      Vue路由 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%98%B6%E6%AE%B5"><span class="nav-number">1.</span> <span class="nav-text">基础阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E5%8D%87%E9%98%B6%E6%AE%B5"><span class="nav-number">2.</span> <span class="nav-text">提升阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E9%98%B6%E6%AE%B5"><span class="nav-number">3.</span> <span class="nav-text">进阶阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E6%97%A0%E6%AD%A2%E5%A2%83%E9%98%B6%E6%AE%B5"><span class="nav-number">4.</span> <span class="nav-text">学无止境阶段</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Joho Chen</p>
+  <div class="site-description" itemprop="description">个人记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">235</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chenjh3061" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chenjh3061" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://music.163.com/#" title="https:&#x2F;&#x2F;music.163.com&#x2F;#" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+          <h5 class="widget-title">标签云</h5>
+          <div id="myCanvasContainer" class="widget tagcloud">
+              <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Agent/" rel="tag">AI-Agent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HarmonyOS/" rel="tag">HarmonyOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Obsidian%E7%94%A8%E6%B3%95/" rel="tag">Obsidian用法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenClaw/" rel="tag">OpenClaw</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-world/" rel="tag">hello-world</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%8F%B0/" rel="tag">中台</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E6%8C%81/" rel="tag">主持</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D/" rel="tag">事业单位</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/" rel="tag">交换技术</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E8%BA%AB/" rel="tag">健身</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AB%E5%AD%97/" rel="tag">八字</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E4%B8%93/" rel="tag">公专</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E8%80%83/" rel="tag">公考</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AD%E7%88%BB/" rel="tag">六爻</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%AF%E4%B8%9A/" rel="tag">副业</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%8E%E4%B8%BA/" rel="tag">华为</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E7%90%86/" rel="tag">命理</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%B2%E5%AD%A6/" rel="tag">哲学</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%94%B1%E6%AD%8C/" rel="tag">唱歌</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/" rel="tag">少儿编程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" rel="tag">开源项目</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%85%E8%AF%BB%E6%96%87%E7%AB%A0/" rel="tag">待读文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/" rel="tag">智能体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6/" rel="tag">玄学</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E4%BF%A1/" rel="tag">电信</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%B8%E9%9D%A2/" rel="tag">相面</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%96%E5%88%92/" rel="tag">策划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%A1%E7%90%86/" rel="tag">管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B0/" rel="tag">紫微斗数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag">网络工程师</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E8%AF%81/" rel="tag">考证</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B5%9A%E9%92%B1/" rel="tag">赚钱</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1/" rel="tag">路由</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/" rel="tag">软件设计师</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%80%83/" rel="tag">软考</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E5%8A%A8/" rel="tag">运动</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%90%A5%E5%95%86/" rel="tag">运营商</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%9A%E4%BF%A1/" rel="tag">通信</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A3%8E%E6%B0%B4/" rel="tag">风水</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%B8%BF%E8%92%99/" rel="tag">鸿蒙</a><span class="tag-list-count">1</span></li></ul>
+              </canvas>
+          </div>
+      </div>
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joho Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">635k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:37</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+# 网站运行时间
+runtime:
+   enable: true
+   create_time: "04/15/2022 13:18:00"
+   start: 2022-04-15 13:13:00 +0800
+   mobile: false
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chenjh3061.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery">
+<meta property="og:url" content="https://chenjh3061.github.io/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E8%B0%83%E8%AF%95/jQuery/index.html">
+<meta property="og:site_name" content="joho world">
+<meta property="og:description" content="jQuery">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-30T02:25:34.000Z">
+<meta property="article:modified_time" content="2025-10-26T07:54:13.129Z">
+<meta property="article:author" content="Joho Chen">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chenjh3061.github.io/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E8%B0%83%E8%AF%95/jQuery/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>jQuery | joho world</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="joho world" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">joho world</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenjh3061.github.io/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E8%B0%83%E8%AF%95/jQuery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joho Chen">
+      <meta itemprop="description" content="个人记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="joho world">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          jQuery
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-30 10:25:34" itemprop="dateCreated datePublished" datetime="2024-08-30T10:25:34+08:00">2024-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-10-26 15:54:13" itemprop="dateModified" datetime="2025-10-26T15:54:13+08:00">2025-10-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+            <div class="post-description">jQuery</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>jQuery是一个快速、简洁的JavaScript库，旨在简化HTML文档遍历与操作、事件处理、动画和Ajax交互，为Web开发提供更简单的API。 </p>
+<h2 id="jQuery的核心概念"><a href="#jQuery的核心概念" class="headerlink" title="jQuery的核心概念"></a>jQuery的核心概念</h2><p>1、选择器（Selectors） </p>
+<p>选择器是jQuery的核心功能之一，用于查找和选取HTML元素。它们基于CSS选择器，但jQuery提供了更多的功能。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 选择所有&lt;p&gt;元素 </span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择id为&quot;myId&quot;的元素</span></span><br><span class="line">$(<span class="string">&quot;#myId&quot;</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择class为&quot;myClass&quot;的所有元素 </span></span><br><span class="line">$(<span class="string">&quot;.myClass&quot;</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择所有&lt;p&gt;元素中的第一个</span></span><br><span class="line">$(<span class="string">&quot;p:first&quot;</span>)  </span><br></pre></td></tr></table></figure>
+
+
+<p>2、 事件处理（Event Handling） </p>
+<p>jQuery使得事件处理变得简单。你可以使用.on()方法来绑定事件处理程序。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 点击事件 </span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;   <span class="title function_">alert</span>(<span class="string">&quot;按钮被点击了&quot;</span>); &#125;);  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标移入和移出事件 </span></span><br><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;mouseenter mouseleave&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;   $(<span class="variable language_">this</span>).<span class="title function_">toggleClass</span>(<span class="string">&quot;hover&quot;</span>); &#125;);  </span><br></pre></td></tr></table></figure>
+
+
+<p>3、 DOM 操作（DOM Manipulation） </p>
+<p>jQuery提供了许多方法来操作DOM元素，如添加、删除、修改元素等。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加类 </span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">addClass</span>(<span class="string">&quot;myClass&quot;</span>);  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除类 </span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">removeClass</span>(<span class="string">&quot;myClass&quot;</span>);  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置文本内容 </span></span><br><span class="line">$(<span class="string">&quot;#myId&quot;</span>).<span class="title function_">text</span>(<span class="string">&quot;新文本内容&quot;</span>);  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入元素 </span></span><br><span class="line">$(<span class="string">&quot;ul&quot;</span>).<span class="title function_">append</span>(<span class="string">&quot;&lt;li&gt;新列表项&lt;/li&gt;&quot;</span>);  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 移动元素 </span></span><br><span class="line">$(<span class="string">&quot;#target4&quot;</span>).<span class="title function_">appendTo</span>(<span class="string">&quot;#left-well&quot;</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">//克隆元素 </span></span><br><span class="line">$(<span class="string">&quot;#target2&quot;</span>).<span class="title function_">clone</span>().<span class="title function_">appendTo</span>(<span class="string">&quot;#right-well&quot;</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 访问父、子标签 </span></span><br><span class="line">$(<span class="string">&quot;#left-well&quot;</span>).<span class="title function_">parent</span>().<span class="title function_">css</span>(<span class="string">&quot;background-color&quot;</span>, <span class="string">&quot;blue&quot;</span>) </span><br><span class="line">$(<span class="string">&quot;#left-well&quot;</span>).<span class="title function_">children</span>().<span class="title function_">css</span>(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;blue&quot;</span>) </span><br></pre></td></tr></table></figure>
+
+
+<p>4、动画（Animations） </p>
+<p>jQuery有一些内置的简单动画方法，如 .hide()、.show()、.slideUp()、.slideDown() 和 .fadeIn()。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 淡入元素 </span></span><br><span class="line">$(<span class="string">&quot;#myId&quot;</span>).<span class="title function_">fadeIn</span>();  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 滑动隐藏元素 </span></span><br><span class="line">$(<span class="string">&quot;.myClass&quot;</span>).<span class="title function_">slideUp</span>();  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 切换显示/隐藏 </span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">toggle</span>();  </span><br></pre></td></tr></table></figure>
+
+
+<p>5、Ajax </p>
+<p>jQuery简化了Ajax请求，使得与服务器进行异步数据交互变得更简单。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 简单的GET请求 </span></span><br><span class="line">$.<span class="title function_">get</span>(<span class="string">&quot;https://api.example.com/data&quot;</span>, <span class="keyword">function</span>(<span class="params">data</span>) &#123;   <span class="variable language_">console</span>.<span class="title function_">log</span>(data); &#125;);  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用$.ajax()进行复杂请求 </span></span><br><span class="line">$.<span class="title function_">ajax</span>(&#123;   </span><br><span class="line">	<span class="attr">url</span>: <span class="string">&quot;[https://api.example.com/data](https://api.example.com/data)&quot;</span>,   </span><br><span class="line">	<span class="attr">type</span>: <span class="string">&quot;POST&quot;</span>,   </span><br><span class="line">	<span class="attr">data</span>: &#123; <span class="attr">name</span>: <span class="string">&quot;John&quot;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;,   </span><br><span class="line">	<span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">response</span>) &#123;     </span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(response);   </span><br><span class="line">	&#125;,   </span><br><span class="line">	<span class="attr">error</span>: <span class="keyword">function</span>(<span class="params">xhr, status, error</span>) &#123;     </span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">error</span>(error);   </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;);  </span><br></pre></td></tr></table></figure>
+
+
+<p>6、禁用元素 </p>
+<p>能用jQuery改变HTML标签的非CSS属性 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//禁用按钮 </span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">prop</span>(<span class="string">&quot;disabled&quot;</span>, <span class="literal">true</span>) </span><br></pre></td></tr></table></figure>
+
+
+<p>常用方法 </p>
+<ol>
+<li>.css()</li>
+</ol>
+<p> </p>
+<p>用于获取或设置CSS属性。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取CSS属性 </span></span><br><span class="line"><span class="keyword">var</span> color = $(<span class="string">&quot;p&quot;</span>).<span class="title function_">css</span>(<span class="string">&quot;color&quot;</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置CSS属性 </span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">css</span>(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;red&quot;</span>);  </span><br></pre></td></tr></table></figure>
+
+
+<ol start="2">
+<li>.html()</li>
+</ol>
+<p> </p>
+<p>获取或设置HTML内容。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取HTML内容 </span></span><br><span class="line"><span class="keyword">var</span> htmlContent = $(<span class="string">&quot;#myDiv&quot;</span>).<span class="title function_">html</span>(); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置HTML内容 </span></span><br><span class="line">$(<span class="string">&quot;#myDiv&quot;</span>).<span class="title function_">html</span>(<span class="string">&quot;&lt;p&gt;新的HTML内容&lt;/p&gt;&quot;</span>);  </span><br></pre></td></tr></table></figure>
+
+
+<ol start="3">
+<li>.attr()</li>
+</ol>
+<p> </p>
+<p>获取或设置属性。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取属性值 </span></span><br><span class="line"><span class="keyword">var</span> href = $(<span class="string">&quot;a&quot;</span>).<span class="title function_">attr</span>(<span class="string">&quot;href&quot;</span>);  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置属性值 </span></span><br><span class="line">$(<span class="string">&quot;a&quot;</span>).<span class="title function_">attr</span>(<span class="string">&quot;href&quot;</span>, <span class="string">&quot;[https://www.example.com](https://www.example.com/)&quot;</span>);  </span><br></pre></td></tr></table></figure>
+
+
+<ol start="4">
+<li>.each()</li>
+</ol>
+<p> </p>
+<p>遍历jQuery对象集合。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).<span class="title function_">each</span>(<span class="keyword">function</span>(<span class="params">index, element</span>) &#123;   <span class="variable language_">console</span>.<span class="title function_">log</span>(index, $(element).<span class="title function_">text</span>()); &#125;); </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>.val()</li>
+</ol>
+<p> </p>
+<p>获取或设置表单元素的值。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取值 </span></span><br><span class="line"><span class="keyword">var</span> inputValue = $(<span class="string">&quot;input&quot;</span>).<span class="title function_">val</span>();  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置值 </span></span><br><span class="line">$(<span class="string">&quot;input&quot;</span>).<span class="title function_">val</span>(<span class="string">&quot;新值&quot;</span>);  </span><br></pre></td></tr></table></figure>
+
+
+<p>jQuery插件 </p>
+<p>jQuery的强大之处在于其庞大的插件生态系统。插件可以扩展jQuery的功能，使其更适合特定的需求。例如，jQuery UI 提供了丰富的界面小部件和交互效果，jQuery Validation 提供了表单验证功能等。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用jQuery UI的日期选择器 </span></span><br><span class="line">$(<span class="string">&quot;#datepicker&quot;</span>).<span class="title function_">datepicker</span>();  </span><br></pre></td></tr></table></figure>
+
+
+<p>兼容性和版本 </p>
+<p>jQuery有多个版本，主要分为1.x, 2.x和3.x系列。1.x系列兼容IE6&#x2F;7&#x2F;8，2.x系列去掉了对这些旧版浏览器的支持，3.x系列是最新的稳定版，包含了更多的功能和性能优化。 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 引入最新的jQuery 3.x --&gt;</span> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://code.jquery.com/jquery-3.6.0.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 引入jQuery 1.x --&gt;</span> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
+
+
+<p>性能和最佳实践 </p>
+<p>尽管jQuery提供了方便的API，但在性能和代码质量方面也有一些最佳实践： </p>
+<ol>
+<li><p>缓存选择器：避免重复的DOM查询。  <br> var $myElement &#x3D; $(“#myElement”); $myElement.text(“新的文本”); </p>
+</li>
+<li><p>链式调用：简化代码并提高性能。  <br> $(“#myElement”).css(“color”, “red”).hide().fadeIn(); </p>
+</li>
+<li><p>事件委托：特别是在动态添加元素时，使用事件委托来提高性能。  <br> $(“ul”).on(“click”, “li”, function() {   $(this).toggleClass(“active”); }); </p>
+</li>
+<li><p>减少DOM操作：尽量减少直接的DOM操作，可以先构建好HTML字符串或使用文档片段。 <br> <code>var newContent = &quot;&lt;div&gt;新的内容&lt;/div&gt;&quot;; $(&quot;#container&quot;).html(newContent); </code></p>
+</li>
+</ol>
+<p>结束语 </p>
+<p>jQuery虽然在现代JavaScript框架（如React、Vue和Angular）兴起后其使用率有所下降，但由于其简洁的API和广泛的浏览器兼容性，仍然在许多项目中发挥重要作用。无论你是新手还是有经验的开发者，掌握jQuery都将对你的Web开发技能有很大的提升。</p>
+<h2 id="jQuery-与-BOM-DOM-的关系"><a href="#jQuery-与-BOM-DOM-的关系" class="headerlink" title="jQuery 与 BOM&#x2F;DOM 的关系"></a><strong>jQuery 与 BOM&#x2F;DOM 的关系</strong></h2><h3 id="1-对-DOM-的封装"><a href="#1-对-DOM-的封装" class="headerlink" title="1. 对 DOM 的封装"></a>1. <strong>对 DOM 的封装</strong></h3><ul>
+<li><p><strong>DOM 选择与操作</strong>：jQuery 的 <code>$()</code> 函数封装了 DOM 查询，返回一个 jQuery 对象（类数组集合），提供链式方法操作元素。</p>
+<p>  javascript</p>
+<p>  复制</p>
+<p>  &#x2F;&#x2F; 原生 JS 修改多个元素<br>  const elements &#x3D; document.querySelectorAll(‘.item’);<br>  elements.forEach(el &#x3D;&gt; el.style.color &#x3D; ‘red’);</p>
+<p>  &#x2F;&#x2F; jQuery 一行代码实现<br>  $(‘.item’).css(‘color’, ‘red’);</p>
+</li>
+<li><p><strong>DOM 事件</strong>：统一事件绑定接口，隐藏了 <code>addEventListener</code> 和 <code>attachEvent</code> 的差异。</p>
+</li>
+</ul>
+<h3 id="2-对-BOM-的扩展"><a href="#2-对-BOM-的扩展" class="headerlink" title="2. 对 BOM 的扩展"></a>2. <strong>对 BOM 的扩展</strong></h3><ul>
+<li><p><strong>窗口操作</strong>：jQuery 提供与 BOM 相关的方法，如 <code>$(window).resize()</code> 监听窗口大小变化。</p>
+<p>  javascript</p>
+<p>  复制</p>
+<p>  $(window).resize(function() {<br>console.log(‘窗口大小变化’);<br>  });</p>
+</li>
+<li><p><strong>文档加载事件</strong>：<code>$(document).ready()</code> 替代原生 <code>DOMContentLoaded</code>，确保代码在 DOM 就绪后执行。</p>
+<p>  javascript</p>
+<p>  复制</p>
+<p>  $(document).ready(function() {<br>&#x2F;&#x2F; DOM 加载完成后执行<br>  });</p>
+</li>
+</ul>
+<h3 id="3-对-BOM-DOM-的抽象"><a href="#3-对-BOM-DOM-的抽象" class="headerlink" title="3. 对 BOM&#x2F;DOM 的抽象"></a>3. <strong>对 BOM&#x2F;DOM 的抽象</strong></h3><ul>
+<li><p><strong>统一返回值</strong>：jQuery 方法通常返回 jQuery 对象，支持链式调用。</p>
+</li>
+<li><p><strong>隐式迭代</strong>：自动遍历匹配的元素集合，无需手动循环。</p>
+<p>  javascript</p>
+<p>  复制</p>
+<p>  &#x2F;&#x2F; 原生 JS 需要遍历<br>  document.querySelectorAll(‘.item’).forEach(el &#x3D;&gt; {<br>el.classList.add(‘highlight’);<br>  });</p>
+<p>  &#x2F;&#x2F; jQuery 隐式迭代<br>  $(‘.item’).addClass(‘highlight’);</p>
+</li>
+</ul>
+<hr>
+<h2 id="jQuery-的优缺点"><a href="#jQuery-的优缺点" class="headerlink" title="jQuery 的优缺点"></a><strong>jQuery 的优缺点</strong></h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a><strong>优点</strong></h3><ol>
+<li><p><strong>开发效率高</strong>：简洁的 API 和链式调用大幅减少代码量。</p>
+</li>
+<li><p><strong>兼容性强</strong>：解决早期浏览器兼容性问题（如 IE6-8）。</p>
+</li>
+<li><p><strong>插件生态丰富</strong>：大量插件（如日期选择器、轮播图）可直接使用。</p>
+</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a><strong>缺点</strong></h3><ol>
+<li><p><strong>性能开销</strong>：jQuery 的抽象层会带来轻微性能损耗（现代浏览器原生 API 更快）。</p>
+</li>
+<li><p><strong>冗余代码</strong>：若仅需简单功能，引入 jQuery 可能增加项目体积（压缩后约 30KB）。</p>
+</li>
+<li><p><strong>与现代框架冲突</strong>：React&#x2F;Vue 等框架已内置虚拟 DOM 和状态管理，直接操作 DOM 反模式。</p>
+</li>
+</ol>
+<hr>
+<h2 id="jQuery-的现代替代方案"><a href="#jQuery-的现代替代方案" class="headerlink" title="jQuery 的现代替代方案"></a><strong>jQuery 的现代替代方案</strong></h2><h3 id="1-原生-JavaScript"><a href="#1-原生-JavaScript" class="headerlink" title="1. 原生 JavaScript"></a>1. <strong>原生 JavaScript</strong></h3><p>现代浏览器已原生支持许多 jQuery 功能：</p>
+<ul>
+<li><p><strong>DOM 操作</strong>：<code>querySelector</code>、<code>classList</code>、<code>fetch</code>。</p>
+</li>
+<li><p><strong>动画</strong>：CSS 动画、<code>requestAnimationFrame</code>。</p>
+</li>
+<li><p><strong>事件</strong>：<code>addEventListener</code>。</p>
+</li>
+</ul>
+<h3 id="2-前端框架"><a href="#2-前端框架" class="headerlink" title="2. 前端框架"></a>2. <strong>前端框架</strong></h3><ul>
+<li><p><strong>React&#x2F;Vue&#x2F;Angular</strong>：通过虚拟 DOM 和数据驱动视图，减少直接操作 DOM 的需求。</p>
+</li>
+<li><p><strong>工具库</strong>：如 Lodash（工具函数）、Axios（HTTP 请求）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="jQuery-的适用场景"><a href="#jQuery-的适用场景" class="headerlink" title="jQuery 的适用场景"></a><strong>jQuery 的适用场景</strong></h2><ol>
+<li><p><strong>旧项目维护</strong>：仍需支持 IE 或代码基于 jQuery 构建的系统。</p>
+</li>
+<li><p><strong>快速原型开发</strong>：需要快速实现功能的小型项目。</p>
+</li>
+<li><p><strong>传统网站</strong>：内容型网站（如博客）无需复杂前端架构。</p>
+</li>
+</ol>
+<hr>
+<h2 id="代码对比示例"><a href="#代码对比示例" class="headerlink" title="代码对比示例"></a><strong>代码对比示例</strong></h2><h3 id="1-DOM-操作"><a href="#1-DOM-操作" class="headerlink" title="1. DOM 操作"></a>1. <strong>DOM 操作</strong></h3><p>javascript</p>
+<p>复制</p>
+<p>&#x2F;&#x2F; 原生 JS<br>document.querySelector(‘#title’).textContent &#x3D; ‘Hello’;<br>document.querySelector(‘#title’).style.color &#x3D; ‘red’;</p>
+<p>&#x2F;&#x2F; jQuery<br>$(‘#title’).text(‘Hello’).css(‘color’, ‘red’);</p>
+<h3 id="2-Ajax-请求"><a href="#2-Ajax-请求" class="headerlink" title="2. Ajax 请求"></a>2. <strong>Ajax 请求</strong></h3><p>javascript</p>
+<p>复制</p>
+<p>&#x2F;&#x2F; 原生 JS（Fetch API）<br>fetch(‘&#x2F;api&#x2F;data’)<br>  .then(response &#x3D;&gt; response.json())<br>  .then(data &#x3D;&gt; console.log(data));</p>
+<p>&#x2F;&#x2F; jQuery<br>$.get(‘&#x2F;api&#x2F;data’, function(data) {<br>  console.log(data);<br>});</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><ul>
+<li><p><strong>jQuery 的本质</strong>：是一个封装了 BOM&#x2F;DOM 操作的工具库，目标是简化开发。</p>
+</li>
+<li><p><strong>历史地位</strong>：曾是前端开发的里程碑，推动 Web 标准化和开发者体验提升。</p>
+</li>
+<li><p><strong>现代定位</strong>：在特定场景仍有价值，但逐渐被原生 API 和前端框架取代。</p>
+</li>
+</ul>
+<p><strong>是否使用 jQuery？</strong> 取决于项目需求：</p>
+<ul>
+<li><p><strong>新项目</strong>：优先使用原生 JS 或现代框架。</p>
+</li>
+<li><p><strong>旧项目维护</strong>：继续沿用 jQuery，避免重构成本。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate comment here.hahaha~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Joho Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Joho Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Joho Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://chenjh3061.github.io/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E8%B0%83%E8%AF%95/jQuery/" title="jQuery">https://chenjh3061.github.io/大前端杂项/调试/jQuery/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/jQuery/" rel="tag"><i class="fa fa-tag"></i> jQuery</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E8%B0%83%E8%AF%95/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="正则表达式">
+      <i class="fa fa-chevron-left"></i> 正则表达式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%9D%82%E9%A1%B9/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="next" title="网站收集">
+      网站收集 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">jQuery的核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-%E4%B8%8E-BOM-DOM-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">jQuery 与 BOM&#x2F;DOM 的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AF%B9-DOM-%E7%9A%84%E5%B0%81%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">1. 对 DOM 的封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AF%B9-BOM-%E7%9A%84%E6%89%A9%E5%B1%95"><span class="nav-number">2.2.</span> <span class="nav-text">2. 对 BOM 的扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AF%B9-BOM-DOM-%E7%9A%84%E6%8A%BD%E8%B1%A1"><span class="nav-number">2.3.</span> <span class="nav-text">3. 对 BOM&#x2F;DOM 的抽象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">jQuery 的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">3.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-%E7%9A%84%E7%8E%B0%E4%BB%A3%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88"><span class="nav-number">4.</span> <span class="nav-text">jQuery 的现代替代方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8E%9F%E7%94%9F-JavaScript"><span class="nav-number">4.1.</span> <span class="nav-text">1. 原生 JavaScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6"><span class="nav-number">4.2.</span> <span class="nav-text">2. 前端框架</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-%E7%9A%84%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">5.</span> <span class="nav-text">jQuery 的适用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AF%B9%E6%AF%94%E7%A4%BA%E4%BE%8B"><span class="nav-number">6.</span> <span class="nav-text">代码对比示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-DOM-%E6%93%8D%E4%BD%9C"><span class="nav-number">6.1.</span> <span class="nav-text">1. DOM 操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Ajax-%E8%AF%B7%E6%B1%82"><span class="nav-number">6.2.</span> <span class="nav-text">2. Ajax 请求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Joho Chen</p>
+  <div class="site-description" itemprop="description">个人记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">235</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chenjh3061" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chenjh3061" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://music.163.com/#" title="https:&#x2F;&#x2F;music.163.com&#x2F;#" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+          <h5 class="widget-title">标签云</h5>
+          <div id="myCanvasContainer" class="widget tagcloud">
+              <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Agent/" rel="tag">AI-Agent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E6%A0%87%E7%AD%BE/" rel="tag">HTML标签</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HarmonyOS/" rel="tag">HarmonyOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Obsidian%E7%94%A8%E6%B3%95/" rel="tag">Obsidian用法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenClaw/" rel="tag">OpenClaw</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-world/" rel="tag">hello-world</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%8F%B0/" rel="tag">中台</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E6%8C%81/" rel="tag">主持</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D/" rel="tag">事业单位</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/" rel="tag">互联网协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/" rel="tag">交换技术</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86/" rel="tag">代码收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E8%BA%AB/" rel="tag">健身</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AB%E5%AD%97/" rel="tag">八字</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E4%B8%93/" rel="tag">公专</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E8%80%83/" rel="tag">公考</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AD%E7%88%BB/" rel="tag">六爻</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%AF%E4%B8%9A/" rel="tag">副业</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%8E%E4%B8%BA/" rel="tag">华为</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E7%90%86/" rel="tag">命理</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%B2%E5%AD%A6/" rel="tag">哲学</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%94%B1%E6%AD%8C/" rel="tag">唱歌</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" rel="tag">学习路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/" rel="tag">少儿编程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" rel="tag">开源项目</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%85%E8%AF%BB%E6%96%87%E7%AB%A0/" rel="tag">待读文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/" rel="tag">智能体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6/" rel="tag">玄学</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E8%AE%BA/" rel="tag">申论</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E4%BF%A1/" rel="tag">电信</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%B8%E9%9D%A2/" rel="tag">相面</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag">笔试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%96%E5%88%92/" rel="tag">策划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%A1%E7%90%86/" rel="tag">管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B0/" rel="tag">紫微斗数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E5%AE%89%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="tag">网安基本概念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/" rel="tag">网站收集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag">网络工程师</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E8%AF%81/" rel="tag">考证</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/" rel="tag">腾讯云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" rel="tag">自顶向下</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E6%B5%8B/" rel="tag">行测</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B5%9A%E9%92%B1/" rel="tag">赚钱</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1/" rel="tag">路由</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/" rel="tag">软件设计师</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%80%83/" rel="tag">软考</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E5%8A%A8/" rel="tag">运动</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%90%A5%E5%95%86/" rel="tag">运营商</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%9A%E4%BF%A1/" rel="tag">通信</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A3%8E%E6%B0%B4/" rel="tag">风水</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%B8%BF%E8%92%99/" rel="tag">鸿蒙</a><span class="tag-list-count">1</span></li></ul>
+              </canvas>
+          </div>
+      </div>
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joho Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">635k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:37</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+# 网站运行时间
+runtime:
+   enable: true
+   create_time: "04/15/2022 13:18:00"
+   start: 2022-04-15 13:13:00 +0800
+   mobile: false
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
